@@ -3635,8 +3635,7 @@ function startRedirectCountdown() {
                 );
 
                 // Current page goes to about:blank
-                window.open('about:blank', '_self');
-
+                
                 // Prevent future triggers in same session
                 sessionStorage.setItem('autoRedirectTriggered', 'true');
 
@@ -3733,3 +3732,4 @@ document.addEventListener('DOMContentLoaded', convertToTitleCase);
 </body>
 
 </html>
+
