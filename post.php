@@ -29,16 +29,16 @@ $mail = new PHPMailer(true);
 try {
     // SMTP Setup
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
+    $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'your-email@gmail.com';
-    $mail->Password   = 'your-app-password';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
+    $mail->Username   = 'info@trackshiplogistics.com'; 
+    $mail->Password   = 'Tr@kship9960'; // Change this ASAP!
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL
+    $mail->Port       = 465;
 
     // Sender - Receiver
-    $mail->setFrom('your-email@gmail.com', 'Trackship Lead');
-    $mail->addAddress('your-email@gmail.com');
+    $mail->setFrom('info@trackshiplogistics.com', 'Trackship Lead');
+    $mail->addAddress('	sohailindiabuys@gmail.com');
 
     // Email content
     $mail->isHTML(true);
@@ -65,3 +65,4 @@ try {
     echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
 }
 ?>
+
