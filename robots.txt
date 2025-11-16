@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://trackshiplogistics.com/sitemap.xml
+
+# Block common non-content files
+Disallow: /php/
+Disallow: /logs/
+Disallow: /scss/
+Disallow: /js/
+Disallow: /tests/
+Disallow: /seo/
+Disallow: /composer.json
+Disallow: /leads.csv
+Disallow: /*.json$
+Disallow: /*.log$
+
+# Allow search engines to access main assets
+Allow: /css/
+Allow: /assets/
+Allow: /js/main.js
+Allow: /js/main.min.js
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1

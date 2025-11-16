@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trackship Logistics - Your Partner in Business Excellence</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #F7931E;
+            --accent: #0b4a7a;
+            --muted: #666;
+            --light: #f8f9fa;
+            --reveal-duration: 0.5s; /* per-element animate duration */
+            --reveal-stagger: 0.5s; /* gap between layers/items */
+            --slider-interval: 6000; /* ms */
+            --header-height: 80px;
+            --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #FFA726);
+            color: white;
+            box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Animated Gradient Button */
+        .animated-gradient {
+            background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
+            background-size: 600% 600%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity var(--reveal-duration) var(--transition-smooth), 
+                        transform var(--reveal-duration) var(--transition-smooth);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-from-bottom {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--reveal-duration) var(--transition-smooth), 
+                        transform var(--reveal-duration) var(--transition-smooth);
+            will-change: opacity, transform;
+        }
+
+        .reveal-from-bottom.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header Styles */
+        .main-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            height: var(--header-height);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--primary);
+        }
+
+        .desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .drop-btn {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .drop-btn:hover {
+            background: #0a3d6a;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            top: 45px;
+            width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: #f5f5f5;
+        }
+
+        /* Mobile Panel */
+        .mobile-panel {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            background: white;
+            width: 300px;
+            height: 100vh;
+            padding: 25px;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+            z-index: 1001;
+        }
+
+        .mobile-panel.open {
+            transform: translateX(0);
+        }
+
+        .close-btn {
+            text-align: right;
+            font-size: 24px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .panel-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .panel-links a {
+            font-size: 16px;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .panel-links h4 {
+            margin-top: 20px;
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .panel-social {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .panel-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .panel-social a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1200;
+            background: transparent;
+            border: none;
+            position: relative;
+        }
+
+        #hamburgerIcon {
+            font-size: 22px;
+            line-height: 1;
+            transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+            pointer-events: none;
+            color: #333;
+        }
+
+        .hamburger .cross {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            opacity: 0;
+            pointer-events: none;
+            transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+        }
+
+        .hamburger.active #hamburgerIcon {
+            transform: rotate(-20deg) scale(.85);
+            opacity: 0;
+        }
+
+        .hamburger.active .cross {
+            transform: translate(-50%, -50%) rotate(0);
+            opacity: 1;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        .slide-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            z-index: 1;
+            color: white;
+        }
+
+        .slide-layer {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--reveal-duration) var(--transition-smooth), 
+                        transform var(--reveal-duration) var(--transition-smooth);
+        }
+
+        .slide.active .slide-layer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide.active .slide-layer:nth-child(1) { transition-delay: 0s; }
+        .slide.active .slide-layer:nth-child(2) { transition-delay: var(--reveal-stagger); }
+        .slide.active .slide-layer:nth-child(3) { transition-delay: calc(var(--reveal-stagger) * 2); }
+        .slide.active .slide-layer:nth-child(4) { transition-delay: calc(var(--reveal-stagger) * 3); }
+
+        .slide-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .slide-subtitle {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .slide-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .slide-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Slider Navigation */
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .slider-prev {
+            left: 20px;
+        }
+
+        .slider-next {
+            right: 20px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #d7ecff, #585a5c);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #ffffff, #f0f7ff);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 180px;
+            height: 180px;
+            background: url("https://picsum.photos/seed/dot-pattern/180/180.jpg");
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card.highlight {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(247, 147, 30, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+
+        .service-icon i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+
+        .service-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-description {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-link:hover {
+            background: var(--accent);
+            transform: rotate(10deg);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-images {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image-main {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image-secondary {
+            position: absolute;
+            width: 70%;
+            border-radius: 15px;
+            bottom: -30px;
+            right: -30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        /* Why Choose Section */
+        .why-choose-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .why-choose-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .why-choose-content {
+            flex: 1;
+        }
+
+        .why-choose-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .why-choose-text {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(247, 147, 30, 0.1);
+            border-radius: 10px;
+            color: var(--primary);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .feature-content p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .why-choose-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .why-choose-image-main {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-choose-image-secondary {
+            position: absolute;
+            width: 60%;
+            border-radius: 15px;
+            bottom: -30px;
+            right: -30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 74, 122, 0.8), rgba(10, 61, 106, 0.8)), url('https://picsum.photos/seed/stats-bg/1920/600.jpg') center/cover no-repeat;
+            color: white;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: white;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .testimonials-slider {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 350px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 0 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .testimonial-rating {
+            color: var(--primary);
+            margin-top: 10px;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--primary);
+        }
+
+        /* Partners Section */
+        .partners-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 74, 122, 0.8), rgba(10, 61, 106, 0.8)), url('https://picsum.photos/seed/partners-bg/1920/600.jpg') center/cover no-repeat;
+            color: white;
+        }
+
+        .partners-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .partners-subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+        .partners-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .partners-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+        }
+
+        .partners-track:hover {
+            animation-play-state: paused;
+        }
+
+        .partner-logo {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 30px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            color: var(--muted);
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .contact-text {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(247, 147, 30, 0.1);
+            border-radius: 10px;
+            color: var(--primary);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .contact-content p {
+            font-size: 16px;
+            color: var(--muted);
+        }
+
+        .call-now {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .call-now:hover {
+            background: #0a3d6a;
+            transform: translateY(-3px);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(247, 147, 30, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-message {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            min-height: 120px;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .form-message:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(247, 147, 30, 0.1);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary), #FFA726);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--accent) url('https://picsum.photos/seed/world-map/1920/400.jpg') center/cover no-repeat;
+            color: white;
+            padding: 80px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-column p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .popup-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-modal.active .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--accent), #0a3d6a);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+        }
+
+        .popup-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .popup-body {
+            padding: 30px;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-dropdown {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-drop-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: #333;
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .mobile-drop-btn i {
+            transition: 0.3s;
+        }
+
+        .mobile-drop-btn.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Hidden Dropdown Menu */
+        .mobile-drop-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-drop-menu a {
+            padding: 10px 0 10px 10px;
+            color: #555;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .mobile-drop-menu a:hover {
+            color: var(--primary);
+        }
+
+        /* Service Selection */
+        .service-selection {
+            margin: 20px 0;
+        }
+
+        .service-selection h4 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .service-checkbox label {
+            font-size: 15px;
+            color: #333;
+        }
+
+        .go-to-services {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .go-to-services:hover {
+            background: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .hero-slider .slide-content {
+                text-align: center;
+            }
+            
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .why-choose-container {
+                flex-direction: column;
+            }
+            
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                min-width: 300px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-header {
+                padding: 10px 15px;
+            }
+            
+            .slide-title {
+                font-size: 28px;
+            }
+            
+            .slide-subtitle {
+                font-size: 20px;
+            }
+            
+            .slide-description {
+                font-size: 16px;
+            }
+            
+            .about-title, .why-choose-title, .contact-title {
+                font-size: 24px;
+            }
+            
+            .stat-number {
+                font-size: 32px;
+            }
+            
+            .slide-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="https://itzadarsh.co.in/assets/trackship/img/favicon.png" alt="Trackship Logo">
+        </div>
+        
+        <nav class="desktop-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#why-choose">Why Choose Us</a>
+            <a href="#contact">Contact</a>
+            
+            <div class="dropdown">
+                <button class="drop-btn">Admin Panel ▾</button>
+                <div class="dropdown-content">
+                    <a href="#">Admin Login</a>
+                    <a href="#">B2B Login</a>
+                    <a href="#">Franchise Login</a>
+                    <a href="#">Delivery Boy Login</a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars" id="hamburgerIcon"></i>
+            <div class="cross">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Panel -->
+    <div class="mobile-panel" id="mobilePanel">
+        <div class="close-btn" id="closePanel">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="panel-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            
+            <!-- Admin Panel Dropdown -->
+            <div class="mobile-dropdown">
+                <button class="mobile-drop-btn" id="adminPanelBtn">
+                    Admin Panel <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-drop-menu" id="adminPanelMenu">
+                    <a href="#">Admin Login</a>
+                    <a href="#">B2B Login</a>
+                    <a href="#">Franchise Login</a>
+                    <a href="#">Delivery Boy Login</a>
+                </div>
+            </div>
+            
+            <!-- Service Selection -->
+            <div class="service-selection">
+                <h4>Select Services</h4>
+                <div class="service-checkboxes">
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-courier" value="courier">
+                        <label for="service-courier">Own Courier Point</label>
+                    </div>
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-logistics" value="logistics">
+                        <label for="service-logistics">Logistics</label>
+                    </div>
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-solar" value="solar">
+                        <label for="service-solar">Solar Energy</label>
+                    </div>
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-ev" value="ev">
+                        <label for="service-ev">EV Charging</label>
+                    </div>
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-b2b" value="b2b">
+                        <label for="service-b2b">B2B</label>
+                    </div>
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-tech" value="tech">
+                        <label for="service-tech">Technology Services</label>
+                    </div>
+                    <div class="service-checkbox">
+                        <input type="checkbox" id="service-sms" value="sms">
+                        <label for="service-sms">Bulk SMS</label>
+                    </div>
+                </div>
+                <button class="go-to-services" id="goToServicesBtn">Go to Services</button>
+            </div>
+        </div>
+        
+        <div class="panel-social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="home">
+        <!-- Slide 1 -->
+        <div class="slide active" data-slide="0">
+            <div class="slide-bg" style="background-image: url('https://picsum.photos/seed/logistics-hero/1920/1080.jpg')"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title slide-layer">Your Partner in Business Excellence</h1>
+                <p class="slide-subtitle slide-layer">Logistics solutions tailored to your needs</p>
+                <p class="slide-description slide-layer">At Trackship, we provide trusted logistics, courier, B2B, and technology services for businesses across India. Our commitment to excellence ensures your business runs smoothly and efficiently.</p>
+                <div class="slide-buttons slide-layer">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide" data-slide="1">
+            <div class="slide-bg" style="background-image: url('https://picsum.photos/seed/courier-delivery/1920/1080.jpg')"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title slide-layer">Fast & Reliable Courier Services</h1>
+                <p class="slide-subtitle slide-layer">Delivering excellence, one package at a time</p>
+                <p class="slide-description slide-layer">Our courier network spans across India, ensuring timely delivery of your parcels with real-time tracking and professional handling.</p>
+                <div class="slide-buttons slide-layer">
+                    <a href="#services" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-secondary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slide" data-slide="2">
+            <div class="slide-bg" style="background-image: url('https://picsum.photos/seed/business-solutions/1920/1080.jpg')"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title slide-layer">Comprehensive Business Solutions</h1>
+                <p class="slide-subtitle slide-layer">From logistics to technology, we've got you covered</p>
+                <p class="slide-description slide-layer">Trackship offers a complete suite of services including logistics, B2B solutions, technology services, and renewable energy options to power your business growth.</p>
+                <div class="slide-buttons slide-layer">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Navigation -->
+        <div class="slider-nav">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+        </div>
+        
+        <div class="slider-arrow slider-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="slider-arrow slider-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-images reveal-from-bottom">
+                    <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Logistics Team" class="about-image-main" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Package Delivery" class="about-image-secondary" loading="lazy">
+                </div>
+                
+                <div class="about-content reveal">
+                    <h2 class="about-title">Your One-Stop Solution for Success & Innovation</h2>
+                    <p class="about-text">At Trackship, we are committed to being a trusted partner for individuals, businesses, and organizations, offering an extensive suite of services designed to meet diverse needs efficiently and effectively.</p>
+                    <p class="about-text">From logistics and financial solutions to technology and renewable energy, our expertise and dedication drive us to provide innovative and reliable solutions across multiple domains.</p>
+                    <a href="#services" class="btn btn-primary">
+                        <span>Explore Our Services</span>
+                        <span class="btn-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title reveal">We Provide Exclusive Service For Your Business</h2>
+            <p class="section-subtitle reveal">Our comprehensive range of services ensures all your business needs are met</p>
+            
+            <div class="services-grid">
+                <div class="service-card reveal-from-bottom" data-service="courier">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="service-title">Own Courier Point</h3>
+                    <p class="service-description">Providing doorstep courier support with high-quality service assurance.</p>
+                    <a href="#" class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal-from-bottom" data-service="logistics">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="service-title">Logistics</h3>
+                    <p class="service-description">Smart & efficient logistics solutions for all your business needs.</p>
+                    <a href="#" class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal-from-bottom" data-service="solar">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3 class="service-title">Solar Energy</h3>
+                    <p class="service-description">Eco-friendly energy solutions designed for modern sustainability needs.</p>
+                    <a href="#" class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal-from-bottom" data-service="b2b">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="service-title">B2B</h3>
+                    <p class="service-description">Reliable B2B solutions helping businesses grow faster with smart tools.</p>
+                    <a href="#" class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal-from-bottom" data-service="tech">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Technology Services</h3>
+                    <p class="service-description">Tech-driven services to digitally transform your business efficiently.</p>
+                    <a href="#" class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal-from-bottom" data-service="sms">
+                    <div class="service-icon">
+                        <i class="fas fa-sms"></i>
+                    </div>
+                    <h3 class="service-title">Bulk SMS</h3>
+                    <p class="service-description">Effective communication solutions with automated bulk SMS systems.</p>
+                    <a href="#" class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section" id="why-choose">
+        <div class="container">
+            <div class="why-choose-container">
+                <div class="why-choose-content reveal">
+                    <h2 class="why-choose-title">Why Choose Trackship?</h2>
+                    <p class="why-choose-text">Trackship offers tailored logistics, courier, B2B and tech services — powerful, reliable and scalable. We combine modern technology with local expertise to deliver efficient solutions for businesses and individuals.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item reveal-from-bottom">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Innovative Solutions</h4>
+                                <p>Tech-first operations & automation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item reveal-from-bottom">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Customer Focused</h4>
+                                <p>Service with clear SLAs & transparency.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item reveal-from-bottom">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>End-to-End Support</h4>
+                                <p>From pickup to delivery & tracking.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item reveal-from-bottom">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Efficient Operations</h4>
+                                <p>Optimised routes & robust networks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-choose-image reveal-from-bottom">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Logistics Operations" class="why-choose-image-main" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Delivery Team" class="why-choose-image-secondary" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title reveal">Our Skillfulness</h2>
+            <p class="section-subtitle reveal">A glimpse of our operations and team</p>
+            
+            <div class="stats-container">
+                <div class="stat-card reveal-from-bottom">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                
+                <div class="stat-card reveal-from-bottom">
+                    <div class="stat-number" data-target="80899">0</div>
+                    <div class="stat-label">Parcels Delivered</div>
+                </div>
+                
+                <div class="stat-card reveal-from-bottom">
+                    <div class="stat-number" data-target="173">0</div>
+                    <div class="stat-label">No. of Employees</div>
+                </div>
+                
+                <div class="stat-card reveal-from-bottom">
+                    <div class="stat-number" data-target="4000">0</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title reveal">What Our Clients Say</h2>
+            <p class="section-subtitle reveal">Don't just take our word for it</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card reveal-from-bottom">
+                        <p class="testimonial-text">"Outstanding service and very fast delivery. Trackship team is very cooperative and professional. They've been our logistics partner for over a year now."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rohan Sharma" class="author-image">
+                            <div class="author-info">
+                                <h4>Rohan Sharma</h4>
+                                <p>CEO, TechStart Solutions</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card reveal-from-bottom">
+                        <p class="testimonial-text">"Very reliable courier and logistics solution for our daily business needs. Their tracking system is accurate and their customer support is excellent."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Desai" class="author-image">
+                            <div class="author-info">
+                                <h4>Priya Desai</h4>
+                                <p>Operations Manager, FashionHub</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card reveal-from-bottom">
+                        <p class="testimonial-text">"Customer support is excellent. Highly satisfied with the tracking accuracy. They've helped us streamline our delivery process significantly."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Amit Verma" class="author-image">
+                            <div class="author-info">
+                                <h4>Amit Verma</h4>
+                                <p>Director, Global Exports</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card reveal-from-bottom">
+                        <p class="testimonial-text">"Great experience! The team is very professional and punctual with deliveries. Their B2B solutions have helped our business grow exponentially."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Sneha Kulkarni" class="author-image">
+                            <div class="author-info">
+                                <h4>Sneha Kulkarni</h4>
+                                <p>Founder, Organic Store</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card reveal-from-bottom">
+                        <p class="testimonial-text">"Affordable pricing and timely services. Highly recommended for startups and small businesses looking for reliable logistics solutions."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Harshit Mehta" class="author-image">
+                            <div class="author-info">
+                                <h4>Harshit Mehta</h4>
+                                <p>Co-founder, InnovateTech</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <span class="nav-dot active" data-slide="0"></span>
+                <span class="nav-dot" data-slide="1"></span>
+                <span class="nav-dot" data-slide="2"></span>
+                <span class="nav-dot" data-slide="3"></span>
+                <span class="nav-dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <h2 class="partners-title reveal">Our Trusted Partners</h2>
+            <p class="partners-subtitle reveal">We work with leading companies to deliver exceptional service</p>
+            
+            <div class="partners-carousel">
+                <div class="partners-track">
+                    <!-- First set of logos -->
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner1/200/100.jpg" alt="Partner 1">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner2/200/100.jpg" alt="Partner 2">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner3/200/100.jpg" alt="Partner 3">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner4/200/100.jpg" alt="Partner 4">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner5/200/100.jpg" alt="Partner 5">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner6/200/100.jpg" alt="Partner 6">
+                    </div>
+                    
+                    <!-- Duplicate logos for seamless scrolling -->
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner1/200/100.jpg" alt="Partner 1">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner2/200/100.jpg" alt="Partner 2">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner3/200/100.jpg" alt="Partner 3">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner4/200/100.jpg" alt="Partner 4">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner5/200/100.jpg" alt="Partner 5">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://picsum.photos/seed/partner6/200/100.jpg" alt="Partner 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title reveal">Frequently Asked Questions</h2>
+            <p class="section-subtitle reveal">Find answers to common questions about our services</p>
+            
+            <div class="faq-container">
+                <div class="faq-item reveal-from-bottom">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq1">
+                        <span>What services does Trackship offer?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq1">
+                        <p>Trackship offers a comprehensive range of services including courier delivery, logistics solutions, B2B services, technology services, solar energy solutions, and bulk SMS services. We provide end-to-end support for all your business needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal-from-bottom">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq2">
+                        <span>How can I track my shipment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq2">
+                        <p>Once you register with Trackship, you'll receive a tracking number for your shipment. You can use this number on our website or mobile app to track your shipment in real-time. We also provide SMS and email updates at every stage of delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal-from-bottom">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq3">
+                        <span>What areas do you serve?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq3">
+                        <p>Trackship provides services across India with a strong presence in major cities including Mumbai, Delhi, Bangalore, Chennai, Kolkata, and many more. We're continuously expanding our network to serve more locations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal-from-bottom">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq4">
+                        <span>How do I become a partner with Trackship?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq4">
+                        <p>To become a partner with Trackship, you can fill out the partnership form on our website or contact our business development team. We offer various partnership opportunities including franchise options, delivery partnerships, and service collaborations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info reveal">
+                <h2 class="contact-title">Get In Touch</h2>
+                <p class="contact-text">Have questions about our services? Fill out the form and our team will get back to you shortly.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Address</h4>
+                        <p>Malad (West), Mumbai, Maharashtra<br>India - 400064</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Phone</h4>
+                        <p>+91 74003 72375</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Email</h4>
+                        <p>info@trackshiplogistics.com</p>
+                    </div>
+                </div>
+                
+                <a href="tel:+917400372375" class="call-now">
+                    <i class="fas fa-phone"></i>
+                    Call Now
+                </a>
+            </div>
+            
+            <div class="contact-form reveal-from-bottom">
+                <form id="contactForm" action="post.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="contactName">Name</label>
+                            <input type="text" class="form-control" id="contactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactEmail">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="contactContact">Contact No</label>
+                            <input type="tel" class="form-control" id="contactContact" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactService">Select Service</label>
+                            <select class="form-control" id="contactService" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="courier">Own Courier Point</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="solar">Solar Energy</option>
+                                <option value="ev">EV Charging</option>
+                                <option value="b2b">B2B</option>
+                                <option value="tech">Technology Services</option>
+                                <option value="sms">Bulk SMS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="contactOpportunity">Select Opportunity</label>
+                            <select class="form-control" id="contactOpportunity" name="opportunity" required>
+                                <option value="">Select an opportunity</option>
+                                <option value="franchise">Franchise</option>
+                                <option value="partner">Business Partner</option>
+                                <option value="delivery">Delivery Boy</option>
+                                <option value="customer">Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactPincode">Pincode</label>
+                            <input type="text" class="form-control" id="contactPincode" name="pincode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactState">State</label>
+                        <input type="text" class="form-control" id="contactState" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactMessage">Message</label>
+                        <textarea class="form-message" id="contactMessage" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Trackship</h3>
+                    <p>At Trackship, we provide trusted logistics, courier, B2B, and technology services for businesses across India.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Useful Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Own Courier Point</a></li>
+                        <li><a href="#services">Logistics</a></li>
+                        <li><a href="#services">Solar Energy</a></li>
+                        <li><a href="#services">EV Charging</a></li>
+                        <li><a href="#services">B2B</a></li>
+                        <li><a href="#services">Technology Services</a></li>
+                        <li><a href="#services">Bulk SMS</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Information</h3>
+                    <p>Malad (West), Mumbai, Maharashtra<br>India - 400064</p>
+                    
+                    <p><i class="fas fa-phone"></i> +91 74003 72375</p>
+                    <p><i class="fas fa-envelope"></i> info@trackshiplogistics.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Trackship. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="popup-modal" id="popupModal" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title" id="popupTitle">Get Started with Trackship</h3>
+                <div class="popup-close" id="popupClose" role="button" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="popup-body">
+                <form id="popupForm" action="post.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="popupName">Name</label>
+                            <input type="text" class="form-control" id="popupName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="popupEmail">Email</label>
+                            <input type="email" class="form-control" id="popupEmail" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="popupContact">Contact No</label>
+                            <input type="tel" class="form-control" id="popupContact" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="popupService">Select Service</label>
+                            <select class="form-control" id="popupService" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="courier">Own Courier Point</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="solar">Solar Energy</option>
+                                <option value="ev">EV Charging</option>
+                                <option value="b2b">B2B</option>
+                                <option value="tech">Technology Services</option>
+                                <option value="sms">Bulk SMS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="popupOpportunity">Select Opportunity</label>
+                            <select class="form-control" id="popupOpportunity" name="opportunity" required>
+                                <option value="">Select an opportunity</option>
+                                <option value="franchise">Franchise</option>
+                                <option value="partner">Business Partner</option>
+                                <option value="delivery">Delivery Boy</option>
+                                <option value="customer">Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="popupPincode">Pincode</label>
+                            <input type="text" class="form-control" id="popupPincode" name="pincode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="popupState">State</label>
+                        <input type="text" class="form-control" id="popupState" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="popupMessage">Message</label>
+                        <textarea class="form-message" id="popupMessage" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user has visited before
+        document.addEventListener('DOMContentLoaded', function() {
+            const hasVisited = localStorage.getItem('trackshipVisited');
+            
+            if (!hasVisited) {
+                // Show popup after a short delay
+                setTimeout(() => {
+                    document.getElementById('popupModal').classList.add('active');
+                    localStorage.setItem('trackshipVisited', 'true');
+                }, 1000);
+            }
+        });
+
+        // Popup Modal Controls
+        document.getElementById('popupClose').addEventListener('click', function() {
+            document.getElementById('popupModal').classList.remove('active');
+        });
+
+        document.getElementById('popupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+
+        // Form Submission with AJAX
+        document.getElementById('popupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch('post.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for your submission! We will get back to you soon.');
+                    document.getElementById('popupModal').classList.remove('active');
+                    this.reset();
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again.');
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch('post.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for your submission! We will get back to you soon.');
+                    this.reset();
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again.');
+            });
+        });
+
+        // Mobile Panel Controls
+        const hamburger = document.getElementById('hamburger');
+        const mobilePanel = document.getElementById('mobilePanel');
+        const closePanel = document.getElementById('closePanel');
+        const overlay = document.getElementById('overlay');
+
+        // Open Mobile Menu
+        hamburger.addEventListener('click', () => {
+            mobilePanel.classList.add('open');
+            overlay.style.display = 'block';
+            hamburger.classList.add('active');
+        });
+
+        // Close (from cross button)
+        closePanel.addEventListener('click', () => {
+            mobilePanel.classList.remove('open');
+            overlay.style.display = 'none';
+            hamburger.classList.remove('active');
+        });
+
+        // Click outside overlay closes menu
+        overlay.addEventListener('click', () => {
+            mobilePanel.classList.remove('open');
+            overlay.style.display = 'none';
+            hamburger.classList.remove('active');
+        });
+
+        // Mobile Admin Panel Dropdown
+        const adminPanelBtn = document.getElementById('adminPanelBtn');
+        const adminPanelMenu = document.getElementById('adminPanelMenu');
+
+        adminPanelBtn.addEventListener('click', () => {
+            adminPanelMenu.style.maxHeight = adminPanelMenu.style.maxHeight ? null : adminPanelMenu.scrollHeight + 'px';
+            adminPanelBtn.classList.toggle('active');
+        });
+
+        // Go to Services Button
+        const goToServicesBtn = document.getElementById('goToServicesBtn');
+        goToServicesBtn.addEventListener('click', () => {
+            // Close mobile panel
+            mobilePanel.classList.remove('open');
+            overlay.style.display = 'none';
+            hamburger.classList.remove('active');
+            
+            // Scroll to services section
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+            
+            // Get selected services
+            const selectedServices = [];
+            document.querySelectorAll('.service-checkbox input:checked').forEach(checkbox => {
+                selectedServices.push(checkbox.value);
+            });
+            
+            // Highlight selected service cards
+            if (selectedServices.length > 0) {
+                setTimeout(() => {
+                    const serviceCards = document.querySelectorAll('.service-card');
+                    serviceCards.forEach((card, index) => {
+                        const serviceType = card.getAttribute('data-service');
+                        if (selectedServices.includes(serviceType)) {
+                            setTimeout(() => {
+                                card.classList.add('highlight');
+                                setTimeout(() => {
+                                    card.classList.remove('highlight');
+                                }, 2000);
+                            }, index * 500);
+                        }
+                    });
+                }, 1000);
+            }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')),
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobilePanel.classList.remove('open');
+                    overlay.style.display = 'none';
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Hero Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        let currentSlide = 0;
+        let slideInterval;
+        const sliderInterval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--slider-interval'));
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let index = (currentSlide + 1) % slides.length;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            let index = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(index);
+        }
+
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, sliderInterval);
+        }
+
+        function stopSlideShow() {
+            clearInterval(slideInterval);
+        }
+
+        // Initialize slider
+        showSlide(0);
+        startSlideShow();
+
+        // Slider controls
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopSlideShow();
+            startSlideShow();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopSlideShow();
+            startSlideShow();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                stopSlideShow();
+                startSlideShow();
+            });
+        });
+
+        // Pause on hover
+        document.querySelector('.hero-slider').addEventListener('mouseenter', stopSlideShow);
+        document.querySelector('.hero-slider').addEventListener('mouseleave', startSlideShow);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                stopSlideShow();
+                startSlideShow();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                stopSlideShow();
+                startSlideShow();
+            }
+        });
+
+        // Touch support for slider
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.hero-slider').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.hero-slider').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+                stopSlideShow();
+                startSlideShow();
+            }
+            
+            if (touchEndX > touchStartX + 50) {
+                prevSlide();
+                stopSlideShow();
+                startSlideShow();
+            }
+        }
+
+        // Reveal Animation on Scroll
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-from-bottom');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        // Format the final number
+                        if (target === 173) {
+                            counter.textContent = target + '+';
+                        } else if (target === 4000) {
+                            counter.textContent = target + '+';
+                        } else {
+                            counter.textContent = target;
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for Counter Animation
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            counterObserver.observe(statsSection);
+        }
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                const answer = faqItem.querySelector('.faq-answer');
+                const control = question.getAttribute('aria-controls');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Testimonials Slider
+        const testimonialTrack = document.getElementById('testimonialsTrack');
+        const testimonialDots = document.querySelectorAll('.testimonial-nav .nav-dot');
+        let currentTestimonial = 0;
+        const testimonialWidth = 380; // card width + margin
+
+        function showTestimonial(index) {
+            testimonialTrack.style.transform = `translateX(-${index * testimonialWidth}px)`;
+            
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            testimonialDots[index].classList.add('active');
+            
+            currentTestimonial = index;
+        }
+
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+
+        // Clone testimonials for infinite scroll
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        testimonials.forEach(testimonial => {
+            const clone = testimonial.cloneNode(true);
+            testimonialTrack.appendChild(clone);
+        });
+
+        // Touch support for testimonials
+        let testimonialTouchStartX = 0;
+        let testimonialTouchEndX = 0;
+
+        testimonialTrack.addEventListener('touchstart', (e) => {
+            testimonialTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        testimonialTrack.addEventListener('touchend', (e) => {
+            testimonialTouchEndX = e.changedTouches[0].screenX;
+            handleTestimonialSwipe();
+        });
+
+        function handleTestimonialSwipe() {
+            if (testimonialTouchEndX < testimonialTouchStartX - 50) {
+                if (currentTestimonial < testimonials.length - 1) {
+                    showTestimonial(currentTestimonial + 1);
+                }
+            }
+            
+            if (testimonialTouchEndX > testimonialTouchStartX + 50) {
+                if (currentTestimonial > 0) {
+                    showTestimonial(currentTestimonial - 1);
+                }
+            }
+        }
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Escape key to close modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('popupModal').classList.remove('active');
+                mobilePanel.classList.remove('open');
+                overlay.style.display = 'none';
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Universal Swipe Support for Horizontal Carousels
+        function enableSwipe(slider) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            // Mouse Events
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1.2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch Events
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!startX) return;
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1.2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        // Enable swipe for partners carousel
+        const partnersTrack = document.querySelector('.partners-track');
+        if (partnersTrack) {
+            enableSwipe(partnersTrack);
+        }
+    </script>
+</body>
+</html>
