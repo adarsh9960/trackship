@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 });
-
 // Popup Modal Controls
 document.getElementById('popupClose').addEventListener('click', function() {
     document.getElementById('popupModal').classList.remove('active');
@@ -43,7 +42,6 @@ document.getElementById('popupClose').addEventListener('click', function() {
         timestamp: Date.now()
     }));
 });
-
 document.getElementById('popupModal').addEventListener('click', function(e) {
     if (e.target === this) {
         this.classList.remove('active');
@@ -54,68 +52,12 @@ document.getElementById('popupModal').addEventListener('click', function(e) {
         }));
     }
 });
-
-// Form Submission with AJAX for popup
-document.getElementById('popupForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(this);
-    
-    fetch('https://itzadarsh.co.in/post.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Mark that user has submitted the form
-            localStorage.setItem('trackshipPopupSubmitted', 'true');
-            
-            alert('Thank you for your submission! We will get back to you soon.');
-            document.getElementById('popupModal').classList.remove('active');
-            this.reset();
-        } else {
-            alert('There was an error submitting your form. Please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting your form. Please try again.');
-    });
-});
-
-// Form Submission with AJAX for contact form
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(this);
-    
-    fetch('https://itzadarsh.co.in/post.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Thank you for your submission! We will get back to you soon.');
-            this.reset();
-        } else {
-            alert('There was an error submitting your form. Please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting your form. Please try again.');
-    });
-});
-
 // Mobile panel controls
 const hamburger = document.getElementById('hamburger');
 const hamburgerIcon = document.getElementById('hamburgerIcon');
 const mobilePanel = document.getElementById('mobilePanel');
 const closePanel = document.getElementById('closePanel');
 const overlay = document.getElementById('overlay');
-
 // Open Mobile Menu
 hamburger.addEventListener('click', () => {
     mobilePanel.classList.add('open');
@@ -126,7 +68,6 @@ hamburger.addEventListener('click', () => {
     // Prevent body scrolling when panel is open
     document.body.style.overflow = 'hidden';
 });
-
 // Close (from cross button)
 closePanel.addEventListener('click', () => {
     mobilePanel.classList.remove('open');
@@ -137,7 +78,6 @@ closePanel.addEventListener('click', () => {
     // Restore body scrolling
     document.body.style.overflow = '';
 });
-
 // Click outside overlay closes menu
 overlay.addEventListener('click', () => {
     mobilePanel.classList.remove('open');
@@ -148,11 +88,9 @@ overlay.addEventListener('click', () => {
     // Restore body scrolling
     document.body.style.overflow = '';
 });
-
 // Desktop Services dropdown
 const desktopServicesToggle = document.querySelector('.desktop-nav .dropdown-toggle');
 const desktopServicesMenu = document.querySelector('.desktop-nav .dropdown-menu');
-
 if (desktopServicesToggle) {
     desktopServicesToggle.addEventListener('click', function(e) {
         e.preventDefault();
@@ -178,8 +116,6 @@ hamburger.addEventListener('click', () => {
 
     document.body.style.overflow = 'hidden';
 });
-
-
 // ================================
 // SERVICES MAIN DROPDOWN
 // ================================
@@ -195,10 +131,8 @@ dropdownToggle.addEventListener('click', () => {
 
     dropdownToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
 });
-
 const nestedToggle = document.querySelector('.nested-toggle');
 const nestedMenu = document.getElementById('b2bMenu');
-
 nestedToggle.addEventListener('click', () => {
     const isOpen = nestedToggle.getAttribute('aria-expanded') === 'true';
 
@@ -208,7 +142,6 @@ nestedToggle.addEventListener('click', () => {
 
     nestedToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
 });
-
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -234,7 +167,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
 // Reveal Animation on Scroll
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
@@ -257,9 +189,6 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
-
-
-
 // Counter Animation
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
@@ -290,7 +219,6 @@ function animateCounters() {
         updateCounter();
     });
 }
-
 // Intersection Observer for Counter Animation
 const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -300,15 +228,12 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
         }
     });
 }, { threshold: 1 });
-
 const statsSection = document.querySelector('.stats-section');
 if (statsSection) {
     counterObserver.observe(statsSection);
 }
-
 // FAQ Accordion (Independent toggle)
 const faqQuestions = document.querySelectorAll('.faq-question');
-
 faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
         const faqItem = question.parentElement;
@@ -317,14 +242,11 @@ faqQuestions.forEach(question => {
         faqItem.classList.toggle('active');
     });
 });
-
-
 // Testimonial Slider
 const testimonialTrack = document.getElementById('testimonialsTrack');
 const navDots = document.querySelectorAll('.nav-dot');
 let currentSlide = 0;
 const slideWidth = 370; // Width of testimonial card + margin
-
 function goToSlide(slideIndex) {
     if (slideIndex < 0) {
         slideIndex = navDots.length - 1;
@@ -340,37 +262,31 @@ function goToSlide(slideIndex) {
         dot.classList.toggle('active', index === slideIndex);
     });
 }
-
 // Add click event to nav dots
 navDots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         goToSlide(index);
     });
 });
-
 // Auto-rotate testimonials
 let testimonialInterval = setInterval(() => {
     goToSlide(currentSlide + 1);
 }, 5000);
-
 // Pause auto-rotation on hover
 testimonialTrack.addEventListener('mouseenter', () => {
     clearInterval(testimonialInterval);
 });
-
 testimonialTrack.addEventListener('mouseleave', () => {
     testimonialInterval = setInterval(() => {
         goToSlide(currentSlide + 1);
     }, 5000);
 });
-
 // Clone testimonials for infinite scroll
 const testimonials = document.querySelectorAll('.testimonial-card');
 testimonials.forEach(testimonial => {
     const clone = testimonial.cloneNode(true);
     testimonialTrack.appendChild(clone);
 });
-
 // Enable swipe for testimonials
 function enableSwipe(slider) {
     let isDown = false;
@@ -418,11 +334,8 @@ function enableSwipe(slider) {
         slider.scrollLeft = scrollLeft - walk;
     });
 }
-
 // Apply swipe to testimonials
 enableSwipe(testimonialTrack);
-
-
 // Partners carousel swipe
 const partnersCarousel = document.querySelector('.partners-carousel');
 if (partnersCarousel) {
@@ -432,13 +345,9 @@ const testimonialCard = document.querySelector('.testimonial-card');
 if(testimonialCard) {
     enableSwipe(testimonialCard);
 }
-
 // =============================================
 // AUTO REDIRECT — FINAL CLEAN VERSION (NO API)
 // =============================================
-
-
-
 // Preloader
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
@@ -446,7 +355,6 @@ window.addEventListener("load", function () {
         preloader.classList.add("hide");
     }, 300); // slight delay for smooth fade
 });
-
 // Text case conversion (Title Case) for sections
 function convertToTitleCase() {
     // Get all sections except header, footer, and hero
@@ -480,7 +388,6 @@ function convertToTitleCase() {
                 }
             }
         );
-        
         let textNode;
         while (textNode = walker.nextNode()) {
             const text = textNode.textContent;
@@ -488,7 +395,6 @@ function convertToTitleCase() {
             const titleCaseText = text.replace(/\w\S*/g, (txt) => {
                 return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
             });
-            
             // Only update if there's a change
             if (text !== titleCaseText) {
                 textNode.textContent = titleCaseText;
@@ -496,13 +402,10 @@ function convertToTitleCase() {
         }
     });
 }
-
 // Apply title case conversion after DOM is loaded
 document.addEventListener('DOMContentLoaded', convertToTitleCase);
-
 // ======= CITY CARDS SCROLL ANIMATION =======
 const cityCards = document.querySelectorAll('.city-card');
-
 const revealCities = () => {
     const trigger = window.innerHeight - 100;
     cityCards.forEach(card => {
@@ -510,18 +413,13 @@ const revealCities = () => {
         if (top < trigger) card.classList.add("show");
     });
 };
-
 window.addEventListener("scroll", revealCities);
 revealCities();
-
-
 // ====== FORM VALIDATION ======
 const form = document.getElementById("quickForm");
-
 form.addEventListener("submit", (e) => {
     const inputs = form.querySelectorAll("input, textarea");
     let valid = true;
-
     inputs.forEach(input => {
         if (!input.value.trim()) {
             valid = false;
@@ -529,6 +427,66 @@ form.addEventListener("submit", (e) => {
             setTimeout(() => input.classList.remove("shake"), 500);
         }
     });
+    if (!valid) e.preventDefault();
+});
+    const popupForm = document.getElementById("popupForm");
+popupForm.addEventListener("submit", function(e) {
+    let valid = true;
+
+    document.querySelectorAll("#popupForm .form-group").forEach(group => {
+        const input = group.querySelector("input, select, textarea");
+        const errorText = group.querySelector(".error-text");
+
+        if (!input.checkValidity()) {
+            valid = false;
+            errorText.textContent = "This field is required";
+            group.classList.add("error-shake");
+
+            setTimeout(() => {
+                group.classList.remove("error-shake");
+            }, 300);
+        } else {
+            errorText.textContent = "";
+        }
+    });
 
     if (!valid) e.preventDefault();
+});
+function submitToAPI(formId) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+
+    fetch("https://itzadarsh.co.in/api/v1/post", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);  // Server ka exact message: “We have received…”
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(err => {
+        alert("Network error — please try again.");
+        console.error(err);
+    });
+}
+
+// ===== POPUP FORM =====
+document.getElementById("popupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitToAPI("popupForm");
+});
+// ===== CONTACT FORM =====
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitToAPI("contactForm");
+});
+// ===== QUICK FORM (cities section) =====
+document.getElementById("quickForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitToAPI("quickForm");
 });

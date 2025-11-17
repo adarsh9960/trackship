@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="icon.css">
-<link rel="stylesheet" href="pointer.css">
 
 <!-- SEO Title -->
 <!-- =============================== -->
@@ -130,1643 +129,6 @@
   ]
 }
 </script>
-<style>
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    overflow-x: hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Button Styles */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(-100%);
-    transition: transform 0.4s ease;
-    z-index: -1;
-}
-
-.btn:hover::before {
-    transform: translateX(0);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #F7931E, #FFA726);
-    color: white;
-    box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #F7931E;
-    border: 2px solid #F7931E;
-}
-
-.btn-secondary:hover {
-    background: #F7931E;
-    color: white;
-}
-
-.btn-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-/* Popup Modal */
-.popup-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.popup-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup-content {
-    background: white;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.popup-modal.active .popup-content {
-    transform: scale(1);
-}
-
-.popup-header {
-    padding: 25px 30px;
-    background: linear-gradient(135deg, #0b4a7a, #0a3d6a);
-    color: white;
-    border-radius: 16px 16px 0 0;
-    position: relative;
-}
-
-.popup-title {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.popup-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.popup-close:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: rotate(90deg);
-}
-
-.popup-body {
-    padding: 30px;
-}
-
-
-
-/* Header Styles */
-.main-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    height: 80px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 220px;
-    margin-top: -30px;      /* 🚀 Image ko upar shift karega */
-    margin-left: -15px;       /* left adjust if needed */
-    margin-bottom: 5px;
-    object-fit: contain;
-    display: block;
-}
-
-
-.desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.desktop-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.desktop-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #F7931E;
-    transition: width 0.3s ease;
-}
-
-.desktop-nav a:hover {
-    color: #F7931E;
-}
-
-.desktop-nav a:hover::after {
-    width: 100%;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.drop-btn {
-    background: #23a6f7;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.drop-btn:hover {
-    background: #1a8fd7;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    top: 45px;
-    width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #333;
-    transition: background 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    background: #f5f5f5;
-}
-
-/* Mobile Panel */
-.mobile-panel {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    background: white;
-    width: 300px;
-    height: 100vh;
-    padding: 25px;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-    transition: 0.4s ease;
-    z-index: 1001;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.mobile-panel.open {
-    left: 0;
-}
-
-.close-btn {
-    text-align: right;
-    font-size: 24px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.panel-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.panel-links a {
-    font-size: 16px;
-    text-decoration: none;
-    color: #333;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.panel-links h4 {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #F7931E;
-    margin-bottom: 10px;
-}
-
-.panel-social {
-    position: absolute;
-    bottom: 20px;
-    left: 25px;
-    display: flex;
-    gap: 15px;
-}
-
-.panel-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
-    border-radius: 50%;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.panel-social a:hover {
-    background: #F7931E;
-    color: white;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-
-.delivery-boy {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: url('https://itzadarsh.co.in/demo/h5-2.webp') center/contain no-repeat;
-    z-index: 3;
-    opacity: 0;
-}
-
-/* Animations for Hero */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes popInOut {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    20%, 80% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-/* About Section */
-.about-section {
-    padding: 100px 0;
-    background: white;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.about-images {
-    flex: 1;
-    position: relative;
-}
-
-.about-image-main {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about-image-secondary {
-    position: absolute;
-    width: 70%;
-    border-radius: 15px;
-    bottom: -30px;
-    right: -30px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0b4a7a;
-    margin-bottom: 20px;
-}
-
-.about-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-/* Services Section - IMPROVED */
-.services-section {
-    padding: 120px 0;
-    background: linear-gradient(135deg, #ffffff, #dce4ea);
-
-}
-
-
-
-.section-subtitle {
-    text-align: center;
-    font-size: 18px;
-    color: #353535;
-    margin-bottom: 60px;
-}
-
-.partners-carousel {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;     /* Firefox */
-}
-
-.partners-carousel::-webkit-scrollbar {
-    display: none;             /* Chrome, Safari */
-}
-
-.service-icon i {
-    font-size: 40px;
-    color: #830000;
-}
-
-.service-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.service-description {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.service-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: #f0f7ff;
-    border-radius: 50%;
-    color: #23a6f7;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-.service-link:hover {
-    background: #23a6f7;
-    color: white;
-}
-
-/* Service Card Animation */
-@keyframes fadeUp {
-    0% { opacity:0; transform:translateY(40px); }
-    100% { opacity:1; transform:translateY(0); }
-}
-
-.service-card:nth-child(1) { animation-delay: 0.2s; }
-.service-card:nth-child(2) { animation-delay: 0.35s; }
-.service-card:nth-child(3) { animation-delay: 0.5s; }
-.service-card:nth-child(4) { animation-delay: 0.65s; }
-.service-card:nth-child(5) { animation-delay: 0.8s; }
-.service-card:nth-child(6) { animation-delay: 0.95s; }
-
-/* Partners Section - NEW */
-.partners-section {
-    padding: 100px 0;
-    /* Background Image + Fixed Parallax Effect */
-    background-image:
-        linear-gradient(135deg, rgba(11, 74, 122, 0), rgba(10, 61, 106, 0)),
-        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg'); /* Replace with your image */
-
-    background-attachment: fixed; /* FIXED IMAGE */
-    background-size: cover;       /* Cover whole screen */
-    background-position: center;  /* Center image nicely */
-    background-repeat: no-repeat; /* No repeat */
-    overflow: hidden;
-}
-
-.partners-title {
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    color: #ffd000;
-    margin-bottom: 5px;
-    margin-top: -90px;
-}
-
-.partners-subtitle {
-    text-align: center;
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.partners-carousel {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-}
-.partners-carousel {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    cursor: grab;
-    padding-bottom: -100px;
-}
-
-.partners-carousel:active {
-    cursor: grabbing;
-}
-
-.partners-track {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    width: max-content;
-}
-
-
-.partners-track {
-    display: flex;
-    animation: scroll 15s linear infinite;
-    width: fit-content;
-    
-}
-
-.partners-track:hover {
-    animation-play-state: paused;
-}
-
-.partner-logo {
-    flex: 0 0 auto;
-    width: 200px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 3px;
-    filter: grayscale(10%);
-    opacity: 0.9;
-    transition: all 0.3s ease;
-    
-}
-
-.partner-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-.partner-logo img {
-    max-width: 100%;
-    max-height: 80%;
-    object-fit: contain;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Why Choose Us Section */
-.why-choose-section {
-    padding: 100px 0;
-    background: white;
-}
-
-.why-choose-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.why-choose-content {
-    flex: 1;
-}
-
-.why-choose-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0b4a7a;
-    margin-bottom: 20px;
-}
-
-.why-choose-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 40px;
-}
-
-.features-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.feature-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: #0b4a7a;
-    border-radius:   25px  25px  25px 0;
-    color: #ffffff;
-    font-size: 20px;
-    flex-shrink: 0;
-}
-.feature-icon img {
-    width: 65%;
-    height: 65%;
-    object-fit: contain;
-}
-
-.feature-content h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #0b4a7a;
-    margin-bottom: 5px;
-}
-
-.feature-content p {
-    font-size: 14px;
-    color: #666;
-}
-
-.why-choose-image {
-    flex: 1;
-    position: relative;
-}
-
-.why-choose-image-main {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.why-choose-image-secondary {
-    position: absolute;
-    width: 60%;
-    border-radius: 15px;
-    bottom: -30px;
-    right: -30px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Stats Section */
-.stats-section {
-    padding: 100px 0;
-    /* Background Image + Fixed Parallax Effect */
-    background-image:
-        linear-gradient(135deg, rgba(11, 74, 122, 0.199), rgba(2, 3, 3, 0.192)),
-        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg'); /* Replace with your image */
-
-    background-attachment: fixed; /* FIXED IMAGE */
-    background-size: cover;       /* Cover whole screen */
-    background-position: center;  /* Center image nicely */
-    background-repeat: no-repeat; /* No repeat */
-}
-
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-}
-
-.stat-card {
-    background: linear-gradient(135deg, #ff6f00, #ffa726);
-    border-radius:   25px 0 25px  25px ;
-    padding: 2px;
-    text-align: center;
-    height: 90px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.671);
-}
-
-.stat-number {
-    font-size: 42px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 1px;
-    position: absolute;
-    bottom: 12px;
-    left: 25px;
-
-             /* big number */
-    font-weight: 800;
-    line-height: 1;
-    color: transparent;          /* no fill */
-    -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.555);  /* outline */
-    font-family: 'Poppins', sans-serif;
-
-    opacity: 0.8;
-    pointer-events: none;
-    
-    
-    transition: 0.3s ease;
-
-}
-
-.stat-label {
-    font-size: 16px;
-    color: #0b4a7a;
-    -webkit-animation-delay: 15s;
-}
-
-
-
-
-/* Nested dropdown styling */
-.nested-dropdown {
-    padding-left: 15px;
-}
-
-.nested-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #333;
-    padding: 10px 15px;
-    font-size: 15px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-/* Main dropdown animation */
-.dropdown-menu,
-.nested-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-}
-
-/* Inner B2B dropdown indent */
-.nested-dropdown {
-    padding-left: 15px;
-}
-
-
-.nested-menu {
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(0,0,0,0.03);
-    margin-left: 10px;
-    border-left: 2px solid #F7931E;
-    transition: max-height 0.3s ease;
-}
-
-.nested-menu a {
-    padding: 8px 15px;
-    font-size: 14px;
-    display: block;
-}
-
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-/* Testimonials Section */
-.testimonials-section {
-    padding: 100px 0;
-    margin-top: -20px;
-    background: #f8f9fa;
-}
-
-.testimonials-slider {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.testimonials-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.testimonial-card {
-    min-width: 350px;
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    margin: 0 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-.testimonial-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.author-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.author-info h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #0b4a7a;
-}
-.author-info p {
-    font-size: 14px;
-    color: #666;
-}
-.testimonial-rating {
-    color: #F7931E;
-    margin-top: 10px;
-}
-.testimonial-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-.nav-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ddd;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.nav-dot.active {
-    background: #F7931E;
-}
-
-/* CTA Section */
-.cta-section {
-    padding: 10px 0;
-    color: white;
-    text-align: center;
-    margin-top: -20px;
-    /* Background Image + Fixed Parallax Effect */
-    background-image:
-        linear-gradient(135deg, rgba(11, 74, 122, 0.205), rgba(10, 61, 106, 0.178)),
-        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg'); /* Replace with your image */
-
-    background-attachment: fixed; /* FIXED IMAGE */
-    background-size: cover;       /* Cover whole screen */
-    background-position: center;  /* Center image nicely */
-    background-repeat: no-repeat; /* No repeat */
-}
-
-.cta-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-.cta-text {
-    font-size: 18px;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.btn-cta {
-    color: #fff;
-}
-
-.btn-cta:hover {
-    background: #12a005;
-}
-
-.btn-outline {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-.btn-outline:hover {
-    background: white;
-    color: #0b4a7a;
-}
-/* Moving Bikes Section */
-.moving-bikes-section {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-.bikes-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.bikes-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
-.bikes-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-}
-.bike {
-    position: absolute;
-    bottom: -3px;
-    width: 80px;
-    height: auto;
-}
-.bike-1 {
-    animation: moveBikeleft 5s linear infinite;
-    
-}
-.truck {
-    position: relative;
-    width: 125px;        /* apne hisaab se adjust kar sakte ho */
-    animation: drive 5s linear infinite;
-    animation-delay: 2s;
-}
-
-/* Animation: left → right (infinite loop) */
-@keyframes drive {
-    0% {
-        left: -150px;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-.mirror-horizontal {
-    transform: scaleX(-1);
-}
-
-.bike-2 {
-    animation: moveBike 4s linear infinite;
-    animation-delay: 5s;
-}
-.bike-3 {
-    animation: moveBike 7s linear infinite;
-    animation-delay: 2s;
-}
-
-@keyframes moveBikeleft {
-    0% {
-        left: -150px;
-    }
-    100% {
-        left: 100%;
-    }
-}
-@keyframes moveBike {
-    0% {
-        right: -150px;
-    }
-    100% {
-        right: 100%;
-    }
-}
-/* Contact Form Section */
-.contact-section {
-    padding: 100px 0;
-    background: white;
-}
-.contact-container {
-    display: flex;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-.contact-info {
-    flex: 1;
-}
-.contact-form {
-    flex: 1;
-}
-.contact-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0b4a7a;
-    margin-bottom: 20px;
-}
-.contact-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
-}
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.contact-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: rgba(247, 146, 30, 0.411);
-    
-    border-radius:   25px  25px  25px 0;
-    color: #F7931E;
-    font-size: 20px;
-    flex-shrink: 0;
-}
-
-.contact-content h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #0b4a7a;
-    margin-bottom: 5px;
-}
-
-.contact-content p {
-    font-size: 16px;
-    color: #555;
-}
-
-.call-now {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #0a630eb6;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.call-now:hover {
-    background: #1a8fd7;
-    transform: translateY(-3px);
-}
-
-
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: white;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    background: #b3a100;
-    transform: translateY(-3px);
-}
-
-
-
-/* Reveal Animation - IMPROVED */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity .9s ease, transform .9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity .9s ease, transform .9s ease;
-}
-
-.reveal-right {
-    opacity: 0;
-    transform: translateX(60px);
-    transition: opacity .9s ease, transform .9s ease;
-}
-
-.reveal-left.active,
-.reveal-right.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .desktop-nav {
-        display: none;
-    }
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .why-choose-container {
-        flex-direction: column;
-    }
-    .features-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .steps-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .testimonial-card {
-        min-width: 300px;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 576px) {
-    .main-header {
-        padding: 10px 15px;
-    }
-    .about-title, .why-choose-title, .cta-title, .contact-title {
-        font-size: 24px;
-    }
-    
-    .stat-number {
-        font-size: 32px;
-    }
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* ---------- Responsive Hamburger position & transition ---------- */
-/* default hidden (desktop) */
-.hamburger {
-    display: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1200;
-    background: transparent;
-    border: none;
-    position: relative;
-}
-
-/* icon inside */
-#hamburgerIcon {
-    font-size: 22px;
-    line-height: 1;
-    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
-    pointer-events: none;
-    color: #333;
-}
-
-/* show cross using a separate element (avoid layout shift) */
-.hamburger .cross {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 22px;
-    opacity: 0;
-    pointer-events: none;
-    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
-}
-
-/* when active - hide bars icon and show cross */
-.hamburger.active #hamburgerIcon {
-    transform: rotate(-20deg) scale(.85);
-    opacity: 0;
-}
-.hamburger.active .cross {
-    transform: translate(-50%, -50%) rotate(0);
-    opacity: 1;
-}
-
-/* mobile panel closing animation (cut-close) */
-.mobile-panel {
-    transform: translateX(-100%);
-    transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .25s ease;
-    left: 0; /* will be controlled via transform rather than left */
-    will-change: transform, opacity;
-}
-
-.mobile-panel.open {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.mobile-panel.closing {
-    transform: translateX(-120%) scale(.98);
-    opacity: 0;
-}
-
-/* overlay transitions */
-.overlay {
-    opacity: 0;
-    transition: opacity .25s ease;
-    display: block; /* keep it in DOM; visibility controlled via opacity */
-    pointer-events: none;
-}
-.overlay.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* place hamburger absolutely inside header on small screens so it doesn't shift */
-@media (max-width: 992px) {
-    .hamburger {
-        display: flex;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    /* hide desktop nav in mobile */
-    .desktop-nav { display: none; }
-}
-
-
-
-/* Icon Style */
-.service-icon i {
-    font-size: 42px;
-    padding: 22px;
-    background: radial-gradient(circle at 30% 30%, #ffd29f77, #ff323256);
-    border-radius: 50%;
-    color: #32b4ff;
-    margin-bottom: 16px;
-    z-index: 2;
-    position: relative;
-}
-
-/* Title */
-.service-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #083b74;
-    position: relative;
-    z-index: 2;
-}
-
-/* Description */
-.service-description {
-    color: #ffffff;
-    font-size: 14.5px;
-    margin-top: 10px;
-    z-index: 2;
-    position: relative;
-    line-height: 1.5;
-}
-
-/* Arrow Button */
-.service-link {
-    margin-top: 20px;
-    display: inline-flex;
-    width: 42px;
-    height: 42px;
-    background: #23381b;
-    border-radius: 50%;
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-    position: relative;
-    z-index: 2;
-}
-
-.service-link:hover {
-    background: #000000;
-}
-
-/* ========= SCROLL-IN ANIMATION ========= */
-.reveal-service {
-    opacity: 0;
-    transform: translateY(10%);
-    transition: 2.3s ease-out;
-}
-
-.reveal-service.active {
-    opacity: 1;
-    transform: translateY();
-}
-/* Mobile Dropdown */
-.mobile-dropdown {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #0575c0;
-}
-
-.drop-btn {
-    width: 100%;
-    background: none;
-    border: none;
-    font-size: 16px;
-    color: #333;
-    padding: 12px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.drop-btn i {
-    transition: 0.3s;
-}
-
-.drop-btn.active i {
-    transform: rotate(180deg);
-}
-
-/* Hidden Dropdown Menu */
-.drop-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.drop-menu a {
-    padding: 10px 0 10px 10px;
-    color: #555;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.drop-menu a:hover {
-    color: #F7931E;
-}
-.dropdown {
-    margin-top: 10px;
-}
-
-.dropdown-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #cc9e08;
-    font-size: 16px;
-    padding: 12px 0;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dropdown-toggle i {
-    transition: 0.3s;
-}
-
-.dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: max-height 0.3s ease;
-}
-
-.dropdown-menu a {
-    padding: 10px 15px;
-    font-size: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    margin-top: 1px;
-}
-
-.credit {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 15px;
-    color: #ffffffcc;   /* light white */
-    position: relative; /* safe for all layouts */
-}
-
-.credit a {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.credit a:hover {
-    text-decoration: underline;
-}
-/* PRELOADER */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff; /* White background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999999; /* Sabse upar */
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-/* WhatsApp Floater */
-.whatsapp-floater {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.5s ease forwards;
-}
-
-.whatsapp-floater:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-floater i {
-    color: white;
-    font-size: 28px;
-}
-
-/* Redirect Toast */
-.redirect-toast {
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 16px;
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    gap: 15px;
-}
-
-.redirect-toast.active {
-    display: flex;
-}
-
-.redirect-toast button {
-    background-color: #F7931E;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.redirect-toast button:hover {
-    background-color: #e6830d;
-}
-
-#preloader.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-</style>
 </head>
 <body>
 <!-- Popup Modal -->
@@ -1969,17 +331,17 @@ html, body {
 
 <section class="orb-hero">
     <div class="orb-wrapper">
-        <img src="WebP/trackship@90x.webp" class="orb-bg" alt="Orb Background">
+        <img src="WebP/bg-asset.png" class="orb-bg" alt="Orb Background">
 
         <!-- Floating Person PNG -->
         <img src="delivery-boy.png" class="orb-person" alt="Person">
     </div>
 
     <div class="hero-content">
-        <h1>Delivering Excellence <span>Every Day</span></h1>
+        <h1>Delivering Excellence<br><span>Every Day</span></h1>
         <p>Smart logistics & technology solutions to grow your business.</p>
 
-        <a href="#services" class="hero-btn">Explore Services</a>
+        <a href="service.html" class="hero-btn">Explore Services</a>
     </div>
 </section>
 
@@ -1998,7 +360,7 @@ html, body {
                 <h2 class="about-title reveal-left hover-icon-left">Your One-Stop Solution for Success & Innovation</h2>
                 <p class="about-text reveal-right">At Trackship, we are committed to being a trusted partner for individuals, businesses, and organizations, offering an extensive suite of services designed to meet diverse needs efficiently and effectively.</p>
                 <p class="about-text reveal-left">From logistics and financial solutions to technology and renewable energy, our expertise and dedication drive us to provide innovative and reliable solutions across multiple domains.</p>
-                <a href="#services" class="btn btn-primary ">
+                <a href="service.html" class="btn btn-primary ">
                     <span>Explore Our Services</span>
                     <span class="btn-icon ">
                         <i class="fas fa-arrow-right "></i>
@@ -2091,16 +453,7 @@ html, body {
                 </a>
             </div>
             
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/solar-panel-3.png" alt="Solar panel service provider" style="height: 100px; width: 100px;">
-                </div>
-                <h3 class="service-title reveal-left" >Solar Energy</h3>
-                <p class="service-description reveal-right">Eco-friendly energy solutions designed for modern sustainability needs.</p>
-                <a href="#" class="service-link">
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+           
             
             <div class="service-card reveal">
                 <div class="service-icon">
@@ -2108,28 +461,6 @@ html, body {
                 </div>
                 <h3 class="service-title reveal-left">B2B</h3>
                 <p class="service-description reveal-right">Reliable B2B solutions helping businesses grow faster with smart tools.</p>
-                <a href="#" class="service-link">
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/data-management.png" alt="Technology services" style="height: 100px; width: 100px;">
-                </div>
-                <h3 class="service-title reveal-left">Technology Services</h3>
-                <p class="service-description reveal-right">Tech-driven services to digitally transform your business efficiently.</p>
-                <a href="#" class="service-link">
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/chatting.png" alt="Bulk SMS Service Providers" style="height: 100px; width: 100px;">
-                </div>
-                <h3 class="service-title reveal-left">Bulk SMS</h3>
-                <p class="service-description reveal-right">Effective communication solutions with automated bulk SMS systems.</p>
                 <a href="#" class="service-link">
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -2200,12 +531,12 @@ html, body {
 </section>
 <section class="premium-services-section">
     <div class="container">
-        <h2 class="premium-title">Premium Services By Trackship</h2>
-        <p class="premium-subtitle">We deliver quality, speed & trust — powered by modern logistics innovation.</p>
+        <h2 class="premium-title reveal reveal-right">Premium Services By Trackship</h2>
+        <p class="premium-subtitle reveal reveal-left">We deliver quality, speed & trust — powered by modern logistics innovation.</p>
 
         <div class="premium-grid">
 
-            <div class="premium-card">
+            <div class="premium-card reveal-right">
                 <div class="icon-circle">
                     <i class="fas fa-user-check"></i>
                 </div>
@@ -2213,7 +544,7 @@ html, body {
                 <span class="underline"></span>
             </div>
 
-            <div class="premium-card">
+            <div class="premium-card reveal-right">
                 <div class="icon-circle">
                     <i class="fas fa-shipping-fast"></i>
                 </div>
@@ -2221,7 +552,7 @@ html, body {
                 <span class="underline"></span>
             </div>
 
-            <div class="premium-card">
+            <div class="premium-card reveal-right">
                 <div class="icon-circle">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -2229,7 +560,7 @@ html, body {
                 <span class="underline"></span>
             </div>
 
-            <div class="premium-card">
+            <div class="premium-card reveal-right">
                 <div class="icon-circle">
                     <i class="fas fa-road"></i>
                 </div>
@@ -2237,7 +568,7 @@ html, body {
                 <span class="underline"></span>
             </div>
 
-            <div class="premium-card">
+            <div class="premium-card reveal-right">
                 <div class="icon-circle">
                     <i class="fas fa-chart-line"></i>
                 </div>
@@ -2245,7 +576,7 @@ html, body {
                 <span class="underline"></span>
             </div>
 
-            <div class="premium-card">
+            <div class="premium-card reveal-right">
                 <div class="icon-circle">
                     <i class="fas fa-truck"></i>
                 </div>
@@ -2309,37 +640,44 @@ html, body {
                 <div class="city-card">South India</div>
                 <div class="city-card">Jammu & Kashmir</div>
                 <div class="city-card">Punjab & Haryana</div>
+                   <!-- ⭐ Added States -->
+                <div class="city-card">Uttar Pradesh (UP)</div>
+                <div class="city-card">Madhya Pradesh (MP)</div>
+                <div class="city-card">Assam</div>
+                <div class="city-card">West Bengal</div>
             </div>
         </div>
 
         <!-- RIGHT SIDE FORM -->
-        <div class="right-form">
-            <h3 class="form-title">Want to ask more Questions?</h3>
+<div class="right-form">
+    <h3 class="form-title">Want to ask more Questions?</h3>
 
-            <form id="quickForm">
-                <div class="input-group">
-                    <input type="text" required>
-                    <label>Your Name</label>
-                </div>
-
-                <div class="input-group">
-                    <input type="email" required>
-                    <label>Email Address</label>
-                </div>
-
-                <div class="input-group">
-                    <input type="text" required>
-                    <label>Phone Number</label>
-                </div>
-
-                <div class="input-group textarea">
-                    <textarea required></textarea>
-                    <label>Message</label>
-                </div>
-
-                <button class="submit-btn" type="submit">Submit</button>
-            </form>
+    <form id="quickForm" onsubmit="submitToAPI('quickForm'); return false;">
+        
+        <div class="input-group">
+            <input type="text" name="name" required>
+            <label>Your Name</label>
         </div>
+
+        <div class="input-group">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+        </div>
+
+        <div class="input-group">
+            <input type="text" name="contact" required>
+            <label>Phone Number</label>
+        </div>
+
+        <div class="input-group textarea">
+            <textarea name="message" required></textarea>
+            <label>Message</label>
+        </div>
+
+        <button class="submit-btn" type="submit">Submit</button>
+    </form>
+</div>
+
 
     </div>
 </section>
@@ -2540,7 +878,7 @@ html, body {
         <p class="cta-text reveal">Join thousands of businesses that trust Trackship for their logistics needs</p>
         
         <div class="cta-buttons reveal">
-            <a href="#contact" class="btn btn-cta">
+            <a href="https://api.whatsapp.com/send/?phone=917400372375&text=Hi+Trackship&type=phone_number&app_absent=0" class="btn btn-cta">
                 <span>Get Started</span>
                 <span class="btn-icon">
                     <!-- WhatsApp SVG -->
@@ -2557,7 +895,7 @@ html, body {
                 </span>
             </a>
 
-            <a href="#services" class="btn btn-outline">
+            <a href="service.html" class="btn btn-outline">
                 <span>Learn More</span>
                 <span class="btn-icon">
                     <i class="fas fa-info-circle"></i>
@@ -2608,7 +946,7 @@ html, body {
 
         <!-- RIGHT SIDE: FORM -->
         <div class="contact-form reveal">
-            <form id="contactForm" action="post.php" method="POST" novalidate>
+            <form id="contactForm" method="POST" novalidate>
 
                 <!-- ROW 1 -->
                 <div class="form-row">
@@ -2685,7 +1023,7 @@ html, body {
                     <span class="error-message"></span>
                 </div>
 
-                <button type="submit" class="form-submit">Submit</button>
+                <button type="submit" class="form-submit" onclick="submitToAPI">Submit</button>
             </form>
         </div>
 
@@ -2694,14 +1032,13 @@ html, body {
 
 <!-- Moving Bikes Section -->
 <section class="moving-bikes-section">
-    <img src="https://itzadarsh.co.in/assets/trackship/img/road.png" alt="City Background" class="bikes-background">
+    <img src="road.png" alt="City Background" class="bikes-background">
     <div class="bikes-overlay"></div>
     
     <div class="bikes-container">
-        <img src="/wp-content/uploads/2021/11/bike-1.png" alt="Delivery Bike" class="bike bike-1 mirror-horizontal">
-        <img src="/wp-content/uploads/2021/11/bike-2.png" alt="Delivery Bike" class="bike bike-2">
-        <img src="/wp-content/uploads/2021/11/bike-1-309x300.png" alt="Delivery Bike" class="bike bike-3">
         <img src="//itzadarsh.co.in/demo/truck.svg" alt="Delivery Bike" class="truck">
+        <img src="/wp-content/uploads/2021/11/bike-2.png" alt="Delivery Bike" class="bike bike-2">
+
     </div>
 </section>
 <!-- Footer -->
@@ -2733,7 +1070,7 @@ html, body {
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="service.html">Services</a></li>
                     <li><a href="#why-choose">Why Choose Us</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">Careers</a></li>
@@ -2745,10 +1082,10 @@ html, body {
             <div class="footer-column">
                 <h3>Our Future Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#services">Solar Energy</a></li>
-                    <li><a href="#services">EV Charging</a></li>
-                    <li><a href="#services">Technology Services</a></li>
-                    <li><a href="#services">Bulk SMS</a></li>
+                    <li><a href="service.html">Solar Energy</a></li>
+                    <li><a href="service.html">EV Charging</a></li>
+                    <li><a href="service.html">Technology Services</a></li>
+                    <li><a href="service.html">Bulk SMS</a></li>
                 </ul>
             </div>
             
@@ -2800,179 +1137,7 @@ html, body {
         <div class="credit">Designed By <a href="https://itzadarsh.co.in" target="_blank"  class="developer" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: red;">ITZ Adarsh</a></div>
     </div>
 </footer>
-
-
-<script>
-    const popupForm = document.getElementById("popupForm");
-
-popupForm.addEventListener("submit", function(e) {
-    let valid = true;
-
-    document.querySelectorAll("#popupForm .form-group").forEach(group => {
-        const input = group.querySelector("input, select, textarea");
-        const errorText = group.querySelector(".error-text");
-
-        if (!input.checkValidity()) {
-            valid = false;
-            errorText.textContent = "This field is required";
-            group.classList.add("error-shake");
-
-            setTimeout(() => {
-                group.classList.remove("error-shake");
-            }, 300);
-        } else {
-            errorText.textContent = "";
-        }
-    });
-
-    if (!valid) e.preventDefault();
-});
-
-</script>
 <script src="script.js"></script>
-<script>const sections = document.querySelectorAll(".scroll-sec");
 
-function animateUnderline() {
-    sections.forEach(sec => {
-        const h3 = sec.querySelector(".section-title");
-        const rect = sec.getBoundingClientRect();
-
-        // Viewport height
-        const vh = window.innerHeight;
-
-        // Section visible progress (0 → 1)
-        let progress = 1 - (rect.bottom / (vh + rect.height));
-
-        // Clamp values between 0 and 1
-        progress = Math.min(Math.max(progress, 0), 1);
-
-        // Apply width to underline
-        h3.style.setProperty("--underline-progress", progress * 100 + "%");
-        h3.style.setProperty("--underline-progress-number", progress);
-        
-        h3.style.setProperty("width", "auto");  
-        h3.style.setProperty("--underline-width", (progress * 100) + "%");
-
-        h3.style.setProperty("--progress", progress);
-        h3.style.setProperty("--px", (progress * 100) + "%");
-
-        // Animate underline
-        h3.style.setProperty("--underline", progress);
-        h3.style.setProperty("--underlineWidth", (progress * 100) + "%");
-
-        // Set actual width
-        h3.style.setProperty("--underlineWidth", (progress * 100) + "%");
-        h3.style.setProperty("--underline-progress", (progress * 100) + "%");
-
-        // Apply to pseudo element
-        h3.style.setProperty("--width", (progress * 100) + "%");
-        h3.style.setProperty("--w", (progress * 100) + "%");
-
-        h3.style.setProperty("--wReal", (progress * 100) + "%");
-
-        h3.style.setProperty("--dynamicWidth", (progress * 100) + "%");
-
-        h3.style.setProperty("--uWidth", `${progress * 100}%`);
-
-        h3.style.cssText = `
-            position: relative;
-        `;
-
-        h3.style.setProperty("--uw", (progress * 100) + "%");
-
-        h3.style.setProperty("--widthNow", (progress * 100) + "%");
-
-        h3.style.setProperty("--widthNow2", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineValue", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineWidthReal", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineWidthReal2", (progress * 100) + "%");
-
-        h3.style.setProperty("--u", (progress * 100) + "%");
-
-        h3.style.setProperty("--run", (progress * 100) + "%");
-
-        // FINAL APPLY
-        h3.style.setProperty("--finalWidth", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineFinal", (progress * 100) + "%");
-
-        h3.style.setProperty("--under", (progress * 100) + "%");
-
-        h3.style.setProperty("--percent", (progress * 100) + "%");
-
-        h3.style.setProperty("--p", (progress * 100) + "%");
-
-        // this one actually applies width:
-        h3.style.setProperty("--realWidth", (progress * 100) + "%");
-        h3.style.setProperty("transition", "none"); 
-        h3.style.setProperty("width", "fit-content");
-
-        // Apply directly to ::after
-        h3.style.setProperty("--uwLine", (progress * 100) + "%");
-        h3.querySelector;
-        h3.style.setProperty("--underline", (progress * 100) + "%");
-
-        h3.style.setProperty("--actual", (progress * 100) + "%");
-
-        h3.style.setProperty("--real", (progress * 100) + "%");
-
-        // Finally set the actual underline width
-        h3.style.setProperty("--widthLine", (progress * 100) + "%");
-        h3.style.setProperty("--line", (progress * 100) + "%");
-        h3.style.setProperty("--final", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineWidthFinal", `${progress * 100}%`);
-
-        h3.style.setProperty("--uwf", `${progress * 100}%`);
-
-        // REAL FINAL APPLY
-        h3.style.setProperty("--uwReal", `${progress * 100}%`);
-
-        h3.style.setProperty("--finalW", `${progress * 100}%`);
-
-        h3.style.setProperty("--realUnderline", `${progress * 100}%`);
-
-        // Now apply directly:
-        h3.style.setProperty("--underlineWidthValue", `${progress * 100}%`);
-        h3.style.setProperty("--underlineDone", `${progress * 100}%`);
-
-        // True setting:
-        h3.style.setProperty("width", "fit-content");
-        h3.style.setProperty("--uwidth", `${progress * 100}%`);
-
-        h3.style.setProperty("--lineWidth", `${progress * 100}%`);
-
-        h3.style.setProperty("--runWidth", `${progress * 100}%`);
-
-        h3.style.setProperty("--wRealFinal", `${progress * 100}%`);
-
-        // ACTUAL underline
-        h3.style.setProperty("--underlineWidth__", `${progress * 100}%`);
-
-        // apply directly to css variable used by pseudo element:
-        h3.style.setProperty("--ul", `${progress * 100}%`);
-
-        h3.style.setProperty("--lineFill", `${progress * 100}%`);
-
-        // To pseudo element:
-        h3.style.setProperty("--afterWidth", `${progress * 100}%`);
-
-        // Final:
-        h3.style.setProperty("--widthUnderline", `${progress * 100}%`);
-
-        // This is the one used by CSS
-        h3.style.setProperty("--underlineWidthFinalFinal", `${progress * 100}%`);
-
-        // Done
-    });
-}
-
-// Apply animation continuously
-window.addEventListener("scroll", animateUnderline);
-window.addEventListener("load", animateUnderline);
-</script>
 </body>
 </html>
