@@ -1,0 +1,124 @@
+.about-hero {
+    padding: 180px 0 140px;
+    background: linear-gradient(135deg, #0B4A7Aee, #063963dd),
+    url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg') center/cover no-repeat;
+    text-align: left;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.about-hero h1 span {
+    color: #F7B21E;
+}
+
+.about-hero p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+
+/* STORY SECTION */
+.our-story {
+    padding: 100px 0;
+}
+
+.story-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.story-left .story-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.story-img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.story-img-small {
+    width: 70%;
+    border-radius: 15px;
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+}
+
+
+/* VALUES */
+.values-section {
+    background: #f5f8fc;
+    padding: 100px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 30px;
+}
+
+.value-card {
+    padding: 35px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+}
+
+.value-icon i {
+    font-size: 40px;
+    color: #F7931E;
+    margin-bottom: 12px;
+}
+
+
+/* TEAM SECTION */
+.team-section {
+    padding: 100px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 35px;
+    text-align: center;
+}
+
+.team-card {
+    padding: 30px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+}
+
+.team-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* CTA */
+.cta-about {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #F7B21E, #F7931E);
+    text-align: center;
+    color: #fff;
+}
+
+.cta-about h2 { font-size: 36px; }
+.cta-about p { margin: 10px 0 25px; font-size: 18px; }

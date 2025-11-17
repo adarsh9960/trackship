@@ -1254,9 +1254,8 @@ html, body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(247, 146, 30, 0.411);
-    
-    border-radius:   25px  25px  25px 0;
+    background: rgba(247, 147, 30, 0.1);
+    border-radius: 10px;
     color: #F7931E;
     font-size: 20px;
     flex-shrink: 0;
@@ -2578,7 +2577,7 @@ html, body {
             </p>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/OOjs_UI_icon_mapPin.svg" alt="locations"></div>
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="contact-content">
                     <h4>Address</h4>
                     <p>Malad (West), Mumbai, Maharashtra<br>India - 400064</p>
@@ -2586,7 +2585,7 @@ html, body {
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Telephone_receiver.svg" alt="call-now" style="width: 20px; height: auto;"></div>
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
                 <div class="contact-content">
                     <h4>Phone</h4>
                     <p>+91 91366 01185</p>
@@ -2594,7 +2593,7 @@ html, body {
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/2674096_object_email_web_essential_icon.svg" alt="email" style="width: 20px; height: auto;"></div>
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                 <div class="contact-content">
                     <h4>Email</h4>
                     <p>info@trackshiplogistics.com</p>
@@ -2800,8 +2799,6 @@ html, body {
         <div class="credit">Designed By <a href="https://itzadarsh.co.in" target="_blank"  class="developer" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: red;">ITZ Adarsh</a></div>
     </div>
 </footer>
-
-
 <script>
     const popupForm = document.getElementById("popupForm");
 
@@ -2830,149 +2827,4 @@ popupForm.addEventListener("submit", function(e) {
 
 </script>
 <script src="script.js"></script>
-<script>const sections = document.querySelectorAll(".scroll-sec");
-
-function animateUnderline() {
-    sections.forEach(sec => {
-        const h3 = sec.querySelector(".section-title");
-        const rect = sec.getBoundingClientRect();
-
-        // Viewport height
-        const vh = window.innerHeight;
-
-        // Section visible progress (0 → 1)
-        let progress = 1 - (rect.bottom / (vh + rect.height));
-
-        // Clamp values between 0 and 1
-        progress = Math.min(Math.max(progress, 0), 1);
-
-        // Apply width to underline
-        h3.style.setProperty("--underline-progress", progress * 100 + "%");
-        h3.style.setProperty("--underline-progress-number", progress);
-        
-        h3.style.setProperty("width", "auto");  
-        h3.style.setProperty("--underline-width", (progress * 100) + "%");
-
-        h3.style.setProperty("--progress", progress);
-        h3.style.setProperty("--px", (progress * 100) + "%");
-
-        // Animate underline
-        h3.style.setProperty("--underline", progress);
-        h3.style.setProperty("--underlineWidth", (progress * 100) + "%");
-
-        // Set actual width
-        h3.style.setProperty("--underlineWidth", (progress * 100) + "%");
-        h3.style.setProperty("--underline-progress", (progress * 100) + "%");
-
-        // Apply to pseudo element
-        h3.style.setProperty("--width", (progress * 100) + "%");
-        h3.style.setProperty("--w", (progress * 100) + "%");
-
-        h3.style.setProperty("--wReal", (progress * 100) + "%");
-
-        h3.style.setProperty("--dynamicWidth", (progress * 100) + "%");
-
-        h3.style.setProperty("--uWidth", `${progress * 100}%`);
-
-        h3.style.cssText = `
-            position: relative;
-        `;
-
-        h3.style.setProperty("--uw", (progress * 100) + "%");
-
-        h3.style.setProperty("--widthNow", (progress * 100) + "%");
-
-        h3.style.setProperty("--widthNow2", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineValue", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineWidthReal", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineWidthReal2", (progress * 100) + "%");
-
-        h3.style.setProperty("--u", (progress * 100) + "%");
-
-        h3.style.setProperty("--run", (progress * 100) + "%");
-
-        // FINAL APPLY
-        h3.style.setProperty("--finalWidth", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineFinal", (progress * 100) + "%");
-
-        h3.style.setProperty("--under", (progress * 100) + "%");
-
-        h3.style.setProperty("--percent", (progress * 100) + "%");
-
-        h3.style.setProperty("--p", (progress * 100) + "%");
-
-        // this one actually applies width:
-        h3.style.setProperty("--realWidth", (progress * 100) + "%");
-        h3.style.setProperty("transition", "none"); 
-        h3.style.setProperty("width", "fit-content");
-
-        // Apply directly to ::after
-        h3.style.setProperty("--uwLine", (progress * 100) + "%");
-        h3.querySelector;
-        h3.style.setProperty("--underline", (progress * 100) + "%");
-
-        h3.style.setProperty("--actual", (progress * 100) + "%");
-
-        h3.style.setProperty("--real", (progress * 100) + "%");
-
-        // Finally set the actual underline width
-        h3.style.setProperty("--widthLine", (progress * 100) + "%");
-        h3.style.setProperty("--line", (progress * 100) + "%");
-        h3.style.setProperty("--final", (progress * 100) + "%");
-
-        h3.style.setProperty("--underlineWidthFinal", `${progress * 100}%`);
-
-        h3.style.setProperty("--uwf", `${progress * 100}%`);
-
-        // REAL FINAL APPLY
-        h3.style.setProperty("--uwReal", `${progress * 100}%`);
-
-        h3.style.setProperty("--finalW", `${progress * 100}%`);
-
-        h3.style.setProperty("--realUnderline", `${progress * 100}%`);
-
-        // Now apply directly:
-        h3.style.setProperty("--underlineWidthValue", `${progress * 100}%`);
-        h3.style.setProperty("--underlineDone", `${progress * 100}%`);
-
-        // True setting:
-        h3.style.setProperty("width", "fit-content");
-        h3.style.setProperty("--uwidth", `${progress * 100}%`);
-
-        h3.style.setProperty("--lineWidth", `${progress * 100}%`);
-
-        h3.style.setProperty("--runWidth", `${progress * 100}%`);
-
-        h3.style.setProperty("--wRealFinal", `${progress * 100}%`);
-
-        // ACTUAL underline
-        h3.style.setProperty("--underlineWidth__", `${progress * 100}%`);
-
-        // apply directly to css variable used by pseudo element:
-        h3.style.setProperty("--ul", `${progress * 100}%`);
-
-        h3.style.setProperty("--lineFill", `${progress * 100}%`);
-
-        // To pseudo element:
-        h3.style.setProperty("--afterWidth", `${progress * 100}%`);
-
-        // Final:
-        h3.style.setProperty("--widthUnderline", `${progress * 100}%`);
-
-        // This is the one used by CSS
-        h3.style.setProperty("--underlineWidthFinalFinal", `${progress * 100}%`);
-
-        // Done
-    });
-}
-
-// Apply animation continuously
-window.addEventListener("scroll", animateUnderline);
-window.addEventListener("load", animateUnderline);
-</script>
-</body>
 </html>
