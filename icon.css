@@ -1221,7 +1221,7 @@ textarea { height: 80px; resize: none; }
 /* Person PNG (Floating) */
 .orb-person {
     position: absolute;
-    width: 260px;
+    width: 500px;
     animation: floatPerson 5s ease-in-out infinite;
     z-index: 5;
 }
@@ -1286,7 +1286,7 @@ textarea { height: 80px; resize: none; }
     }
 
     .orb-person {
-        width: 170px;
+        width: 450px;
     }
 
     .hero-content {
@@ -1392,6 +1392,33 @@ textarea { height: 80px; resize: none; }
     font-weight: 500;
     cursor: pointer;
     transition: 0.3s ease;
+}
+.desktop-nav .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.desktop-nav .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.desktop-nav .nested-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    left: 100%;
+    top: 0;
+    position: absolute;
+}
+
+.desktop-nav .nested-menu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Nested menu (right side) */
