@@ -2,69 +2,95 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+// Load PHPMailer
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-header("Access-Control-Allow-Origin: *");
-header('Content-Type: application/json');
-
-// Validate request method
+// Allow only POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo json_encode(["status" => "error", "message" => "Invalid request"]);
+    echo json_encode(["success" => false, "message" => "Invalid request method"]);
     exit;
 }
 
-$name       = $_POST['name'];
-$email      = $_POST['email'];
-$contact    = $_POST['contact'];
-$service    = $_POST['service'];
-$opportunity = $_POST['opportunity'];
-$pincode    = $_POST['pincode'];
-$state      = $_POST['state'];
-$message    = $_POST['message'];
+// Sanitize all inputs safely
+function clean($value) {
+    return htmlspecialchars(trim($value ?? ""), ENT_QUOTES, 'UTF-8');
+}
 
-// SEND EMAIL
+$name        = clean($_POST['name']       ?? "");
+$email       = clean($_POST['email']      ?? "");
+$contact     = clean($_POST['contact']    ?? "");
+$service     = clean($_POST['service']    ?? "");
+$opportunity = clean($_POST['opportunity']?? "");
+$pincode     = clean($_POST['pincode']    ?? "");
+$state       = clean($_POST['state']      ?? "");
+$message     = clean($_POST['message']    ?? "");
+
+// BASIC VALIDATION
+if ($name === "" || $email === "") {
+    echo json_encode(["success" => false, "message" => "Name and Email are required."]);
+    exit;
+}
+
+// Initialize PHPMailer
 $mail = new PHPMailer(true);
 
 try {
-    // SMTP Setup
+    // SMTP CONFIG
     $mail->isSMTP();
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'info@trackshiplogistics.com'; 
-    $mail->Password   = 'Tr@kship9960'; // Change this ASAP!
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL
+    $mail->Username   = 'info@trackshiplogistics.com';
+    $mail->Password   = 'Tr@kship9960';  // Change this ASAP!
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
+    $mail->CharSet    = 'UTF-8';
 
-    // Sender - Receiver
-    $mail->setFrom('info@trackshiplogistics.com', 'Trackship Lead');
-    $mail->addAddress('	sohailindiabuys@gmail.com');
+    // SENDER + RECEIVER
+    $mail->setFrom('info@trackshiplogistics.com', 'Trackship Leads');
+    $mail->addAddress('sohailindiabuys@gmail.com');
 
-    // Email content
+    // EMAIL CONTENT
     $mail->isHTML(true);
-    $mail->Subject = "New Trackship Lead from Popup";
+    $mail->Subject = "📩 New Trackship Lead Submission";
 
     $mail->Body = "
-        <h3>New Lead Details</h3>
-        <p><strong>Name:</strong> $name</p>
-        <p><strong>Email:</strong> $email</p>
-        <p><strong>Contact:</strong> $contact</p>
-        <p><strong>Service:</strong> $service</p>
-        <p><strong>Opportunity:</strong> $opportunity</p>
-        <p><strong>Pincode:</strong> $pincode</p>
-        <p><strong>State:</strong> $state</p>
-        <p><strong>Message:</strong> $message</p>
+        <h2 style='margin-bottom:8px;color:#333;'>New Trackship Lead Received</h2>
+        <hr>
+        <p><strong>Name:</strong> {$name}</p>
+        <p><strong>Email:</strong> {$email}</p>
+        <p><strong>Contact:</strong> {$contact}</p>
+        <p><strong>Service:</strong> {$service}</p>
+        <p><strong>Opportunity:</strong> {$opportunity}</p>
+        <p><strong>Pincode:</strong> {$pincode}</p>
+        <p><strong>State:</strong> {$state}</p>
+        <p><strong>Message:</strong> {$message}</p>
     ";
 
-    $mail->send();
-
-    echo json_encode(["status" => "success", "message" => "Lead submitted & email sent"]);
-    exit;
+    // SEND EMAIL
+    if ($mail->send()) {
+        echo json_encode([
+            "success" => true,
+            "message" => "Lead submitted successfully"
+        ]);
+        exit;
+    } else {
+        echo json_encode([
+            "success" => false,
+            "message" => "Failed to send email"
+        ]);
+        exit;
+    }
 
 } catch (Exception $e) {
-    echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
+    echo json_encode([
+        "success" => false,
+        "message" => "Mailer Error: {$mail->ErrorInfo}"
+    ]);
+    exit;
 }
 ?>
-
-
