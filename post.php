@@ -6,6 +6,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 
 // Validate request method
@@ -65,4 +66,5 @@ try {
     echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
 }
 ?>
+
 
