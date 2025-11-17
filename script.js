@@ -532,5 +532,3 @@ form.addEventListener("submit", (e) => {
 
     if (!valid) e.preventDefault();
 });
-
-

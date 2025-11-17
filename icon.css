@@ -1204,17 +1204,17 @@ textarea { height: 80px; resize: none; }
     height: 100%;
     object-fit: contain;
     animation: orbPop 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 40px rgba(65, 131, 26, 0.5));
+    filter: drop-shadow(0 0 40px rgba(64, 131, 26, 0));
 }
 
 @keyframes orbPop {
     0%, 100% {
         transform: scale(1);
-        filter: drop-shadow(0 0 40px rgba(120, 50, 255, 0.5));
+        filter: drop-shadow(0 0 40px rgba(194, 255, 53, 0.5));
     }
     50% {
         transform: scale(1.08);
-        filter: drop-shadow(0 0 70px rgba(120, 50, 255, 0.7));
+        filter: drop-shadow(0 0 70px rgba(193, 255, 50, 0.7));
     }
 }
 
