@@ -61,7 +61,7 @@ document.getElementById('popupForm').addEventListener('submit', function(e) {
     
     const formData = new FormData(this);
     
-    fetch('post.php', {
+    fetch('https://itzadarsh.co.in/post.php', {
         method: 'POST',
         body: formData
     })
@@ -532,3 +532,4 @@ form.addEventListener("submit", (e) => {
 
     if (!valid) e.preventDefault();
 });
+
