@@ -1,124 +1,104 @@
-.about-hero {
-    padding: 180px 0 140px;
-    background: linear-gradient(135deg, #0B4A7Aee, #063963dd),
-    url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg') center/cover no-repeat;
-    text-align: left;
-    color: white;
+/* about.css - Custom animations, shapes, reveal, parallax, transitions */
+@import "tailwindcss";
+/* ==========================
+   GLOBAL ANIMATIONS
+========================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.about-hero h1 {
-    font-size: 48px;
-    font-weight: 800;
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-.about-hero h1 span {
-    color: #F7B21E;
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-.about-hero p {
-    margin-top: 10px;
-    font-size: 18px;
-    opacity: 0.9;
-}
-
-
-/* STORY SECTION */
-.our-story {
-    padding: 100px 0;
-}
-
-.story-flex {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.story-left .story-text {
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.story-img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-}
-
-.story-img-small {
-    width: 70%;
-    border-radius: 15px;
-    position: absolute;
-    right: -20px;
-    bottom: -20px;
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 
-/* VALUES */
-.values-section {
-    background: #f5f8fc;
-    padding: 100px 0;
+/* ==========================
+   BLOB SHAPES
+========================== */
+@keyframes blob {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
 }
 
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: 30px;
+.animate-blob {
+  animation: blob 8s infinite ease-in-out;
 }
 
-.value-card {
-    padding: 35px;
-    background: white;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.value-card:hover {
-    transform: translateY(-8px);
-}
-
-.value-icon i {
-    font-size: 40px;
-    color: #F7931E;
-    margin-bottom: 12px;
+.animate-blob-slow {
+  animation: blob 12s infinite ease-in-out;
 }
 
 
-/* TEAM SECTION */
-.team-section {
-    padding: 100px 0;
-}
+/* ==========================
+   REVEAL ANIMATIONS
+========================== */
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.9s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: 35px;
-    text-align: center;
-}
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: 0.9s ease; }
+.reveal-left.active { opacity: 1; transform: translateX(0); }
 
-.team-card {
-    padding: 30px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
-}
+.reveal-right { opacity: 0; transform: translateX(40px); transition: 0.9s ease; }
+.reveal-right.active { opacity: 1; transform: translateX(0); }
 
-.team-card img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
+.scale-reveal { opacity: 0; transform: scale(0.9); transition: 0.9s ease; }
+.scale-reveal.active { opacity: 1; transform: scale(1); }
+
+
+/* ==========================
+   TIMELINE LINE FIX FOR MOBILE
+========================== */
+@media (max-width: 768px) {
+  #timeline .border-l { left: 0 !important; transform: none !important; }
 }
 
 
-/* CTA */
-.cta-about {
-    padding: 120px 0;
-    background: linear-gradient(135deg, #F7B21E, #F7931E);
-    text-align: center;
-    color: #fff;
+/* ==========================
+   CUSTOM SCROLLBAR
+========================== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #fbbf24, #f59e0b); border-radius: 4px; }
+
+
+/* ==========================
+   CARDS HOVER EFFECT
+========================== */
+.card:hover, .team-card:hover, .mission-card:hover, .vision-card:hover, .values-card:hover {
+  transform: translateY(-6px);
+  transition: 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
-.cta-about h2 { font-size: 36px; }
-.cta-about p { margin: 10px 0 25px; font-size: 18px; }
+
+/* ==========================
+   CTA BUTTON HOVER
+========================== */
+.btn-glow:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 0 16px rgba(255,200,0,0.6);
+  transform: scale(1.05);
+}
+
+
+/* ==========================
+   PARALLAX (Optional CSS)
+========================== */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}

@@ -356,7 +356,7 @@ footer {
    FOOTER MAIN STYLING (Optimized + Clean)
 ----------------------------------------- */
 .footer {
-    background: #042b5359 url('https://itzadarsh.co.in/assets/trackship/img/india_map.jpg') 
+    background: #042b53ab url('https://itzadarsh.co.in/assets/trackship/img/india_map.jpg') 
                center/cover no-repeat;
     color: #ffffff;
     padding: 70px 0 20px;
@@ -447,7 +447,7 @@ footer {
     text-align: center;
     position: relative;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.671);
-    border-radius:   25px  25px  0 25px ;
+    border-radius:   25px  25px  25px 25px ;
 }
 .step-title {
     font-size: 20px;
@@ -1724,10 +1724,11 @@ html, body {
 }
 
 .logo img {
-    height: 220px;
-    margin-top: -30px;      /* 🚀 Image ko upar shift karega */
-    margin-left: -15px;       /* left adjust if needed */
-    margin-bottom: 5px;
+    height: auto;
+    width: 250px;
+    margin-top: 0px;      /* 🚀 Image ko upar shift karega */
+    margin-left: -20px;       /* left adjust if needed */
+    margin-bottom: 0px;
     object-fit: contain;
     display: block;
 }
@@ -2187,6 +2188,7 @@ html, body {
     max-width: 100%;
     max-height: 80%;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 @keyframes scroll {
@@ -2311,7 +2313,7 @@ html, body {
 
 .stat-card {
     background: linear-gradient(135deg, #ff6f00, #ffa726);
-    border-radius:   25px 0 25px  25px ;
+    border-radius:   25px 25px 25px  25px ;
     padding: 2px;
     text-align: center;
     height: 90px;
@@ -2333,13 +2335,13 @@ html, body {
     color: transparent;          /* no fill */
     -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.555);  /* outline */
     font-family: 'Poppins', sans-serif;
+    
 
     opacity: 0.8;
     pointer-events: none;
     
     
     transition: 0.3s ease;
-
 }
 
 .stat-label {
@@ -2410,15 +2412,18 @@ html, body {
 
 .testimonials-slider {
     position: relative;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
     padding: 20px 0;
+     scrollbar-width: none; /* Firefox */
 }
-
 .testimonials-track {
     display: flex;
     transition: transform 0.5s ease;
 }
-
 .testimonial-card {
     min-width: 350px;
     background: white;
@@ -2427,7 +2432,6 @@ html, body {
     margin: 0 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
-
 .testimonial-text {
     font-size: 16px;
     color: #555;
@@ -2532,7 +2536,8 @@ html, body {
 /* Moving Bikes Section */
 .moving-bikes-section {
     position: relative;
-    height: 250px;
+    height: 400px;
+    width: auto;
     overflow: hidden;
 }
 .bikes-background {

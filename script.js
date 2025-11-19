@@ -341,13 +341,55 @@ const partnersCarousel = document.querySelector('.partners-carousel');
 if (partnersCarousel) {
     enableSwipe(partnersCarousel);
 }
-const testimonialCard = document.querySelector('.testimonial-card');
-if(testimonialCard) {
-    enableSwipe(testimonialCard);
+// Apply swipe to testimonials
+enableSwipe(testimonialTrack);
+function enableSwipe(slider) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // Mouse Events
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch Events
+    slider.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchend', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
 }
-// =============================================
-// AUTO REDIRECT — FINAL CLEAN VERSION (NO API)
-// =============================================
+
 // Preloader
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
@@ -415,6 +457,33 @@ const revealCities = () => {
 };
 window.addEventListener("scroll", revealCities);
 revealCities();
+// DESKTOP SERVICES DROPDOWN FIX
+const desktopDropdown = document.querySelector('.desktop-nav .dropdown');
+const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
+const desktopMenu = desktopDropdown.querySelector('.dropdown-menu');
+
+desktopToggle.addEventListener('mouseenter', () => {
+    desktopMenu.classList.add('show');
+});
+
+desktopDropdown.addEventListener('mouseleave', () => {
+    desktopMenu.classList.remove('show');
+});
+
+// Nested dropdown hover
+const nestedDropdown = document.querySelector('.desktop-nav .nested-dropdown');
+if (nestedDropdown) {
+    const nestedToggle = nestedDropdown.querySelector('.nested-toggle');
+    const nestedMenu = nestedDropdown.querySelector('.nested-menu');
+
+    nestedDropdown.addEventListener('mouseenter', () => {
+        nestedMenu.classList.add('show');
+    });
+
+    nestedDropdown.addEventListener('mouseleave', () => {
+        nestedMenu.classList.remove('show');
+    });
+}
 // ====== FORM VALIDATION ======
 const form = document.getElementById("quickForm");
 form.addEventListener("submit", (e) => {
@@ -463,8 +532,7 @@ function submitToAPI(formId) {
     .then(res => res.json())
     .then(data => {
         if (data.success) {
-            alert(data.message);  // Server ka exact message: “We have received…”
-            form.reset();
+            alert(data.message);
         } else {
             alert("Error: " + data.message);
         }
