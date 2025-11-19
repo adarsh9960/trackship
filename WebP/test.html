@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Title -->
+    <title>Trackship Logistics – Courier Point, B2B Delivery, Franchise & Pan-India Logistics Solutions</title>
+    
+    <!-- Description -->
+    <meta name="description" content="Trackship provides fast courier services, B2B logistics, franchise opportunities, business partner programs, and end-to-end delivery solutions across India. Trusted by startups, SMEs, and enterprises for reliable logistics and seamless tracking.">
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="Trackship, Trackship Logistics, courier service India, courier franchise, logistics company India, B2B delivery, business partner program, startup courier service, pan India logistics, delivery partner India, courier point franchise, supply chain solutions, shipping and delivery India, last mile delivery, franchise opportunity India">
+    
+    <!-- For Better SEO Indexing -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Trackship Logistics">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://trackshiplogistics.com/">
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- =============================== -->
+    <!-- 🖼️ FAVICONS & ICONS -->
+    <!-- =============================== -->
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/trackship_16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/trackship_32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/trackship_48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/trackship_192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/icons/trackship_256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/trackship_512.png">
+    <!-- Favicon ICO -->
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+    
+    <!-- =============================== -->
+    <!-- 🍏 APPLE TOUCH ICON -->
+    <!-- =============================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/trackship_180.png">
+    <!-- Apple App Mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- =============================== -->
+    <!-- 🅿️ ANDROID / PWA SETUP -->
+    <!-- =============================== -->
+    <!-- Progressive Web App -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Chrome / Windows -->
+    <meta name="msapplication-TileImage" content="/assets/icons/trackship_256.png">
+    
+    <!-- =============================== -->
+    <!-- 📣 SOCIAL SHARE (Open Graph) -->
+    <!-- =============================== -->
+    <meta property="og:title" content="Trackship Logistics – Delivering Speed & Trust Across India">
+    <meta property="og:description" content="Fast courier services, B2B logistics, franchise opportunities & partner programs across India.">
+    <meta property="og:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://trackshiplogistics.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trackship Logistics – Delivering Speed & Trust Across India">
+    <meta name="twitter:description" content="Powerful courier & B2B logistics solutions across India.">
+    <meta name="twitter:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
+    
+    <!-- =============================== -->
+    <!-- END HEAD SETUP -->
+    <!-- =============================== -->
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Custom animations and styles that can't be handled by Tailwind */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeLeft {
+            0% { opacity: 0; transform: translateX(-60px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes fadeRight {
+            0% { opacity: 0; transform: translateX(60px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        
+        @keyframes orbPop {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 40px rgba(194, 255, 53, 0.5)); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 0 70px rgba(193, 255, 50, 0.7)); }
+        }
+        
+        @keyframes floatPerson {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes moveBikeleft {
+            0% { left: -150px; }
+            100% { left: 100%; }
+        }
+        
+        @keyframes moveBike {
+            0% { right: -150px; }
+            100% { right: 100%; }
+        }
+        
+        @keyframes drive {
+            0% { left: -150px; }
+            100% { left: 100%; }
+        }
+        
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .9s ease, transform .9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity .9s ease, transform .9s ease;
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity .9s ease, transform .9s ease;
+        }
+        
+        .reveal-left.active,
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Service card animation */
+        .service-card {
+            opacity: 0;
+            transform: translateY(40px) scale(1);
+            transition: transform 0.55s ease, box-shadow 0.55s ease, opacity 0.55s ease;
+        }
+        
+        .service-card.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        /* Dot pattern for service cards */
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 180px;
+            height: 180px;
+            background: url("https://itzadarsh.co.in/demo/dot.png");
+            background-size: cover;
+            opacity: 0.22;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        /* FAQ animations */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* City card animations */
+        .city-card {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .city-card.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Step card animations */
+        .step-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.4s ease;
+        }
+        
+        .step-card.reveal {
+            animation: fadeUp 0.85s ease forwards;
+        }
+        
+        /* Premium card underline */
+        .underline {
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            height: 3px;
+            width: 100%;
+            background: #537a0bb7;
+            transition: 0.4s ease;
+        }
+        
+        .premium-card:hover .underline {
+            left: 0;
+        }
+        
+        /* Icon rotation on hover */
+        .premium-card:hover .icon-circle {
+            animation: rotateIcon 1.2s linear infinite;
+            background: #e3f2fd;
+        }
+        
+        @keyframes rotateIcon {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Partner logo animation */
+        .partners-track {
+            display: flex;
+            animation: scroll 15s linear infinite;
+            width: fit-content;
+        }
+        
+        .partners-track:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Popup modal animation */
+        .popup-modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .popup-modal.active .popup-content {
+            transform: scale(1);
+        }
+        
+        /* Mobile panel animation */
+        .mobile-panel {
+            transform: translateX(-100%);
+            transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+            left: 0;
+            will-change: transform, opacity;
+        }
+        
+        .mobile-panel.open {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .mobile-panel.closing {
+            transform: translateX(-120%) scale(.98);
+            opacity: 0;
+        }
+        
+        /* Overlay animation */
+        .overlay {
+            opacity: 0;
+            transition: opacity .25s ease;
+            display: block;
+            pointer-events: none;
+        }
+        
+        .overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        /* Hamburger animation */
+        .hamburger .cross {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            opacity: 0;
+            pointer-events: none;
+            transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+        }
+        
+        .hamburger.active #hamburgerIcon {
+            transform: rotate(-20deg) scale(.85);
+            opacity: 0;
+        }
+        
+        .hamburger.active .cross {
+            transform: translate(-50%, -50%) rotate(0);
+            opacity: 1;
+        }
+        
+        /* Form animations */
+        .shake {
+            animation: shake 0.3s ease;
+        }
+        
+        .error-shake {
+            animation: shake 0.3s ease;
+        }
+        
+        /* Preloader animation */
+        #preloader {
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        /* Footer animation */
+        .footer-visible .footer-column h3::after {
+            width: 80px;
+        }
+    </style>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Trackship Logistics",
+      "url": "https://trackshiplogistics.com",
+      "logo": "https://trackship.in/logo.png",
+      "description": "Trackship provides fast courier services, logistics solutions, B2B support, franchise opportunities, and business partner programs across India.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Trackship"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 7400372375",
+        "contactType": "customer support",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/trackship",
+        "https://www.instagram.com/trackship",
+        "https://www.linkedin.com/company/trackship"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "services": [
+        {
+          "@type": "Service",
+          "name": "Courier Point Services",
+          "description": "Franchise-based courier point setup for new entrepreneurs."
+        },
+        {
+          "@type": "Service",
+          "name": "Logistics Solutions",
+          "description": "Pan-India pickup & delivery services for businesses."
+        },
+        {
+          "@type": "Service",
+          "name": "B2B Delivery Solutions",
+          "description": "Supply chain, warehousing, and business-to-business delivery services."
+        },
+        {
+          "@type": "Service",
+          "name": "Technology Services",
+          "description": "API-based tracking system and digital business solutions."
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <dotlottie-wc 
+            src="https://lottie.host/3cd4febc-ded7-4afe-81d8-543f8601ab79/McOjHx6LtG.lottie" 
+            style="width: 200px;height: 200px" autoplay loop>
+        </dotlottie-wc>
+    </div>
+    
+    <!-- Popup Modal -->
+    <div class="popup-modal fixed inset-0 bg-black/55 backdrop-blur-sm hidden justify-center items-center z-50" id="popupModal">
+        <div class="popup-content bg-white w-full max-w-md rounded-xl overflow-hidden shadow-xl">
+            <div class="popup-header bg-blue-800 text-white p-4 flex justify-between items-center">
+                <h3 class="popup-title text-xl font-bold">Get Started with Trackship</h3>
+                <div class="popup-close cursor-pointer" id="popupClose">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="popup-body p-6">
+                <form id="popupForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form-group relative">
+                            <input type="text" id="popupName" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" placeholder=" " required>
+                            <label for="popupName" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Name</label>
+                            <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                        
+                        <div class="form-group relative">
+                            <input type="email" id="popupEmail" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" placeholder=" " required>
+                            <label for="popupEmail" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Email</label>
+                            <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form-group relative">
+                            <input type="tel" id="popupContact" name="contact" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" placeholder=" " required>
+                            <label for="popupContact" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Contact No</label>
+                            <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                        
+                        <div class="form-group relative">
+                            <select id="popupService" name="service" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition appearance-none bg-white" required>
+                                <option value="" disabled selected></option>
+                                <option value="courier">Own Courier Point</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="solar">Solar Energy</option>
+                                <option value="ev">EV Charging</option>
+                                <option value="b2b">B2B</option>
+                                <option value="tech">Technology Services</option>
+                                <option value="sms">Bulk SMS</option>
+                            </select>
+                            <label for="popupService" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Select Service</label>
+                            <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form-group relative">
+                            <select id="popupOpportunity" name="opportunity" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition appearance-none bg-white" required>
+                                <option value="" disabled selected></option>
+                                <option value="franchise">Franchise</option>
+                                <option value="partner">Business Partner</option>
+                                <option value="delivery">Delivery Boy</option>
+                                <option value="customer">Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="popupOpportunity" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Select Opportunity</label>
+                            <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                        
+                        <div class="form-group relative">
+                            <input type="text" id="popupPincode" name="pincode" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" placeholder=" " required>
+                            <label for="popupPincode" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Pincode</label>
+                            <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group relative mb-4">
+                        <input type="text" id="popupState" name="state" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" placeholder=" " required>
+                        <label for="popupState" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">State</label>
+                        <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                    </div>
+                    
+                    <div class="form-group relative mb-6">
+                        <textarea id="popupMessage" name="message" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition h-24 resize-none" placeholder=" " required></textarea>
+                        <label for="popupMessage" class="absolute left-3 top-3 text-gray-500 transition-all pointer-events-none">Message</label>
+                        <span class="error-text text-red-500 text-sm mt-1 hidden"></span>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="main-header fixed top-0 left-0 w-full bg-white shadow-lg z-40 h-20 flex justify-between items-center px-6">
+        <div class="logo">
+            <img src="https://itzadarsh.co.in/assets/trackship/img/track-logo-400X400.svg" alt="Trackship Logo" class="h-40 -mt-8 -ml-4 object-contain">
+        </div>
+        
+        <nav class="desktop-nav hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-blue-900 font-medium hover:text-orange-500 transition relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:bg-orange-500 after:w-0 after:transition-all hover:after:w-full">Home</a>
+            <a href="about.html" class="text-blue-900 font-medium hover:text-orange-500 transition relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:bg-orange-500 after:w-0 after:transition-all hover:after:w-full">About</a>
+            
+            <!-- Services Dropdown -->
+            <div class="dropdown relative">
+                <button class="drop-btn text-blue-900 font-medium hover:text-orange-500 transition flex items-center gap-1">
+                    Services <i class="fas fa-chevron-down text-xs transition"></i>
+                </button>
+                
+                <div class="dropdown-menu absolute top-10 left-0 min-w-48 bg-white rounded-lg shadow-xl py-2 opacity-0 invisible transition-all duration-300">
+                    <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 hover:text-orange-500 transition">Courier Point</a>
+                    <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 hover:text-orange-500 transition">Logistics</a>
+                    
+                    <!-- B2B Nested Dropdown -->
+                    <div class="nested-dropdown relative">
+                        <button class="nested-toggle w-full text-left px-4 py-2 text-blue-900 hover:bg-blue-50 hover:text-orange-500 transition flex justify-between items-center">
+                            B2B <i class="fas fa-chevron-right text-xs transition"></i>
+                        </button>
+                        
+                        <div class="nested-menu absolute left-full top-0 min-w-48 bg-white rounded-lg shadow-xl py-2 opacity-0 invisible transition-all duration-300">
+                            <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 hover:text-orange-500 transition">B2B Seller</a>
+                            <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 hover:text-orange-500 transition">B2B Franchise</a>
+                            <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 hover:text-orange-500 transition">B2B Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#why-choose" class="text-blue-900 font-medium hover:text-orange-500 transition relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:bg-orange-500 after:w-0 after:transition-all hover:after:w-full">Why Choose Us</a>
+            <a href="#contact" class="text-blue-900 font-medium hover:text-orange-500 transition relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:bg-orange-500 after:w-0 after:transition-all hover:after:w-full">Contact</a>
+        </nav>
+        
+        <div class="hamburger md:hidden w-12 h-12 rounded-lg flex items-center justify-center cursor-pointer relative" id="hamburger">
+            <i class="fas fa-bars text-xl" id="hamburgerIcon"></i>
+            <div class="cross text-xl">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Panel -->
+    <div class="mobile-panel fixed top-0 left-0 w-72 h-full bg-white shadow-lg z-50 p-6 overflow-y-auto" id="mobilePanel">
+        <div class="close-btn text-right text-xl mb-4 cursor-pointer" id="closePanel">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="panel-links flex flex-col gap-4">
+            <a href="index.html" class="text-blue-900 font-medium py-2 border-b border-gray-200">Home</a>
+            <a href="about.html" class="text-blue-900 font-medium py-2 border-b border-gray-200">About</a>
+            <a href="#contact" class="text-blue-900 font-medium py-2 border-b border-gray-200">Contact</a>
+            
+            <!-- Services Mobile Dropdown -->
+            <div class="dropdown mt-2">
+                <button class="dropdown-toggle w-full text-left text-blue-900 font-medium py-2 flex justify-between items-center border-b border-gray-200" aria-expanded="false" aria-controls="servicesMenu">
+                    Services <i class="fas fa-chevron-down text-xs transition"></i>
+                </button>
+                
+                <div class="dropdown-menu max-h-0 overflow-hidden transition-all duration-350" id="servicesMenu">
+                    <a href="#" class="block py-2 pl-4 text-blue-900">Courier Point</a>
+                    <a href="#" class="block py-2 pl-4 text-blue-900">Logistics</a>
+                    
+                    <!-- B2B Nested Mobile Dropdown -->
+                    <div class="dropdown nested-dropdown">
+                        <button class="nested-toggle w-full text-left py-2 pl-4 text-blue-900 flex justify-between items-center" aria-expanded="false" aria-controls="b2bMenu">
+                            B2B <i class="fas fa-chevron-right text-xs transition"></i>
+                        </button>
+                        
+                        <div class="nested-menu max-h-0 overflow-hidden transition-all duration-300 ml-4 border-l-2 border-orange-500" id="b2bMenu">
+                            <a href="#" class="block py-2 pl-4 text-blue-900 bg-gray-50 mt-1">B2B Seller</a>
+                            <a href="#" class="block py-2 pl-4 text-blue-900 bg-gray-50 mt-1">B2B Franchise</a>
+                            <a href="#" class="block py-2 pl-4 text-blue-900 bg-gray-50 mt-1">B2B Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel-social absolute bottom-6 left-6 flex gap-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-orange-500 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-orange-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-orange-500 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-orange-500 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    
+    <div class="overlay fixed inset-0 bg-black/50 z-40 hidden" id="overlay"></div>
+    
+    <!-- WhatsApp Floater -->
+    <a href="https://wa.me/917400372375?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater fixed bottom-8 right-8 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-30 hover:scale-110 transition" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+    
+    <!-- Hero Section -->
+    <section class="orb-hero w-full min-h-screen relative overflow-hidden flex items-center justify-center py-10 bg-blue-50 px-4">
+        <div class="orb-wrapper absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-[550px] md:h-[550px] flex items-center justify-center z-10 -mt-20">
+            <img src="WebP/bg-asset.png" class="orb-bg w-full h-full object-contain animate-pulse" alt="Orb Background">
+            <img src="delivery-boy.png" class="orb-person absolute w-4/5 animate-bounce" alt="Person">
+        </div>
+        
+        <div class="hero-content relative z-20 text-center max-w-2xl mt-80 md:mt-96">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 reveal">Delivering Excellence<br><span class="text-orange-500">Every Day</span></h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 reveal">Smart logistics & technology solutions to grow your business.</p>
+            <a href="service.html" class="hero-btn inline-block bg-orange-500 text-white py-3 px-6 rounded-xl font-semibold text-lg hover:bg-orange-600 transition transform hover:-translate-y-1">Explore Services</a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about-section py-16 bg-white" id="about">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="about-container flex flex-col md:flex-row items-center gap-12">
+                <div class="about-images w-full md:w-1/2 relative reveal">
+                    <img src="https://www.shutterstock.com/image-photo/semi-trailer-trucks-containers-cargo-600nw-2456717979.jpg" alt="Logistics Team" class="about-image-main w-full rounded-2xl shadow-xl">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/019/049/181/small/global-business-logistics-import-export-and-container-cargo-freight-ship-during-loading-at-industrial-port-by-crane-container-handlers-cargo-plane-truck-on-highway-transportation-industry-concept-photo.jpg" alt="Package Delivery" class="about-image-secondary absolute w-3/4 rounded-2xl shadow-xl -bottom-8 -right-8 border-8 border-white">
+                </div>
+                
+                <div class="about-content w-full md:w-1/2 reveal-left">
+                    <h2 class="about-title text-3xl md:text-4xl font-bold text-blue-900 mb-6">Your One-Stop Solution for Success & Innovation</h2>
+                    <p class="about-text text-gray-600 mb-4 reveal-right">At Trackship, we are committed to being a trusted partner for individuals, businesses, and organizations, offering an extensive suite of services designed to meet diverse needs efficiently and effectively.</p>
+                    <p class="about-text text-gray-600 mb-8 reveal-left">From logistics and financial solutions to technology and renewable energy, our expertise and dedication drive us to provide innovative and reliable solutions across multiple domains.</p>
+                    <a href="service.html" class="btn btn-primary inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-yellow-400 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition hover:-translate-y-1">
+                        <span>Explore Our Services</span>
+                        <span class="btn-icon w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section class="partners-section py-20 bg-blue-900 bg-cover bg-fixed bg-center" id="partners" style="background-image: url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg')">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="partners-title text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-4 reveal">Our Trusted Partners</h2>
+            <p class="partners-subtitle text-white text-lg text-center mb-12 reveal">We work with leading companies to deliver exceptional service</p>
+            
+            <div class="partners-carousel overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing">
+                <div class="partners-track flex gap-8 items-center w-max">
+                    <!-- Partner logos -->
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-7.jpg" alt="ekart" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-6.png" alt="ecomexpress" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/amazon-logo-1-3.jpg" alt="Amazon" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-5.png" alt="Facebook" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="flipkart.png" alt="flipkart" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/Swiggy_logo-1.png" alt="WhatsApp" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-1.png" alt="Apple" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    
+                    <!-- Duplicate for seamless scrolling -->
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/zepto-1-1.png" alt="Google" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-4.png" alt="Microsoft" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/amazon-logo-1-3.jpg" alt="Amazon" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-5.png" alt="Facebook" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-7.jpg" alt="WhatsApp" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-1.png" alt="Apple" class="max-w-full max-h-20 object-contain rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services-section py-20 bg-gradient-to-br from-white to-blue-50" id="services">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-blue-900 text-center mb-4 reveal">We Provide Exclusive Service For Your Business</h2>
+            <p class="section-subtitle text-gray-600 text-lg text-center mb-12 reveal">Our comprehensive range of services ensures all your business needs are met</p>
+            
+            <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card relative overflow-hidden text-center bg-gradient-to-br from-blue-100 to-gray-500 rounded-[40px_80px_40px_80px] p-8 text-black shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl reveal">
+                    <div class="service-icon mb-6">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/11/delivery-man.png" alt="Delivery Service" class="h-24 w-24 mx-auto">
+                    </div>
+                    <h3 class="service-title text-xl font-semibold text-blue-900 mb-4">Own Courier Point</h3>
+                    <p class="service-description text-gray-700 mb-6">Providing doorstep courier support with high-quality service assurance.</p>
+                    <a href="#" class="service-link inline-flex w-12 h-12 bg-blue-900 rounded-full text-white justify-center items-center hover:bg-black transition">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card relative overflow-hidden text-center bg-gradient-to-br from-blue-100 to-gray-500 rounded-[40px_80px_40px_80px] p-8 text-black shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl reveal">
+                    <div class="service-icon mb-6">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/11/logistics-1.png" alt="Logistic Service in India" class="h-24 w-24 mx-auto">
+                    </div>
+                    <h3 class="service-title text-xl font-semibold text-blue-900 mb-4">Logistics</h3>
+                    <p class="service-description text-gray-700 mb-6">Smart & efficient logistics solutions for all your business needs.</p>
+                    <a href="#" class="service-link inline-flex w-12 h-12 bg-blue-900 rounded-full text-white justify-center items-center hover:bg-black transition">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card relative overflow-hidden text-center bg-gradient-to-br from-blue-100 to-gray-500 rounded-[40px_80px_40px_80px] p-8 text-black shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl reveal">
+                    <div class="service-icon mb-6">
+                        <img src="https://eazyonesources.com/wp-content/uploads/2024/11/b2b.png" alt="B2B services" class="h-24 w-24 mx-auto">
+                    </div>
+                    <h3 class="service-title text-xl font-semibold text-blue-900 mb-4">B2B</h3>
+                    <p class="service-description text-gray-700 mb-6">Reliable B2B solutions helping businesses grow faster with smart tools.</p>
+                    <a href="#" class="service-link inline-flex w-12 h-12 bg-blue-900 rounded-full text-white justify-center items-center hover:bg-black transition">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section py-20 bg-white" id="why-choose">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="why-choose-container flex flex-col md:flex-row items-center gap-12">
+                <div class="why-choose-content w-full md:w-1/2 reveal">
+                    <h2 class="why-choose-title text-3xl md:text-4xl font-bold text-blue-900 mb-6">Why Choose Trackship?</h2>
+                    <p class="why-choose-text text-gray-600 mb-8">Trackship offers tailored logistics, courier, B2B and tech services — powerful, reliable and scalable. We combine modern technology with local expertise to deliver efficient solutions for businesses and individuals.</p>
+                    
+                    <div class="features-list grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="feature-item flex items-start gap-4 reveal">
+                            <div class="feature-icon w-12 h-12 bg-blue-900 rounded-[25px_25px_25px_0] text-white flex items-center justify-center flex-shrink-0">
+                                <img src="https://instalogistic.com/assets/img/icon/money.svg" alt="Feature Icon" class="w-8 h-8">
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-1">Innovative Solutions</h4>
+                                <p class="text-gray-600 text-sm">Tech-first operations & automation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item flex items-start gap-4 reveal">
+                            <div class="feature-icon w-12 h-12 bg-blue-900 rounded-[25px_25px_25px_0] text-white flex items-center justify-center flex-shrink-0">
+                                <img src="https://instalogistic.com/assets/img/icon/team.svg" alt="Feature Icon" class="w-8 h-8">
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-1">Customer Focused</h4>
+                                <p class="text-gray-600 text-sm">Service with clear SLAs & transparency.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item flex items-start gap-4 reveal">
+                            <div class="feature-icon w-12 h-12 bg-blue-900 rounded-[25px_25px_25px_0] text-white flex items-center justify-center flex-shrink-0">
+                                <img src="https://instalogistic.com/assets/img/icon/certified.svg" alt="Feature Icon" class="w-8 h-8">
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-1">End-to-End Support</h4>
+                                <p class="text-gray-600 text-sm">From pickup to delivery & tracking.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item flex items-start gap-4 reveal">
+                            <div class="feature-icon w-12 h-12 bg-blue-900 rounded-[25px_25px_25px_0] text-white flex items-center justify-center flex-shrink-0">
+                                <img src="https://instalogistic.com/assets/img/icon/certified.svg" alt="Feature Icon" class="w-8 h-8">
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-1">Efficient Operations</h4>
+                                <p class="text-gray-600 text-sm">Optimised routes & robust networks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-choose-image w-full md:w-1/2 relative reveal">
+                    <img src="https://media.istockphoto.com/id/1400839985/vector/recruiting-hr-and-employee-review-team-building-vector.jpg?s=612x612&w=0&k=20&c=ZXVuuCvAI3Lwk_CrZkixjtPZzjra48aHi_MwaQd5NEQ=" alt="Logistics Operations" class="why-choose-image-main w-full rounded-2xl shadow-xl">
+                    <img src="https://digitalengage.net/wp-content/uploads/2020/08/digitalengage-image-1.png.webp" alt="Delivery Team" class="why-choose-image-secondary absolute w-3/5 rounded-2xl shadow-xl -bottom-8 -right-8 border-8 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Premium Services Section -->
+    <section class="premium-services-section py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <h2 class="premium-title text-3xl md:text-4xl font-bold text-blue-900 mb-4 reveal">Premium Services By Trackship</h2>
+            <p class="premium-subtitle text-gray-600 mb-12 reveal">We deliver quality, speed & trust — powered by modern logistics innovation.</p>
+            
+            <div class="premium-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="premium-card bg-white rounded-2xl p-4 text-left flex items-center gap-4 border-b-2 border-transparent cursor-pointer transition-all duration-350 hover:scale-105 hover:-translate-y-1 hover:border-blue-900 hover:shadow-xl hover:rounded-3xl reveal">
+                    <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                        <i class="fas fa-user-check text-orange-500 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-900">Customer-Centric Solutions</h4>
+                    <span class="underline"></span>
+                </div>
+                
+                <div class="premium-card bg-white rounded-2xl p-4 text-left flex items-center gap-4 border-b-2 border-transparent cursor-pointer transition-all duration-350 hover:scale-105 hover:-translate-y-1 hover:border-blue-900 hover:shadow-xl hover:rounded-3xl reveal">
+                    <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                        <i class="fas fa-shipping-fast text-orange-500 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-900">Same-Day Delivery</h4>
+                    <span class="underline"></span>
+                </div>
+                
+                <div class="premium-card bg-white rounded-2xl p-4 text-left flex items-center gap-4 border-b-2 border-transparent cursor-pointer transition-all duration-350 hover:scale-105 hover:-translate-y-1 hover:border-blue-900 hover:shadow-xl hover:rounded-3xl reveal">
+                    <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                        <i class="fas fa-map-marker-alt text-orange-500 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-900">Real-Time Tracking</h4>
+                    <span class="underline"></span>
+                </div>
+                
+                <div class="premium-card bg-white rounded-2xl p-4 text-left flex items-center gap-4 border-b-2 border-transparent cursor-pointer transition-all duration-350 hover:scale-105 hover:-translate-y-1 hover:border-blue-900 hover:shadow-xl hover:rounded-3xl reveal">
+                    <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                        <i class="fas fa-road text-orange-500 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-900">Easy Upgrade of Service</h4>
+                    <span class="underline"></span>
+                </div>
+                
+                <div class="premium-card bg-white rounded-2xl p-4 text-left flex items-center gap-4 border-b-2 border-transparent cursor-pointer transition-all duration-350 hover:scale-105 hover:-translate-y-1 hover:border-blue-900 hover:shadow-xl hover:rounded-3xl reveal">
+                    <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                        <i class="fas fa-chart-line text-orange-500 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-900">High Returns on Investment</h4>
+                    <span class="underline"></span>
+                </div>
+                
+                <div class="premium-card bg-white rounded-2xl p-4 text-left flex items-center gap-4 border-b-2 border-transparent cursor-pointer transition-all duration-350 hover:scale-105 hover:-translate-y-1 hover:border-blue-900 hover:shadow-xl hover:rounded-3xl reveal">
+                    <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                        <i class="fas fa-truck text-orange-500 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-900">Express Shipping</h4>
+                    <span class="underline"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section py-20 bg-cover bg-fixed bg-center" style="background-image: url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg')">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-white text-center mb-4 reveal">Our Skillfulness</h2>
+            <p class="section-subtitle text-white text-lg text-center mb-12 reveal">A glimpse of our operations and team</p>
+            
+            <div class="stats-container grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="stat-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-[25px_0_25px_25px] p-6 text-center h-24 shadow-xl relative reveal">
+                    <div class="stat-number absolute bottom-3 left-6 text-6xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.555)]" data-target="6">0</div>
+                    <div class="stat-label text-blue-900 font-medium mt-12">Years of Experience</div>
+                </div>
+                
+                <div class="stat-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-[25px_0_25px_25px] p-6 text-center h-24 shadow-xl relative reveal">
+                    <div class="stat-number absolute bottom-3 left-6 text-6xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.555)]" data-target="80899">0</div>
+                    <div class="stat-label text-blue-900 font-medium mt-12">Parcels Delivered</div>
+                </div>
+                
+                <div class="stat-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-[25px_0_25px_25px] p-6 text-center h-24 shadow-xl relative reveal">
+                    <div class="stat-number absolute bottom-3 left-6 text-6xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.555)]" data-target="173">0</div>
+                    <div class="stat-label text-blue-900 font-medium mt-12">No. of Employees</div>
+                </div>
+                
+                <div class="stat-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-[25px_0_25px_25px] p-6 text-center h-24 shadow-xl relative reveal">
+                    <div class="stat-number absolute bottom-3 left-6 text-6xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.555)]" data-target="4000">0</div>
+                    <div class="stat-label text-blue-900 font-medium mt-12">Happy Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cities Contact Section -->
+    <section class="cities-contact-section py-20 bg-white" id="citiesSection">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <!-- Left Side -->
+                <div class="cities-box">
+                    <span class="tag bg-orange-500 text-white py-1 px-3 rounded-full text-xs font-semibold inline-block mb-4">OUR SKILLS</span>
+                    <h2 class="cities-title text-3xl md:text-4xl font-bold text-blue-900 mb-8">We Deliver to These Bay Area<br>Cities & STATE OF INDIA</h2>
+                    
+                    <div class="cities-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Mumbai</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Bhopal</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Chennai</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Rajasthan</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Delhi</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Gujarat</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Goa</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">North India</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Maharashtra</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">South India</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Jammu & Kashmir</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Punjab & Haryana</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Uttar Pradesh (UP)</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Madhya Pradesh (MP)</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">Assam</div>
+                        <div class="city-card bg-blue-900 text-white p-3 rounded-xl cursor-pointer font-semibold transition-all duration-300 hover:bg-orange-500 hover:translate-x-2 relative after:content-['→'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:text-yellow-300 hover:after:opacity-100 hover:after:translate-x-0">West Bengal</div>
+                    </div>
+                </div>
+                
+                <!-- Right Side Form -->
+                <div class="right-form bg-orange-500 p-8 rounded-xl shadow-lg">
+                    <h3 class="form-title text-2xl font-bold text-blue-900 text-center mb-6">Want to ask more Questions?</h3>
+                    
+                    <form id="quickForm" onsubmit="submitToAPI('quickForm'); return false;">
+                        <div class="input-group relative mb-6">
+                            <input type="text" name="name" class="w-full p-4 border-2 border-yellow-400 rounded-xl bg-white focus:border-blue-900 focus:ring-2 focus:ring-blue-200 outline-none transition" required>
+                            <label class="absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Your Name</label>
+                        </div>
+                        
+                        <div class="input-group relative mb-6">
+                            <input type="email" name="email" class="w-full p-4 border-2 border-yellow-400 rounded-xl bg-white focus:border-blue-900 focus:ring-2 focus:ring-blue-200 outline-none transition" required>
+                            <label class="absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Email Address</label>
+                        </div>
+                        
+                        <div class="input-group relative mb-6">
+                            <input type="text" name="contact" class="w-full p-4 border-2 border-yellow-400 rounded-xl bg-white focus:border-blue-900 focus:ring-2 focus:ring-blue-200 outline-none transition" required>
+                            <label class="absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Phone Number</label>
+                        </div>
+                        
+                        <div class="input-group textarea relative mb-6">
+                            <textarea name="message" class="w-full p-4 border-2 border-yellow-400 rounded-xl bg-white focus:border-blue-900 focus:ring-2 focus:ring-blue-200 outline-none transition h-32 resize-none" required></textarea>
+                            <label class="absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Message</label>
+                        </div>
+                        
+                        <button class="submit-btn w-full bg-blue-900 text-white py-4 rounded-lg font-bold hover:bg-blue-800 transition hover:-translate-y-1" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works-section py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-blue-900 text-center mb-4 reveal">How It Works</h2>
+            <p class="section-subtitle text-gray-600 text-lg text-center mb-12 reveal">Simple steps to get started with Trackship</p>
+            
+            <div class="steps-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="step-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-2xl p-8 text-white relative overflow-hidden shadow-lg transition-all duration-400 hover:-translate-y-2 hover:scale-105 hover:shadow-xl reveal">
+                    <div class="step-number absolute bottom-3 left-6 text-7xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.35)]">01</div>
+                    <h3 class="step-title text-xl font-bold mb-4">Register</h3>
+                </div>
+                
+                <div class="step-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-2xl p-8 text-white relative overflow-hidden shadow-lg transition-all duration-400 hover:-translate-y-2 hover:scale-105 hover:shadow-xl reveal">
+                    <div class="step-number absolute bottom-3 left-6 text-7xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.35)]">02</div>
+                    <h3 class="step-title text-xl font-bold mb-4">Choose Service</h3>
+                </div>
+                
+                <div class="step-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-2xl p-8 text-white relative overflow-hidden shadow-lg transition-all duration-400 hover:-translate-y-2 hover:scale-105 hover:shadow-xl reveal">
+                    <div class="step-number absolute bottom-3 left-6 text-7xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.35)]">03</div>
+                    <h3 class="step-title text-xl font-bold mb-4">Provide Details</h3>
+                </div>
+                
+                <div class="step-card bg-gradient-to-r from-orange-500 to-yellow-400 rounded-2xl p-8 text-white relative overflow-hidden shadow-lg transition-all duration-400 hover:-translate-y-2 hover:scale-105 hover:shadow-xl reveal">
+                    <div class="step-number absolute bottom-3 left-6 text-7xl font-extrabold text-transparent [-webkit-text-stroke:2.5px_rgba(255,255,255,0.35)]">04</div>
+                    <h3 class="step-title text-xl font-bold mb-4">Track & Receive</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section py-20 bg-white/90">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-blue-900 text-center mb-4 reveal">Frequently Asked Questions</h2>
+            <p class="section-subtitle text-gray-600 text-lg text-center mb-12 reveal">Find answers to common questions about our services</p>
+            
+            <div class="faq-container">
+                <div class="faq-item bg-white rounded-xl mb-4 overflow-hidden shadow-lg reveal">
+                    <div class="faq-question p-5 text-lg font-semibold text-blue-900 cursor-pointer flex justify-between items-center">
+                        <span>What services does Trackship offer?</span>
+                        <i class="fas fa-chevron-down transition"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="p-5 pt-0 text-gray-600">Trackship offers a comprehensive range of services including courier delivery, logistics solutions, B2B services, technology services, solar energy solutions, and bulk SMS services. We provide end-to-end support for all your business needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-xl mb-4 overflow-hidden shadow-lg reveal">
+                    <div class="faq-question p-5 text-lg font-semibold text-blue-900 cursor-pointer flex justify-between items-center">
+                        <span>How can I track my shipment?</span>
+                        <i class="fas fa-chevron-down transition"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="p-5 pt-0 text-gray-600">Once you register with Trackship, you'll receive a tracking number for your shipment. You can use this number on our website or mobile app to track your shipment in real-time. We also provide SMS and email updates at every stage of delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-xl mb-4 overflow-hidden shadow-lg reveal">
+                    <div class="faq-question p-5 text-lg font-semibold text-blue-900 cursor-pointer flex justify-between items-center">
+                        <span>What areas do you serve?</span>
+                        <i class="fas fa-chevron-down transition"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="p-5 pt-0 text-gray-600">Trackship provides services across India with a strong presence in major cities including Mumbai, Delhi, Bangalore, Chennai, Kolkata, and many more. We're continuously expanding our network to serve more locations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-xl mb-4 overflow-hidden shadow-lg reveal">
+                    <div class="faq-question p-5 text-lg font-semibold text-blue-900 cursor-pointer flex justify-between items-center">
+                        <span>How do I become a partner with Trackship?</span>
+                        <i class="fas fa-chevron-down transition"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="p-5 pt-0 text-gray-600">To become a partner with Trackship, you can fill out the partnership form on our website or contact our business development team. We offer various partnership opportunities including franchise options, delivery partnerships, and service collaborations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-blue-900 text-center mb-4 reveal">What Our Clients Say</h2>
+            <p class="section-subtitle text-gray-600 text-lg text-center mb-12 reveal">Don't just take our word for it</p>
+            
+            <div class="testimonials-slider overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing py-5">
+                <div class="testimonials-track flex gap-6 transition-transform duration-500" id="testimonialsTrack">
+                    <div class="testimonial-card min-w-[300px] md:min-w-[350px] bg-white rounded-2xl p-6 shadow-lg reveal">
+                        <p class="testimonial-text text-gray-600 mb-6 italic">"Outstanding service and very fast delivery. Trackship team is very cooperative and professional. They've been our logistics partner for over a year now."</p>
+                        <div class="testimonial-author flex items-center gap-4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Rohan Sharma" class="author-image w-12 h-12 rounded-full object-cover">
+                            <div class="author-info">
+                                <h4 class="text-lg font-semibold text-blue-900">Rohan Sharma</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating text-orange-500 mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card min-w-[300px] md:min-w-[350px] bg-white rounded-2xl p-6 shadow-lg reveal">
+                        <p class="testimonial-text text-gray-600 mb-6 italic">"Very reliable courier and logistics solution for our daily business needs. Their tracking system is accurate and their customer support is excellent."</p>
+                        <div class="testimonial-author flex items-center gap-4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Priya Desai" class="author-image w-12 h-12 rounded-full object-cover">
+                            <div class="author-info">
+                                <h4 class="text-lg font-semibold text-blue-900">Priya Desai</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating text-orange-500 mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card min-w-[300px] md:min-w-[350px] bg-white rounded-2xl p-6 shadow-lg reveal">
+                        <p class="testimonial-text text-gray-600 mb-6 italic">"Customer support is excellent. Highly satisfied with the tracking accuracy. They've helped us streamline our delivery process significantly."</p>
+                        <div class="testimonial-author flex items-center gap-4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Amit Verma" class="author-image w-12 h-12 rounded-full object-cover">
+                            <div class="author-info">
+                                <h4 class="text-lg font-semibold text-blue-900">Amit Verma</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating text-orange-500 mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card min-w-[300px] md:min-w-[350px] bg-white rounded-2xl p-6 shadow-lg reveal">
+                        <p class="testimonial-text text-gray-600 mb-6 italic">"Great experience! The team is very professional and punctual with deliveries. Their B2B solutions have helped our business grow exponentially."</p>
+                        <div class="testimonial-author flex items-center gap-4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Sneha Kulkarni" class="author-image w-12 h-12 rounded-full object-cover">
+                            <div class="author-info">
+                                <h4 class="text-lg font-semibold text-blue-900">Sneha Kulkarni</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating text-orange-500 mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card min-w-[300px] md:min-w-[350px] bg-white rounded-2xl p-6 shadow-lg reveal">
+                        <p class="testimonial-text text-gray-600 mb-6 italic">"Affordable pricing and timely services. Highly recommended for startups and small businesses looking for reliable logistics solutions."</p>
+                        <div class="testimonial-author flex items-center gap-4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Harshit Mehta" class="author-image w-12 h-12 rounded-full object-cover">
+                            <div class="author-info">
+                                <h4 class="text-lg font-semibold text-blue-900">Harshit Mehta</h4>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating text-orange-500 mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav flex justify-center gap-2 mt-8">
+                <div class="nav-dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer transition hover:bg-orange-500 active"></div>
+                <div class="nav-dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer transition hover:bg-orange-500"></div>
+                <div class="nav-dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer transition hover:bg-orange-500"></div>
+                <div class="nav-dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer transition hover:bg-orange-500"></div>
+                <div class="nav-dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer transition hover:bg-orange-500"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section py-20 bg-cover bg-fixed bg-center text-white" style="background-image: url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg')">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="cta-title text-3xl md:text-4xl font-bold mb-6 reveal">Ready to Transform Your Logistics?</h2>
+            <p class="cta-text text-lg mb-10 reveal">Join thousands of businesses that trust Trackship for their logistics needs</p>
+            
+            <div class="cta-buttons flex flex-col sm:flex-row justify-center gap-5 reveal">
+                <a href="https://api.whatsapp.com/send/?phone=917400372375&text=Hi+Trackship&type=phone_number&app_absent=0" class="btn btn-cta inline-flex items-center gap-3 bg-green-600 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:bg-green-700 transition hover:-translate-y-1">
+                    <span>Get Started</span>
+                    <span class="btn-icon w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <!-- WhatsApp SVG -->
+                        <svg width="20" height="20" viewBox="0 0 256 258" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="a">
+                                    <stop stop-color="#1FAF38" offset="0%"/>
+                                    <stop stop-color="#60D669" offset="100%"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M128.002 0C57.425 0 0 57.423 0 128c0 22.57 5.891 44.618 17.078 64.063L0 256l65.47-16.85C84.6 249.986 106.064 256 128.002 256 198.575 256 256 198.577 256 128 256 57.423 198.575 0 128.002 0zm0 234.667c-20.22 0-40.07-5.46-57.317-15.806l-4.093-2.426-38.786 9.988 10.354-37.959-2.667-4.369C25.862 164.43 21.333 146.485 21.333 128 21.333 70.165 70.168 21.333 128.002 21.333c57.835 0 106.667 48.832 106.667 106.667 0 57.834-48.832 106.667-106.667 106.667zm60.988-72.002c-3.333-1.666-19.71-9.73-22.77-10.838-3.06-1.11-5.29-1.666-7.51 1.666-2.22 3.334-8.6 10.84-10.54 13.063-1.94 2.222-3.89 2.5-7.22.83-3.33-1.666-14.07-5.18-26.808-16.53-9.907-8.846-16.61-19.78-18.553-23.113-1.945-3.334-.207-5.13 1.457-6.79 1.495-1.49 3.333-3.89 4.997-5.83 1.666-1.943 2.222-3.333 3.335-5.555 1.11-2.22.555-4.166-.275-5.83-.83-1.668-7.51-18.103-10.29-24.953-2.713-6.71-5.47-5.8-7.51-5.88-1.94-.08-4.17-.1-6.39-.1-2.22 0-5.55.78-8.47 3.89-2.925 3.11-11.12 10.86-11.12 26.48 0 15.62 11.39 30.72 12.995 32.85 1.666 2.22 22.39 34.2 54.31 47.97 7.58 3.27 13.5 5.21 18.12 6.67 7.61 2.42 14.54 2.08 20.03 1.26 6.11-.91 19.71-8.06 22.49-15.86 2.78-7.78 2.78-14.45 1.94-15.86-.83-1.41-3.06-2.22-6.39-3.89z"
+                                  fill="white"/>
+                        </svg>
+                    </span>
+                </a>
+                
+                <a href="service.html" class="btn btn-outline inline-flex items-center gap-3 bg-transparent text-white border-2 border-white py-3 px-6 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">
+                    <span>Learn More</span>
+                    <span class="btn-icon w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <section class="contact-section py-20 bg-white" id="contact">
+        <div class="contact-container mx-auto max-w-6xl px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Content -->
+            <div class="contact-info reveal">
+                <h2 class="contact-title text-3xl md:text-4xl font-bold text-blue-900 mb-6">Get In Touch</h2>
+                <p class="contact-text text-gray-600 mb-8">
+                    Have questions about our services? Fill out the form and our team will get back to you shortly.
+                </p>
+                
+                <div class="contact-item flex items-start gap-4 mb-6 p-5 rounded-xl bg-blue-50 border-l-4 border-orange-500">
+                    <div class="contact-icon w-12 h-12 bg-orange-100 rounded-[25px_25px_25px_0] text-orange-500 flex items-center justify-center flex-shrink-0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/OOjs_UI_icon_mapPin.svg" alt="locations" class="w-6 h-6">
+                    </div>
+                    <div class="contact-content">
+                        <h4 class="text-sm font-bold text-orange-500 uppercase tracking-wide mb-1">Address</h4>
+                        <p class="text-blue-900">Office No 411, 4th Floor, Lotus Business Park Premises,<br>
+                        Near HP Petrol Pump, SV Road, Malad West,<br>
+                        Mumbai, India - 400064</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item flex items-start gap-4 mb-6 p-5 rounded-xl bg-blue-50 border-l-4 border-orange-500">
+                    <div class="contact-icon w-12 h-12 bg-orange-100 rounded-[25px_25px_25px_0] text-orange-500 flex items-center justify-center flex-shrink-0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Telephone_receiver.svg" alt="call-now" class="w-5 h-5">
+                    </div>
+                    <div class="contact-content">
+                        <h4 class="text-sm font-bold text-orange-500 uppercase tracking-wide mb-1">Phone</h4>
+                        <p class="text-orange-500 font-medium">+91 91366 01185</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item flex items-start gap-4 mb-8 p-5 rounded-xl bg-blue-50 border-l-4 border-orange-500">
+                    <div class="contact-icon w-12 h-12 bg-orange-100 rounded-[25px_25px_25px_0] text-orange-500 flex items-center justify-center flex-shrink-0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/2674096_object_email_web_essential_icon.svg" alt="email" class="w-5 h-5">
+                    </div>
+                    <div class="contact-content">
+                        <h4 class="text-sm font-bold text-orange-500 uppercase tracking-wide mb-1">Email</h4>
+                        <p class="text-orange-500 font-medium">info@trackshiplogistics.com</p>
+                    </div>
+                </div>
+                
+                <a href="tel:+917400372375" class="call-now inline-flex items-center gap-3 bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition hover:-translate-y-1">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            
+            <!-- Right Side: Form -->
+            <div class="contact-form reveal">
+                <form id="contactForm" method="POST" novalidate>
+                    <!-- Row 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form-group relative">
+                            <input type="text" class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" id="contactName" name="name" required>
+                            <label for="contactName" class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Name</label>
+                            <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                        
+                        <div class="form-group relative">
+                            <input type="email" class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" id="contactEmail" name="email" required>
+                            <label for="contactEmail" class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Email</label>
+                            <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form-group relative">
+                            <input type="tel" class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" id="contactContact" name="contact" required>
+                            <label for="contactContact" class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Contact No</label>
+                            <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                        
+                        <div class="form-group relative">
+                            <select class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition appearance-none bg-white" id="contactService" name="service" required>
+                                <option value=""></option>
+                                <option value="courier">Own Courier Point</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="solar">Solar Energy</option>
+                                <option value="ev">EV Charging</option>
+                                <option value="b2b">B2B</option>
+                                <option value="tech">Technology Services</option>
+                                <option value="sms">Bulk SMS</option>
+                            </select>
+                            <label class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Select Service</label>
+                            <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form-group relative">
+                            <select class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition appearance-none bg-white" id="contactOpportunity" name="opportunity" required>
+                                <option value=""></option>
+                                <option value="franchise">Franchise</option>
+                                <option value="partner">Business Partner</option>
+                                <option value="delivery">Delivery Boy</option>
+                                <option value="customer">Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Select Opportunity</label>
+                            <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                        
+                        <div class="form-group relative">
+                            <input type="text" class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" id="contactPincode" name="pincode" required>
+                            <label class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Pincode</label>
+                            <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- State -->
+                    <div class="form-group relative mb-4">
+                        <input type="text" class="form-control w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition" id="contactState" name="state" required>
+                        <label class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">State</label>
+                        <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="form-group relative mb-6">
+                        <textarea class="form-message w-full p-4 border border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition h-32 resize-none" id="contactMessage" name="message" required></textarea>
+                        <label class="form-label absolute left-4 top-4 text-gray-500 transition-all pointer-events-none">Message</label>
+                        <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
+                    </div>
+                    
+                    <button type="submit" class="form-submit w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition" onclick="submitToAPI">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Moving Bikes Section -->
+    <section class="moving-bikes-section relative h-64 overflow-hidden">
+        <img src="road.png" alt="City Background" class="bikes-background absolute inset-0 w-full h-full object-cover">
+        <div class="bikes-overlay absolute inset-0 bg-black/30"></div>
+        
+        <div class="bikes-container absolute bottom-0 left-0 w-full h-24">
+            <img src="//itzadarsh.co.in/demo/truck.svg" alt="Delivery Truck" class="truck absolute w-24 animate-[drive_5s_linear_infinite] -bottom-3" style="animation-delay: 2s;">
+            <img src="/wp-content/uploads/2021/11/bike-2.png" alt="Delivery Bike" class="bike bike-2 absolute w-20 animate-[moveBike_3s_linear_infinite] -bottom-3">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer bg-blue-900 bg-cover bg-center text-white py-16 relative overflow-hidden" style="background-image: url('https://itzadarsh.co.in/assets/trackship/img/india_map.jpg')">
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="footer-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="footer-column">
+                    <h3 class="text-xl font-semibold text-orange-500 mb-4 relative pl-7 pb-3 inline-block transition hover:translate-x-1">Trackship</h3>
+                    <p class="text-gray-300 mb-6">At Trackship, we provide trusted logistics, courier, B2B, and technology services for businesses across India.</p>
+                    
+                    <div class="social-icons flex gap-3">
+                        <a href="#" class="social-icon w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition hover:-translate-y-1">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition hover:-translate-y-1">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition hover:-translate-y-1">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="text-xl font-semibold text-orange-500 mb-4 relative pl-7 pb-3 inline-block transition hover:translate-x-1">Useful Links</h3>
+                    <ul class="footer-links space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">About Us</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Services</a></li>
+                        <li><a href="#why-choose" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Why Choose Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Gallery</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="text-xl font-semibold text-orange-500 mb-4 relative pl-7 pb-3 inline-block transition hover:translate-x-1">Our Future Services</h3>
+                    <ul class="footer-links space-y-2">
+                        <li><a href="service.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Solar Energy</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">EV Charging</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Technology Services</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-orange-500 transition pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-500 hover:before:translate-x-1 hover:translate-x-1">Bulk SMS</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column contact-box space-y-5">
+                    <div class="contact-item flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border-b-4 border-orange-500 transition hover:bg-white/10">
+                        <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                            <i class="fas fa-map-marker-alt text-orange-500 text-xl"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h4 class="text-xs font-bold text-orange-500 uppercase tracking-wide mb-1">OUR OFFICE</h4>
+                            <p class="text-white text-sm">Trackship Courier & Logistics Company</p>
+                            <p class="text-white text-sm">Office No 411, 4th Floor, Lotus Business Park Premises,<br>
+                            Near HP Petrol Pump, SV Road, Malad West,<br>
+                            Mumbai, India - 400064</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border-b-4 border-orange-500 transition hover:bg-white/10">
+                        <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                            <i class="fas fa-phone text-orange-500 text-xl"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h4 class="text-xs font-bold text-orange-500 uppercase tracking-wide mb-1">SUPPORT 24/7</h4>
+                            <p class="text-white text-sm">+91 91366 01185</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border-b-4 border-orange-500 transition hover:bg-white/10">
+                        <div class="icon-circle w-16 h-16 border-2 border-dashed border-orange-500 rounded-full flex justify-center items-center transition-all duration-400">
+                            <i class="fas fa-envelope text-orange-500 text-xl"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h4 class="text-xs font-bold text-orange-500 uppercase tracking-wide mb-1">E-MAIL US</h4>
+                            <p class="text-white text-sm">info@trackshiplogistics.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center pt-8 border-t border-white/10">
+                <p class="text-gray-300">&copy; 2025 Trackship. All rights reserved.</p>
+            </div>
+            <div class="credit text-center pt-4 text-gray-300">
+                Designed By <a href="https://itzadarsh.co.in" target="_blank" class="developer font-bold text-red-500">ITZ Adarsh</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Lottie Import -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // All the JavaScript from your original files goes here
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.querySelector(".footer");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        footer.classList.add("footer-visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(footer);
+        });
+        
+        // Check if user has visited before and popup logic
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user has submitted the popup form
+            const hasSubmitted = localStorage.getItem('trackshipPopupSubmitted');
+            
+            // Check if user has closed the popup and when
+            const popupClosedData = localStorage.getItem('trackshipPopupClosed');
+            let hasClosedRecently = false;
+            
+            if (popupClosedData) {
+                const { timestamp } = JSON.parse(popupClosedData);
+                const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
+                hasClosedRecently = (Date.now() - timestamp) < thirtyDaysInMs;
+            }
+            
+            // Show popup if user hasn't submitted and hasn't closed recently
+            if (!hasSubmitted && !hasClosedRecently) {
+                setTimeout(() => {
+                    document.getElementById('popupModal').classList.remove('hidden');
+                    document.getElementById('popupModal').classList.add('active');
+                }, 1000);
+            }
+        });
+        
+        // Popup Modal Controls
+        document.getElementById('popupClose').addEventListener('click', function() {
+            document.getElementById('popupModal').classList.remove('active');
+            setTimeout(() => {
+                document.getElementById('popupModal').classList.add('hidden');
+            }, 300);
+            
+            // Store that user closed the popup with timestamp
+            localStorage.setItem('trackshipPopupClosed', JSON.stringify({
+                timestamp: Date.now()
+            }));
+        });
+        
+        document.getElementById('popupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                setTimeout(() => {
+                    this.classList.add('hidden');
+                }, 300);
+                
+                // Store that user closed the popup with timestamp
+                localStorage.setItem('trackshipPopupClosed', JSON.stringify({
+                    timestamp: Date.now()
+                }));
+            }
+        });
+        
+        // Mobile panel controls
+        const hamburger = document.getElementById('hamburger');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const mobilePanel = document.getElementById('mobilePanel');
+        const closePanel = document.getElementById('closePanel');
+        const overlay = document.getElementById('overlay');
+        
+        // Open Mobile Menu
+        hamburger.addEventListener('click', () => {
+            mobilePanel.classList.add('open');
+            overlay.classList.remove('hidden');
+            overlay.classList.add('visible');
+            hamburger.classList.add('active');
+            
+            // Prevent body scrolling when panel is open
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close (from cross button)
+        closePanel.addEventListener('click', () => {
+            mobilePanel.classList.remove('open');
+            overlay.classList.remove('visible');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 250);
+            hamburger.classList.remove('active');
+            
+            // Restore body scrolling
+            document.body.style.overflow = '';
+        });
+        
+        // Click outside overlay closes menu
+        overlay.addEventListener('click', () => {
+            mobilePanel.classList.remove('open');
+            overlay.classList.remove('visible');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 250);
+            hamburger.classList.remove('active');
+            
+            // Restore body scrolling
+            document.body.style.overflow = '';
+        });
+        
+        // Desktop Services dropdown
+        const desktopServicesToggle = document.querySelector('.desktop-nav .dropdown-toggle');
+        const desktopServicesMenu = document.querySelector('.desktop-nav .dropdown-menu');
+        
+        if (desktopServicesToggle) {
+            desktopServicesToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const isOpen = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isOpen);
+                
+                if (isOpen) {
+                    desktopServicesMenu.style.maxHeight = '0px';
+                } else {
+                    desktopServicesMenu.style.maxHeight = desktopServicesMenu.scrollHeight + 'px';
+                }
+            });
+        }
+        
+        // ================================
+        // SERVICES MAIN DROPDOWN
+        // ================================
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.getElementById('servicesMenu');
+        
+        dropdownToggle.addEventListener('click', () => {
+            const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
+            
+            dropdownToggle.setAttribute('aria-expanded', !isOpen);
+            
+            dropdownMenu.style.maxHeight = isOpen ? "0px" : dropdownMenu.scrollHeight + "px";
+            
+            dropdownToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+        });
+        
+        const nestedToggle = document.querySelector('.nested-toggle');
+        const nestedMenu = document.getElementById('b2bMenu');
+        
+        nestedToggle.addEventListener('click', () => {
+            const isOpen = nestedToggle.getAttribute('aria-expanded') === 'true';
+            
+            nestedToggle.setAttribute('aria-expanded', !isOpen);
+            
+            nestedMenu.style.maxHeight = isOpen ? "0px" : nestedMenu.scrollHeight + "px";
+            
+            nestedToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobilePanel.classList.remove('open');
+                    overlay.classList.remove('visible');
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 250);
+                    hamburger.classList.remove('active');
+                    
+                    // Restore body scrolling
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Reveal Animation on Scroll
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                    
+                    // Service card animation
+                    if (element.classList.contains('service-card')) {
+                        element.style.animation = 'fadeUp 0.9s ease forwards';
+                        element.style.animationDelay = getComputedStyle(element).animationDelay;
+                    }
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        // Format the final number
+                        if (target === 173) {
+                            counter.textContent = target + '+';
+                        } else if (target === 4000) {
+                            counter.textContent = target + '+';
+                        } else {
+                            counter.textContent = target;
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Intersection Observer for Counter Animation
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 1 });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            counterObserver.observe(statsSection);
+        }
+        
+        // FAQ Accordion (Independent toggle)
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                
+                // Toggle ONLY this FAQ
+                faqItem.classList.toggle('active');
+            });
+        });
+        
+        // Testimonial Slider
+        const testimonialTrack = document.getElementById('testimonialsTrack');
+        const navDots = document.querySelectorAll('.nav-dot');
+        let currentSlide = 0;
+        const slideWidth = 370; // Width of testimonial card + margin
+        
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0) {
+                slideIndex = navDots.length - 1;
+            } else if (slideIndex >= navDots.length) {
+                slideIndex = 0;
+            }
+            
+            currentSlide = slideIndex;
+            testimonialTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+            
+            // Update nav dots
+            navDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
+            });
+        }
+        
+        // Add click event to nav dots
+        navDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        let testimonialInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Pause auto-rotation on hover
+        testimonialTrack.addEventListener('mouseenter', () => {
+            clearInterval(testimonialInterval);
+        });
+        
+        testimonialTrack.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+        });
+        
+        // Clone testimonials for infinite scroll
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        testimonials.forEach(testimonial => {
+            const clone = testimonial.cloneNode(true);
+            testimonialTrack.appendChild(clone);
+        });
+        
+        // Enable swipe for testimonials
+        function enableSwipe(slider) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            
+            // Mouse Events
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+            
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+            
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll-fast
+                slider.scrollLeft = scrollLeft - walk;
+            });
+            
+            // Touch Events
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+            });
+            
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+        
+        // Apply swipe to testimonials
+        enableSwipe(testimonialTrack);
+        
+        // Partners carousel swipe
+        const partnersCarousel = document.querySelector('.partners-carousel');
+        if (partnersCarousel) {
+            enableSwipe(partnersCarousel);
+        }
+        
+        // Preloader
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+            setTimeout(() => {
+                preloader.classList.add("hide");
+            }, 300); // slight delay for smooth fade
+        });
+        
+        // Text case conversion (Title Case) for sections
+        function convertToTitleCase() {
+            // Get all sections except header, footer, and hero
+            const sections = document.querySelectorAll('section:not(.hero-section):not(.main-header):not(.footer)');
+            
+            sections.forEach(section => {
+                // Get all text nodes that are not inside script, style, or other excluded elements
+                const walker = document.createTreeWalker(
+                    section,
+                    NodeFilter.SHOW_TEXT,
+                    {
+                        acceptNode: function(node) {
+                            // Exclude script, style, and other non-content elements
+                            const parent = node.parentElement;
+                            if (!parent) return NodeFilter.FILTER_REJECT;
+                            
+                            // Exclude certain elements
+                            if (parent.tagName === 'SCRIPT' || 
+                                parent.tagName === 'STYLE' || 
+                                parent.tagName === 'NOSCRIPT' ||
+                                parent.classList.contains('credit')) {
+                                return NodeFilter.FILTER_REJECT;
+                            }
+                            
+                            // Exclude text that is just whitespace
+                            if (node.textContent.trim() === '') {
+                                return NodeFilter.FILTER_REJECT;
+                            }
+                            
+                            return NodeFilter.FILTER_ACCEPT;
+                        }
+                    }
+                );
+                let textNode;
+                while (textNode = walker.nextNode()) {
+                    const text = textNode.textContent;
+                    // Convert to title case
+                    const titleCaseText = text.replace(/\w\S*/g, (txt) => {
+                        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                    });
+                    // Only update if there's a change
+                    if (text !== titleCaseText) {
+                        textNode.textContent = titleCaseText;
+                    }
+                }
+            });
+        }
+        
+        // Apply title case conversion after DOM is loaded
+        document.addEventListener('DOMContentLoaded', convertToTitleCase);
+        
+        // ======= CITY CARDS SCROLL ANIMATION =======
+        const cityCards = document.querySelectorAll('.city-card');
+        const revealCities = () => {
+            const trigger = window.innerHeight - 100;
+            cityCards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < trigger) card.classList.add("show");
+            });
+        };
+        window.addEventListener("scroll", revealCities);
+        revealCities();
+        
+        // DESKTOP SERVICES DROPDOWN FIX
+        const desktopDropdown = document.querySelector('.desktop-nav .dropdown');
+        const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
+        const desktopMenu = desktopDropdown.querySelector('.dropdown-menu');
+        
+        desktopToggle.addEventListener('mouseenter', () => {
+            desktopMenu.classList.add('show');
+        });
+        
+        desktopDropdown.addEventListener('mouseleave', () => {
+            desktopMenu.classList.remove('show');
+        });
+        
+        // Nested dropdown hover
+        const nestedDropdown = document.querySelector('.desktop-nav .nested-dropdown');
+        if (nestedDropdown) {
+            const nestedToggle = nestedDropdown.querySelector('.nested-toggle');
+            const nestedMenu = nestedDropdown.querySelector('.nested-menu');
+            
+            nestedDropdown.addEventListener('mouseenter', () => {
+                nestedMenu.classList.add('show');
+            });
+            
+            nestedDropdown.addEventListener('mouseleave', () => {
+                nestedMenu.classList.remove('show');
+            });
+        }
+        
+        // ====== FORM VALIDATION ======
+        const form = document.getElementById("quickForm");
+        form.addEventListener("submit", (e) => {
+            const inputs = form.querySelectorAll("input, textarea");
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    valid = false;
+                    input.classList.add("shake");
+                    setTimeout(() => input.classList.remove("shake"), 500);
+                }
+            });
+            if (!valid) e.preventDefault();
+        });
+        
+        const popupForm = document.getElementById("popupForm");
+        popupForm.addEventListener("submit", function(e) {
+            let valid = true;
+            
+            document.querySelectorAll("#popupForm .form-group").forEach(group => {
+                const input = group.querySelector("input, select, textarea");
+                const errorText = group.querySelector(".error-text");
+                
+                if (!input.checkValidity()) {
+                    valid = false;
+                    errorText.textContent = "This field is required";
+                    errorText.classList.remove('hidden');
+                    group.classList.add("error-shake");
+                    
+                    setTimeout(() => {
+                        group.classList.remove("error-shake");
+                    }, 300);
+                } else {
+                    errorText.textContent = "";
+                    errorText.classList.add('hidden');
+                }
+            });
+            
+            if (!valid) e.preventDefault();
+        });
+        
+        function submitToAPI(formId) {
+            const form = document.getElementById(formId);
+            const formData = new FormData(form);
+            
+            fetch("https://itzadarsh.co.in/api/v1/post", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                } else {
+                    alert("Error: " + data.message);
+                }
+            })
+            .catch(err => {
+                alert("Network error — please try again.");
+                console.error(err);
+            });
+        }
+        
+        // ===== POPUP FORM =====
+        document.getElementById("popupForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            submitToAPI("popupForm");
+        });
+        
+        // ===== CONTACT FORM =====
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            submitToAPI("contactForm");
+        });
+        
+        // ===== QUICK FORM (cities section) =====
+        document.getElementById("quickForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            submitToAPI("quickForm");
+        });
+    </script>
+</body>
+</html>
