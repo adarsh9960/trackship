@@ -1,430 +1,3522 @@
-<!doctype html>
+<!-- about.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — Trackship Logistics</title>
-  <meta name="description" content="About Trackship — delivering trust, innovation & speed across India. Learn about our mission, team, values and services.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="icon.css">
+<style>
+    /* icon.css */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <!-- Tailwind CDN (production-ready utility classes) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+html, body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
 
-  <!-- Custom small CSS for shapes & tweaks -->
-  <link rel="stylesheet" href="about.css">
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
-  <!-- Lottie for animations -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
 
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    color: white;
+    box-shadow: 0 4px 15px rgba(11, 74, 122, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(11, 74, 122, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0b4a7a;
+    border: 2px solid #0b4a7a;
+}
+
+.btn-secondary:hover {
+    background: #0b4a7a;
+    color: white;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Popup Modal */
+.popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.popup-modal.active .popup-content {
+    transform: scale(1);
+}
+
+.popup-header {
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    color: white;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+}
+
+.popup-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.popup-body {
+    padding: 30px;
+}
+
+/* Header Styles */
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: auto;
+    width: 250px;
+    margin-top: 0px;
+    margin-left: -20px;
+    margin-bottom: 0px;
+    object-fit: contain;
+    display: block;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-nav a,
+.desktop-nav .dropdown-toggle {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.desktop-nav a:hover,
+.desktop-nav .dropdown-toggle:hover {
+    color: #ff7300;
+}
+
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff7300;
+    transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    min-width: 200px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 115, 0, 0.1);
+    color: #ff7300;
+}
+
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nested-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 180px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+.nested-dropdown:hover .nested-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Mobile Panel */
+.mobile-panel {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background: white;
+    width: 300px;
+    height: 100vh;
+    padding: 25px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.4s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.mobile-panel.open {
+    left: 0;
+}
+
+.close-btn {
+    text-align: right;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.panel-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel-links a,
+.panel-links button {
+    font-size: 16px;
+    text-decoration: none;
+    color: #333333;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.panel-social {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.panel-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    color: #333333;
+    transition: all 0.3s ease;
+}
+
+.panel-social a:hover {
+    background: #ff7300;
+    color: white;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.visible {
+    display: block;
+}
+
+/* WhatsApp Floater */
+.whatsapp-floater {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-floater:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-floater i {
+    color: white;
+    font-size: 28px;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, #f5f7ff 0%, #e8f0fe 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0b4a7a;
+    margin-bottom: 20px;
+    padding-top: 20%;
+    line-height: 1.2;
+}
+
+.hero-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #005792;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #444444;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b4a7a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #ff7300;
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Section */
+.about-section {
+    background: white;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-images {
+    position: relative;
+}
+
+.about-image-main {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image-secondary {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    border-radius: 20px;
+    bottom: -30px;
+    right: -30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0b4a7a;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.achievement-highlights {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(0, 87, 146, 0.1));
+    border-radius: 50px;
+    font-weight: 600;
+    color: #005792;
+}
+
+.highlight-item i {
+    color: #ff7300;
+    font-size: 20px;
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+    background: #f8f9fa;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.vision-card,
+.mission-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+.vision-card h3,
+.mission-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b4a7a;
+    margin-bottom: 20px;
+}
+
+.vision-card p,
+.mission-card p {
+    font-size: 16px;
+    color: #444444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.vision-card ul,
+.mission-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vision-card li,
+.mission-card li {
+    padding: 8px 0;
+    color: #444444;
+    position: relative;
+    padding-left: 25px;
+}
+
+.vision-card li::before,
+.mission-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ff7300;
+    font-weight: bold;
+}
+
+.values-grid {
+    margin-top: 40px;
+}
+
+.values-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0b4a7a;
+    margin-bottom: 40px;
+}
+
+.values-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.value-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 115, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.value-icon i {
+    font-size: 25px;
+    color: #ff7300;
+}
+
+.value-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0b4a7a;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    background: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-image {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.member-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 74, 122, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.member-image:hover .member-overlay {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b4a7a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff7300;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.member-info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0b4a7a;
+    margin-bottom: 5px;
+}
+
+.position {
+    font-size: 16px;
+    color: #ff7300;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.bio {
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+/* Timeline Section */
+.timeline-section {
+    background: #f8f9fa;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #0b4a7a, #ff7300);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    position: relative;
+    margin: 50px 0;
+    width: 50%;
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+    justify-content: flex-start;
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0b4a7a;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+.timeline-date {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: -100px;
+    right: auto;
+}
+
+.year {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #ff7300;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 3px rgba(255, 115, 0, 0.2);
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+    right: auto;
+}
+
+/* Achievements Section */
+.achievements-section {
+    background: white;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.achievement-card {
+    background: linear-gradient(135deg, rgba(11, 74, 122, 0.05), rgba(0, 87, 146, 0.05));
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 5px solid #ff7300;
+}
+
+.achievement-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.achievement-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+.achievement-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b4a7a;
+    margin-bottom: 20px;
+}
+
+.achievement-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.achievement-card li {
+    padding: 10px 0;
+    color: #444444;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.6;
+}
+
+.achievement-card li::before {
+    content: "🏆";
+    position: absolute;
+    left: 0;
+}
+
+.stats-counter {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 30px;
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-label {
+    font-size: 16px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item i {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 60px;
+    opacity: 0.1;
+}
+
+/* CSR Section */
+.csr-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.csr-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.csr-text p {
+    font-size: 16px;
+    color: #444444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.csr-initiatives {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.initiative-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.initiative-card:hover {
+    transform: translateY(-10px);
+}
+
+.initiative-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 115, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.initiative-icon i {
+    font-size: 25px;
+    color: #ff7300;
+}
+
+.initiative-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0b4a7a;
+    margin-bottom: 10px;
+}
+
+.initiative-card p {
+    font-size: 14px;
+    color: #444444;
+    line-height: 1.5;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: #f8f9fa;
+}
+
+.testimonials-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+}
+
+.testimonial-card {
+    min-width: 350px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 80px;
+    color: rgba(255, 115, 0, 0.1);
+    font-family: Georgia, serif;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: #444444;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b4a7a;
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    font-size: 14px;
+    color: #ff7300;
+}
+
+.testimonial-rating {
+    color: #ff7300;
+    font-size: 18px;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, rgba(11, 74, 122, 0.363), rgba(0, 88, 146, 0.432)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.cta-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.cta-text {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-section .btn-primary {
+    background: white;
+    color: #0b4a7a;
+}
+
+.cta-section .btn-primary:hover {
+    background: #f8f9fa;
+}
+
+.cta-section .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-section .btn-secondary:hover {
+    background: white;
+    color: #0b4a7a;
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, #0b4a7a, #005792);
+    color: white;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff7300;
+    margin-bottom: 30px;
+}
+
+.contact-text {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-item p{
+    color: #ff7300 ;
+}
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 115, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    font-size: 20px;
+    color: #ff7300;
+}
+
+.contact-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff7300;
+    margin-bottom: 5px;
+}
+
+.contact-content p {
+    font-size: 15px;
+    color: #042b53;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: rgba(59, 59, 59, 0.356);
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: -24px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* clean spacing */
+
+
+}
+
+.contact-form h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff7300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-control,
+.form-message {
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-control::placeholder,
+.form-message::placeholder {
+    color: #042b53;
+}
+
+.form-control:focus,
+.form-message:focus {
+    border-color: #ff7300;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label,
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #ff7300;
+    
+    padding: 0 8px;
+    border-radius: 15px;
+}
+
+select.form-control {
+    color: #ff7300;
+    cursor: pointer;
+}
+
+.form-message {
+    min-height: 120px;
+    color: #000000;
+    resize: vertical;
+}
+
+.error-message {
+    font-size: 12px;
+    color: #ff4444;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff7300, #ff7b00);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 115, 0, 0.4);
+}
+
+/* India Hero Animation */
+.india-hero {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.road-layer {
+    width: 100%;
+    height: 228px;
+    background: url('PNG/moving-bike-bg.png') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.bike {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: 20;
+}
+
+.bike-left {
+    animation: runRight 9s linear infinite;
+}
+
+.bike-right {
+    animation: runLeft 11s linear infinite;
+    transform: scaleX(-1);
+    height: 100px;
+}
+
+@keyframes runRight {
+    0% { left: -200px; }
+    100% { left: 110%; }
+}
+
+@keyframes runLeft {
+    0% { right: -200px; }
+    100% { right: 110%; }
+}
+
+/* Footer */
+.footer {
+    background: #042b5300 url('https://trackshiplogistics.com/india-map.png') 
+               center/cover no-repeat;
+    color: #ffffff;
+    padding: 70px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff7300;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 28px;
+}
+
+.footer-column h3::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7300;
+    font-size: 15px;
+}
+
+.footer-column p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #ff7300;
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-links a:hover::before {
+    transform: translateX(5px);
+}
+
+.footer-links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links i {
+    color: #ff7300;
+    width: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #ff7300;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.credit {
+    margin-top: 10px;
+}
+
+.credit a {
+    color: #ff7300;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.credit a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1200;
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#hamburgerIcon {
+    font-size: 22px;
+    color: #333333;
+    transition: transform 0.35s ease;
+}
+
+.cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    color: #333333;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.hamburger.active #hamburgerIcon {
+    opacity: 0;
+}
+
+.hamburger.active .cross {
+    opacity: 1;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-left.active,
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .about-image-secondary {
+        position: static;
+        width: 80%;
+        margin: 20px auto 0;
+    }
+    
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .csr-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .csr-initiatives {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 20px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 80px;
+    }
+    
+    .timeline-date {
+        left: -10px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+        left: -10px;
+    }
+    
+    .timeline-item::after {
+        left: 20px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 0 60px;
+    }
+    
+    .hero-section h1 {
+        font-size: 36px;
+    }
+    
+    .hero-section h2 {
+        font-size: 22px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-card {
+        min-width: 300px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        padding: 10px 15px;
+        height: 70px;
+    }
+    
+    .logo img {
+        width: 200px;
+    }
+    
+    .hero-section h1 {
+        font-size: 28px;
+    }
+    
+    .hero-section h2 {
+        font-size: 18px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .about-content h2 {
+        font-size: 28px;
+    }
+    
+    .vision-card h3,
+    .mission-card h3 {
+        font-size: 22px;
+    }
+    
+    .achievement-highlights {
+        flex-direction: column;
+    }
+    
+    .highlight-item {
+        justify-content: center;
+    }
+    
+    .stats-counter {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer Hover Effects */
+.footer-column h3 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #ff7300;
+    transition: width 0.5s ease;
+}
+
+.footer.footer-visible .footer-column h3::after {
+    width: 50px;
+}
+
+.footer-column h3:hover {
+    padding-left: 35px;
+}
+
+.footer-column h3:hover::before {
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Additional Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Floating label improvements */
+.form-group.floating input:focus + label,
+.form-group.floating input:not(:placeholder-shown) + label,
+.form-group.floating textarea:focus + label,
+.form-group.floating textarea:not(:placeholder-shown) + label,
+.form-group.floating select:focus + label,
+.form-group.floating select:not([value=""]) + label {
+    background: #0b4a7a;
+    color: #ff7300;
+    padding: 0 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Error states */
+.form-group.show-error .form-control,
+.form-group.show-error .form-message {
+    border-color: #ff4444;
+}
+
+.form-group.show-error .error-message {
+    display: block;
+}
+
+/* Success animation */
+.form-success {
+    animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Improved card hover effects */
+.value-card:hover,
+.initiative-card:hover,
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, .btn, .social-icon, .testimonial-card {
+    transition: all 0.3s ease;
+}
+
+/* Improved focus states for accessibility */
+.btn:focus,
+.btn-secondary:focus,
+.contact-item:focus-within {
+    outline: 2px solid #ff7300;
+    outline-offset: 2px;
+}
+
+/* Loading state for forms */
+.form-submit.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-submit.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Print styles */
+@media print {
+    .main-header,
+    .whatsapp-floater,
+    .cta-section,
+    .contact-section,
+    .footer {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles here if needed */
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        border: 2px solid white;
+    }
+    
+    .testimonial-card {
+        border: 2px solid #333;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+
+<!-- SEO Title -->
+<title>About Trackship Logistics - Leading Courier & B2B Delivery Solutions Across India</title>
+
+<!-- Description -->
+<meta name="description" content="Learn about Trackship Logistics, India's fastest-growing courier and logistics company. Discover our mission to revolutionize delivery services with innovative technology and customer-centric solutions.">
+
+<!-- Keywords -->
+<meta name="keywords" content="Trackship Logistics about, courier company India, logistics services, B2B delivery solutions, mission vision values, transportation solutions, pan India logistics, franchise opportunities, business partner program, delivery excellence">
+
+<!-- For Better SEO Indexing -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="Trackship Logistics">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://trackshiplogistics.com/about">
+
+<!-- Viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FAVICONS & ICONS -->
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/trackship_16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/trackship_32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/trackship_48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/trackship_192.png">
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/icons/trackship_256.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/trackship_512.png">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/trackship_180.png">
+
+<!-- PWA SETUP -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileImage" content="/assets/icons/trackship_256.png">
+
+<!-- SOCIAL SHARE (Open Graph) -->
+<meta property="og:title" content="About Trackship Logistics - Leading Courier & B2B Delivery Solutions">
+<meta property="og:description" content="Discover Trackship Logistics' journey to becoming India's trusted delivery partner. Learn about our mission, values, and commitment to excellence.">
+<meta property="og:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
+<meta property="og:url" content="https://trackshiplogistics.com/about">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Trackship Logistics - Leading Courier & B2B Delivery Solutions">
+<meta name="twitter:description" content="Discover Trackship Logistics' journey to becoming India's trusted delivery partner.">
+<meta name="twitter:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trackship Logistics",
+  "url": "https://trackshiplogistics.com",
+  "logo": "https://trackship.in/logo.png",
+  "description": "Trackship Logistics is India's leading courier and logistics company providing comprehensive delivery solutions across the nation.",
+  "foundingDate": "2018",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91 91366 01185",
+    "contactType": "customer support",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office No 411, 4th Floor, Lotus Business Park Premises, Near HP Petrol Pump, SV Road, Malad West",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400064",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.facebook.com/trackship",
+    "https://www.instagram.com/trackship",
+    "https://www.linkedin.com/company/trackship"
+  ],
+  "serviceArea": {
+    "@type": "Country",
+    "name": "India"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About Trackship Logistics",
+  "description": "Learn about Trackship Logistics, our mission, vision, values, and journey to becoming India's trusted logistics partner.",
+  "url": "https://trackshiplogistics.com/about",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Trackship Logistics",
+    "url": "https://trackshiplogistics.com"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://trackshiplogistics.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Us",
+      "item": "https://trackshiplogistics.com/about"
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-slate-100 antialiased leading-relaxed">
+<body>
 
-  <!-- HEADER -->
-  <header class="site-header fixed w-full z-40 backdrop-blur bg-white/5">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 md:p-6">
-      <a href="/" class="flex items-center gap-3">
-        <img src="/assets/icons/trackship_48.png" alt="Trackship" class="w-10 h-10">
-        <span class="text-white font-bold text-lg">Trackship</span>
-      </a>
+<!-- Popup Modal -->
+<div class="popup-modal" id="popupModal">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3 class="popup-title">Get Started with Trackship</h3>
+            <div class="popup-close" id="popupClose">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="/" class="hover:text-amber-300">Home</a>
-        <a href="/service.html" class="hover:text-amber-300">Services</a>
-        <a href="/about.html" class="text-amber-300 font-medium">About</a>
-        <a href="#team" class="hover:text-amber-300">Team</a>
-        <a href="#contact" class="hover:text-amber-300">Contact</a>
-      </nav>
+        <div class="popup-body">
+            <form id="popupForm">
 
-      <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden md:inline-block px-4 py-2 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 font-semibold shadow-lg hover:scale-105 transform transition">Contact Us</a>
+                <div class="form-row">
+                    <div class="form-group floating">
+                        <input type="text" id="popupName" name="name" required>
+                        <label for="popupName">Name</label>
+                        <span class="error-text"></span>
+                    </div>
 
-        <button id="mobileToggle" class="md:hidden p-2 rounded text-white focus:outline-none" style="color: --color-red-950;">
-          <i class="fas fa-bars"></i>
+                    <div class="form-group floating">
+                        <input type="email" id="popupEmail" name="email" required>
+                        <label for="popupEmail">Email</label>
+                        <span class="error-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group floating">
+                        <input type="tel" id="popupContact" name="contact" required>
+                        <label for="popupContact">Contact No</label>
+                        <span class="error-text"></span>
+                    </div>
+
+                    <div class="form-group floating">
+                        <select id="popupService" name="service" required>
+                            <option value="" disabled selected></option>
+                            <option value="courier">Own Courier Point</option>
+                            <option value="logistics">Logistics</option>
+                            <option value="solar">Solar Energy</option>
+                            <option value="ev">EV Charging</option>
+                            <option value="b2b">B2B</option>
+                            <option value="tech">Technology Services</option>
+                            <option value="sms">Bulk SMS</option>
+                        </select>
+                        <label for="popupService">Select Service</label>
+                        <span class="error-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group floating">
+                        <select id="popupOpportunity" name="opportunity" required>
+                            <option value="" disabled selected></option>
+                            <option value="franchise">Franchise</option>
+                            <option value="partner">Business Partner</option>
+                            <option value="delivery">Delivery Boy</option>
+                            <option value="customer">Customer</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="popupOpportunity">Select Opportunity</label>
+                        <span class="error-text"></span>
+                    </div>
+
+                    <div class="form-group floating">
+                        <input type="text" id="popupPincode" name="pincode" required>
+                        <label for="popupPincode">Pincode</label>
+                        <span class="error-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-group floating">
+                    <input type="text" id="popupState" name="state" required>
+                    <label for="popupState">State</label>
+                    <span class="error-text"></span>
+                </div>
+
+                <div class="form-group floating">
+                    <textarea id="popupMessage" name="message" required></textarea>
+                    <label for="popupMessage">Message</label>
+                    <span class="error-text"></span>
+                </div>
+
+                <button type="submit" class="form-submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="main-header">
+    <div class="logo">
+        <img src="https://itzadarsh.co.in/assets/trackship/img/track-ship-logo.png" alt="Trackship Logo">
+    </div>
+    
+    <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+
+    <!-- SERVICES DROPDOWN -->
+    <div class="dropdown">
+        <button class="dropdown-toggle">
+            Services <i class="fas fa-chevron-down"></i>
         </button>
-      </div>
+
+        <div class="dropdown-menu">
+            <a href="#">Courier Point</a>
+            <a href="#">Logistics</a>
+
+            <!-- B2B NESTED DROPDOWN -->
+            <div class="nested-dropdown">
+                <button class="nested-toggle">
+                    B2B <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="nested-menu">
+                    <a href="#">B2B Seller</a>
+                    <a href="#">B2B Franchise</a>
+                    <a href="#">B2B Services</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Mobile Nav -->
-    <div id="mobileNav" class="md:hidden bg-slate-900/90 backdrop-blur hidden">
-      <div class="p-4 flex flex-col gap-2">
-        <a href="/" class="py-2">Home</a>
-        <a href="/service.html" class="py-2">Services</a>
-        <a href="/about.html" class="py-2 font-semibold text-amber-300">About</a>
-        <a href="#team" class="py-2">Team</a>
-        <a href="#contact" class="py-2">Contact</a>
-      </div>
+    <a href="#why-choose">Why Choose Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+    
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars" id="hamburgerIcon"></i>
+        <div id="headerClose" class="cross">
+            <i class="fas fa-times"></i>
+        </div>
     </div>
-  </header>
+</header>
 
-  <main class="pt-24">
-
-    <!-- HERO -->
-    <section class="relative overflow-hidden">
-      <!-- Animated shapes (absolute) -->
-      <div class="absolute -left-40 -top-20 opacity-30 animate-blob mix-blend-screen w-96 h-96 bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-500 rounded-full filter blur-3xl"></div>
-      <div class="absolute right-0 top-12 opacity-25 animate-blob-slow w-80 h-80 bg-gradient-to-r from-emerald-300 via-cyan-400 to-indigo-500 rounded-full filter blur-2xl"></div>
-
-      <div class="max-w-6xl mx-auto px-4 lg:px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="hero-content reveal">
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">About <span class="text-amber-300">Trackship</span></h1>
-          <p class="mt-4 text-lg text-slate-200 max-w-xl">Delivering trust, innovation and speed across India — combining technology and local expertise to power logistics for businesses and individuals.</p>
-
-          <div class="mt-6 flex gap-4">
-            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 font-semibold shadow-lg hover:scale-105 transform transition">Contact Us <i class="fas fa-arrow-right text-sm"></i></a>
-            <a href="#services" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-sm">Our Services</a>
-          </div>
-
-          <div class="mt-8 flex items-center gap-6">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-amber-300/20 flex items-center justify-center text-amber-300">★</div>
-              <div>
-                <div class="text-sm text-slate-300">Trusted by</div>
-                <div class="text-white font-semibold">10,000+ customers</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-amber-300/20 flex items-center justify-center text-amber-300">⚡</div>
-              <div>
-                <div class="text-sm text-slate-300">Avg. Delivery</div>
-                <div class="text-white font-semibold">24-48 hours</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-media reveal-right relative">
-          <div class="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-slate-800 to-slate-700 p-6">
-            <!-- Lottie animation -->
-            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" loop autoplay class="w-full h-64 md:h-80"></lottie-player>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Company Story -->
-    <section id="story" class="py-16 bg-gradient-to-b from-slate-900/30 to-transparent">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div class="reveal-left">
-            <h2 class="text-3xl font-bold">Our Story</h2>
-            <p class="mt-4 text-slate-300">Founded with a mission to simplify logistics, Trackship started as a small courier point and rapidly expanded by focusing on technology, transparency, and local partnerships. We believe logistics is more than moving parcels — it’s about connecting people and opportunities.</p>
-            <p class="mt-4 text-slate-300">Our journey is powered by a pragmatic approach: smart tech, empathetic customer care, and deeply local operations that adapt to city-level nuances.</p>
-          </div>
-
-          <div class="reveal-right">
-            <img src="https://via.placeholder.com/700x420.png?text=Our+Operations" alt="Our operations" class="rounded-xl shadow-lg w-full">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section id="mission" class="py-16">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="mission-card reveal p-6 rounded-xl bg-slate-800/60">
-            <h3 class="text-xl font-semibold text-amber-300">Our Mission</h3>
-            <p class="mt-3 text-slate-300">To make reliable logistics accessible to every business in India using technology, local partners and transparent pricing.</p>
-          </div>
-
-          <div class="vision-card reveal p-6 rounded-xl bg-slate-800/60">
-            <h3 class="text-xl font-semibold text-amber-300">Our Vision</h3>
-            <p class="mt-3 text-slate-300">To be the most trusted logistics partner for SMBs, enabling them to scale with predictable delivery experiences.</p>
-          </div>
-
-          <div class="values-card reveal p-6 rounded-xl bg-slate-800/60">
-            <h3 class="text-xl font-semibold text-amber-300">Core Values</h3>
-            <ul class="mt-3 text-slate-300 space-y-2">
-              <li>Customer-first mindset</li>
-              <li>Operational excellence</li>
-              <li>Data-driven decisions</li>
-              <li>Local partnerships</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Values Cards -->
-    <section id="values" class="py-16 bg-slate-900/20">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">What We Value</h2>
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="card reveal-left p-6 rounded-xl bg-gradient-to-br from-amber-400/10 to-amber-300/5 border border-white/5">
-            <div class="text-3xl">🤝</div>
-            <h4 class="font-semibold mt-3">Partnership</h4>
-            <p class="mt-2 text-slate-300 text-sm">We grow with our partners and treat them as an extension of our team.</p>
-          </div>
-
-          <div class="card reveal-right p-6 rounded-xl bg-gradient-to-br from-cyan-400/5 to-indigo-500/5 border border-white/5">
-            <div class="text-3xl">🔒</div>
-            <h4 class="font-semibold mt-3">Trust</h4>
-            <p class="mt-2 text-slate-300 text-sm">Transparent tracking and fair pricing — always.</p>
-          </div>
-
-          <div class="card reveal p-6 rounded-xl bg-gradient-to-br from-emerald-300/5 to-cyan-400/5 border border-white/5">
-            <div class="text-3xl">⚡</div>
-            <h4 class="font-semibold mt-3">Speed</h4>
-            <p class="mt-2 text-slate-300 text-sm">Fast deliveries while maintaining reliability.</p>
-          </div>
-
-          <div class="card reveal-left p-6 rounded-xl bg-gradient-to-br from-pink-400/5 to-rose-400/5 border border-white/5">
-            <div class="text-3xl">🧭</div>
-            <h4 class="font-semibold mt-3">Local-first</h4>
-            <p class="mt-2 text-slate-300 text-sm">City-level knowledge to make last-mile work.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership Team -->
-    <section id="team" class="py-16">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">Leadership Team</h2>
-        <p class="mt-3 text-slate-300 reveal-right">A small team with big experience in logistics, product and operations.</p>
-
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- Placeholder team members -->
-          <div class="team-card reveal p-6 rounded-xl bg-slate-800/50 text-center">
-            <img src="https://via.placeholder.com/160" alt="Founder" class="mx-auto w-32 h-32 rounded-full object-cover">
-            <h4 class="mt-4 font-semibold">Ankit Sharma</h4>
-            <div class="text-sm text-slate-300">Founder & CEO</div>
-          </div>
-
-          <div class="team-card reveal p-6 rounded-xl bg-slate-800/50 text-center">
-            <img src="https://via.placeholder.com/160" alt="COO" class="mx-auto w-32 h-32 rounded-full object-cover">
-            <h4 class="mt-4 font-semibold">Priya Singh</h4>
-            <div class="text-sm text-slate-300">COO</div>
-          </div>
-
-          <div class="team-card reveal p-6 rounded-xl bg-slate-800/50 text-center">
-            <img src="https://via.placeholder.com/160" alt="CTO" class="mx-auto w-32 h-32 rounded-full object-cover">
-            <h4 class="mt-4 font-semibold">Rahul Verma</h4>
-            <div class="text-sm text-slate-300">CTO</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="py-16 bg-gradient-to-b from-transparent to-slate-900/10">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8 text-center">
-        <h2 class="text-2xl font-bold reveal">Our Impact</h2>
-        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="reveal p-6 rounded-xl bg-slate-800/50">
-            <div class="text-3xl font-extrabold text-amber-300" data-target="6">0</div>
-            <div class="mt-2 text-slate-300">Years</div>
-          </div>
-          <div class="reveal p-6 rounded-xl bg-slate-800/50">
-            <div class="text-3xl font-extrabold text-amber-300" data-target="80899">0</div>
-            <div class="mt-2 text-slate-300">Parcels Delivered</div>
-          </div>
-          <div class="reveal p-6 rounded-xl bg-slate-800/50">
-            <div class="text-3xl font-extrabold text-amber-300" data-target="173">0</div>
-            <div class="mt-2 text-slate-300">Employees</div>
-          </div>
-          <div class="reveal p-6 rounded-xl bg-slate-800/50">
-            <div class="text-3xl font-extrabold text-amber-300" data-target="4000">0</div>
-            <div class="mt-2 text-slate-300">Happy Customers</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="why-choose" class="py-16">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">Why Choose Trackship</h2>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="reveal-left p-6 rounded-xl bg-slate-800/50">
-            <h4 class="font-semibold text-amber-300">Tech-First</h4>
-            <p class="mt-2 text-slate-300">APIs, tracking and dashboards to keep you informed.</p>
-          </div>
-          <div class="reveal p-6 rounded-xl bg-slate-800/50">
-            <h4 class="font-semibold text-amber-300">Local Presence</h4>
-            <p class="mt-2 text-slate-300">City-level operations and partner network for last-mile reliability.</p>
-          </div>
-          <div class="reveal-right p-6 rounded-xl bg-slate-800/50">
-            <h4 class="font-semibold text-amber-300">Affordable</h4>
-            <p class="mt-2 text-slate-300">Competitive pricing with SLAs and transparent billing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline -->
-    <section id="timeline" class="py-16 bg-slate-900/10">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">Our Timeline</h2>
-        <div class="relative mt-10">
-          <div class="border-l border-white/10 absolute left-1/2 transform -translate-x-1/2 h-full"></div>
-          <div class="space-y-8">
-            <div class="timeline-item reveal-left md:pl-0 pl-6 md:pr-6">
-              <div class="md:w-1/2 md:ml-auto bg-slate-800/40 p-6 rounded-xl">
-                <h4 class="font-semibold">2024 — Founded</h4>
-                <p class="mt-2 text-slate-300">Trackship begins as a local courier point and quickly expands services.</p>
-              </div>
-            </div>
-
-            <div class="timeline-item reveal-right md:pr-0 pr-6 md:pl-6">
-              <div class="md:w-1/2 bg-slate-800/40 p-6 rounded-xl">
-                <h4 class="font-semibold">2025 — Tech Launch</h4>
-                <p class="mt-2 text-slate-300">Introduction of tracking APIs and merchant dashboards.</p>
-              </div>
-            </div>
-
-            <div class="timeline-item reveal-left md:pl-0 pl-6 md:pr-6">
-              <div class="md:w-1/2 md:ml-auto bg-slate-800/40 p-6 rounded-xl">
-                <h4 class="font-semibold">2026 — Scaling</h4>
-                <p class="mt-2 text-slate-300">Rapid expansion across major cities with franchise partners.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Offices -->
-    <section id="offices" class="py-16">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">Our Offices</h2>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-xl bg-slate-800/50 reveal">
-            <h4 class="font-semibold">Mumbai (HQ)</h4>
-            <p class="mt-2 text-slate-300">Malad West, Mumbai, Maharashtra</p>
-          </div>
-          <div class="p-6 rounded-xl bg-slate-800/50 reveal">
-            <h4 class="font-semibold">Delhi</h4>
-            <p class="mt-2 text-slate-300">NCR region</p>
-          </div>
-          <div class="p-6 rounded-xl bg-slate-800/50 reveal">
-            <h4 class="font-semibold">Bengaluru</h4>
-            <p class="mt-2 text-slate-300">Tech & operations hub</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16 bg-gradient-to-b from-transparent to-slate-900/5">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">Frequently Asked Questions</h2>
-        <div class="mt-6 space-y-4">
-          <details class="bg-slate-800/50 p-4 rounded reveal">
-            <summary class="font-medium">How do I become a franchise partner?</summary>
-            <p class="mt-2 text-slate-300">Fill the partnership form and our team will reach out to discuss the process and requirements.</p>
-          </details>
-
-          <details class="bg-slate-800/50 p-4 rounded reveal-right">
-            <summary class="font-medium">What is the typical delivery time?</summary>
-            <p class="mt-2 text-slate-300">Avg. 24–48 hours depending on city-to-city routes and service level chosen.</p>
-          </details>
-
-          <details class="bg-slate-800/50 p-4 rounded reveal-left">
-            <summary class="font-medium">Do you have API access?</summary>
-            <p class="mt-2 text-slate-300">Yes — we provide tracking and shipping APIs for merchants and platforms.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="py-16">
-      <div class="max-w-4xl mx-auto px-4 lg:px-8 text-center rounded-xl bg-gradient-to-r from-amber-400/10 to-amber-300/6 p-8 reveal">
-        <h3 class="text-2xl font-bold">Ready to grow with Trackship?</h3>
-        <p class="mt-3 text-slate-300">Contact our partnership team for franchise and B2B solutions.</p>
-        <div class="mt-6">
-          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 font-semibold shadow-lg">Contact Us <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partners -->
-    <section id="partners" class="py-16 bg-slate-900/10">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8">
-        <h2 class="text-2xl font-bold reveal">Our Partners</h2>
-        <div class="mt-6 grid grid-cols-2 md:grid-cols-6 gap-4 items-center">
-          <!-- placeholder logos -->
-          <img src="https://via.placeholder.com/120x60?text=Client" alt="client" class="opacity-80 filter grayscale reveal">
-          <img src="https://via.placeholder.com/120x60?text=Client" alt="client" class="opacity-80 filter grayscale reveal-left">
-          <img src="https://via.placeholder.com/120x60?text=Client" alt="client" class="opacity-80 filter grayscale reveal-right">
-          <img src="https://via.placeholder.com/120x60?text=Client" alt="client" class="opacity-80 filter grayscale reveal">
-          <img src="https://via.placeholder.com/120x60?text=Client" alt="client" class="opacity-80 filter grayscale reveal-left">
-          <img src="https://via.placeholder.com/120x60?text=Client" alt="client" class="opacity-80 filter grayscale reveal-right">
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact / Footer CTA section -->
-    <section id="contact" class="py-16">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <div class="reveal">
-          <h2 class="text-2xl font-bold">Get in touch</h2>
-          <p class="mt-2 text-slate-300">Have questions about franchise, partnerships or services? Reach out and we'll reply within one business day.</p>
-
-          <div class="mt-6">
-            <p class="text-slate-300">Phone: <a href="tel:+917400372375" class="text-amber-300">+91 74003 72375</a></p>
-            <p class="text-slate-300 mt-2">Email: <a href="mailto:info@trackshiplogistics.com" class="text-amber-300">info@trackshiplogistics.com</a></p>
-          </div>
-        </div>
-
-        <form class="reveal-right bg-slate-800/40 p-6 rounded-xl" action="#" method="POST">
-          <div class="grid grid-cols-1 gap-4">
-            <input type="text" name="name" placeholder="Your name" class="p-3 rounded bg-slate-900/20 border border-white/5" required>
-            <input type="email" name="email" placeholder="Your email" class="p-3 rounded bg-slate-900/20 border border-white/5" required>
-            <input type="tel" name="phone" placeholder="Phone" class="p-3 rounded bg-slate-900/20 border border-white/5">
-            <textarea name="message" rows="4" placeholder="Message" class="p-3 rounded bg-slate-900/20 border border-white/5"></textarea>
-            <button class="inline-flex items-center gap-2 justify-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 font-semibold">Send Message <i class="fas fa-paper-plane"></i></button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 border-t border-white/5 mt-10">
-    <div class="max-w-6xl mx-auto px-4 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div>
-        <img src="/assets/icons/trackship_48.png" alt="logo" class="w-10 h-10">
-        <p class="mt-3 text-slate-300">Trackship — reliable, local-first logistics for businesses across India.</p>
-      </div>
-
-      <div>
-        <h4 class="font-semibold">Company</h4>
-        <ul class="mt-3 space-y-2 text-sm text-slate-300">
-          <li><a href="/about.html" class="hover:text-amber-300">About</a></li>
-          <li><a href="/service.html" class="hover:text-amber-300">Services</a></li>
-          <li><a href="#partners" class="hover:text-amber-300">Partners</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold">Support</h4>
-        <ul class="mt-3 space-y-2 text-sm text-slate-300">
-          <li><a href="#contact" class="hover:text-amber-300">Contact</a></li>
-          <li><a href="#faq" class="hover:text-amber-300">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold">Address</h4>
-        <p class="mt-3 text-slate-300 text-sm">Malad (West), Mumbai<br>India - 400064</p>
-      </div>
+<!-- Mobile Panel -->
+<div class="mobile-panel" id="mobilePanel">
+    <div class="close-btn" id="closePanel">
+        <i class="fas fa-times"></i>
     </div>
 
-    <div class="border-t border-white/5 py-6">
-      <div class="max-w-6xl mx-auto px-4 lg:px-8 flex items-center justify-between text-sm text-slate-400">
-        <div>© 2025 Trackship. All rights reserved.</div>
-        <div>Designed by <a href="https://itzadarsh.co.in" class="text-amber-300">ITZ Adarsh</a></div>
-      </div>
-    </div>
-  </footer>
+    <div class="panel-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
 
-  <!-- External JS -->
-  <script src="about.js"></script>
+        <!-- SERVICES MAIN DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">
+                Services <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu" id="servicesMenu">
+                <a href="#">Courier Point</a>
+                <a href="#">Logistics</a>
+
+                <!-- B2B NESTED DROPDOWN -->
+                <div class="dropdown nested-dropdown">
+                    <button class="nested-toggle" aria-expanded="false" aria-controls="b2bMenu">
+                        B2B <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="nested-menu" id="b2bMenu">
+                        <a href="#">B2B Seller</a>
+                        <a href="#">B2B Franchise</a>
+                        <a href="#">B2B Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- WhatsApp Floater -->
+<a href="https://wa.me/917400372375?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Lottie Import -->
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <dotlottie-wc 
+        src="https://lottie.host/3cd4febc-ded7-4afe-81d8-543f8601ab79/McOjHx6LtG.lottie" 
+        style="width: 200px;height: 200px" autoplay loop>
+    </dotlottie-wc>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="reveal-left">About Trackship Logistics</h1>
+            <h2 class="reveal-right">Pioneering Excellence in Indian Logistics & Delivery Solutions</h2>
+            <p class="reveal">Trackship Logistics stands at the forefront of India's logistics revolution, combining cutting-edge technology with unparalleled service to deliver exceptional courier, B2B, and franchise solutions across the nation. Our journey from a humble startup to a trusted logistics partner reflects our unwavering commitment to innovation, reliability, and customer satisfaction.</p>
+            <div class="hero-buttons reveal">
+                <a href="#our-mission" class="btn btn-primary">
+                    <span>Discover Our Story</span>
+                    <span class="btn-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                    <span class="btn-icon">
+                        <i class="fas fa-phone"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="about-section" id="our-story">
+    <div class="container">
+        <div class="about-container">
+            <div class="about-images reveal">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Our Logistics Team" class="about-image-main">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8f0cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Delivery Operations" class="about-image-secondary">
+            </div>
+            
+            <div class="about-content">
+                <h2 class="about-title reveal-left hover-icon-left">Our Story: From Vision to Reality</h2>
+                <p class="about-text reveal-right">Founded in 2019, Trackship Logistics emerged from a simple yet powerful vision: to transform India's logistics landscape through innovation, technology, and unwavering commitment to customer success. What started as a small team of passionate individuals has grown into a nationwide network serving thousands of businesses and millions of customers across 28 states.</p>
+                <div class="achievement-highlights reveal">
+                    <div class="highlight-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>5+ Years of Excellence</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>28 States & 750+ Cities</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-truck"></i>
+                        <span>5000+ Daily Deliveries</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision-section">
+    <div class="container">
+        <h2 class="section-title reveal">Our Mission, Vision & Values</h2>
+        <p class="section-subtitle reveal">Guiding Principles That Drive Our Excellence</p>
+        
+        <div class="mission-vision-grid">
+            <div class="vision-card reveal">
+                <div class="card-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To become India's most trusted and innovative logistics partner, leveraging cutting-edge technology to create seamless delivery experiences that empower businesses and delight customers. We envision a future where every delivery is predictable, transparent, and perfectly timed – setting new standards for the logistics industry in India and beyond.</p>
+                <ul>
+                    <li>Pioneering sustainable logistics solutions</li>
+                    <li>Expanding our reach to every pin code in India</li>
+                    <li>Becoming the benchmark for delivery excellence</li>
+                </ul>
+            </div>
+            
+            <div class="mission-card reveal">
+                <div class="card-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To provide exceptional logistics solutions through innovative technology, robust infrastructure, and customer-centric approaches. We are committed to bridging the gap between businesses and their customers by ensuring reliable, fast, and transparent delivery services that exceed expectations and drive growth for our partners.</p>
+                <ul>
+                    <li>Delivering 100% customer satisfaction</li>
+                    <li>Empowering entrepreneurs through franchise opportunities</li>
+                    <li>Continuous innovation in logistics technology</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="values-grid">
+            <h3 class="values-title reveal">Core Values That Define Us</h3>
+            
+            <div class="values-row">
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Integrity</h4>
+                    <p>We conduct business with honesty and transparency, building trust through consistent ethical practices and accountable actions.</p>
+                </div>
+                
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>We continuously push boundaries, embracing new technologies and creative solutions to revolutionize logistics and delivery experiences.</p>
+                </div>
+            </div>
+            
+            <div class="values-row">
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Customer Obsession</h4>
+                    <p>Our customers are at the heart of everything we do. We go above and beyond to understand and exceed their expectations.</p>
+                </div>
+                
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Excellence</h4>
+                    <p>We strive for perfection in every aspect of our operations, setting industry benchmarks and continuously improving our standards.</p>
+                </div>
+            </div>
+            
+            <div class="values-row">
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Sustainability</h4>
+                    <p>We are committed to environmentally responsible practices, minimizing our carbon footprint while maximizing efficiency and service quality.</p>
+                </div>
+                
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Quality Assurance</h4>
+                    <p>We maintain the highest standards in all our services, ensuring every delivery meets our rigorous quality criteria and customer requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Company Timeline Section -->
+<section class="timeline-section">
+    <div class="container">
+        <h2 class="section-title reveal">Our Journey Through Time</h2>
+        <p class="section-subtitle reveal">Milestones That Marked Our Growth</p>
+        
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2018</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>The Beginning</h3>
+                    <p>Trackship Logistics founded in Mumbai with a small team of 5 members. Started operations with 2 delivery vans serving local businesses in Mumbai Metropolitan Region.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2019</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>First Major Expansion</h3>
+                    <p>Expanded operations to 5 major cities - Delhi, Bangalore, Chennai, Kolkata, and Hyderabad. Launched our proprietary tracking system and introduced B2B delivery solutions.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2020</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Technology Leap</h3>
+                    <p>Deployed AI-powered route optimization system, reducing delivery times by 30%. Despite pandemic challenges, successfully served 500+ COVID-essential deliveries daily.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2021</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Franchise Launch</h3>
+                    <p>Launched our franchise program, establishing 25 franchise points across India. Introduced electric delivery vehicles in metro cities, beginning our sustainability journey.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2022</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Reaching 50+ Cities</h3>
+                    <p>Achieved milestone of 50,000+ daily deliveries. Launched B2B Seller Platform and integrated with major e-commerce platforms. Received "Fastest Growing Logistics Company" award.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2023</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>National Leadership</h3>
+                    <p>Expanded to 750+ cities with 75+ franchise partners. Launched advanced analytics dashboard for clients. Achieved ISO 9001:2015 certification for quality management.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="year">2024</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Innovation & Excellence</h3>
+                    <p>Introduced drone delivery trials in selected zones. Launched mobile app with real-time tracking features. Reached 500+ team members and set new industry standards for service excellence.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements-section">
+    <div class="container">
+        <h2 class="section-title reveal">Our Achievements & Recognition</h2>
+        <p class="section-subtitle reveal">Celebrating Excellence in Logistics</p>
+        
+        <div class="achievements-grid">
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Industry Awards</h3>
+                <ul>
+                    <li>Best Logistics Startup 2020 - Indian Business Awards</li>
+                    <li>Excellence in Supply Chain Innovation 2021</li>
+                    <li>Customer Choice Award for Most Reliable Courier 2022</li>
+                    <li>Green Logistics Initiative of the Year 2023</li>
+                    <li>Top 10 Logistics Companies in India 2024</li>
+                </ul>
+            </div>
+            
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Certifications</h3>
+                <ul>
+                    <li>ISO 9001:2015 Quality Management</li>
+                    <li>ISO 14001:2015 Environmental Management</li>
+                    <li>OHSAS 18001:2007 Occupational Health & Safety</li>
+                    <li>IATA Certified for International Shipping</li>
+                    <li>GST Compliant with AAA Credit Rating</li>
+                </ul>
+            </div>
+            
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Strategic Partnerships</h3>
+                <ul>
+                    <li>Official Logistics Partner for Major E-commerce Platforms</li>
+                    <li>Collaboration with Leading Retail Chains</li>
+                    <li>Technology Partnership with Cloud Service Providers</li>
+                    <li>Alliance with Electric Vehicle Manufacturers</li>
+                    <li>Supply Chain Integration with 500+ Businesses</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="stats-counter">
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="50000">0</div>
+                <div class="stat-label">Daily Deliveries</div>
+                <i class="fas fa-box"></i>
+            </div>
+            
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="750">0</div>
+                <div class="stat-label">Cities Served</div>
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="99">0</div>
+                <div class="stat-label">Customer Satisfaction %</div>
+                <i class="fas fa-smile"></i>
+            </div>
+            
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">Support Hours</div>
+                <i class="fas fa-headset"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Corporate Social Responsibility Section -->
+<section class="csr-section">
+    <div class="container">
+        <h2 class="section-title reveal">Making a Difference Beyond Business</h2>
+        <p class="section-subtitle reveal">Our Commitment to Social Responsibility</p>
+        
+        <div class="csr-content">
+            <div class="csr-text reveal">
+                <p>At Trackship Logistics, we believe that true success extends beyond business metrics. Our commitment to corporate social responsibility reflects our dedication to creating positive change in the communities we serve and protecting our environment for future generations.</p>
+                
+                <p>Our Green Logistics Initiative has led to the adoption of 200+ electric delivery vehicles in metro cities, reducing our carbon footprint by 40% over the past two years. We've implemented paperless billing systems and optimized route planning to minimize fuel consumption, setting new standards for sustainable logistics in India.</p>
+                
+                <p>Through our Education Support Program, we've provided educational assistance to over 500 underprivileged students across India. Our Skill Development Initiative offers free logistics and delivery training to youth from economically weaker sections, creating employment opportunities and empowering communities.</p>
+                
+                <p>During natural disasters and emergencies, our Rapid Response Team provides free delivery services for essential supplies. We've partnered with NGOs and government agencies to ensure critical reach, including medical supplies during COVID-19, relief materials during floods, and educational materials in remote areas.</p>
+            </div>
+            
+            <div class="csr-initiatives">
+                <div class="initiative-card reveal">
+                    <div class="initiative-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Green Logistics</h4>
+                    <p>200+ EV vehicles, 40% reduced emissions, paperless operations</p>
+                </div>
+                
+                <div class="initiative-card reveal">
+                    <div class="initiative-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Education Support</h4>
+                    <p>500+ students supported, scholarship programs, school infrastructure development</p>
+                </div>
+                
+                <div class="initiative-card reveal">
+                    <div class="initiative-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4>Skill Development</h4>
+                    <p>Free training programs, 1000+ youth trained, employment generation</p>
+                </div>
+                
+                <div class="initiative-card reveal">
+                    <div class="initiative-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>Emergency Response</h4>
+                    <p>Crisis relief support, essential supplies delivery, disaster management</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2 class="cta-title reveal">Join the Trackship Success Story</h2>
+        <p class="cta-text reveal">Whether you're a business looking for reliable logistics solutions, an entrepreneur seeking franchise opportunities, or a professional wanting to join our team, Trackship welcomes you to be part of our growth journey.</p>
+        
+        <div class="cta-buttons reveal">
+            <a href="service.html" class="btn btn-secondary">
+                <span>Explore Opportunities</span>
+                <span class="btn-icon">
+                    <i class="fas fa-rocket"></i>
+                </span>
+            </a>
+            <a href="https://wa.me/919136601185?text=Hi%20Trackship" class="btn btn-secondary" >
+                <span>Start Conversation</span>
+                <span class="btn-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" style="justify-content: center; align-items: center; height: 44px;">
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <div class="contact-info reveal">
+            <h2 class="contact-title reveal-left">Get In Touch</h2>
+            <p class="contact-text reveal-right">Have questions about Trackship? Want to partner with us? We're here to help. Reach out to our team for any inquiries, support, or to discuss how we can work together.</p>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-content">
+                    <h4>Headquarters</h4>
+                    <p>Office No 411, 4th Floor, Lotus Business Park Premises,<br>Near HP Petrol Pump, SV Road, Malad West,<br>Mumbai, India - 400064</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-content">
+                    <h4>Phone Support</h4>
+                    <p>+91 91366 01185<br>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-content">
+                    <h4>Email Us</h4>
+                    <p>info@trackshiplogistics.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-content">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: Emergency Support Only</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form reveal">
+            <h3>Send Us a Message</h3>
+            <form id="aboutContactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="contactName" name="name" required>
+                        <label for="contactName" class="form-label">Your Name</label>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="contactEmail" name="email" required>
+                        <label for="contactEmail" class="form-label">Email Address</label>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="contactPhone" name="phone" required>
+                        <label for="contactPhone" class="form-label">Phone Number</label>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="inquiryType" name="inquiry" required>
+                            <option value=""></option>
+                            <option value="franchise">Franchise Inquiry</option>
+                            <option value="partnership">Business Partnership</option>
+                            <option value="services">Service Information</option>
+                            <option value="support">Customer Support</option>
+                            <option value="careers">Career Opportunities</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label class="form-label">Inquiry Type</label>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <textarea class="form-message" id="contactMessage" name="message" required></textarea>
+                    <label class="form-label">Your Message</label>
+                    <span class="error-message"></span>
+                </div>
+                
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- moving-bike -->
+<section class="india-hero">
+    <div class="road-layer">
+        <img src="svg/truck.svg" class="bike bike-right" alt="Delivery Truck">
+        <img src="https://eazyonesources.com/wp-content/uploads/2021/11/bike.png" class="bike bike-left" alt="Delivery Bike">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Trackship</h3>
+                <p>At Trackship, we provide trusted logistics, courier, B2B, and technology services for businesses across India.</p>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="youtube">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="instagram">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                    </a>
+                    <a href="http://wa.me/919136601185?text=Hi%20Trackship" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="whatsapp">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="#">Franchise</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Courier Point</a></li>
+                    <li><a href="#">Logistics Solutions</a></li>
+                    <li><a href="#">B2B Services</a></li>
+                    <li><a href="#">Franchise Opportunities</a></li>
+                    <li><a href="#">Technology Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919136601185">+91 91366 01185</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@trackshiplogistics.com">info@trackshiplogistics.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>411, 4th Floor, Lotus Business Park Premises, Near HP Petrol Pump, SV Road, Malad West, Mumbai, India - 400064</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Trackship Logistics. All rights reserved.</p>
+            <div class="credit">Designed By <a href="https://itzadarsh.co.in" target="_blank" class="developer">ITZ Adarsh</a></div>
+        </div>
+    </div>
+</footer>
+<script>
+    // script.js
+document.addEventListener("DOMContentLoaded", function () {
+    const footer = document.querySelector(".footer");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                footer.classList.add("footer-visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(footer);
+});
+
+// Check if user has visited before and popup logic
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if user has submitted the popup form
+    const hasSubmitted = localStorage.getItem('trackshipPopupSubmitted');
+    
+    // Check if user has closed the popup and when
+    const popupClosedData = localStorage.getItem('trackshipPopupClosed');
+    let hasClosedRecently = false;
+    
+    if (popupClosedData) {
+        const { timestamp } = JSON.parse(popupClosedData);
+        const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
+        hasClosedRecently = (Date.now() - timestamp) < thirtyDaysInMs;
+    }
+    
+    // Show popup if user hasn't submitted and hasn't closed recently
+    if (!hasSubmitted && !hasClosedRecently) {
+        setTimeout(() => {
+            document.getElementById('popupModal').classList.add('active');
+        }, 1000);
+    }
+});
+
+// Popup Modal Controls
+document.getElementById('popupClose').addEventListener('click', function() {
+    document.getElementById('popupModal').classList.remove('active');
+    
+    // Store that user closed the popup with timestamp
+    localStorage.setItem('trackshipPopupClosed', JSON.stringify({
+        timestamp: Date.now()
+    }));
+});
+
+document.getElementById('popupModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.classList.remove('active');
+        
+        // Store that user closed the popup with timestamp
+        localStorage.setItem('trackshipPopupClosed', JSON.stringify({
+            timestamp: Date.now()
+        }));
+    }
+});
+
+// Mobile panel controls
+const hamburger = document.getElementById('hamburger');
+const hamburgerIcon = document.getElementById('hamburgerIcon');
+const mobilePanel = document.getElementById('mobilePanel');
+const closePanel = document.getElementById('closePanel');
+const overlay = document.getElementById('overlay');
+
+// Open Mobile Menu
+hamburger.addEventListener('click', () => {
+    mobilePanel.classList.add('open');
+    overlay.style.display = 'block';
+    overlay.classList.add('visible');
+    hamburger.classList.add('active');
+    
+    // Prevent body scrolling when panel is open
+    document.body.style.overflow = 'hidden';
+});
+
+// Close (from cross button)
+closePanel.addEventListener('click', () => {
+    mobilePanel.classList.remove('open');
+    overlay.style.display = 'none';
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('active');
+    
+    // Restore body scrolling
+    document.body.style.overflow = '';
+});
+
+// Click outside overlay closes menu
+overlay.addEventListener('click', () => {
+    mobilePanel.classList.remove('open');
+    overlay.style.display = 'none';
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('active');
+    
+    // Restore body scrolling
+    document.body.style.overflow = '';
+});
+
+// Desktop Services dropdown
+const desktopDropdown = document.querySelector('.desktop-nav .dropdown');
+const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
+const desktopMenu = desktopDropdown.querySelector('.dropdown-menu');
+
+desktopDropdown.addEventListener('mouseenter', () => {
+    desktopMenu.classList.add('show');
+});
+
+desktopDropdown.addEventListener('mouseleave', () => {
+    desktopMenu.classList.remove('show');
+});
+
+// Nested dropdown hover
+const nestedDropdown = document.querySelector('.desktop-nav .nested-dropdown');
+if (nestedDropdown) {
+    const nestedToggle = nestedDropdown.querySelector('.nested-toggle');
+    const nestedMenu = nestedDropdown.querySelector('.nested-menu');
+
+    nestedDropdown.addEventListener('mouseenter', () => {
+        nestedMenu.classList.add('show');
+    });
+
+    nestedDropdown.addEventListener('mouseleave', () => {
+        nestedMenu.classList.remove('show');
+    });
+}
+
+// Mobile Services dropdown
+const dropdownToggle = document.querySelector('.mobile-panel .dropdown-toggle');
+const dropdownMenu = document.getElementById('servicesMenu');
+
+if (dropdownToggle) {
+    dropdownToggle.addEventListener('click', () => {
+        const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
+
+        dropdownToggle.setAttribute('aria-expanded', !isOpen);
+
+        dropdownMenu.style.maxHeight = isOpen ? "0px" : dropdownMenu.scrollHeight + "px";
+
+        dropdownToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+    });
+}
+
+const nestedToggle = document.querySelector('.nested-toggle');
+const nestedMenu = document.getElementById('b2bMenu');
+
+if (nestedToggle) {
+    nestedToggle.addEventListener('click', () => {
+        const isOpen = nestedToggle.getAttribute('aria-expanded') === 'true';
+
+        nestedToggle.setAttribute('aria-expanded', !isOpen);
+
+        nestedMenu.style.maxHeight = isOpen ? "0px" : nestedMenu.scrollHeight + "px";
+
+        nestedToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
+    });
+}
+
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            mobilePanel.classList.remove('open');
+            overlay.style.display = 'none';
+            overlay.classList.remove('visible');
+            hamburger.classList.remove('active');
+            
+            // Restore body scrolling
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Reveal Animation on Scroll
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    
+    reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem.classList.contains('active');
+
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Toggle current FAQ item
+        if (!isActive) {
+            faqItem.classList.add('active');
+        }
+    });
+});
+
+// Testimonial Slider
+const testimonialTrack = document.getElementById('testimonialsTrack');
+if (testimonialTrack) {
+    let currentSlide = 0;
+    const slideWidth = 380; // card width + gap
+    
+    function goToSlide(slideIndex) {
+        const slides = testimonialTrack.children.length;
+        if (slideIndex >= slides) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = slides - 1;
+        
+        currentSlide = slideIndex;
+        testimonialTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    }
+    
+    // Auto-rotate testimonials
+    let testimonialInterval = setInterval(() => {
+        goToSlide(currentSlide + 1);
+    }, 5000);
+    
+    // Pause on hover
+    testimonialTrack.addEventListener('mouseenter', () => {
+        clearInterval(testimonialInterval);
+    });
+    
+    testimonialTrack.addEventListener('mouseleave', () => {
+        testimonialInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+    });
+    
+    // Enable swipe
+    enableSwipe(testimonialTrack);
+}
+
+// Partners carousel swipe
+const partnersCarousel = document.querySelector('.partners-carousel');
+if (partnersCarousel) {
+    enableSwipe(partnersCarousel);
+}
+
+// Enable swipe functionality
+function enableSwipe(slider) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // Mouse Events
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch Events
+    slider.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchend', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+}
+
+// Counter Animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200;
+
+    counters.forEach(counter => {
+        const animate = () => {
+            const value = +counter.getAttribute('data-target');
+            const data = +counter.innerText;
+            const time = value / speed;
+
+            if (data < value) {
+                counter.innerText = Math.ceil(data + time);
+                setTimeout(animate, 1);
+            } else {
+                counter.innerText = value;
+            }
+        }
+        
+        // Start animation when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animate();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(counter);
+    });
+}
+
+animateCounters();
+
+// Preloader
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+        preloader.classList.add("hide");
+    }, 300);
+});
+
+// Form validation and submission
+function validateForm(form) {
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    let isValid = true;
+
+    inputs.forEach(input => {
+        const formGroup = input.closest('.form-group');
+        const errorMessage = formGroup.querySelector('.error-message');
+
+        if (!input.value.trim()) {
+            formGroup.classList.add('show-error');
+            if (errorMessage) {
+                errorMessage.textContent = 'This field is required';
+            }
+            isValid = false;
+        } else if (input.type === 'email' && !validateEmail(input.value)) {
+            formGroup.classList.add('show-error');
+            if (errorMessage) {
+                errorMessage.textContent = 'Please enter a valid email address';
+            }
+            isValid = false;
+        } else {
+            formGroup.classList.remove('show-error');
+        }
+    });
+
+    return isValid;
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Handle form submissions
+document.getElementById('popupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateForm(this)) {
+        // Store submission in localStorage
+        localStorage.setItem('trackshipPopupSubmitted', 'true');
+        
+        // Show success message
+        const submitBtn = this.querySelector('.form-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.classList.add('loading');
+        
+        // Simulate form submission
+        setTimeout(() => {
+            submitBtn.textContent = 'Success!';
+            submitBtn.classList.remove('loading');
+            submitBtn.classList.add('success');
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('success');
+                
+                // Close popup
+                document.getElementById('popupModal').classList.remove('active');
+            }, 2000);
+        }, 1500);
+    }
+});
+
+document.getElementById('aboutContactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateForm(this)) {
+        const submitBtn = this.querySelector('.form-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.classList.add('loading');
+        
+        // Simulate form submission
+        setTimeout(() => {
+            submitBtn.textContent = 'Message Sent!';
+            submitBtn.classList.remove('loading');
+            submitBtn.classList.add('success');
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('success');
+            }, 2000);
+        }, 1500);
+    }
+});
+
+// Add floating label functionality
+document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(input => {
+    input.addEventListener('focus', () => {
+        const formGroup = input.closest('.form-group');
+        formGroup.classList.add('focused');
+    });
+    
+    input.addEventListener('blur', () => {
+        const formGroup = input.closest('.form-group');
+        if (!input.value) {
+            formGroup.classList.remove('focused');
+        }
+    });
+    
+    // Check initial state
+    if (input.value) {
+        const formGroup = input.closest('.form-group');
+        formGroup.classList.add('focused');
+    }
+});
+
+// Smooth reveal animation for timeline items
+const timelineItems = document.querySelectorAll('.timeline-item');
+const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('active');
+            }, index * 100);
+        }
+    });
+}, { threshold: 0.1 });
+
+timelineItems.forEach(item => timelineObserver.observe(item));
+
+// Add parallax effect to hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroImage = document.querySelector('.hero-image');
+    if (heroImage) {
+        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
+
+// Add hover sound effect (optional)
+function playHoverSound() {
+    // Create and play a subtle hover sound
+    const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjGH0fPTgjMGHm7A7+OZURE');
+    audio.volume = 0.1;
+    audio.play().catch(() => {}); // Ignore errors if autoplay is blocked
+}
+
+// Add hover sound to buttons (optional - uncomment if desired)
+// document.querySelectorAll('.btn, .social-icon').forEach(element => {
+//     element.addEventListener('mouseenter', playHoverSound);
+// });
+
+// Add keyboard navigation support
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        // Close popup if open
+        const popup = document.getElementById('popupModal');
+        if (popup.classList.contains('active')) {
+            popup.classList.remove('active');
+        }
+        
+        // Close mobile menu if open
+        if (mobilePanel.classList.contains('open')) {
+            mobilePanel.classList.remove('open');
+            overlay.style.display = 'none';
+            overlay.classList.remove('visible');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Add lazy loading for images
+const images = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+images.forEach(img => imageObserver.observe(img));
+
+// Add print styles
+window.addEventListener('beforeprint', () => {
+    // Hide non-essential elements before printing
+    document.querySelector('.main-header').style.display = 'none';
+    document.querySelector('.whatsapp-floater').style.display = 'none';
+    document.querySelector('.cta-section').style.display = 'none';
+    document.querySelector('.contact-section').style.display = 'none';
+    document.querySelector('.footer').style.display = 'none';
+});
+
+window.addEventListener('afterprint', () => {
+    // Restore elements after printing
+    document.querySelector('.main-header').style.display = 'flex';
+    document.querySelector('.whatsapp-floater').style.display = 'flex';
+    document.querySelector('.cta-section').style.display = 'block';
+    document.querySelector('.contact-section').style.display = 'block';
+    document.querySelector('.footer').style.display = 'block';
+});
+
+// Track user engagement
+let timeOnPage = 0;
+setInterval(() => {
+    timeOnPage++;
+    
+    // Trigger special event after 30 seconds
+    if (timeOnPage === 30) {
+        console.log('User has been on page for 30 seconds');
+        // Could trigger a special offer or popup here
+    }
+}, 1000);
+
+// Add smooth page transitions
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// Performance optimization - Debounce scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Debounced scroll handler
+const debouncedScroll = debounce(revealOnScroll, 10);
+window.addEventListener('scroll', debouncedScroll);
+
+// Error tracking
+window.addEventListener('error', (e) => {
+    console.error('JavaScript error:', e.error);
+    // Could send error reports to analytics service here
+});
+
+// Service Worker registration for PWA (if needed)
+if ('serviceWorker' in navigator) {
+    // navigator.serviceWorker.register('/sw.js').catch(console.error);
+}
+</script>
 </body>
 </html>
+
