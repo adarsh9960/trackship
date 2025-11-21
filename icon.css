@@ -338,7 +338,7 @@ footer {
    FOOTER MAIN STYLING (Optimized + Clean)
 ----------------------------------------- */
 .footer {
-    background: #042b53 url('india_map.jpg') 
+    background: #042b53 url('india_map.png') 
                center/cover no-repeat;
     color: #ffffff;
     padding: 70px 0 20px;
@@ -3153,3 +3153,4 @@ html, body {
 
 /*hero-section*/
 		/* Reset and Base Styles */
+
