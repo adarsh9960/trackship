@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="icon.css">
+<link rel="stylesheet" href="icon.css" id="icon">
+
 
 <!-- SEO Title -->
 <!-- =============================== -->
@@ -130,6 +131,311 @@
   ]
 }
 </script>
+<style>
+		/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0b4a7a;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff7300;
+}
+
+/* Revolution Slider Container */
+#rev-slider-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+#rev-slider-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#rev-slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slide Styles */
+.rev-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.rev-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rev-slide-image {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.rev-slide-image img {
+    width: 70%;
+    height: 70%;
+    border-radius: 15px;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-right: -60px;
+    
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.rev-slide.active .rev-slide-image img {
+    transform: scale(1.05);
+}
+
+.rev-slide-content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    background-color: #ffffff;
+}
+
+#rev-slider-container h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ff7300;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+#rev-slider-container h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #0b4a7a;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+#rev-slider-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.rev-slider-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #0b4a7a 0%, #0a3a62 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(11, 74, 122, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    align-self: flex-start;
+}
+
+.rev-slider-btn:hover {
+    background: linear-gradient(135deg, #0a3a62 0%, #092a52 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(11, 74, 122, 0.4);
+}
+
+/* Slider Navigation */
+#rev-slider-nav {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    z-index: 10;
+}
+
+.rev-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rev-slider-dot.active {
+    background-color: #ff7300;
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .rev-slide-content {
+        padding: 40px 50px;
+    }
+    
+    #rev-slider-container h1 {
+        font-size: 40px;
+    }
+    
+    #rev-slider-container h2 {
+        font-size: 24px;
+    }
+    
+    #rev-slider-container p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    #rev-slider-container {
+        height: 0;
+        padding-top: 62.23%; /* 368/229 ratio */
+        position: relative;
+    }
+    
+    #rev-slider-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .rev-slide {
+        flex-direction: row;
+    }
+    
+    .rev-slide-image {
+        width: 45%;
+        height: 100%;
+    }
+    
+    .rev-slide-content {
+        width: 55%;
+        height: 100%;
+        padding: 20px;
+        justify-content: center;
+    }
+    
+    #rev-slider-container h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    #rev-slider-container h2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    #rev-slider-container p {
+        font-size: 12px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    
+    .rev-slider-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    #rev-slider-nav {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .rev-slider-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rev-slide-content {
+        padding: 15px;
+    }
+    
+    #rev-slider-container h1 {
+        font-size: 16px;
+    }
+    
+    #rev-slider-container h2 {
+        font-size: 12px;
+    }
+    
+    #rev-slider-container p {
+        font-size: 11px;
+    }
+    
+    .rev-slider-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+	</style>
+
 </head>
 <body>
 <!-- Popup Modal -->
@@ -330,23 +636,62 @@
         style="width: 200px;height: 200px" autoplay loop>
     </dotlottie-wc>
 </div>
+<br>
+    <br>
+    <br>
+    <br>
+    <div id="rev-slider-container">
+        <div id="rev-slider-wrapper">
+            <div id="rev-slides-container">
+                <!-- Slide 1 -->
+                <div class="rev-slide" id="rev-slide-1">
+                    <div class="rev-slide-image">
+                        <img src="tech.jpg" alt="Shipping Logistics">
+                    </div>
+                    <div class="rev-slide-content">
+                        <h1>Global Shipping Solutions</h1>
+                        <h2>Connecting Your Business Worldwide</h2>
+                        <p>Experience seamless international shipping with our comprehensive logistics network. We deliver your cargo safely and efficiently across continents.</p>
+                        <button class="rev-slider-btn">Learn More</button>
+                    </div>
+                </div>
 
-<section class="orb-hero">
-    <div class="orb-wrapper">
-        <img src="WebP/assets.png" class="orb-bg" alt="Orb Background">
+                <!-- Slide 2 -->
+                <div class="rev-slide" id="rev-slide-2">
+                    <div class="rev-slide-image">
+                        <img src="growth.jpg" alt="Transport Services">
+                    </div>
+                    <div class="rev-slide-content">
+                        <h1>Efficient Transport</h1>
+                        <h2>Advanced Fleet Management</h2>
+                        <p>Our state-of-the-art transport solutions ensure your goods reach their destination on time. With real-time tracking and optimized routes, we guarantee reliability.</p>
+                        <button class="rev-slider-btn">Our Services</button>
+                    </div>
+                </div>
 
-        <!-- Floating Person PNG -->
-        <img src="delivery-boy.png" class="orb-person" alt="Person">
+                <!-- Slide 3 -->
+                <div class="rev-slide" id="rev-slide-3">
+                    <div class="rev-slide-image">
+                        <img src="smart-warehouse.jpg" alt="Warehousing Solutions">
+                    </div>
+                    <div class="rev-slide-content">
+                        <h1>Smart Warehousing</h1>
+                        <h2>Optimized Storage Solutions</h2>
+                        <p>Our strategically located warehouses provide secure storage and efficient inventory management. Reduce costs and improve delivery times with our warehousing expertise.</p>
+                        <button class="rev-slider-btn">Get Started</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div id="rev-slider-nav">
+                <div class="rev-slider-dot active" data-slide="1"></div>
+                <div class="rev-slider-dot" data-slide="2"></div>
+                <div class="rev-slider-dot" data-slide="3"></div>
+            </div>
+        </div>
     </div>
-
-    <div class="hero-content">
-        <h1>Delivering Excellence<br><span>Every Day</span></h1>
-        <p>Smart logistics & technology solutions to grow your business.</p>
-
-        <a href="service.html" class="hero-btn">Explore Services</a>
-    </div>
-</section>
-
+    <br>
 
 <!-- About Section -->
 <section class="about-section" id="about">
@@ -354,8 +699,8 @@
     <div class="container">
         <div class="about-container">
             <div class="about-images reveal">
-                <img src="https://www.shutterstock.com/image-photo/semi-trailer-trucks-containers-cargo-600nw-2456717979.jpg" alt="Logistics Team" class="about-image-main">
-                <img src="/growth.jpg" alt="Package Delivery" class="about-image-secondary">
+                <img src="about-trackship.png" alt="Logistics Team" class="about-image-main">
+                
             </div>
             
             <div class="about-content ">
@@ -457,9 +802,6 @@
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-            
-           
-            
             <div class="service-card reveal">
                 <div class="service-icon">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/11/b2b.png" alt="B2B services" style="height: 100px;width: 100px;">
@@ -486,7 +828,7 @@
                 <div class="features-list">
                     <div class="feature-item reveal reveal-left">
     <div class="feature-icon">
-        <img src="https://instalogistic.com/assets/img/icon/money.svg" alt="Feature Icon">
+        <img src="svg/money.svg" alt="Feature Icon">
     </div>
     <div class="feature-content reveal-right">
         <h4 class="reveal-left">Innovative Solutions</h4>
@@ -497,7 +839,7 @@
                     
                     <div class="feature-item reveal reveal-left">
                         <div class="feature-icon">
-        <img src="https://instalogistic.com/assets/img/icon/team.svg" alt="Feature Icon">
+        <img src="svg/team.svg" alt="Feature Icon">
     </div>
                         <div class="feature-content reveal-right">
                             <h4 class="reveal-left">Customer Focused</h4>
@@ -507,7 +849,7 @@
                     
                     <div class="feature-item reveal reveal-left">
                         <div class="feature-icon">
-        <img src="https://instalogistic.com/assets/img/icon/certified.svg" alt="Feature Icon">
+        <img src="svg/certified.svg" alt="Feature Icon">
     </div>
                         <div class="feature-content reveal-right">
                             <h4 class="reveal-left">End-to-End Support</h4>
@@ -517,7 +859,7 @@
                     
                     <div class="feature-item reveal reveal-left">
                         <div class="feature-icon">
-        <img src="https://instalogistic.com/assets/img/icon/certified.svg" alt="Feature Icon">
+        <img src="svg/certified.svg" alt="Feature Icon">
     </div>
                         <div class="feature-content reveal-right">
                             <h4 class="reveal-left">Efficient Operations</h4>
@@ -595,35 +937,47 @@
 
 <!-- Stats Section -->
 <section class="stats-section">
-    <div class="container">
-        
-        <h2 class="section-title reveal reveal-left"> Our Skillfulness</h2>
-        <p class="section-subtitle reveal reveal-right">A glimpse of our operations and team</p>
-        
-        <div class="stats-container">
-            
-            <div class="stat-card reveal reveal-left">
-                <div class="stat-number" data-target="6">0</div>
-                <div class="stat-label">Years of Experience</div>
+    <div class="stats-wrapper">
+
+        <div class="stat-box reveal">
+            <div class="stat-icon">
+                <img src="svg/warehouse.svg" alt="">
             </div>
+            <span class="plus-data">+</span>
+            <div class="stat-value" data-target="77">0</div>
             
-            <div class="stat-card reveal">
-                <div class="stat-number" data-target="80899">0</div>
-                <div class="stat-label">Parcels Delivered</div>
-            </div>
-            
-            <div class="stat-card reveal">
-                <div class="stat-number" data-target="173">0</div>
-                <div class="stat-label">No. of Employees</div>
-            </div>
-            
-            <div class="stat-card reveal reveal-right">
-                <div class="stat-number" data-target="4000">0</div>
-                <div class="stat-label">Happy Customers</div>
-            </div>
+            <p class="stat-text">Franchise</p>
         </div>
+
+        <div class="stat-box reveal">
+            <div class="stat-icon">
+                <img src="svg/delivery.svg" alt="">
+            </div>
+            <div class="stat-value" data-target="50000">0</div>
+            
+            <p class="stat-text">Parcel Delivered</p>
+        </div>
+
+        <div class="stat-box reveal">
+            <div class="stat-icon">
+                <img src="svg/award.svg" alt="">
+            </div>
+            <div class="stat-value" data-target="5">0</div>
+            <p class="stat-text">Awards Achieved</p>
+        </div>
+
+        <div class="stat-box reveal">
+            <div class="stat-icon">
+                <img src="svg/staff.svg" alt="">
+            </div>
+            <div class="stat-value" data-target="6">0</div>
+            <span class="plus">+</span>
+            <p class="stat-text">Years Experience</p>
+        </div>
+
     </div>
 </section>
+
 <section class="cities-contact-section" id="citiesSection">
     <div class="container">
         
@@ -686,44 +1040,6 @@
 
     </div>
 </section>
-
-<!-- How It Works Section -->
-<section class="how-it-works-section">
-    <div class="container">
-        <h2 class="section-title reveal reveal-left">How It Works</h2>
-        <p class="section-subtitle reveal reveal-right">Simple steps to get started with Trackship</p>
-
-        <div class="steps-container">
-
-            <div class="step-card reveal-left">
-                <div class="step-number">01</div>
-                <h3 class="step-title">Register</h3>
-                
-            </div>
-
-            <div class="step-card reveal">
-                <div class="step-number">02</div>
-                <h3 class="step-title">Choose Service</h3>
-                
-            </div>
-
-            <div class="step-card reveal">
-                <div class="step-number">03</div>
-                <h3 class="step-title">Provide Details</h3>
-                
-            </div>
-
-            <div class="step-card reveal-right">
-                <div class="step-number">04</div>
-                <h3 class="step-title">Track & Receive</h3>
-               
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
 <!-- FAQ Section -->
 <section class="faq-section">
     <div class="container">
@@ -914,28 +1230,28 @@
             </p>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/OOjs_UI_icon_mapPin.svg" alt="locations"></div>
+                <div class="contact-icon"><img src="svg/OOjs_UI_icon_mapPin.svg" alt="locations"></div>
                 <div class="contact-content">
                     <h4>Address</h4>
-                    <p>Office No 411, 4th Floor, Lotus Business Park Premises,<br>
+                    <p class="pclass">Office No 411, 4th Floor, Lotus Business Park Premises,<br>
             Near HP Petrol Pump, SV Road, Malad West,<br>
             Mumbai, India - 400064</p>
                 </div>
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Telephone_receiver.svg" alt="call-now" style="width: 20px; height: auto;"></div>
+                <div class="contact-icon"><img src="svg/Telephone_receiver.svg" alt="call-now" style="width: 20px; height: auto;"></div>
                 <div class="contact-content">
                     <h4>Phone</h4>
-                    <p>+91 91366 01185</p>
+                    <p class="pclass">+91 91366 01185</p>
                 </div>
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/2674096_object_email_web_essential_icon.svg" alt="email" style="width: 20px; height: auto;"></div>
+                <div class="contact-icon"><img src="svg/2674096_object_email_web_essential_icon.svg" alt="email" style="width: 20px; height: auto;"></div>
                 <div class="contact-content">
                     <h4>Email</h4>
-                    <p>info@trackshiplogistics.com</p>
+                    <p class="pclass">info@trackshiplogistics.com</p>
                 </div>
             </div>
 
@@ -1029,20 +1345,16 @@
 
     </div>
 </section>
-
-<!-- Moving Bikes Section -->
-<section class="moving-bikes-section">
-    <img src="road.png" alt="City Background" class="bikes-background">
-    <div class="bikes-overlay"></div>
-    
-    <div class="bikes-container">
-        <img src="//itzadarsh.co.in/demo/truck.svg" alt="Delivery Bike" class="truck">
-        <img src="/wp-content/uploads/2021/11/bike-2.png" alt="Delivery Bike" class="bike bike-2">
-
+<!-- moving-bike -->
+<section class="india-hero">
+    <div class="road-layer">
+        <img src="truck.svg" class="bike bike-right" alt="">
+        <img src="https://eazyonesources.com/wp-content/uploads/2021/11/bike.png" class="bike bike-left" alt="">
     </div>
 </section>
 <!-- Footer -->
 <footer class="footer">
+    
     <div class="container">
         <div class="footer-container">
             <div class="footer-column">
@@ -1051,18 +1363,19 @@
                 
                 <div class="social-icons">
                     <a href="#" class="social-icon">
-                        <i class="fab fa-facebook"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
                     </a>
                     <a href="#" class="social-icon">
-                        <i class="fab fa-instagram"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
                     </a>
                     <a href="#" class="social-icon">
-                        <i class="fab fa-whatsapp"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
                     </a>
                     <a href="#" class="social-icon">
-                        <i class="fab fa-youtube"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
                     </a>
                 </div>
+                
             </div>
             
             <div class="footer-column">
@@ -1071,9 +1384,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="service.html">Services</a></li>
-                    <li><a href="#why-choose">Why Choose Us</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Careers</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                 </ul>
@@ -1090,42 +1400,33 @@
             </div>
             
             <div class="footer-column contact-box">
-
-    <div class="contact-item">
-        <div class="icon-circle">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-
-        <div class="contact-content">
-            <h4>OUR OFFICE</h4>
-            <p>Trackship Courier & Logistics Company</p>
-            <p>Office No 411, 4th Floor, Lotus Business Park Premises,<br>
-            Near HP Petrol Pump, SV Road, Malad West,<br>
-            Mumbai, India - 400064</p>
-        </div>
-    </div>
-
-    <div class="contact-item">
-        <div class="icon-circle">
+                <div class="footer-column contact-box">
+    <h3>Contact Us</h3>
+    
+    <ul class="footer-links contact-details">
+        <li>
             <i class="fas fa-phone"></i>
-        </div>
+            <a href="tel:+919136601185">+91 91366 01185</a>
+        </li>
 
-        <div class="contact-content">
-            <h4>SUPPORT 24/7</h4>
-            <p>+91 91366 01185</p>
-        </div>
-    </div>
-
-    <div class="contact-item">
-        <div class="icon-circle">
+        <li>
             <i class="fas fa-envelope"></i>
-        </div>
+            <a href="mailto:info@trackshiplogistics.com">info@trackshiplogistics.com</a>
+        </li>
 
-        <div class="contact-content">
-            <h4>E-MAIL US</h4>
-            <p>info@trackshiplogistics.com</p>
-        </div>
-    </div>
+        <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>411, 4th Floor, Lotus Business Park Premises,
+Near HP Petrol Pump, SV Road, Malad West,
+Mumbai, India - 400064</span>
+        </li>
+
+        <li>
+            <i class="fas fa-clock"></i>
+            <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+        </li>
+    </ul>
+</div>
 
 </div>
 
@@ -1139,5 +1440,264 @@
 </footer>
 <script src="script.js"></script>
 <script src="form.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const counters = document.querySelectorAll(".stat-value");
+
+    counters.forEach(counter => {
+        const animate = () => {
+            const target = +counter.getAttribute("data-target");
+            const current = +counter.innerText;
+            const speed = 100; // animation speed
+
+            if (current < target) {
+                counter.innerText = Math.ceil(current + target / 150);
+                setTimeout(animate, speed);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        animate();
+    });
+
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Slider elements
+    const slides = document.querySelectorAll('.rev-slide');
+    const dots = document.querySelectorAll('.rev-slider-dot');
+    const sliderContainer = document.getElementById('rev-slider-container');
+    let currentSlide = 0;
+    let slideInterval;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+    
+    // Initialize slider
+    function initSlider() {
+        // Set first slide as active
+        slides[0].classList.add('active');
+        dots[0].classList.add('active');
+        
+        // Animate first slide content
+        animateSlideContent(0);
+        
+        // Start auto-slide
+        startAutoSlide();
+        
+        // Add event listeners
+        setupEventListeners();
+    }
+    
+    // Setup all event listeners
+    function setupEventListeners() {
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Pause on hover (desktop)
+        sliderContainer.addEventListener('mouseenter', pauseAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+        
+        // Touch events for mobile
+        sliderContainer.addEventListener('touchstart', touchStart);
+        sliderContainer.addEventListener('touchmove', touchMove);
+        sliderContainer.addEventListener('touchend', touchEnd);
+        
+        // Mouse events for desktop drag
+        sliderContainer.addEventListener('mousedown', dragStart);
+        sliderContainer.addEventListener('mousemove', dragMove);
+        sliderContainer.addEventListener('mouseup', dragEnd);
+        sliderContainer.addEventListener('mouseleave', dragEnd);
+        
+        // Prevent context menu on long press
+        sliderContainer.addEventListener('contextmenu', e => e.preventDefault());
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        // Remove active class from current slide and dot
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        
+        // Set new slide index
+        currentSlide = index;
+        
+        // Add active class to new slide and dot
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+        
+        // Animate slide content
+        animateSlideContent(currentSlide);
+        
+        // Reset auto-slide timer
+        resetAutoSlide();
+    }
+    
+    // Animate slide content with staggered animations
+    function animateSlideContent(index) {
+        const slide = slides[index];
+        const h1 = slide.querySelector('h1');
+        const h2 = slide.querySelector('h2');
+        const p = slide.querySelector('p');
+        const btn = slide.querySelector('.rev-slider-btn');
+        
+        // Reset animation state
+        gsap.set([h1, h2, p, btn], {
+            opacity: 0,
+            y: 30
+        });
+        
+        // Create timeline for staggered animations
+        const tl = gsap.timeline();
+        
+        // Animate elements with stagger
+        tl.to(h1, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        })
+        .to(h2, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.6")
+        .to(p, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.6")
+        .to(btn, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.6");
+    }
+    
+    // Auto-slide functionality
+    function startAutoSlide() {
+        slideInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+    
+    function pauseAutoSlide() {
+        clearInterval(slideInterval);
+    }
+    
+    function resetAutoSlide() {
+        pauseAutoSlide();
+        startAutoSlide();
+    }
+    
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        goToSlide(nextIndex);
+    }
+    
+    function prevSlide() {
+        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        goToSlide(prevIndex);
+    }
+    
+    // Touch events for mobile swipe
+    function touchStart(e) {
+        startPos = getPositionX(e);
+        isDragging = true;
+        animationID = requestAnimationFrame(animation);
+        sliderContainer.style.cursor = 'grabbing';
+    }
+    
+    function touchMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const currentPosition = getPositionX(e);
+        currentTranslate = prevTranslate + currentPosition - startPos;
+    }
+    
+    function touchEnd() {
+        cancelAnimationFrame(animationID);
+        isDragging = false;
+        
+        const movedBy = currentTranslate - prevTranslate;
+        
+        if (movedBy < -100 && currentSlide < slides.length - 1) {
+            nextSlide();
+        } else if (movedBy > 100 && currentSlide > 0) {
+            prevSlide();
+        }
+        
+        setPositionByIndex();
+        sliderContainer.style.cursor = 'grab';
+    }
+    
+    // Mouse events for desktop drag
+    function dragStart(e) {
+        startPos = getPositionX(e);
+        isDragging = true;
+        animationID = requestAnimationFrame(animation);
+        sliderContainer.style.cursor = 'grabbing';
+    }
+    
+    function dragMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const currentPosition = getPositionX(e);
+        currentTranslate = prevTranslate + currentPosition - startPos;
+    }
+    
+    function dragEnd() {
+        cancelAnimationFrame(animationID);
+        isDragging = false;
+        
+        const movedBy = currentTranslate - prevTranslate;
+        
+        if (movedBy < -100 && currentSlide < slides.length - 1) {
+            nextSlide();
+        } else if (movedBy > 100 && currentSlide > 0) {
+            prevSlide();
+        }
+        
+        setPositionByIndex();
+        sliderContainer.style.cursor = 'grab';
+    }
+    
+    // Helper functions
+    function getPositionX(e) {
+        return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    }
+    
+    function animation() {
+        setSliderPosition();
+        if (isDragging) requestAnimationFrame(animation);
+    }
+    
+    function setSliderPosition() {
+        sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    
+    function setPositionByIndex() {
+        currentTranslate = currentSlide * -window.innerWidth;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
+    }
+    
+    // Initialize the slider
+    initSlider();
+});
+	</script>
 </body>
 </html>

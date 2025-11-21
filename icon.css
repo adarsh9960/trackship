@@ -44,7 +44,7 @@ h1::after, h2::after, h4::after, h5::after, h6::after,
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background: #0c5503;
+  background: #ff7300;
   transition: width 0.35s ease;
 }
 
@@ -120,26 +120,12 @@ h4:hover::after, h5:hover::after, h6:hover::after,
 }
 /* Reduce Global Section Padding */
 /* 🔥 Reduce padding for ALL sections EXCEPT Partners Section */
-section:not(.partners-section) {
+section:not(.partners-section,.india-hero, .hero-slider) {
     padding-top: 50px !important;
     padding-bottom: 50px !important;
 }
 
-/* Extra top white space remove in non-partner sections */
-section:not(.partners-section) .container {
-    padding-top: 0 !important;
-}
 
-/* Hero section extra spacing fix */
-.hero-section {
-    padding-top: 20px !important;
-}
-
-/* About Section spacing fix */
-.about-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-}
 
 /* Services Section spacing fix */
 .services-section {
@@ -153,11 +139,7 @@ section:not(.partners-section) .container {
     padding-bottom: 60px !important;
 }
 
-/* Stats Section (ye bhi parallax nahi hai) */
-.stats-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-}
+
 
 /* FAQ */
 .faq-section {
@@ -217,7 +199,7 @@ footer {
 .section-subtitle {
     text-align: center;
     font-size: 17px;
-    color: #4b4b4b;
+    color: #ff7300;
     margin-bottom: 55px;
 }
 
@@ -230,7 +212,7 @@ footer {
 
 /* Main card */
 .step-card {
-    background: linear-gradient(135deg, #ff6f00, #ffa726);
+    background: linear-gradient(135deg, #ff7300, #ff7300);
     border-radius: 20px;
     padding: 40px 30px;
     color: white;
@@ -254,11 +236,11 @@ footer {
     bottom: 12px;
     left: 25px;
 
-    font-size: 70px;             /* big number */
-    font-weight: 800;
+    font-size: 50px;             /* big number */
+    font-weight: 700;
     line-height: 1;
-    color: transparent;          /* no fill */
-    -webkit-text-stroke: 2.5px rgba(255,255,255,0.35);  /* outline */
+    color: #006cb6;          /* no fill */
+    
     font-family: 'Poppins', sans-serif;
 
     opacity: 0.8;
@@ -307,7 +289,7 @@ footer {
     padding-bottom: 12px;        /* underline gap */
     font-size: 20px;
     font-weight: 600;
-    color: #F7931E;
+    color: #ff7300;
     display: inline-block;
     transition: transform 0.35s ease;
 }
@@ -320,7 +302,7 @@ footer {
     top: 50%;
     transform: translateY(-50%) translateX(-10px);
     font-size: 15px;
-    color: #F7931E;
+    color: #ff7300;
     opacity: 0;
     transition: 0.35s ease;
 }
@@ -333,7 +315,7 @@ footer {
     bottom: 0;
     height: 3px;
     width: 0%;
-    background: #F7931E;
+    background: #ff7300;
     border-radius: 3px;
     transition: width 0.5s ease;
 }
@@ -356,7 +338,7 @@ footer {
    FOOTER MAIN STYLING (Optimized + Clean)
 ----------------------------------------- */
 .footer {
-    background: #042b53ab url('https://itzadarsh.co.in/assets/trackship/img/india_map.jpg') 
+    background: #042b53 url('india_map.jpg') 
                center/cover no-repeat;
     color: #ffffff;
     padding: 70px 0 20px;
@@ -394,7 +376,7 @@ footer {
     transition: 0.3s ease;
 }
 .footer-links a:hover {
-    color: #F7931E;
+    color: #ff7300;
 }
 
 /* Social Icons */
@@ -415,7 +397,7 @@ footer {
     transition: 0.3s ease;
 }
 .social-icon:hover {
-    background: #F7931E;
+    background: #ff7300;
     transform: translateY(-3px);
 }
 
@@ -476,7 +458,7 @@ select.form-control {
     font-size: 16px;
     border-radius: 16px;
     border: 1.8px solid #d5d5d5;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.212);
     backdrop-filter: blur(6px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     outline: none;
@@ -486,7 +468,7 @@ select.form-control {
 .form-control:focus,
 .form-message:focus,
 select.form-control:focus {
-    border-color: #F7931E;
+    border-color: #ff7300;
     box-shadow: 0 0 0 4px rgba(247,147,30,0.25);
     background: #fff;
 }
@@ -520,8 +502,9 @@ select.form-control:not([value=""]) + .form-label,
     top: -10px;
     left: 14px;
     font-size: 13px;
-    color: #F7931E;
+    color: #ff7300;
     background: #fff;
+    border-radius: 15px;
     padding: 0 5px;
 }
 
@@ -547,7 +530,7 @@ select.form-control option:hover {
     background: #ffe0bf !important;
 }
 select.form-control option:checked {
-    background: #F7931E !important;
+    background: #ff7300 !important;
     color: #fff;
 }
 
@@ -590,7 +573,7 @@ select.form-control option:checked {
 .form-submit {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, #F7931E, #FFA726);
+    background: linear-gradient(135deg, #ff7300, #FFA726);
     color: white;
     border: none;
     border-radius: 8px;
@@ -689,7 +672,7 @@ textarea { height: 80px; resize: none; }
     top: -6px;
     left: 10px;
     font-size: 12px;
-    color: #F7931E;
+    color: #ff7300;
     background: #fff;
     padding: 0 6px;
 }
@@ -698,7 +681,7 @@ textarea { height: 80px; resize: none; }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #F7931E;
+    border-color: #ff7300;
     box-shadow: 0 0 0 3px rgba(247,147,30,0.20);
 }
 
@@ -713,7 +696,7 @@ textarea { height: 80px; resize: none; }
 /* Submit Button */
 .form-submit {
     width: 100%;
-    background: #F7931E;
+    background: #ff7300;
     color: #fff;
     padding: 12px;
     border: none;
@@ -775,14 +758,14 @@ textarea { height: 80px; resize: none; }
 
 /* Hover: text moves slightly right */
 .footer-links a:hover {
-    color: #F7931E;
+    color: #ff7300;
     transform: translateX(4px);
 }
 
 /* Hover: arrow slides right smoothly + color change */
 .footer-links a:hover::before {
     transform: translateY(-50%) translateX(6px);
-    color: #F7931E;          /* arrow turns white */
+    color: #ff7300;          /* arrow turns white */
 }
 
 /* FAQ Section */
@@ -959,7 +942,7 @@ textarea { height: 80px; resize: none; }
 ========================================================== */
 
 .right-form {
-    background: #be6919;
+    background: #ff7300;
     padding: 40px 35px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.10);
@@ -992,9 +975,9 @@ textarea { height: 80px; resize: none; }
 .input-group textarea {
     width: 100%;
     padding: 14px 16px;
-    border: 2px solid #ffbe0b;
+    border: 2px solid #ff7300;
     border-radius: 10px;
-    background: #ffffff;
+    background: #ffffff9d;
     font-size: 15px;
     outline: none;
     transition: 0.3s ease;
@@ -1011,10 +994,10 @@ textarea { height: 80px; resize: none; }
     top: 14px;
     left: 18px;
     font-size: 14px;
-    color: #444;
+    color: #006cb6;
     transition: 0.3s ease;
     pointer-events: none;
-    background: transparent;
+    
 }
 
 /* Label animation */
@@ -1024,7 +1007,7 @@ textarea { height: 80px; resize: none; }
 .input-group textarea:not(:placeholder-shown) + label {
     top: -8px;
     left: 10px;
-    background: #ff7b00;
+    background: #ff7300;
     color: #fff;
     padding: 2px 8px;
     border-radius: 6px;
@@ -1088,8 +1071,8 @@ textarea { height: 80px; resize: none; }
 }
 
 .premium-subtitle {
-    color: #6d7c8b;
-    margin-bottom: 50px;
+    color: #ff7300;
+    margin-bottom: 15px;
 }
 
 /* ============================
@@ -1147,7 +1130,7 @@ textarea { height: 80px; resize: none; }
     left: -100%;
     height: 3px;
     width: 100%;
-    background: #537a0bb7;
+    background: #006cb6;
     transition: 0.4s ease;
 }
 
@@ -1233,49 +1216,6 @@ textarea { height: 80px; resize: none; }
     50% {
         transform: translateY(-20px);
     }
-}
-
-/* HERO TEXT */
-.hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 600px;
-    margin-top: 450px; /* pushes text below orb */
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: 800;
-    color: #0b4a7a;
-    margin-bottom: 12px;
-}
-
-.hero-content h1 span {
-    color: #F7931E;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 25px;
-}
-
-/* BUTTON */
-.hero-btn {
-    display: inline-block;
-    padding: 14px 26px;
-    background: #F7931E;
-    color: #fff;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.hero-btn:hover {
-    background: #d97a12;
-    transform: translateY(-3px);
 }
 
 /* MOBILE RESPONSIVE */
@@ -1373,7 +1313,7 @@ textarea { height: 80px; resize: none; }
 .dropdown-menu a:hover,
 .nested-menu a:hover {
     background: rgba(0,163,255,0.12);
-    color: #F7931E;
+    color: #ff7300;
 }
 
 /* NESTED B2B DROPDOWN */
@@ -1469,17 +1409,18 @@ textarea { height: 80px; resize: none; }
     gap: 18px;
     padding: 18px 22px;
     border-radius: 14px;
-    background: rgba(255,255,255,0.05);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(6px);
-    border-bottom: 3px solid #F7931E;
+    border-bottom: 3px solid #ff7300;
     transition: 0.3s ease;
 }
+
 
 /* DOTTED CIRCLE ICON */
 .icon-circle {
     width: 65px;
     height: 65px;
-    border: 2px dashed #F7931E;
+    border: 2px dashed #ff7300;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1490,20 +1431,20 @@ textarea { height: 80px; resize: none; }
 
 .icon-circle i {
     font-size: 22px;
-    color: #F7931E;
+    color: #ff7300;
 }
 
 /* ROTATION ANIMATION ON HOVER */
 .contact-item:hover .icon-circle {
     transform: rotate(360deg);
-    border-color: #00A3FF;
+    border-color: #000000;
 }
 
 /* RIGHT CONTENT */
 .contact-content h4 {
     margin: 0;
     font-size: 12px;
-    color: #F7931E;
+    color: #ff7300;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -1591,7 +1532,7 @@ html, body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #F7931E, #FFA726);
+    background: linear-gradient(135deg, #ff7300, #FFA726);
     color: white;
     box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
 }
@@ -1603,12 +1544,12 @@ html, body {
 
 .btn-secondary {
     background: transparent;
-    color: #F7931E;
-    border: 2px solid #F7931E;
+    color: #ff7300;
+    border: 2px solid #ff7300;
 }
 
 .btn-secondary:hover {
-    background: #F7931E;
+    background: #ff7300;
     color: white;
 }
 
@@ -1756,12 +1697,12 @@ html, body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #F7931E;
+    background: #ff7300;
     transition: width 0.3s ease;
 }
 
 .desktop-nav a:hover {
-    color: #F7931E;
+    color: #ff7300;
 }
 
 .desktop-nav a:hover::after {
@@ -1863,7 +1804,7 @@ html, body {
 .panel-links h4 {
     margin-top: 20px;
     font-size: 16px;
-    color: #F7931E;
+    color: #ff7300;
     margin-bottom: 10px;
 }
 
@@ -1888,7 +1829,7 @@ html, body {
 }
 
 .panel-social a:hover {
-    background: #F7931E;
+    background: #ff7300;
     color: white;
 }
 
@@ -1984,23 +1925,19 @@ html, body {
 }
 
 .about-images {
-    flex: 1;
-    position: relative;
+    width: 100%;
+    max-width: 300px; /* adjust as per your layout */
+    margin: 0 auto;
 }
 
+.about-images img {
+    border-radius: 15px;
+}
 .about-image-main {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about-image-secondary {
-    position: absolute;
-    width: 70%;
-    border-radius: 15px;
-    bottom: -30px;
-    right: -30px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .about-content {
@@ -2027,12 +1964,10 @@ html, body {
 
 }
 
-
-
 .section-subtitle {
     text-align: center;
     font-size: 18px;
-    color: #353535;
+    color: #ff7300;
     margin-bottom: 60px;
 }
 
@@ -2102,7 +2037,7 @@ html, body {
     /* Background Image + Fixed Parallax Effect */
     background-image:
         linear-gradient(135deg, rgba(11, 74, 122, 0), rgba(10, 61, 106, 0)),
-        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg'); /* Replace with your image */
+        url(''); /* Replace with your image */
 
     background-attachment: fixed; /* FIXED IMAGE */
     background-size: cover;       /* Cover whole screen */
@@ -2115,7 +2050,7 @@ html, body {
     text-align: center;
     font-size: 36px;
     font-weight: 700;
-    color: #ffd000;
+    color: #ff7300;
     margin-bottom: 5px;
     margin-top: -90px;
 }
@@ -2123,8 +2058,8 @@ html, body {
 .partners-subtitle {
     text-align: center;
     font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 10px;
+    color: #006cb6;
+    margin-bottom: 1px;
 }
 
 .partners-carousel {
@@ -2247,8 +2182,8 @@ html, body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: #0b4a7a;
-    border-radius:   25px  25px  25px 0;
+    background: #ff73008c;
+    border-radius:   25px  25px  25px 25px;
     color: #ffffff;
     font-size: 20px;
     flex-shrink: 0;
@@ -2290,66 +2225,105 @@ html, body {
     right: -30px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
-
-/* Stats Section */
+/* Background like screenshot */
 .stats-section {
-    padding: 100px 0;
-    /* Background Image + Fixed Parallax Effect */
-    background-image:
-        linear-gradient(135deg, rgba(11, 74, 122, 0.199), rgba(2, 3, 3, 0.192)),
-        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg'); /* Replace with your image */
-
-    background-attachment: fixed; /* FIXED IMAGE */
-    background-size: cover;       /* Cover whole screen */
-    background-position: center;  /* Center image nicely */
-    background-repeat: no-repeat; /* No repeat */
+    padding: 70px 0;
+    background: #003b73; 
 }
 
-.stats-container {
+/* Grid */
+.stats-wrapper {
+    max-width: 1100px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
 }
 
-.stat-card {
-    background: linear-gradient(135deg, #ff6f00, #ffa726);
-    border-radius:   25px 25px 25px  25px ;
-    padding: 2px;
-    text-align: center;
-    height: 90px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.671);
+/* Card */
+.stat-box {
+    background: #0000009c;
+    border: 1px solid rgba(10, 10, 10, 0.315);
+    border-radius: 22px;
+    padding: 28px 20px 8px;
+    margin-left: 28px;
+    margin-right: 20px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: -2px;
 }
 
-.stat-number {
-    font-size: 42px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 1px;
-    position: absolute;
-    bottom: 12px;
-    left: 25px;
+/* Icon Circle */
+.stat-icon img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    left: auto;
+    top: auto;
+    
+}
 
-             /* big number */
+/* Number */
+.stat-value {
+    font-size: 36px;
     font-weight: 800;
-    line-height: 1;
-    color: transparent;          /* no fill */
-    -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.555);  /* outline */
-    font-family: 'Poppins', sans-serif;
-    
-
-    opacity: 0.8;
-    pointer-events: none;
-    
-    
-    transition: 0.3s ease;
+    color: #fff;
+    position: absolute;
+    left: 90px;
+    top: 10px;
+    margin-top: 5px;
 }
 
-.stat-label {
-    font-size: 16px;
-    color: #0b4a7a;
-    -webkit-animation-delay: 15s;
+/* + sign */
+.plus {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    position: absolute;
+    left: 115px;
+    top: 40px;
+}
+.plus-data{
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    position: absolute;
+    left: 140px;
+    top: 40px;
 }
 
+/* Text Label */
+.stat-text {
+    font-size: 17px;
+    color: #d3e6ff;
+    margin-top: -20px;
+    text-align: center;
+    padding-left: 40%;
+}
+.footer .contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.footer .contact-details i {
+    font-size: 18px;
+    color: #ff7300; /* highlight color */
+}
+
+.footer .contact-details a,
+.footer .contact-details span {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.footer .contact-details a:hover {
+    color: #fff;
+}
 
 
 
@@ -2389,7 +2363,7 @@ html, body {
     overflow: hidden;
     background: rgba(0,0,0,0.03);
     margin-left: 10px;
-    border-left: 2px solid #F7931E;
+    border-left: 2px solid #ff7300;
     transition: max-height 0.3s ease;
 }
 
@@ -2460,7 +2434,7 @@ html, body {
     color: #666;
 }
 .testimonial-rating {
-    color: #F7931E;
+    color: #ff7300;
     margin-top: 10px;
 }
 .testimonial-nav {
@@ -2479,7 +2453,7 @@ html, body {
 }
 
 .nav-dot.active {
-    background: #F7931E;
+    background: #ff7300;
 }
 
 /* CTA Section */
@@ -2533,98 +2507,76 @@ html, body {
     background: white;
     color: #0b4a7a;
 }
-/* Moving Bikes Section */
-.moving-bikes-section {
-    position: relative;
-    height: 400px;
-    width: auto;
+
+/* REMOVE ALL GAPS / BORDERS */
+.india-hero,
+.road-layer,
+.road-layer img {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* MAIN WRAPPER */
+.india-hero {
+    width: 100%;
     overflow: hidden;
 }
-.bikes-background {
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* ROAD BACKGROUND */
+.road-layer {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 228px;
+    background: url("PNG/moving-bike-bg.png") center center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
-.bikes-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
-.bikes-container {
+
+/* BIKES */
+.bike {
+    width: 100px;
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    z-index: 20;
+}
+
+/* LEFT → RIGHT */
+.bike-left {
+    animation: runRight 9s linear infinite;
+}
+
+/* RIGHT → LEFT */
+.bike-right {
+    animation: runLeft 11s linear infinite;
+    transform: scaleX(-1);
     height: 100px;
 }
-.bike {
-    position: absolute;
-    bottom: -3px;
-    width: 80px;
-    height: auto;
-}
-.bike-1 {
-    animation: moveBikeleft 5s linear infinite;
-    
-}
-.truck {
-    position: relative;
-    width: 100px;        /* apne hisaab se adjust kar sakte ho */
-    animation: drive 5s linear infinite;
-    animation-delay: 2s;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+
+/* ANIMATIONS */
+@keyframes runRight {
+    0% { left: -200px; }
+    100% { left: 110%; }
 }
 
-/* Animation: left → right (infinite loop) */
-@keyframes drive {
-    0% {
-        left: -150px;
-    }
-    100% {
-        left: 100%;
-    }
+@keyframes runLeft {
+    0% { right: -200px; }
+    100% { right: 110%; }
 }
 
-.mirror-horizontal {
-    transform: scaleX(-1);
-}
-
-.bike-2 {
-    animation: moveBike 3s linear infinite;
-    animation-delay: 0s;
-}
-.bike-3 {
-    animation: moveBike 7s linear infinite;
-    animation-delay: 2s;
-}
-
-@keyframes moveBikeleft {
-    0% {
-        left: -150px;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .road-layer {
+        height: 180px;
     }
-    100% {
-        left: 100%;
-    }
-}
-@keyframes moveBike {
-    0% {
-        right: -150px;
-    }
-    100% {
-        right: 100%;
+    .bike {
+        width: 80px;
     }
 }
 /* Contact Form Section */
 .contact-section {
     padding: 100px 0;
-    background: white;
+    background: #006cb6;
 }
 .contact-container {
     display: flex;
@@ -2642,13 +2594,15 @@ html, body {
 .contact-title {
     font-size: 36px;
     font-weight: 700;
-    color: #0b4a7a;
+    color: #ff7300;
     margin-bottom: 20px;
 }
 .contact-text {
     font-size: 16px;
-    color: #555;
+    color: #ffffff;
     margin-bottom: 30px;
+    font-weight: 20px
+    ;
 }
 .contact-item {
     display: flex;
@@ -2656,6 +2610,23 @@ html, body {
     gap: 15px;
     margin-bottom: 20px;
 }
+.car {
+  position: absolute;
+  top: 90px; /* adjust height */
+  left: -200px; /* start outside screen */
+  width: 160px;
+  opacity: 0;
+  transition: transform 3s ease-out, opacity 0.8s ease-in;
+}
+
+/* Car drive animation */
+.car.drive {
+  opacity: 1;
+  transform: translateX(120vw);
+  animation-delay: 3.4s;
+  
+}
+
 
 .contact-icon {
     display: flex;
@@ -2663,10 +2634,10 @@ html, body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(247, 146, 30, 0.411);
+    background: rgb(247, 146, 30);
     
-    border-radius:   25px  25px  25px 0;
-    color: #F7931E;
+    border-radius:   25px  25px  25px 25px;
+    color: #ff7300;
     font-size: 20px;
     flex-shrink: 0;
 }
@@ -2674,13 +2645,13 @@ html, body {
 .contact-content h4 {
     font-size: 18px;
     font-weight: 600;
-    color: #ffffff;
+    color: #f16922;
     margin-bottom: 5px;
 }
 
 .contact-content p {
     font-size: 16px;
-    color: #fda53f;
+    color: #ff7300;
 }
 
 .call-now {
@@ -2706,15 +2677,20 @@ html, body {
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 35px;
+}
+.social-icon img{
+    height: auto;
+    width: 25px;
+    
 }
 
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 4px;
+    height: 4px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     color: white;
@@ -2965,7 +2941,7 @@ html, body {
     display: inline-flex;
     width: 42px;
     height: 42px;
-    background: #23381b;
+    background: #ff7300;
     border-radius: 50%;
     color: #fff;
     justify-content: center;
@@ -3034,7 +3010,7 @@ html, body {
 }
 
 .drop-menu a:hover {
-    color: #F7931E;
+    color: #ff7300;
 }
 .dropdown {
     margin-top: 10px;
@@ -3044,7 +3020,7 @@ html, body {
     width: 100%;
     background: none;
     border: none;
-    color: #cc9e08;
+    color: #ff7300;
     font-size: 16px;
     padding: 12px 0;
     text-align: left;
@@ -3156,7 +3132,7 @@ html, body {
 }
 
 .redirect-toast button {
-    background-color: #F7931E;
+    background-color: #ff7300;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -3174,3 +3150,6 @@ html, body {
     opacity: 0;
     visibility: hidden;
 }
+
+/*hero-section*/
+		/* Reset and Base Styles */
