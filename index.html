@@ -2012,23 +2012,68 @@ select.form-control {
 
 
 
-/* WhatsApp Floater */
+/* WhatsApp Floater Advanced Animation */
 .whatsapp-floater {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 10px;
     width: 40px;
     height: 40px;
-    background-color: #25D366;
     border-radius: 50%;
+    background: #25D366;
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    animation: popIn 0.6s ease-out, wave 0.5s infinite ease-in-out 0.5s, gentleShake 3s infinite ease-in-out 2s;
+    z-index: 9999;
 }
+
+/* POP-IN Animation */
+@keyframes popIn {
+    0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+    50% { transform: scale(1.15) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* WAVE EFFECT (ripple like WhatsApp calling) */
+.whatsapp-floater::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: rgba(37, 211, 46, 0.747);
+    animation: wavePulse 1.4s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+@keyframes gentleShake {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Optional: Hover Boost */
+.whatsapp-floater:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
 
 /* Title */
 .section-title {
@@ -2814,7 +2859,7 @@ body.popup-open {
 
 <!-- WhatsApp Floater -->
 <a href="https://wa.me/919136601185?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="whatsapp-floater">
 </a>
 
 <!-- Lottie Import -->
