@@ -2010,82 +2010,6 @@ select.form-control {
     transform: translateX(0);
 }
 
-/* Popup Modal */
-.popup-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(5px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 15px; /* Prevents content touching edges on mobile */
-}
-
-/* Popup Box */
-.popup-content {
-    background: #fff;
-    width: 100%;
-    max-width: 420px; /* Desktop width stays same */
-    border-radius: 14px;
-    padding: 0;
-    overflow: scroll;
-    animation: popIn 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* Popup Header */
-.popup-header {
-    background: #0b4a7a;
-    padding: 15px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.popup-title {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.popup-close {
-    cursor: pointer;
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.popup-close:hover {
-    transform: rotate(90deg);
-}
-
-/* Popup Body */
-.popup-body {
-    padding: 20px;
-}
-
-/* Fixing mobile form spacing */
-.popup-body input,
-.popup-body select,
-.popup-body textarea {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Mobile Improvements */
-@media (max-width: 480px) {
-    .popup-content {
-        border-radius: 12px;
-    }
-
-    .popup-body {
-        padding: 18px;
-    }
-}
 
 
 /* WhatsApp Floater */
@@ -2465,6 +2389,252 @@ select.form-control {
         font-size: 11px;
     }
 }
+
+/* Popup Modal */
+.popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Popup Box */
+.popup-content {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh; /* Prevents exceeding viewport height */
+    border-radius: 14px;
+    overflow: hidden;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.popup-modal.active .popup-content {
+    transform: scale(1);
+}
+
+/* Popup Header */
+.popup-header {
+    background: #0b4a7a;
+    padding: 15px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.popup-close {
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.popup-close:hover {
+    transform: rotate(90deg);
+    background: rgba(255,255,255,0.2);
+}
+
+/* Popup Body - Scrollable */
+.popup-body {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(90vh - 70px); /* Full height minus header */
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+.popup-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.popup-body::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.popup-body::-webkit-scrollbar-thumb:hover {
+    background-color: #bbb;
+}
+
+/* Form Styles */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control,
+.form-message {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1.8px solid #d5d5d5;
+    border-radius: 8px;
+    background: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-message {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-control:focus,
+.form-message:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 0 3px rgba(255,115,0,0.2);
+}
+
+.form-label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 15px;
+    color: #777;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label,
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+    top: -8px;
+    font-size: 12px;
+    color: #ff7300;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7300, #ff8c00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,115,0,0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .popup-modal {
+        padding: 10px;
+    }
+
+    .popup-content {
+        border-radius: 12px;
+        max-height: 95vh;
+    }
+
+    .popup-header {
+        padding: 12px 15px;
+    }
+
+    .popup-title {
+        font-size: 18px;
+    }
+
+    .popup-body {
+        padding: 15px;
+        max-height: calc(95vh - 60px);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control,
+    .form-message {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 14px;
+        top: 10px;
+        left: 12px;
+    }
+
+    .form-control:focus + .form-label,
+    .form-control:not(:placeholder-shown) + .form-label,
+    .form-message:focus + .form-label,
+    .form-message:not(:placeholder-shown) + .form-label {
+        top: -6px;
+        font-size: 11px;
+    }
+
+    .form-submit {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Ensure main page remains scrollable when popup is open */
+body.popup-open {
+    overflow: hidden; /* Only when popup is active */
+}
+
 </style>
 </head>
 <body>
