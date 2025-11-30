@@ -3,73 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- SEO Title -->
-<!-- =============================== -->
-<!-- 🚀 TRACKSHIP COMPLETE HEAD SETUP -->
-<!-- =============================== -->
-
-<!-- SEO Title -->
 <title>Trackship Logistics – Courier Point, B2B Delivery, Franchise & Pan-India Logistics Solutions</title>
-
-<!-- Description -->
 <meta name="description" content="Trackship provides fast courier services, B2B logistics, franchise opportunities, business partner programs, and end-to-end delivery solutions across India. Trusted by startups, SMEs, and enterprises for reliable logistics and seamless tracking.">
-
-<!-- Keywords -->
 <meta name="keywords" content="Trackship, Trackship Logistics, courier service India, courier franchise, logistics company India, B2B delivery, business partner program, startup courier service, pan India logistics, delivery partner India, courier point franchise, supply chain solutions, shipping and delivery India, last mile delivery, franchise opportunity India">
-
-<!-- For Better SEO Indexing -->
 <meta name="robots" content="index, follow">
 <meta name="author" content="Trackship Logistics">
-
-<!-- Canonical -->
 <link rel="canonical" href="https://trackshiplogistics.com/">
-
-<!-- Viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- =============================== -->
-<!-- 🖼️ FAVICONS & ICONS -->
-<!-- =============================== -->
-
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/trackship_16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/trackship_32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/trackship_48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/trackship_192.png">
 <link rel="icon" type="image/png" sizes="256x256" href="/assets/icons/trackship_256.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/trackship_512.png">
-<!-- Favicon ICO -->
 <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
-<!-- =============================== -->
-<!-- 🍏 APPLE TOUCH ICON -->
-<!-- =============================== -->
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/trackship_180.png">
-<!-- Apple App Mode -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<!-- =============================== -->
-<!-- 🅿️ ANDROID / PWA SETUP -->
-<!-- =============================== -->
-<!-- Progressive Web App -->
 <meta name="mobile-web-app-capable" content="yes">
-<!-- Chrome / Windows -->
 <meta name="msapplication-TileImage" content="/assets/icons/trackship_256.png">
-<!-- =============================== -->
-<!-- 📣 SOCIAL SHARE (Open Graph) -->
-<!-- =============================== -->
 <meta property="og:title" content="Trackship Logistics – Delivering Speed & Trust Across India">
 <meta property="og:description" content="Fast courier services, B2B logistics, franchise opportunities & partner programs across India.">
 <meta property="og:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
 <meta property="og:url" content="https://trackshiplogistics.com">
 <meta property="og:type" content="website">
-<!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trackship Logistics – Delivering Speed & Trust Across India">
 <meta name="twitter:description" content="Powerful courier & B2B logistics solutions across India.">
 <meta name="twitter:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
-
-<!-- =============================== -->
-<!-- END HEAD SETUP -->
-<!-- =============================== -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -86,7 +47,7 @@
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91 7400372375",
+    "telephone": "+91 9136601185",
     "contactType": "customer support",
     "areaServed": "IN",
     "availableLanguage": ["English", "Hindi"]
@@ -128,21 +89,17 @@
   ]
 }
 </script>
-
 <style>
-    /* UNIVERSAL HOVER EFFECT FOR ALL HEADINGS */
 h1, h2, h4, h5, h6, .text-item {
   position: relative;
   transition: transform 0.3s ease;
 }
 
-/* Text moves right */
 h1:hover, h2:hover, h4:hover, h5:hover, h6:hover,
 .text-item:hover {
   transform: translateX(6px);
 }
 
-/* --- ARROW (hidden initially) --- */
 h1::before, h2::before, h4::before, h5::before, h6::before,
 .text-item::before {
   content: "";
@@ -158,6 +115,156 @@ h1::before, h2::before, h4::before, h5::before, h6::before,
   opacity: 0;
   transition: 0.3s ease;
 }
+/* ============================
+   Wrapper
+============================ */
+.premium-services-section {
+    padding: 80px 0;
+    text-align: center;
+    background: #ffffff;
+}
+.premium-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #003d5c;
+    margin-bottom: 10px;
+}
+.premium-subtitle {
+    color: #ff7300;
+    margin-bottom: 15px;
+}
+/* ============================
+   Grid
+============================ */
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+/* ============================
+   Card
+============================ */
+.premium-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+    gap: 1px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* Default State Animation */
+    transform: scale(1) translateY(0);
+    transition: 0.35s ease;
+}
+.premium-card:hover {
+    transform: scale(1.05) translateY(-4px);
+    border-bottom-color: #0b4a7a;
+}
+/* ============================
+   Icon Circle + Rotation
+============================ */
+
+.premium-card:hover .icon-circle {
+    animation: rotateIcon 1.2s linear infinite;
+    background: #e3f2fd;
+}
+/* DOTTED CIRCLE ICON */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed #ff7300;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    transition: 0.4s ease;
+}
+.icon-circle i {
+    font-size: 22px;
+    color: #ff7300;
+}
+/* ============================
+   Underline Motion
+============================ */
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    height: 3px;
+    width: 100%;
+    background: #006cb6;
+    transition: 0.4s ease;
+}
+.premium-card:hover .underline {
+    left: 0;
+}
+
+/* ============================
+   Morphing Shadow (Premium Effect)
+============================ */
+.premium-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 90, 170, 0.18);
+    border-radius: 20px;
+}
+
+/* Responsive Fix */
+@media (max-width: 480px) {
+    .premium-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Underline expands */
+h1:hover::after, h2:hover::after, 
+h4:hover::after, h5:hover::after, h6:hover::after,
+.text-item:hover::after {
+  width: 100%;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+
+/* Reveal Animation - IMPROVED */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .9s ease, transform .9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity .9s ease, transform .9s ease;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity .9s ease, transform .9s ease;
+}
+
+.reveal-left.active,
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 /* Arrow appears on hover */
 h1:hover::before, h2:hover::before,
@@ -257,8 +364,6 @@ section:not(.partners-section,.india-hero, .hero-slider) {
     padding-bottom: 50px !important;
 }
 
-
-
 /* Services Section spacing fix */
 .services-section {
     padding-top: 70px !important;
@@ -270,8 +375,6 @@ section:not(.partners-section,.india-hero, .hero-slider) {
     padding-top: 60px !important;
     padding-bottom: 60px !important;
 }
-
-
 
 /* FAQ */
 .faq-section {
@@ -309,1142 +412,98 @@ footer {
 .container {
     padding-top: 0 !important;
 }
-/* ---------------------------------------------
-   HOW IT WORKS : Premium Gradient Cards
----------------------------------------------- */
-.how-it-works-section {
-    padding: 9px 0;
-    margin-top: -20px;
-    margin-bottom: -20px;
-    position: relative;
-}
 
-/* Title */
-.section-title {
-    font-size: 38px;
-    font-weight: 800;
-    margin-top: -10px;
-    color: #0b4a7a;
-    text-align: center;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-size: 17px;
-    color: #ff7300;
-    margin-bottom: 55px;
-}
-
-/* Grid layout */
-.steps-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
-}
-
-/* Main card */
-.step-card {
-    background: linear-gradient(135deg, #ff7300, #ff7300);
-    border-radius: 20px;
-    padding: 40px 30px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
-    transition: 0.4s ease;
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-/* Hover effect */
-.step-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 22px 45px rgba(0,0,0,0.28);
-}
-
-/* EXACT Provided Image Style */
-.step-number {
-    position: absolute;
-    bottom: 12px;
-    left: 25px;
-
-    font-size: 50px;             /* big number */
-    font-weight: 700;
-    line-height: 1;
-    color: #006cb6;          /* no fill */
-    
-    font-family: 'Poppins', sans-serif;
-
-    opacity: 0.8;
-    pointer-events: none;
-    user-select: none;
-    
-    transition: 0.3s ease;
-}
-
-
-/* Title inside card */
-.step-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-/* Description */
-.step-description {
-    font-size: 15px;
-    opacity: 0.95;
-    line-height: 1.6;
-}
-
-/* Scroll reveal animation */
-.step-card.reveal {
-    animation: fadeUpSteps 0.85s ease forwards;
-}
-.step-card.reveal-left {
-    animation: fadeUpSteps 0.85s ease forwards;
-}
-
-@keyframes fadeUpSteps {
-    0% { opacity: 0; transform: translateY(40px) scale(0.97); }
-    60% { opacity: 1; transform: translateY(-5px) scale(1.03); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-
-/* -----------------------------------------
-   PREMIUM FOOTER HEADING (Auto-Underline + Hover Arrow)
------------------------------------------ */
-.footer-column h3 {
-    position: relative;
-    padding-left: 28px;          /* arrow space */
-    padding-bottom: 12px;        /* underline gap */
-    font-size: 20px;
-    font-weight: 600;
-    color: #ff7300;
-    display: inline-block;
-    transition: transform 0.35s ease;
-}
-
-/* Arrow (hover par visible) */
-.footer-column h3::before {
-    content: "➤";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%) translateX(-10px);
-    font-size: 15px;
-    color: #ff7300;
-    opacity: 0;
-    transition: 0.35s ease;
-}
-
-/* Underline (hidden initially — animate on scroll) */
-.footer-column h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 0%;
-    background: #ff7300;
-    border-radius: 3px;
-    transition: width 0.5s ease;
-}
-
-/* Footer visible = Underline animate for all h3 */
-.footer.footer-visible .footer-column h3::after {
-    width: 80px;
-}
-
-/* Hover effect: arrow slide-in + text right move */
-.footer-column h3:hover {
-    transform: translateX(6px);
-}
-.footer-column h3:hover::before {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-}
-
-/* -----------------------------------------
-   FOOTER MAIN STYLING (Optimized + Clean)
------------------------------------------ */
-.footer {
-    background: #042b53 url('//trackshiplogistics.com/india-map.png') 
-               center/cover no-repeat;
-    color: #ffffff;
-    padding: 70px 0 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Footer grid layout */
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-/* Paragraph */
-.footer-column p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #ddd;
-    margin-bottom: 20px;
-}
-
-/* Links */
-.footer-links {
-    list-style: none;
-}
-.footer-links li {
-    margin-bottom: 10px;
-}
-.footer-links a {
-    color: #ddd;
-    font-size: 16px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-.footer-links a:hover {
-    color: #ff7300;
-}
-
-/* Social Icons */
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-.social-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    transition: 0.3s ease;
-}
-.social-icon:hover {
-    background: #ff7300;
-    transform: translateY(-3px);
-}
-
-/* Footer bottom row */
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 14px;
-    color: #ddd;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-
-/* How It Works Section */
-.how-it-works-section {
-    padding: 100px 0;
-    background: rgb(255, 255, 255);
-    
-}
-/* steps Section */
-.steps-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 30px;
-    
-}
-
-.step-card {
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.671);
-    border-radius:   25px  25px  25px 25px ;
-}
-.step-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #0b4a7a;
-    margin-bottom: 15px;
-}
-
-.step-description {
-    font-size: 16px;
-    color: #555;
-}
 /* ===============================
-   iOS FORM BASE STYLE
+   DESKTOP NAVIGATION DROPDOWN STYLES
 ================================ */
-.form-group {
-    position: relative;
-    margin-bottom: 90px;
-}
-
-.form-control,
-.form-message,
-select.form-control {
-    width: 100%;
-    padding: 16px 18px;
-    font-size: 16px;
-    border-radius: 16px;
-    border: 1.8px solid #d5d5d5;
-    background: rgba(255, 255, 255, 0.212);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    outline: none;
-    transition: 0.25s ease;
-}
-
-.form-control:focus,
-.form-message:focus,
-select.form-control:focus {
-    border-color: #ff7300;
-    box-shadow: 0 0 0 4px rgba(247,147,30,0.25);
-    background: #fff;
-}
-
-/* ========== FLOATING LABEL ========== */
-.form-label {
-    position: absolute;
-    top: 14px;
-    left: 18px;
-    font-size: 15px;
-    color: #555;
-    pointer-events: none;
-    transition: 0.25s ease;
-}
-#popupForm input::placeholder,
-#popupForm textarea::placeholder,
-#popupForm select {
-    color: #777 !important;   /* visible grey */
-    opacity: 1 !important;
-    font-size: 14px;
-}
-
-
-/* Input filled or focused */
-.form-control:focus + .form-label,
-.form-control:not(:placeholder-shown) + .form-label,
-select.form-control:focus + .form-label,
-select.form-control:not([value=""]) + .form-label,
-.form-message:focus + .form-label,
-.form-message:not(:placeholder-shown) + .form-label {
-    top: -10px;
-    left: 14px;
-    font-size: 13px;
-    color: #ff7300;
-    background: #fff;
-    border-radius: 15px;
-    padding: 0 5px;
-}
-
-/* ========== SELECT DROPDOWN DESIGN ========== */
-select.form-control {
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%230b4a7a" height="20" width="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 18px center;
-    background-size: 20px;
-}
-
-/* Dropdown options */
-select.form-control option {
-    padding: 5px;
-    background: #fff;
-    font-size: 15px;
-}
-
-
-/* Option hover + selected */
-select.form-control option:hover {
-    background: #ffe0bf !important;
-}
-select.form-control option:checked {
-    background: #ff7300 !important;
-    color: #fff;
-}
-
-/* ========== ERROR MESSAGE ========== */
-.error-message {
-    font-size: 13px;
-    color: #d90000;
-    margin-top: 4px;
-    display: block;
-    padding-left: 4px;
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-/* Show Error */
-.show-error .error-message {
-    opacity: 1;
-}
-
-/* Red border error */
-.show-error .form-control,
-.show-error .form-message,
-.show-error select.form-control {
-    border-color: #d90000 !important;
-    box-shadow: 0 0 0 4px rgba(217,0,0,0.18);
-}
-
-/* ========== SHAKE ANIMATION ========== */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-}
-
-.shake {
-    animation: shake 0.3s ease;
-}
-.form-submit {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #ff7300, #FFA726);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-/* Popup Background */
-.popup-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(5px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-/* Popup box */
-.popup-content {
-    background: #fff;
-    width: 420px;
-    border-radius: 14px;
-    padding: 0;
-    overflow: hidden;
-    animation: popIn 0.3s ease;
-}
-
-@keyframes popIn {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-/* Header */
-.popup-header {
-    background: #0b4a7a;
-    padding: 15px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.popup-close i {
-    cursor: pointer;
-    font-size: 18px;
-}
-
-/* Body */
-.popup-body {
-    padding: 25px 25px 35px;
-}
-
-/* Floating Inputs */
-.form-group {
-    position: relative;
-    margin-bottom: 22px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 14px 12px;
-    font-size: 15px;
-    border: 1.8px solid #ddd;
-    background: #fff;
-    border-radius: 16px;
-    outline: none;
-    transition: 0.25s;
-}
-
-textarea { height: 80px; resize: none; }
-
-/* Label */
-.form-group label {
-    position: absolute;
-    top: 14px;
-    left: 20px;
-    color: #888;
-    font-size: 15px;
-    transition: 0.25s;
-    pointer-events: none;
-}
-
-/* Floating effect when typing */
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label,
-.form-group select:focus + label,
-.form-group select:not([value=""]) + label,
-.form-group textarea:focus + label,
-.form-group textarea:not(:placeholder-shown) + label {
-    top: -6px;
-    left: 10px;
-    font-size: 12px;
-    color: #ff7300;
-    background: #fff;
-    padding: 0 6px;
-}
-
-/* Focus effect */
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #ff7300;
-    box-shadow: 0 0 0 3px rgba(247,147,30,0.20);
-}
-
-/* Custom error text */
-.error-text {
-    font-size: 12px;
-    color: #d00000;
-    margin-top: 3px;
-    display: block;
-}
-
-/* Submit Button */
-.form-submit {
-    width: 100%;
-    background: #ff7300;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.form-submit:hover {
-    background: #bd6500;
-}
-
-/* Shake error animation */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-4px); }
-    100% { transform: translateX(0); }
-}
-
-.error-shake {
-    animation: shake 0.3s ease;
-}
-/* Hide scrollbar but keep scroll working */
-.popup-content {
-    scrollbar-width: none; /* Firefox */
-}
-
-.popup-content::-webkit-scrollbar {
-    width: 0px;              /* Chrome */
-    background: transparent; /* Chrome */
-}
-
-/* Base footer links */
-.footer-links a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 16px;
-    position: relative;
-    display: inline-block;
-    padding-left: 26px; /* left space for the arrow */
-    transition: 0.3s ease;
-}
-
-/* Arrow ALWAYS visible */
-.footer-links a::before {
-    content: "\27A7";  /* → */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #ffbb00;      /* default orange arrow */
-    transition: 0.35s cubic-bezier(.25,.8,.25,1);
-}
-
-/* Hover: text moves slightly right */
-.footer-links a:hover {
-    color: #ff7300;
-    transform: translateX(4px);
-}
-
-/* Hover: arrow slides right smoothly + color change */
-.footer-links a:hover::before {
-    transform: translateY(-50%) translateX(6px);
-    color: #ff7300;          /* arrow turns white */
-}
-
-/* FAQ Section */
-.faq-section {
-    padding-top: 60px 0;
-    margin-top: -50px;
-    margin-bottom: -50px;
-    margin-top: -30px;
-    background: #ffffff8e;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin-top: -200px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.faq-question {
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: -10px;
-    color: #0b4a7a;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-question i {
-    transition: transform 0.3s ease;
-}
-
-.faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-answer p {
-    font-size: 16px;
-    color: #555;
-    padding-bottom: 20px;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 300px;
-    padding: 0 20px 20px;
-}
-
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
-}
-/* ==========================================================
-   SECTION WRAPPER
-========================================================== */
-.cities-contact-section {
-    padding: 80px 0;
-    background: #ffffff;
-}
-
-.cities-contact-section .container {
-    display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 40px;
-    align-items: start;
-}
-
-@media (max-width: 992px) {
-    .cities-contact-section .container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-}
-
-/* ==========================================================
-   TAG / TITLE
-========================================================== */
-
-.tag {
-    background: #ff7b00;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    color: #fff;
-    font-weight: 600;
-}
-
-.cities-title {
-    margin: 15px 0 25px;
-    font-size: 32px;
-    line-height: 40px;
-    color: #005792;
-    font-weight: 800;
-}
-
-@media (max-width: 480px) {
-    .cities-title {
-        font-size: 26px;
-        line-height: 34px;
-    }
-}
-
-/* ==========================================================
-   CITY GRID / CARDS
-========================================================== */
-
-.cities-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-@media (max-width: 480px) {
-    .cities-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.city-card {
-    background: #005792;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 12px;
-    cursor: pointer;
-    position: relative;
-    font-weight: 600;
-    transition: 0.3s ease;
-    transform: translateY(30px);
-    opacity: 0;
-}
-
-.city-card:hover {
-    background: #ff7b00;
-    transform: translateX(8px);
-}
-
-/* Arrow on hover */
-.city-card::after {
-    content: "→";
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%) translateX(-10px);
-    opacity: 0;
-    transition: 0.3s ease;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffbe0b;
-}
-
-.city-card:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-}
-
-/* Animation when visible */
-.city-card.show {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* ==========================================================
-   FORM BOX
-========================================================== */
-
-.right-form {
-    background: #ff7300;
-    padding: 40px 35px;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.10);
-}
-
-@media (max-width: 480px) {
-    .right-form {
-        padding: 30px 20px;
-    }
-}
-
-.form-title {
-    text-align: center;
-    color: #005792;
-    font-weight: 800;
-    margin-bottom: 25px;
-    font-size: 22px;
-}
-
-/* ----------------------------------------------------------
-   INPUT GROUP
----------------------------------------------------------- */
-
-.input-group {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #ff7300;
-    border-radius: 10px;
-    background: #ffffff9d;
-    font-size: 15px;
-    outline: none;
-    transition: 0.3s ease;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-    border-color: #005792;
-    box-shadow: 0 0 0 3px rgba(0, 87, 146, 0.15);
-}
-
-.input-group label {
-    position: absolute;
-    top: 14px;
-    left: 18px;
-    font-size: 14px;
-    color: #006cb6;
-    transition: 0.3s ease;
-    pointer-events: none;
-    
-}
-
-/* Label animation */
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label,
-.input-group textarea:focus + label,
-.input-group textarea:not(:placeholder-shown) + label {
-    top: -8px;
-    left: 10px;
-    background: #ff7300;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 11px;
-}
-
-/* Textarea */
-.input-group.textarea textarea {
-    height: 110px;
-    resize: none;
-}
-
-/* ==========================================================
-   SUBMIT BUTTON
-========================================================== */
-
-.submit-btn {
-    width: 100%;
-    background: #005792;
-    color: white;
-    padding: 14px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    transition: 0.3s ease;
-    font-size: 15px;
-}
-
-.submit-btn:hover {
-    background: #003d5c;
-    transform: translateY(-2px);
-}
-
-/* Shake animation */
-.shake {
-    animation: shakeAnim 0.3s ease;
-}
-
-@keyframes shakeAnim {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-4px); }
-    100% { transform: translateX(0); }
-}
-/* ============================
-   Wrapper
-============================ */
-.premium-services-section {
-    padding: 80px 0;
-    text-align: center;
-    background: #ffffff;
-}
-
-.premium-title {
-    font-size: 36px;
-    font-weight: 800;
-    color: #003d5c;
-    margin-bottom: 10px;
-}
-
-.premium-subtitle {
-    color: #ff7300;
-    margin-bottom: 15px;
-}
-
-/* ============================
-   Grid
-============================ */
-.premium-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-/* ============================
-   Card
-============================ */
-.premium-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 15px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    margin-top: -20px;
-    gap: 1px;
-    border-bottom: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-
-    /* Default State Animation */
-    transform: scale(1) translateY(0);
-    transition: 0.35s ease;
-}
-
-.premium-card:hover {
-    transform: scale(1.05) translateY(-4px);
-    border-bottom-color: #0b4a7a;
-}
-
-/* ============================
-   Icon Circle + Rotation
-============================ */
-
-.premium-card:hover .icon-circle {
-    animation: rotateIcon 1.2s linear infinite;
-    background: #e3f2fd;
-}
-
-
-/* ============================
-   Underline Motion
-============================ */
-.underline {
-    position: absolute;
-    bottom: 0;
-    left: -100%;
-    height: 3px;
-    width: 100%;
-    background: #006cb6;
-    transition: 0.4s ease;
-}
-
-.premium-card:hover .underline {
-    left: 0;
-}
-
-/* ============================
-   Morphing Shadow (Premium Effect)
-============================ */
-.premium-card:hover {
-    box-shadow: 0 12px 40px rgba(0, 90, 170, 0.18);
-    border-radius: 20px;
-}
-
-/* Responsive Fix */
-@media (max-width: 480px) {
-    .premium-card {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-/* MAIN HERO */
-.orb-hero {
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    background: #f5f7ff;
-}
-
-/* Center Wrapper */
-.orb-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 550px;
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -90px;
-    z-index: 1;
-}
-
-/* Purple Orb */
-.orb-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    animation: orbPop 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 40px rgba(64, 131, 26, 0));
-}
-
-@keyframes orbPop {
-    0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 40px rgba(194, 255, 53, 0.5));
-    }
-    50% {
-        transform: scale(1.08);
-        filter: drop-shadow(0 0 70px rgba(193, 255, 50, 0.7));
-    }
-}
-
-/* Person PNG (Floating) */
-.orb-person {
-    position: absolute;
-    width: 500px;
-    animation: floatPerson 5s ease-in-out infinite;
-    z-index: 5;
-}
-
-@keyframes floatPerson {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-    .orb-wrapper {
-        width: 330px;
-        height: 330px;
-    }
-
-    .orb-person {
-        width: 450px;
-    }
-
-    .hero-content {
-        margin-top: 300px;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-}
-
-/* DESKTOP NAV WRAPPER */
 .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 35px;
-    position: relative;
+    gap: 30px;
 }
 
-.desktop-nav a,
-.desktop-nav .drop-btn {
-    color: #042B53;
-    font-weight: 600;
-    cursor: pointer;
-    position: relative;
+.desktop-nav a {
     text-decoration: none;
+    color: #042B53;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-/* SERVICES DROPDOWN WRAPPER */
+.desktop-nav a:hover {
+    color: #ff7300;
+}
+
+/* SERVICES DROPDOWN */
 .desktop-nav .dropdown {
     position: relative;
 }
 
-/* Dropdown button */
-.drop-btn {
+.dropdown-toggle {
     background: none;
     border: none;
+    color: #042B53;
     font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 6px;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    color: #ff7300;
+}
+
+.dropdown-toggle i {
+    transition: transform 0.3s ease;
+    font-size: 12px;
 }
 
 /* Main dropdown menu */
 .dropdown-menu {
     position: absolute;
-    top: 40px;
+    top: 100%;
     left: 0;
-    min-width: 180px;
+    min-width: 200px;
     background: #ffffff;
-    border-radius: 10px;
-    padding: 10px 0;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: 0.3s ease;
-    z-index: 999;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 8px 0;
+    margin-top: 8px;
 }
 
-/* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-/* Dropdown items */
-.dropdown-menu a,
-.nested-menu a {
-    display: block;
-    padding: 10px 18px;
-    color: #042B53;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s ease;
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
 }
 
-/* Hover highlight */
-.dropdown-menu a:hover,
-.nested-menu a:hover {
-    background: rgba(0,163,255,0.12);
+/* Dropdown items */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #042B53;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255,115,0,0.1);
     color: #ff7300;
 }
 
@@ -1453,137 +512,194 @@ textarea { height: 80px; resize: none; }
     position: relative;
 }
 
-/* B2B BUTTON */
-.nested-btn {
-    padding: 10px 18px;
-    width: 100%;
-    border: none;
-    background: none;
+.nested-dropdown > a {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease;
 }
 
-/* FIX: Proper dropdown visibility */
-.desktop-nav .dropdown-menu {
-    display: block;
+.nested-dropdown > a::after {
+    content: "\f054";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 10px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* FIX: Nested menu positioning */
-.desktop-nav .nested-menu {
+.nested-dropdown:hover > a::after {
+    transform: translateX(3px);
+}
+
+/* Nested menu */
+.nested-menu {
     position: absolute;
     top: 0;
     left: 100%;
     min-width: 180px;
     background: #ffffff;
-    border-radius: 10px;
-    padding: 10px 0;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateX(10px);
-    transition: 0.3s ease;
-    z-index: 999;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    padding: 8px 0;
 }
 
-/* Show nested on hover */
 .nested-dropdown:hover .nested-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
-/* Arrow animation */
-.dropdown:hover .drop-btn i {
-    transform: rotate(180deg);
-    transition: 0.3s ease;
+.nested-menu a {
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
-.nested-dropdown:hover .nested-btn i {
-    transform: rotate(90deg);
-    transition: 0.2s ease;
+/* ===============================
+   MOBILE NAVIGATION DROPDOWN STYLES
+================================ */
+.mobile-panel {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background: white;
+    width: 300px;
+    height: 100vh;
+    padding: 25px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+    z-index: 1001;
+    overflow-y: auto;
 }
-/* CONTACT BOX WRAPPER */
-.contact-box {
+
+.mobile-panel.open {
+    transform: translateX(300px);
+}
+
+.panel-links {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
 }
 
-/* INDIVIDUAL ITEM */
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 18px 22px;
-    border-radius: 14px;
-    background: rgb(255, 255, 255);
-    backdrop-filter: blur(6px);
-    border-bottom: 3px solid #ff7300;
-    transition: 0.3s ease;
+.panel-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
 }
 
+.panel-links a:hover {
+    color: #ff7300;
+}
 
-/* DOTTED CIRCLE ICON */
-.icon-circle {
-    width: 65px;
-    height: 65px;
-    border: 2px dashed #ff7300;
-    border-radius: 50%;
+/* Mobile dropdown */
+.mobile-dropdown {
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-dropdown-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    padding: 12px 0;
+    text-align: left;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-width: 65px;
-    transition: 0.4s ease;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.icon-circle i {
-    font-size: 22px;
+.mobile-dropdown-toggle:hover {
     color: #ff7300;
 }
 
-/* ROTATION ANIMATION ON HOVER */
-.contact-item:hover .icon-circle {
-    transform: rotate(360deg);
-    border-color: #000000;
-}
-
-/* RIGHT CONTENT */
-.contact-content h4 {
-    margin: 0;
+.mobile-dropdown-toggle i {
+    transition: transform 0.3s ease;
     font-size: 12px;
+}
+
+.mobile-dropdown-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* Mobile dropdown menu */
+.mobile-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f9f9f9;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.mobile-dropdown-menu.show {
+    max-height: 500px;
+}
+
+.mobile-dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #555;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.mobile-dropdown-menu a:hover {
+    background: rgba(255,115,0,0.1);
     color: #ff7300;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    padding-left: 20px;
 }
 
-.contact-content p {
-    margin: 3px 0;
-    color: #fff;
+/* Mobile nested dropdown */
+.mobile-nested-dropdown {
+    position: relative;
+}
+
+.mobile-nested-dropdown a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nested-dropdown a::after {
+    content: "\f054";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 10px;
+}
+
+.mobile-nested-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f0f0f0;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.mobile-nested-menu.show {
+    max-height: 300px;
+}
+
+.mobile-nested-menu a {
+    padding: 8px 25px;
     font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
 }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-    .contact-item {
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .icon-circle {
-        width: 55px;
-        height: 55px;
-        min-width: 55px;
-    }
-
-    .contact-content p {
-        font-size: 13px;
-    }
-}
+/* ===============================
+   OTHER STYLES
+================================ */
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -1604,6 +720,210 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Header Styles */
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: auto;
+    width: 250px;
+    margin-top: 0px;
+    margin-left: -20px;
+    margin-bottom: 0px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1200;
+    background: transparent;
+    border: none;
+    position: relative;
+}
+#mobilePanel .cross {
+    display: block;
+}
+
+.main-header .cross {
+    display: none;
+}
+
+#hamburgerIcon {
+    font-size: 22px;
+    line-height: 1;
+    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+    pointer-events: none;
+    color: #333;
+}
+
+.hamburger .cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+}
+
+.hamburger.active #hamburgerIcon {
+    transform: rotate(-20deg) scale(.85);
+    opacity: 0;
+}
+.hamburger.active .cross {
+    transform: translate(-50%, -50%) rotate(0);
+    opacity: 1;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close Button */
+.close-btn {
+    text-align: right;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff7300;
+}
+
+/* Panel Social */
+.panel-social {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.panel-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    color: #333;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.panel-social a:hover {
+    background: #ff7300;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .desktop-nav {
+        display: none;
+    }
+}
+
+/* Continue with rest of your styles... */
+/* [Keeping all your existing styles below this line] */
+
+/* About Section */
+.about-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-images {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.about-images img {
+    border-radius: 15px;
+}
+.about-image-main {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0b4a7a;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
 }
 
 /* Button Styles */
@@ -1674,404 +994,10 @@ html, body {
     flex-shrink: 0;
 }
 
-/* Popup Modal */
-.popup-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.popup-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup-content {
-    background: white;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.popup-modal.active .popup-content {
-    transform: scale(1);
-}
-
-.popup-header {
-    padding: 25px 30px;
-    background: linear-gradient(135deg, #0b4a7a, #0a3d6a);
-    color: white;
-    border-radius: 16px 16px 0 0;
-    position: relative;
-}
-
-.popup-title {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.popup-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.popup-close:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: rotate(90deg);
-}
-
-.popup-body {
-    padding: 30px;
-}
-
-
-
-/* Header Styles */
-.main-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    height: 80px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: auto;
-    width: 250px;
-    margin-top: 0px;      /* 🚀 Image ko upar shift karega */
-    margin-left: -20px;       /* left adjust if needed */
-    margin-bottom: 0px;
-    object-fit: contain;
-    display: block;
-}
-
-
-.desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.desktop-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.desktop-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #ff7300;
-    transition: width 0.3s ease;
-}
-
-.desktop-nav a:hover {
-    color: #ff7300;
-}
-
-.desktop-nav a:hover::after {
-    width: 100%;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.drop-btn {
-    background: #23a6f7;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.drop-btn:hover {
-    background: #1a8fd7;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    top: 45px;
-    width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #333;
-    transition: background 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    background: #f5f5f5;
-}
-
-/* Mobile Panel */
-.mobile-panel {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    background: white;
-    width: 300px;
-    height: 100vh;
-    padding: 25px;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-    transition: 0.4s ease;
-    z-index: 1001;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.mobile-panel.open {
-    left: 0;
-}
-
-.close-btn {
-    text-align: right;
-    font-size: 24px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.panel-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.panel-links a {
-    font-size: 16px;
-    text-decoration: none;
-    color: #333;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.panel-links h4 {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #ff7300;
-    margin-bottom: 10px;
-}
-
-.panel-social {
-    position: absolute;
-    bottom: 20px;
-    left: 25px;
-    display: flex;
-    gap: 15px;
-}
-
-.panel-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
-    border-radius: 50%;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.panel-social a:hover {
-    background: #ff7300;
-    color: white;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-
-.delivery-boy {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: url('h5-2.webp') center/contain no-repeat;
-    z-index: 3;
-    opacity: 0;
-}
-
-/* Animations for Hero */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes popInOut {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    20%, 80% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-/* About Section */
-.about-section {
-    padding: 100px 0;
-    background: white;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.about-images {
-    width: 100%;
-    max-width: 300px; /* adjust as per your layout */
-    margin: 0 auto;
-}
-
-.about-images img {
-    border-radius: 15px;
-}
-.about-image-main {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0b4a7a;
-    margin-bottom: 20px;
-}
-
-.about-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-/* Services Section - IMPROVED */
+/* Services Section */
 .services-section {
     padding: 120px 0;
     background: linear-gradient(135deg, #ffffff, #dce4ea);
-
 }
 
 .section-subtitle {
@@ -2081,78 +1007,16 @@ html, body {
     margin-bottom: 60px;
 }
 
-.partners-carousel {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;     /* Firefox */
-}
-
-.partners-carousel::-webkit-scrollbar {
-    display: none;             /* Chrome, Safari */
-}
-
-.service-icon i {
-    font-size: 40px;
-    color: #830000;
-}
-
-.service-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.service-description {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.service-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: #f0f7ff;
-    border-radius: 50%;
-    color: #23a6f7;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-.service-link:hover {
-    background: #23a6f7;
-    color: white;
-}
-
-/* Service Card Animation */
-@keyframes fadeUp {
-    0% { opacity:0; transform:translateY(40px); }
-    100% { opacity:1; transform:translateY(0); }
-}
-
-.service-card:nth-child(1) { animation-delay: 0.2s; }
-.service-card:nth-child(2) { animation-delay: 0.35s; }
-.service-card:nth-child(3) { animation-delay: 0.5s; }
-.service-card:nth-child(4) { animation-delay: 0.65s; }
-.service-card:nth-child(5) { animation-delay: 0.8s; }
-.service-card:nth-child(6) { animation-delay: 0.95s; }
-
-/* Partners Section - NEW */
+/* Partners Section */
 .partners-section {
     padding: 100px 0;
-    /* Background Image + Fixed Parallax Effect */
     background-image:
         linear-gradient(135deg, rgba(11, 74, 122, 0), rgba(10, 61, 106, 0)),
-        url(''); /* Replace with your image */
-
-    background-attachment: fixed; /* FIXED IMAGE */
-    background-size: cover;       /* Cover whole screen */
-    background-position: center;  /* Center image nicely */
-    background-repeat: no-repeat; /* No repeat */
+        url('');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -2178,32 +1042,11 @@ html, body {
     height: auto;
     overflow: hidden;
 }
-.partners-carousel {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    cursor: grab;
-    padding-bottom: -100px;
-}
-
-.partners-carousel:active {
-    cursor: grabbing;
-}
-
-.partners-track {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    width: max-content;
-}
-
 
 .partners-track {
     display: flex;
     animation: scroll 15s linear infinite;
     width: fit-content;
-    
 }
 
 .partners-track:hover {
@@ -2221,7 +1064,6 @@ html, body {
     filter: grayscale(10%);
     opacity: 0.9;
     transition: all 0.3s ease;
-    
 }
 
 .partner-logo:hover {
@@ -2293,11 +1135,12 @@ html, body {
     width: 50px;
     height: 50px;
     background: #ff73008c;
-    border-radius:   25px  25px  25px 25px;
+    border-radius: 25px;
     color: #ffffff;
     font-size: 20px;
     flex-shrink: 0;
 }
+
 .feature-icon img {
     width: 65%;
     height: 65%;
@@ -2322,7 +1165,7 @@ html, body {
 }
 
 .why-choose-image-main {
-    width: 100%;
+    width: 90%;
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -2332,16 +1175,16 @@ html, body {
     width: 60%;
     border-radius: 15px;
     bottom: -30px;
-    right: -30px;
+    right: -50px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
-/* Background like screenshot */
+
+/* Stats Section */
 .stats-section {
     padding: 70px 0;
     background: #003b73; 
 }
 
-/* Grid */
 .stats-wrapper {
     max-width: 1100px;
     margin: auto;
@@ -2350,7 +1193,6 @@ html, body {
     gap: 25px;
 }
 
-/* Card */
 .stat-box {
     background: #0000009c;
     border: 1px solid rgba(10, 10, 10, 0.315);
@@ -2365,17 +1207,14 @@ html, body {
     gap: -2px;
 }
 
-/* Icon Circle */
 .stat-icon img {
     width: 65px;
     height: 65px;
     object-fit: contain;
     left: auto;
     top: auto;
-    
 }
 
-/* Number */
 .stat-value {
     font-size: 36px;
     font-weight: 800;
@@ -2386,7 +1225,6 @@ html, body {
     margin-top: 5px;
 }
 
-/* + sign */
 .plus {
     font-size: 20px;
     font-weight: 800;
@@ -2395,7 +1233,8 @@ html, body {
     left: 115px;
     top: 40px;
 }
-.plus-data{
+
+.plus-data {
     font-size: 20px;
     font-weight: 800;
     color: #fff;
@@ -2404,7 +1243,6 @@ html, body {
     top: 40px;
 }
 
-/* Text Label */
 .stat-text {
     font-size: 17px;
     color: #d3e6ff;
@@ -2412,81 +1250,252 @@ html, body {
     text-align: center;
     padding-left: 40%;
 }
-.footer .contact-details li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 10px;
+
+/* Cities Contact Section */
+.cities-contact-section {
+    padding: 80px 0;
+    background: #ffffff;
 }
 
-.footer .contact-details i {
-    font-size: 18px;
-    color: #ff7300; /* highlight color */
+.cities-contact-section .container {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 40px;
+    align-items: start;
 }
 
-.footer .contact-details a,
-.footer .contact-details span {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 15px;
+@media (max-width: 992px) {
+    .cities-contact-section .container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
 
-.footer .contact-details a:hover {
+.tag {
+    background: #ff7b00;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
     color: #fff;
+    font-weight: 600;
 }
 
-
-
-/* Nested dropdown styling */
-.nested-dropdown {
-    padding-left: 15px;
+.cities-title {
+    margin: 15px 0 25px;
+    font-size: 32px;
+    line-height: 40px;
+    color: #005792;
+    font-weight: 800;
 }
 
-.nested-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #333;
-    padding: 10px 15px;
-    font-size: 15px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
+@media (max-width: 480px) {
+    .cities-title {
+        font-size: 26px;
+        line-height: 34px;
+    }
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 480px) {
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.city-card {
+    background: #005792;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 12px;
     cursor: pointer;
-}
-/* Main dropdown animation */
-.dropdown-menu,
-.nested-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
+    position: relative;
+    font-weight: 600;
+    transition: 0.3s ease;
+    transform: translateY(30px);
+    opacity: 0;
 }
 
-/* Inner B2B dropdown indent */
-.nested-dropdown {
-    padding-left: 15px;
+.city-card:hover {
+    background: #ff7b00;
+    transform: translateX(8px);
 }
 
-
-.nested-menu {
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(0,0,0,0.03);
-    margin-left: 10px;
-    border-left: 2px solid #ff7300;
-    transition: max-height 0.3s ease;
+.city-card::after {
+    content: "→";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+    transition: 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffbe0b;
 }
 
-.nested-menu a {
-    padding: 8px 15px;
-    font-size: 14px;
-    display: block;
+.city-card:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
 }
 
-
-.gallery-item:hover .gallery-overlay {
+.city-card.show {
+    transform: translateY(0);
     opacity: 1;
 }
+
+.right-form {
+    background: #ff7300;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 480px) {
+    .right-form {
+        padding: 30px 20px;
+    }
+}
+
+.form-title {
+    text-align: center;
+    color: #005792;
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ff7300;
+    border-radius: 10px;
+    background: #ffffff9d;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #005792;
+    box-shadow: 0 0 0 3px rgba(0, 87, 146, 0.15);
+}
+
+.input-group label {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 14px;
+    color: #006cb6;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+    top: -8px;
+    left: 10px;
+    background: #ff7300;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.input-group.textarea textarea {
+    height: 110px;
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #005792;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+.submit-btn:hover {
+    background: #003d5c;
+    transform: translateY(-2px);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 60px 0;
+    margin-top: -30px;
+    background: #ffffff8e;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: -10px;
+    color: #0b4a7a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    font-size: 16px;
+    color: #555;
+    padding-bottom: 20px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 20px 20px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
 /* Testimonials Section */
 .testimonials-section {
     padding: 100px 0;
@@ -2502,12 +1511,18 @@ html, body {
     -webkit-overflow-scrolling: touch;
     cursor: grab;
     padding: 20px 0;
-     scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
 }
+
+.testimonials-slider::-webkit-scrollbar {
+    display: none;
+}
+
 .testimonials-track {
     display: flex;
     transition: transform 0.5s ease;
 }
+
 .testimonial-card {
     min-width: 350px;
     background: white;
@@ -2516,6 +1531,7 @@ html, body {
     margin: 0 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
+
 .testimonial-text {
     font-size: 16px;
     color: #555;
@@ -2528,31 +1544,37 @@ html, body {
     align-items: center;
     gap: 15px;
 }
+
 .author-image {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
 }
+
 .author-info h4 {
     font-size: 18px;
     font-weight: 600;
     color: #0b4a7a;
 }
+
 .author-info p {
     font-size: 14px;
     color: #666;
 }
+
 .testimonial-rating {
     color: #ff7300;
     margin-top: 10px;
 }
+
 .testimonial-nav {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 30px;
 }
+
 .nav-dot {
     width: 12px;
     height: 12px;
@@ -2572,15 +1594,13 @@ html, body {
     color: white;
     text-align: center;
     margin-top: -20px;
-    /* Background Image + Fixed Parallax Effect */
     background-image:
         linear-gradient(135deg, rgba(11, 74, 122, 0.205), rgba(10, 61, 106, 0.178)),
-        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg'); /* Replace with your image */
-
-    background-attachment: fixed; /* FIXED IMAGE */
-    background-size: cover;       /* Cover whole screen */
-    background-position: center;  /* Center image nicely */
-    background-repeat: no-repeat; /* No repeat */
+        url('https://itzadarsh.co.in/assets/trackship/img/way-to-India.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .cta-title {
@@ -2588,6 +1608,7 @@ html, body {
     font-weight: 700;
     margin-bottom: 20px;
 }
+
 .cta-text {
     font-size: 18px;
     margin-bottom: 40px;
@@ -2595,11 +1616,13 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
+
 .btn-cta {
     color: #fff;
 }
@@ -2613,81 +1636,18 @@ html, body {
     color: white;
     border: 2px solid white;
 }
+
 .btn-outline:hover {
     background: white;
     color: #0b4a7a;
 }
 
-/* REMOVE ALL GAPS / BORDERS */
-.india-hero,
-.road-layer,
-.road-layer img {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-}
-
-/* MAIN WRAPPER */
-.india-hero {
-    width: 100%;
-    overflow: hidden;
-}
-
-/* ROAD BACKGROUND */
-.road-layer {
-    width: 100%;
-    height: 228px;
-    background: url("PNG/moving-bike-bg.png") center center no-repeat;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-}
-
-/* BIKES */
-.bike {
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    z-index: 20;
-}
-
-/* LEFT → RIGHT */
-.bike-left {
-    animation: runRight 9s linear infinite;
-}
-
-/* RIGHT → LEFT */
-.bike-right {
-    animation: runLeft 11s linear infinite;
-    transform: scaleX(-1);
-    height: 100px;
-}
-
-/* ANIMATIONS */
-@keyframes runRight {
-    0% { left: -200px; }
-    100% { left: 110%; }
-}
-
-@keyframes runLeft {
-    0% { right: -200px; }
-    100% { right: 110%; }
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .road-layer {
-        height: 180px;
-    }
-    .bike {
-        width: 80px;
-    }
-}
-/* Contact Form Section */
+/* Contact Section */
 .contact-section {
     padding: 100px 0;
-    background: #006cb6;
+    background: #006db600;
 }
+
 .contact-container {
     display: flex;
     gap: 60px;
@@ -2695,48 +1655,35 @@ html, body {
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .contact-info {
     flex: 1;
 }
+
 .contact-form {
     flex: 1;
 }
+
 .contact-title {
     font-size: 36px;
     font-weight: 700;
     color: #ff7300;
     margin-bottom: 20px;
 }
+
 .contact-text {
-    font-size: 16px;
-    color: #ffffff;
+    font-size: 19px;
+    color: #ff0000;
     margin-bottom: 30px;
-    font-weight: 20px
-    ;
+    font-weight: 30px;
 }
+
 .contact-item {
     display: flex;
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 20px;
 }
-.car {
-  position: absolute;
-  top: 90px; /* adjust height */
-  left: -200px; /* start outside screen */
-  width: 160px;
-  opacity: 0;
-  transition: transform 3s ease-out, opacity 0.8s ease-in;
-}
-
-/* Car drive animation */
-.car.drive {
-  opacity: 1;
-  transform: translateX(120vw);
-  animation-delay: 3.4s;
-  
-}
-
 
 .contact-icon {
     display: flex;
@@ -2745,8 +1692,7 @@ html, body {
     width: 50px;
     height: 50px;
     background: rgb(247, 146, 30);
-    
-    border-radius:   25px  25px  25px 25px;
+    border-radius: 25px;
     color: #ff7300;
     font-size: 20px;
     flex-shrink: 0;
@@ -2771,7 +1717,7 @@ html, body {
     background: #0a630eb6;
     color: white;
     padding: 14px 28px;
-    border-radius: 8px;
+    border-radius: 25px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -2783,39 +1729,258 @@ html, body {
     transform: translateY(-3px);
 }
 
+/* Form Styles */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
 
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-control,
+.form-message,
+select.form-control {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 16px;
+    border-radius: 16px;
+    border: 1.8px solid #d5d5d5;
+    background: rgba(255, 255, 255, 0.212);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    outline: none;
+    transition: 0.25s ease;
+}
+
+
+.form-control:focus,
+.form-message:focus,
+select.form-control:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 0 4px rgba(247,147,30,0.25);
+    background: #fff;
+}
+
+.form-label {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 15px;
+    color: #555;
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label,
+select.form-control:focus + .form-label,
+select.form-control:not([value=""]) + .form-label,
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+    top: -10px;
+    left: 14px;
+    font-size: 13px;
+    color: #ff7300;
+    background: #fff;
+    border-radius: 15px;
+    padding: 0 5px;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%230b4a7a" height="20" width="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 20px;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7300, #FFA726);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-submit:hover {
+    background: linear-gradient(135deg, #e56500, #e59500);
+    transform: translateY(-2px);
+}
+
+/* India Hero Section */
+.india-hero,
+.road-layer,
+.road-layer img {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.india-hero {
+    width: 100%;
+    overflow: hidden;
+}
+
+.road-layer {
+    width: 100%;
+    height: 228px;
+    background: url("PNG/moving-bike-bg.png") center center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.bike {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: 20;
+}
+
+.bike-left {
+    animation: runRight 9s linear infinite;
+}
+
+.bike-right {
+    animation: runLeft 11s linear infinite;
+    transform: scaleX(-1);
+    height: 100px;
+}
+
+@keyframes runRight {
+    0% { left: -200px; }
+    100% { left: 110%; }
+}
+
+@keyframes runLeft {
+    0% { right: -200px; }
+    100% { right: 110%; }
+}
+
+@media (max-width: 900px) {
+    .road-layer {
+        height: 180px;
+    }
+    .bike {
+        width: 80px;
+    }
+}
+
+/* Footer */
+.footer {
+    background: #042b53 url('//trackshiplogistics.com/india-map.png') 
+               center/cover no-repeat;
+    color: #ffffff;
+    padding: 70px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-column p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff7300;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+.footer-links i{
+ color: #ff7300;
+}
+
+.footer-links a {
+    color: #ddd;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff7300;
+}
 
 .social-icons {
     display: flex;
-    gap: 35px;
-}
-.social-icon img{
-    height: auto;
-    width: 25px;
-    
+    gap: 15px;
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
     color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
+    text-decoration: none;
 }
 
 .social-icon:hover {
-    background: #b3a100;
+    background: #ff7300;
     transform: translateY(-3px);
 }
 
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
 
+.credit {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #ffffffcc;
+    position: relative;
+}
 
-/* Reveal Animation - IMPROVED */
+.credit a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #ff7300;
+}
+
+.credit a:hover {
+    text-decoration: underline;
+}
+
+/* Reveal Animation */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -2845,11 +2010,136 @@ html, body {
     transform: translateX(0);
 }
 
+/* Popup Modal */
+.popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px; /* Prevents content touching edges on mobile */
+}
+
+/* Popup Box */
+.popup-content {
+    background: #fff;
+    width: 100%;
+    max-width: 420px; /* Desktop width stays same */
+    border-radius: 14px;
+    padding: 0;
+    overflow: scroll;
+    animation: popIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Popup Header */
+.popup-header {
+    background: #0b4a7a;
+    padding: 15px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.popup-close {
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.popup-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Popup Body */
+.popup-body {
+    padding: 20px;
+}
+
+/* Fixing mobile form spacing */
+.popup-body input,
+.popup-body select,
+.popup-body textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mobile Improvements */
+@media (max-width: 480px) {
+    .popup-content {
+        border-radius: 12px;
+    }
+
+    .popup-body {
+        padding: 18px;
+    }
+}
+
+
+/* WhatsApp Floater */
+.whatsapp-floater {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Title */
+.section-title {
+    font-size: 38px;
+    font-weight: 800;
+    margin-top: -10px;
+    color: #0b4a7a;
+    text-align: center;
+}
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+.social-icon img{
+    height: auto;
+    width: 25px;
+    
+}
 /* Responsive Design */
 @media (max-width: 992px) {
-    .desktop-nav {
-        display: none;
-    }
     .about-container {
         flex-direction: column;
         text-align: center;
@@ -2860,15 +2150,12 @@ html, body {
     .features-list {
         grid-template-columns: 1fr;
     }
-    
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
     .contact-container {
         flex-direction: column;
     }
-    
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -2878,28 +2165,16 @@ html, body {
     .section-title {
         font-size: 28px;
     }
-    
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
-    .steps-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-    
     .testimonial-card {
         min-width: 300px;
     }
-    
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
     .footer-container {
         grid-template-columns: 1fr;
     }
@@ -2912,413 +2187,13 @@ html, body {
     .about-title, .why-choose-title, .cta-title, .contact-title {
         font-size: 24px;
     }
-    
-    .stat-number {
-        font-size: 32px;
-    }
     .btn {
         width: 100%;
         justify-content: center;
     }
 }
 
-/* ---------- Responsive Hamburger position & transition ---------- */
-/* default hidden (desktop) */
-.hamburger {
-    display: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1200;
-    background: transparent;
-    border: none;
-    position: relative;
-}
-
-/* icon inside */
-#hamburgerIcon {
-    font-size: 22px;
-    line-height: 1;
-    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
-    pointer-events: none;
-    color: #333;
-}
-
-/* show cross using a separate element (avoid layout shift) */
-.hamburger .cross {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 22px;
-    opacity: 0;
-    pointer-events: none;
-    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
-}
-
-/* when active - hide bars icon and show cross */
-.hamburger.active #hamburgerIcon {
-    transform: rotate(-20deg) scale(.85);
-    opacity: 0;
-}
-.hamburger.active .cross {
-    transform: translate(-50%, -50%) rotate(0);
-    opacity: 1;
-}
-
-/* mobile panel closing animation (cut-close) */
-.mobile-panel {
-    transform: translateX(-100%);
-    transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .25s ease;
-    left: 0; /* will be controlled via transform rather than left */
-    will-change: transform, opacity;
-}
-
-.mobile-panel.open {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.mobile-panel.closing {
-    transform: translateX(-120%) scale(.98);
-    opacity: 0;
-}
-
-/* overlay transitions */
-.overlay {
-    opacity: 0;
-    transition: opacity .25s ease;
-    display: block; /* keep it in DOM; visibility controlled via opacity */
-    pointer-events: none;
-}
-.overlay.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* place hamburger absolutely inside header on small screens so it doesn't shift */
-@media (max-width: 992px) {
-    .hamburger {
-        display: flex;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    /* hide desktop nav in mobile */
-    .desktop-nav { display: none; }
-}
-
-
-
-/* Icon Style */
-.service-icon i {
-    font-size: 42px;
-    padding: 22px;
-    background: radial-gradient(circle at 30% 30%, #ffd29f77, #ff323256);
-    border-radius: 50%;
-    color: #32b4ff;
-    margin-bottom: 16px;
-    z-index: 2;
-    position: relative;
-}
-
-/* Title */
-.service-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #083b74;
-    position: relative;
-    z-index: 2;
-}
-
-/* Description */
-.service-description {
-    color: #ffffff;
-    font-size: 14.5px;
-    margin-top: 10px;
-    z-index: 2;
-    position: relative;
-    line-height: 1.5;
-}
-
-/* Arrow Button */
-.service-link {
-    margin-top: 20px;
-    display: inline-flex;
-    width: 42px;
-    height: 42px;
-    background: #ff7300;
-    border-radius: 50%;
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-    position: relative;
-    z-index: 2;
-}
-
-.service-link:hover {
-    background: #000000;
-}
-
-/* ========= SCROLL-IN ANIMATION ========= */
-.reveal-service {
-    opacity: 0;
-    transform: translateY(10%);
-    transition: 2.3s ease-out;
-}
-
-.reveal-service.active {
-    opacity: 1;
-    transform: translateY();
-}
-/* Mobile Dropdown */
-.mobile-dropdown {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #0575c0;
-}
-
-.drop-btn {
-    width: 100%;
-    background: none;
-    border: none;
-    font-size: 16px;
-    color: #333;
-    padding: 12px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.drop-btn i {
-    transition: 0.3s;
-}
-
-.drop-btn.active i {
-    transform: rotate(180deg);
-}
-
-/* Hidden Dropdown Menu */
-.drop-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.drop-menu a {
-    padding: 10px 0 10px 10px;
-    color: #555;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.drop-menu a:hover {
-    color: #ff7300;
-}
-.dropdown {
-    margin-top: 10px;
-}
-
-.dropdown-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #ff7300;
-    font-size: 16px;
-    padding: 12px 0;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dropdown-toggle i {
-    transition: 0.3s;
-}
-
-.dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: max-height 0.3s ease;
-}
-
-.dropdown-menu a {
-    padding: 10px 15px;
-    font-size: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    margin-top: 1px;
-}
-
-.credit {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 15px;
-    color: #ffffffcc;   /* light white */
-    position: relative; /* safe for all layouts */
-}
-
-.credit a {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.credit a:hover {
-    text-decoration: underline;
-}
-/* PRELOADER */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff; /* White background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999999; /* Sabse upar */
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-/* WhatsApp Floater */
-.whatsapp-floater {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.5s ease forwards;
-}
-
-.whatsapp-floater:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-floater i {
-    color: white;
-    font-size: 28px;
-}
-
-/* Redirect Toast */
-.redirect-toast {
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 16px;
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    gap: 15px;
-}
-
-.redirect-toast.active {
-    display: flex;
-}
-
-.redirect-toast button {
-    background-color: #ff7300;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.redirect-toast button:hover {
-    background-color: #e6830d;
-}
-
-#preloader.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/*hero-section*/
-		/* Reset and Base Styles */
-
-</style>
-<style>
-		/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    overflow-x: hidden;
-}
-
-/* Header Styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: relative;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0b4a7a;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ff7300;
-}
-
-/* Revolution Slider Container */
+/* Revolution Slider Styles */
 #rev-slider-container {
     width: 100%;
     height: calc(100vh - 70px);
@@ -3339,7 +2214,6 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Slide Styles */
 .rev-slide {
     position: absolute;
     top: 0;
@@ -3370,7 +2244,6 @@ nav ul li a:hover {
     margin-left: 40px;
     margin-top: 30px;
     margin-right: -60px;
-    
     object-fit: cover;
     transition: transform 1.5s ease;
 }
@@ -3439,7 +2312,6 @@ nav ul li a:hover {
     box-shadow: 0 6px 20px rgba(11, 74, 122, 0.4);
 }
 
-/* Slider Navigation */
 #rev-slider-nav {
     position: absolute;
     bottom: 30px;
@@ -3447,7 +2319,33 @@ nav ul li a:hover {
     display: flex;
     z-index: 10;
 }
+/* Arrow Button */
+.service-link {
+    margin-top: 20px;
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    background: #ff7300;
+    border-radius: 50%;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    position: relative;
+    z-index: 2;
+}
 
+.service-link:hover {
+    background: #000000;
+}
+/* Title */
+.service-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #083b74;
+    position: relative;
+    z-index: 2;
+}
 .rev-slider-dot {
     width: 12px;
     height: 12px;
@@ -3463,7 +2361,6 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
     .rev-slide-content {
         padding: 40px 50px;
@@ -3485,7 +2382,7 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     #rev-slider-container {
         height: 0;
-        padding-top: 62.23%; /* 368/229 ratio */
+        padding-top: 62.23%;
         position: relative;
     }
     
@@ -3568,8 +2465,7 @@ nav ul li a:hover {
         font-size: 11px;
     }
 }
-	</style>
-
+</style>
 </head>
 <body>
 <!-- Popup Modal -->
@@ -3581,34 +2477,26 @@ nav ul li a:hover {
                 <i class="fas fa-times"></i>
             </div>
         </div>
-
         <div class="popup-body">
             <form id="popupForm">
-
                 <div class="form-row">
-                    <div class="form-group floating">
-                        <input type="text" id="popupName" name="name" required>
-                        <label for="popupName">Name</label>
-                        <span class="error-text"></span>
+                    <div class="form-group">
+                        <input type="text" id="popupName" name="name" class="form-control" placeholder=" " required>
+                        <label for="popupName" class="form-label">Name</label>
                     </div>
-
-                    <div class="form-group floating">
-                        <input type="email" id="popupEmail" name="email" required>
-                        <label for="popupEmail">Email</label>
-                        <span class="error-text"></span>
+                    <div class="form-group">
+                        <input type="email" id="popupEmail" name="email" class="form-control" placeholder=" " required>
+                        <label for="popupEmail" class="form-label">Email</label>
                     </div>
                 </div>
-
                 <div class="form-row">
-                    <div class="form-group floating">
-                        <input type="tel" id="popupContact" name="contact" required>
-                        <label for="popupContact">Contact No</label>
-                        <span class="error-text"></span>
+                    <div class="form-group">
+                        <input type="tel" id="popupContact" name="contact" class="form-control" placeholder=" " required>
+                        <label for="popupContact" class="form-label">Contact No</label>
                     </div>
-
-                    <div class="form-group floating">
-                        <select id="popupService" name="service" required>
-                            <option value="" disabled selected></option>
+                    <div class="form-group">
+                        <select id="popupService" name="service" class="form-control" required>
+                            <option value="">Select Service</option>
                             <option value="courier">Own Courier Point</option>
                             <option value="logistics">Logistics</option>
                             <option value="solar">Solar Energy</option>
@@ -3617,147 +2505,151 @@ nav ul li a:hover {
                             <option value="tech">Technology Services</option>
                             <option value="sms">Bulk SMS</option>
                         </select>
-                        <label for="popupService">Select Service</label>
-                        <span class="error-text"></span>
+                        <label for="popupService" class="form-label">Select Service</label>
                     </div>
                 </div>
-
                 <div class="form-row">
-                    <div class="form-group floating">
-                        <select id="popupOpportunity" name="opportunity" required>
-                            <option value="" disabled selected></option>
+                    <div class="form-group">
+                        <select id="popupOpportunity" name="opportunity" class="form-control" required>
+                            <option value="">Select Opportunity</option>
                             <option value="franchise">Franchise</option>
                             <option value="partner">Business Partner</option>
                             <option value="delivery">Delivery Boy</option>
                             <option value="customer">Customer</option>
                             <option value="other">Other</option>
                         </select>
-                        <label for="popupOpportunity">Select Opportunity</label>
-                        <span class="error-text"></span>
+                        <label for="popupOpportunity" class="form-label">Select Opportunity</label>
                     </div>
-
-                    <div class="form-group floating">
-                        <input type="text" id="popupPincode" name="pincode" required>
-                        <label for="popupPincode">Pincode</label>
-                        <span class="error-text"></span>
+                    <div class="form-group">
+                        <input type="text" id="popupPincode" name="pincode" class="form-control" placeholder=" " required>
+                        <label for="popupPincode" class="form-label">Pincode</label>
                     </div>
                 </div>
-
-                <div class="form-group floating">
-                    <input type="text" id="popupState" name="state" required>
-                    <label for="popupState">State</label>
-                    <span class="error-text"></span>
+                <div class="form-group">
+                    <input type="text" id="popupState" name="state" class="form-control" placeholder=" " required>
+                    <label for="popupState" class="form-label">State</label>
                 </div>
-
-                <div class="form-group floating">
-                    <textarea id="popupMessage" name="message" required></textarea>
-                    <label for="popupMessage">Message</label>
-                    <span class="error-text"></span>
+                <div class="form-group">
+                    <textarea id="popupMessage" name="message" class="form-message" placeholder=" " required></textarea>
+                    <label for="popupMessage" class="form-label">Message</label>
                 </div>
-
                 <button type="submit" class="form-submit">Submit</button>
-
             </form>
         </div>
     </div>
 </div>
+
 <!-- Header -->
 <header class="main-header">
     <div class="logo">
         <img src="https://itzadarsh.co.in/assets/trackship/img/track-ship-logo.png" alt="Trackship Logo">
     </div>
     
+    <!-- Desktop Navigation -->
     <nav class="desktop-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-
-    <!-- SERVICES DROPDOWN -->
-    <div class="dropdown">
-        <button class="dropdown-toggle">
-            Services <i class="fas fa-chevron-down"></i>
-        </button>
-
-        <div class="dropdown-menu">
-            <a href="service.html">Courier Point</a>
-            <a href="service.html">Logistics</a>
-
-            <!-- B2B NESTED DROPDOWN -->
-            <div class="nested-dropdown">
-                <button class="nested-toggle">
-
-                    B2B <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="nested-menu">
-                    <a href="b2b.html">B2B Seller</a>
-                    <a href="b2b.html">B2B Franchise</a>
-                    <a href="b2b.html">B2B Services</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        
+        <!-- Services Dropdown -->
+        <div class="dropdown">
+            <button class="dropdown-toggle">
+                Services <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a href="service.html">Courier Point</a>
+                <a href="service.html">Logistics</a>
+                
+                <!-- Nested B2B Dropdown -->
+                <div class="nested-dropdown">
+                    <a href="#">B2B</a>
+                    <div class="nested-menu">
+                        <a href="b2b.html">B2B Seller</a>
+                        <a href="b2b.html">B2B Franchise</a>
+                        <a href="b2b.html">B2B Services</a>
+                    </div>
                 </div>
             </div>
-            <!-- END NESTED -->
         </div>
-    </div>
-    <!-- END SERVICES DROPDOWN -->
-
-    <a href="#why-choose">Why Choose Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
+        
+        <a href="#why-choose">Why Choose Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
     
+    <!-- Mobile Menu Button -->
     <div class="hamburger" id="hamburger">
         <i class="fas fa-bars" id="hamburgerIcon"></i>
-        <div id="headerClose" class="cross">
+        <div class="cross">
             <i class="fas fa-times"></i>
         </div>
     </div>
 </header>
+
 <!-- Mobile Panel -->
 <div class="mobile-panel" id="mobilePanel">
     <div class="close-btn" id="closePanel">
         <i class="fas fa-times"></i>
     </div>
-
+    
     <div class="panel-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-
-        <!-- SERVICES MAIN DROPDOWN -->
-        <div class="dropdown">
-            <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">
+        
+        <!-- Mobile Services Dropdown -->
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle">
                 Services <i class="fas fa-chevron-down"></i>
             </button>
-
-            <div class="dropdown-menu" id="servicesMenu" style="display: none;">
+            <div class="mobile-dropdown-menu">
                 <a href="service.html">Courier Point</a>
                 <a href="service.html">Logistics</a>
-                <div class="nested-dropdown">
-                    <button class="nested-toggle" aria-expanded="false" aria-controls="b2bMenu">
-                        B2B <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="nested-menu" id="b2bMenu" style="display: none;">
-                        <a href="service.html">B2B Seller</a>
-                        <a href="service.html">B2B Franchise</a>
-                        <a href="service.html">B2B Services</a>
+                
+                <!-- Mobile Nested B2B Dropdown -->
+                <div class="mobile-nested-dropdown">
+                    <a href="#" class="mobile-nested-toggle">
+                        B2B 
+                    </a>
+                    <div class="mobile-nested-menu">
+                        <a href="b2b.html">B2B Seller</a>
+                        <a href="b2b.html">B2B Franchise</a>
+                        <a href="b2b.html">B2B Services</a>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <a href="#why-choose">Why Choose Us</a>
+        <a href="contact.html">Contact</a>
     </div>
-
+    
     <div class="panel-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        
+                    <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
+                    </a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
+                    </a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                    </a>
+        <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+        </a>
+                
     </div>
 </div>
+
+<!-- Overlay -->
 <div class="overlay" id="overlay"></div>
+
 <!-- WhatsApp Floater -->
-<a href="https://wa.me/917400372375?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
+<a href="https://wa.me/919136601185?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
+
 <!-- Lottie Import -->
 <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
 <!-- PRELOADER -->
 <div id="preloader">
     <dotlottie-wc 
@@ -3765,93 +2657,95 @@ nav ul li a:hover {
         style="width: 200px;height: 200px" autoplay loop>
     </dotlottie-wc>
 </div>
+
 <br>
-    <br>
-    <br>
-    <br>
-    <div id="rev-slider-container">
-        <div id="rev-slider-wrapper">
-            <div id="rev-slides-container">
-                <!-- Slide 1 -->
-                <div class="rev-slide" id="rev-slide-1">
-                    <div class="rev-slide-image">
-                        <img src="tech.jpg" alt="Shipping Logistics">
-                    </div>
-                    <div class="rev-slide-content">
-                        <h1>Global Shipping Solutions</h1>
-                        <h2>Connecting Your Business Worldwide</h2>
-                        <p>Experience seamless international shipping with our comprehensive logistics network. We deliver your cargo safely and efficiently across continents.</p>
-                        <button class="rev-slider-btn">Learn More</button>
-                    </div>
-                </div>
+<br>
+<br>
+<br>
 
-                <!-- Slide 2 -->
-                <div class="rev-slide" id="rev-slide-2">
-                    <div class="rev-slide-image">
-                     <img src="growth.jpg" alt="Transport Services">    
-                    </div>
-                    <div class="rev-slide-content">
-                        <h1>Efficient Transport</h1>
-                        <h2>Advanced Fleet Management</h2>
-                        <p>Our state-of-the-art transport solutions ensure your goods reach their destination on time. With real-time tracking and optimized routes, we guarantee reliability.</p>
-                        <button class="rev-slider-btn">Our Services</button>
-                    </div>
+<!-- Revolution Slider -->
+<div id="rev-slider-container">
+    <div id="rev-slider-wrapper">
+        <div id="rev-slides-container">
+            <!-- Slide 1 -->
+            <div class="rev-slide" id="rev-slide-1">
+                <div class="rev-slide-image">
+                    <img src="tech.jpg" alt="Shipping Logistics">
                 </div>
-
-                <!-- Slide 3 -->
-                <div class="rev-slide" id="rev-slide-3">
-                    <div class="rev-slide-image">
-                      <img src="smart-warehouse.jpg" alt="Warehousing Solutions">
-                    </div>
-                    <div class="rev-slide-content">
-                        <h1>Smart Warehousing</h1>
-                        <h2>Optimized Storage Solutions</h2>
-                        <p>Our strategically located warehouses provide secure storage and efficient inventory management. Reduce costs and improve delivery times with our warehousing expertise.</p>
-                        <button class="rev-slider-btn">Get Started</button>
-                    </div>
+                <div class="rev-slide-content">
+                    <h1>Global Shipping Solutions</h1>
+                    <h2>Connecting Your Business Worldwide</h2>
+                    <p>Experience seamless international shipping with our comprehensive logistics network. We deliver your cargo safely and efficiently across continents.</p>
+                    <button class="rev-slider-btn">Learn More</button>
                 </div>
             </div>
 
-            <!-- Slider Navigation -->
-            <div id="rev-slider-nav">
-                <div class="rev-slider-dot active" data-slide="0"></div>
-                <div class="rev-slider-dot" data-slide="1"></div>
-                <div class="rev-slider-dot" data-slide="2"></div>
+            <!-- Slide 2 -->
+            <div class="rev-slide" id="rev-slide-2">
+                <div class="rev-slide-image">
+                    <img src="growth.jpg" alt="Transport Services">    
+                </div>
+                <div class="rev-slide-content">
+                    <h1>Efficient Transport</h1>
+                    <h2>Advanced Fleet Management</h2>
+                    <p>Our state-of-the-art transport solutions ensure your goods reach their destination on time. With real-time tracking and optimized routes, we guarantee reliability.</p>
+                    <button class="rev-slider-btn">Our Services</button>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="rev-slide" id="rev-slide-3">
+                <div class="rev-slide-image">
+                    <img src="smart-warehouse.jpg" alt="Warehousing Solutions">
+                </div>
+                <div class="rev-slide-content">
+                    <h1>Smart Warehousing</h1>
+                    <h2>Optimized Storage Solutions</h2>
+                    <p>Our strategically located warehouses provide secure storage and efficient inventory management. Reduce costs and improve delivery times with our warehousing expertise.</p>
+                    <button class="rev-slider-btn">Get Started</button>
+                </div>
             </div>
         </div>
+
+        <!-- Slider Navigation -->
+        <div id="rev-slider-nav">
+            <div class="rev-slider-dot active" data-slide="0"></div>
+            <div class="rev-slider-dot" data-slide="1"></div>
+            <div class="rev-slider-dot" data-slide="2"></div>
+        </div>
     </div>
-    <br>
+</div>
+
+<br>
 
 <!-- About Section -->
 <section class="about-section" id="about">
-    
     <div class="container">
         <div class="about-container">
             <div class="about-images reveal">
                 <img src="about-trackship.png" alt="Logistics Team" class="about-image-main">
             </div>
             
-            <div class="about-content ">
-                <h2 class="about-title reveal-left hover-icon-left">Your One-Stop Solution for Success & Innovation</h2>
+            <div class="about-content">
+                <h2 class="about-title reveal-left">Your One-Stop Solution for Success & Innovation</h2>
                 <p class="about-text reveal-right">At Trackship, we are committed to being a trusted partner for individuals, businesses, and organizations, offering an extensive suite of services designed to meet diverse needs efficiently and effectively.</p>
                 <p class="about-text reveal-left">From logistics and financial solutions to technology and renewable energy, our expertise and dedication drive us to provide innovative and reliable solutions across multiple domains.</p>
-                <a href="service.html" class="btn btn-primary ">
+                <a href="service.html" class="btn btn-primary">
                     <span>Explore Our Services</span>
-                    <span class="btn-icon ">
-                        <i class="fas fa-arrow-right "></i>
+                    <span class="btn-icon">
+                        <i class="fas fa-arrow-right"></i>
                     </span>
                 </a>
             </div>
         </div>
-        
     </div>
 </section>
-<!-- Partners Section - NEW -->
+
+<!-- Partners Section -->
 <section class="partners-section" id="partners">
-    
     <div class="container">
-        <h2 class="partners-title reveal reveal-left">Our Trusted Partners</h2>
-        <p class="partners-subtitle reveal reveal-right">We work with leading companies to deliver exceptional service</p>
+        <h2 class="partners-title reveal">Our Trusted Partners</h2>
+        <p class="partners-subtitle reveal">We work with leading companies to deliver exceptional service</p>
         
         <div class="partners-carousel">
             <div class="partners-track">
@@ -3901,31 +2795,31 @@ nav ul li a:hover {
         </div>
     </div>
 </section>
-<!-- Services Section - IMPROVED -->
+
+<!-- Services Section -->
 <section class="services-section" id="services">
-    
     <div class="container">
-        <h2 class="section-title reveal reveal-left hover-icon-left">We Provide Exclusive Service For Your Business</h2>
-        <p class="section-subtitle reveal reveal-right">Our comprehensive range of services ensures all your business needs are met</p>
+        <h2 class="section-title reveal">We Provide Exclusive Service For Your Business</h2>
+        <p class="section-subtitle reveal">Our comprehensive range of services ensures all your business needs are met</p>
         
         <div class="services-grid">
             <div class="service-card reveal">
                 <div class="service-icon">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/11/delivery-man.png" alt="" style="height: 100px; width: 100px;">
                 </div>
-                <h3 class="service-title reveal-left">Own Courier Point</h3>
-                <p class="service-description reveal-right">Providing doorstep courier support with high-quality service assurance.</p>
+                <h3 class="service-title">Own Courier Point</h3>
+                <p class="service-description">Providing doorstep courier support with high-quality service assurance.</p>
                 <a href="#" class="service-link">
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             
-            <div class="service-card reveal ">
-                <div class="service-icon ">
-                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/logistics-1.png " alt=" Logistic Service in India" style="height: 100px; width: 100px;">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/logistics-1.png" alt=" Logistic Service in India" style="height: 100px; width: 100px;">
                 </div>
-                <h3 class="service-title reveal-left">Logistics</h3>
-                <p class="service-description reveal-right">Smart & efficient logistics solutions for all your business needs.</p>
+                <h3 class="service-title">Logistics</h3>
+                <p class="service-description">Smart & efficient logistics solutions for all your business needs.</p>
                 <a href="#" class="service-link">
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -3934,72 +2828,41 @@ nav ul li a:hover {
                 <div class="service-icon">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/11/b2b.png" alt="B2B services" style="height: 100px;width: 100px;">
                 </div>
-                <h3 class="service-title reveal-left">B2B</h3>
-                <p class="service-description reveal-right">Reliable B2B solutions helping businesses grow faster with smart tools.</p>
+                <h3 class="service-title">B2B</h3>
+                <p class="service-description">Reliable B2B solutions helping businesses grow faster with smart tools.</p>
                 <a href="#" class="service-link">
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-        </div>
-        
-    </div>
-    
-</section>
-<!-- Why Choose Us Section -->
-<section class="why-choose-section" id="why-choose">
-    <div class="container">
-        <div class="why-choose-container">
-            <div class="why-choose-content reveal">
-                <h2 class="why-choose-title reveal-left hover-icon-left">Why Choose Trackship?</h2>
-                <p class="why-choose-text reveal-right">Trackship offers tailored logistics, courier, B2B and tech services — powerful, reliable and scalable. We combine modern technology with local expertise to deliver efficient solutions for businesses and individuals.</p>
-                
-                <div class="features-list">
-                    <div class="feature-item reveal reveal-left">
-    <div class="feature-icon">
-        <img src="svg/money.svg" alt="Feature Icon">
-    </div>
-    <div class="feature-content reveal-right">
-        <h4 class="reveal-left">Innovative Solutions</h4>
-        <p class="reveal-right">Tech-first operations & automation.</p>
-    </div>
-</div>
-
-                    
-                    <div class="feature-item reveal reveal-left">
-                        <div class="feature-icon">
-        <img src="svg/team.svg" alt="Feature Icon">
-    </div>
-                        <div class="feature-content reveal-right">
-                            <h4 class="reveal-left">Customer Focused</h4>
-                            <p class="reveal-right">Service with clear SLAs & transparency.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item reveal reveal-left">
-                        <div class="feature-icon">
-        <img src="svg/certified.svg" alt="Feature Icon">
-    </div>
-                        <div class="feature-content reveal-right">
-                            <h4 class="reveal-left">End-to-End Support</h4>
-                            <p class="reveal-right">From pickup to delivery & tracking.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item reveal reveal-left">
-                        <div class="feature-icon">
-        <img src="svg/certified.svg" alt="Feature Icon">
-    </div>
-                        <div class="feature-content reveal-right">
-                            <h4 class="reveal-left">Efficient Operations</h4>
-                            <p class="reveal-right">Optimised routes & robust networks.</p>
-                        </div>
-                    </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/solar-panel-3-430x430.png" alt="Solar services" style="height: 100px;width: 100px;">
                 </div>
+                <h3 class="service-title reveal-left">Solar</h3>
+                <p class="service-description reveal-right">We embrace innovation, providing cutting-edge solutions across services.</p>
+                <a href="#" class="service-link">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            
-            <div class="why-choose-image reveal">
-                <img src="https://media.istockphoto.com/id/1400839985/vector/recruiting-hr-and-employee-review-team-building-vector.jpg?s=612x612&w=0&k=20&c=ZXVuuCvAI3Lwk_CrZkixjtPZzjra48aHi_MwaQd5NEQ=" alt="Logistics Operations" class="why-choose-image-main">
-                <img src="https://digitalengage.net/wp-content/uploads/2020/08/digitalengage-image-1.png.webp" alt="Delivery Team" class="why-choose-image-secondary">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/data-management-430x430.png" alt="Solar services" style="height: 100px;width: 100px;">
+                </div>
+                <h3 class="service-title reveal-left">Technology Services</h3>
+                <p class="service-description reveal-right">We embrace innovation, providing cutting-edge solutions across services.</p>
+                <a href="#" class="service-link">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/11/chatting-430x430.png" alt="Solar services" style="height: 100px;width: 100px;">
+                </div>
+                <h3 class="service-title reveal-left">Bulk Sms</h3>
+                <p class="service-description reveal-right">We embrace innovation, providing cutting-edge solutions across services.</p>
+                <a href="#" class="service-link">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -4062,18 +2925,74 @@ nav ul li a:hover {
         </div>
     </div>
 </section>
+<!-- Why Choose Us Section -->
+<section class="why-choose-section" id="why-choose">
+    <div class="container">
+        <div class="why-choose-container">
+            <div class="why-choose-content reveal">
+                <h2 class="why-choose-title reveal-left">Why Choose Trackship?</h2>
+                <p class="why-choose-text reveal-right">Trackship offers tailored logistics, courier, B2B and tech services — powerful, reliable and scalable. We combine modern technology with local expertise to deliver efficient solutions for businesses and individuals.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <img src="svg/money.svg" alt="Feature Icon">
+                        </div>
+                        <div class="feature-content">
+                            <h4>Innovative Solutions</h4>
+                            <p>Tech-first operations & automation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <img src="svg/team.svg" alt="Feature Icon">
+                        </div>
+                        <div class="feature-content">
+                            <h4>Customer Focused</h4>
+                            <p>Service with clear SLAs & transparency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <img src="svg/certified.svg" alt="Feature Icon">
+                        </div>
+                        <div class="feature-content">
+                            <h4>End-to-End Support</h4>
+                            <p>From pickup to delivery & tracking.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <img src="svg/certified.svg" alt="Feature Icon">
+                        </div>
+                        <div class="feature-content">
+                            <h4>Efficient Operations</h4>
+                            <p>Optimised routes & robust networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="why-choose-image reveal">
+                <img src="https://media.istockphoto.com/id/1400839985/vector/recruiting-hr-and-employee-review-team-building-vector.jpg?s=612x612&w=0&k=20&c=ZXVuuCvAI3Lwk_CrZkixjtPZzjra48aHi_MwaQd5NEQ=" alt="Logistics Operations" class="why-choose-image-main">
+                <img src="https://digitalengage.net/wp-content/uploads/2020/08/digitalengage-image-1.png.webp" alt="Delivery Team" class="why-choose-image-secondary">
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Stats Section -->
 <section class="stats-section">
     <div class="stats-wrapper">
-
         <div class="stat-box reveal">
             <div class="stat-icon">
                 <img src="svg/warehouse.svg" alt="">
             </div>
             <span class="plus-data">+</span>
             <div class="stat-value" data-target="77">0</div>
-            
             <p class="stat-text">Franchise</p>
         </div>
 
@@ -4082,7 +3001,6 @@ nav ul li a:hover {
                 <img src="svg/delivery.svg" alt="">
             </div>
             <div class="stat-value" data-target="50000">0</div>
-            
             <p class="stat-text">Parcel Delivered</p>
         </div>
 
@@ -4102,13 +3020,11 @@ nav ul li a:hover {
             <span class="plus">+</span>
             <p class="stat-text">Years Experience</p>
         </div>
-
     </div>
 </section>
 
 <section class="cities-contact-section" id="citiesSection">
     <div class="container">
-        
         <!-- LEFT SIDE -->
         <div class="cities-box">
             <span class="tag">OUR SKILLS</span>
@@ -4127,7 +3043,6 @@ nav ul li a:hover {
                 <div class="city-card">South India</div>
                 <div class="city-card">Jammu & Kashmir</div>
                 <div class="city-card">Punjab & Haryana</div>
-                   <!-- ⭐ Added States -->
                 <div class="city-card">Uttar Pradesh (UP)</div>
                 <div class="city-card">Madhya Pradesh (MP)</div>
                 <div class="city-card">Assam</div>
@@ -4136,46 +3051,39 @@ nav ul li a:hover {
         </div>
 
         <!-- RIGHT SIDE FORM -->
-<div class="right-form">
-    <h3 class="form-title">Want to ask more Questions?</h3>
-
-    <form id="quickForm" onsubmit="submitToAPI('quickForm'); return false;">
-        
-        <div class="input-group">
-            <input type="text" name="name" required>
-            <label>Your Name</label>
+        <div class="right-form">
+            <h3 class="form-title">Want to ask more Questions?</h3>
+            <form id="quickForm" onsubmit="submitToAPI('quickForm'); return false;">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder=" " required>
+                    <label>Your Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder=" " required>
+                    <label>Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="contact" placeholder=" " required>
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-group textarea">
+                    <textarea name="message" placeholder=" " required></textarea>
+                    <label>Message</label>
+                </div>
+                <button class="submit-btn" type="submit">Submit</button>
+            </form>
         </div>
-
-        <div class="input-group">
-            <input type="email" name="email" required>
-            <label>Email Address</label>
-        </div>
-
-        <div class="input-group">
-            <input type="text" name="contact" required>
-            <label>Phone Number</label>
-        </div>
-
-        <div class="input-group textarea">
-            <textarea name="message" required></textarea>
-            <label>Message</label>
-        </div>
-
-        <button class="submit-btn" type="submit">Submit</button>
-    </form>
-</div>
-
-
     </div>
 </section>
+
 <!-- FAQ Section -->
 <section class="faq-section">
     <div class="container">
-        <h2 class="section-title reveal reveal-left">Frequently Asked Questions</h2>
-        <p class="section-subtitle reveal reveal-right">Find answers to common questions about our services</p>
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        <p class="section-subtitle reveal">Find answers to common questions about our services</p>
         
         <div class="faq-container">
-            <div class="faq-item reveal reveal-left">
+            <div class="faq-item reveal">
                 <div class="faq-question">
                     <span>What services does Trackship offer?</span>
                     <i class="fas fa-chevron-down"></i>
@@ -4185,7 +3093,7 @@ nav ul li a:hover {
                 </div>
             </div>
             
-            <div class="faq-item reveal reveal-right">
+            <div class="faq-item reveal">
                 <div class="faq-question">
                     <span>How can I track my shipment?</span>
                     <i class="fas fa-chevron-down"></i>
@@ -4195,7 +3103,7 @@ nav ul li a:hover {
                 </div>
             </div>
             
-            <div class="faq-item reveal reveal-right">
+            <div class="faq-item reveal">
                 <div class="faq-question">
                     <span>What areas do you serve?</span>
                     <i class="fas fa-chevron-down"></i>
@@ -4205,7 +3113,7 @@ nav ul li a:hover {
                 </div>
             </div>
             
-            <div class="faq-item reveal reveal-left">
+            <div class="faq-item reveal">
                 <div class="faq-question">
                     <span>How do I become a partner with Trackship?</span>
                     <i class="fas fa-chevron-down"></i>
@@ -4217,10 +3125,11 @@ nav ul li a:hover {
         </div>
     </div>
 </section>
+
 <section class="testimonials-section">
     <div class="container">
-        <h2 class="section-title reveal reveal-left">What Our Clients Say</h2>
-        <p class="section-subtitle reveal reveal-right">Don't just take our word for it</p>
+        <h2 class="section-title reveal">What Our Clients Say</h2>
+        <p class="section-subtitle reveal">Don't just take our word for it</p>
         
         <div class="testimonials-slider">
             <div class="testimonials-track" id="testimonialsTrack">
@@ -4230,7 +3139,6 @@ nav ul li a:hover {
                         <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Rohan Sharma" class="author-image">
                         <div class="author-info">
                             <h4>Rohan Sharma</h4>
-                            
                         </div>
                     </div>
                     <div class="testimonial-rating">
@@ -4247,7 +3155,6 @@ nav ul li a:hover {
                         <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Priya Desai" class="author-image">
                         <div class="author-info">
                             <h4>Priya Desai</h4>
-                            
                         </div>
                     </div>
                     <div class="testimonial-rating">
@@ -4264,41 +3171,6 @@ nav ul li a:hover {
                         <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Amit Verma" class="author-image">
                         <div class="author-info">
                             <h4>Amit Verma</h4>
-                            
-                        </div>
-                    </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <p class="testimonial-text">"Great experience! The team is very professional and punctual with deliveries. Their B2B solutions have helped our business grow exponentially."</p>
-                    <div class="testimonial-author">
-                        <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Sneha Kulkarni" class="author-image">
-                        <div class="author-info">
-                            <h4>Sneha Kulkarni</h4>
-                            
-                        </div>
-                    </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <p class="testimonial-text">"Affordable pricing and timely services. Highly recommended for startups and small businesses looking for reliable logistics solutions."</p>
-                    <div class="testimonial-author">
-                        <img src="https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Harshit Mehta" class="author-image">
-                        <div class="author-info">
-                            <h4>Harshit Mehta</h4>
-                            
                         </div>
                     </div>
                     <div class="testimonial-rating">
@@ -4313,14 +3185,15 @@ nav ul li a:hover {
         </div>
     </div>
 </section>
+
 <!-- CTA Section -->
 <section class="cta-section">
     <div class="container">
-        <h2 class="cta-title reveal-right">Ready to Transform Your Logistics?</h2>
+        <h2 class="cta-title reveal">Ready to Transform Your Logistics?</h2>
         <p class="cta-text reveal">Join thousands of businesses that trust Trackship for their logistics needs</p>
         
         <div class="cta-buttons reveal">
-            <a href="https://api.whatsapp.com/send/?phone=917400372375&text=Hi+Trackship&type=phone_number&app_absent=0" class="btn btn-cta">
+            <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="btn btn-cta">
                 <span>Get Started</span>
                 <span class="btn-icon">
                     <!-- WhatsApp SVG -->
@@ -4346,11 +3219,11 @@ nav ul li a:hover {
         </div>
     </div>
 </section>
+
 <!-- Contact Form Section -->
 <section class="contact-section" id="contact">
     <div class="contact-container">
-        
-        <!-- LEFT CONTENT --- SAME -->
+        <!-- LEFT CONTENT -->
         <div class="contact-info reveal">
             <h2 class="contact-title reveal-left">Get In Touch</h2>
             <p class="contact-text reveal-right">
@@ -4358,17 +3231,21 @@ nav ul li a:hover {
             </p>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="svg/OOjs_UI_icon_mapPin.svg" alt="locations"></div>
+                <div class="contact-icon">
+                    <img src="svg/OOjs_UI_icon_mapPin.svg" alt="locations">
+                </div>
                 <div class="contact-content">
                     <h4>Address</h4>
                     <p class="pclass">Office No 411, 4th Floor, Lotus Business Park Premises,<br>
-            Near HP Petrol Pump, SV Road, Malad West,<br>
-            Mumbai, India - 400064</p>
+                    Near HP Petrol Pump, SV Road, Malad West,<br>
+                    Mumbai, India - 400064</p>
                 </div>
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="svg/Telephone_receiver.svg" alt="call-now" style="width: 20px; height: auto;"></div>
+                <div class="contact-icon">
+                    <img src="svg/Telephone_receiver.svg" alt="call-now" style="width: 20px; height: auto;">
+                </div>
                 <div class="contact-content">
                     <h4>Phone</h4>
                     <p class="pclass">+91 91366 01185</p>
@@ -4376,14 +3253,16 @@ nav ul li a:hover {
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon"><img src="svg/2674096_object_email_web_essential_icon.svg" alt="email" style="width: 20px; height: auto;"></div>
+                <div class="contact-icon">
+                    <img src="svg/2674096_object_email_web_essential_icon.svg" alt="email" style="width: 20px; height: auto;">
+                </div>
                 <div class="contact-content">
                     <h4>Email</h4>
                     <p class="pclass">info@trackshiplogistics.com</p>
                 </div>
             </div>
 
-            <a href="tel:+917400372375" class="call-now">
+            <a href="tel:+919136601185" class="call-now">
                 <i class="fas fa-phone"></i> Call Now
             </a>
         </div>
@@ -4391,33 +3270,29 @@ nav ul li a:hover {
         <!-- RIGHT SIDE: FORM -->
         <div class="contact-form reveal">
             <form id="contactForm" method="POST" novalidate>
-
                 <!-- ROW 1 -->
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="contactName" name="name" required>
+                        <input type="text" class="form-control" id="contactName" name="name" placeholder=" " required>
                         <label for="contactName" class="form-label">Name</label>
-                        <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" class="form-control" id="contactEmail" name="email" required>
+                        <input type="email" class="form-control" id="contactEmail" name="email" placeholder=" " required>
                         <label for="contactEmail" class="form-label">Email</label>
-                        <span class="error-message"></span>
                     </div>
                 </div>
 
                 <!-- ROW 2 -->
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="tel" class="form-control" id="contactContact" name="contact" required>
+                        <input type="tel" class="form-control" id="contactContact" name="contact" placeholder=" " required>
                         <label for="contactContact" class="form-label">Contact No</label>
-                        <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
                         <select class="form-control" id="contactService" name="service" required>
-                            <option value=""></option>
+                            <option value="">Select Service</option>
                             <option value="courier">Own Courier Point</option>
                             <option value="logistics">Logistics</option>
                             <option value="solar">Solar Energy</option>
@@ -4427,7 +3302,6 @@ nav ul li a:hover {
                             <option value="sms">Bulk SMS</option>
                         </select>
                         <label class="form-label">Select Service</label>
-                        <span class="error-message"></span>
                     </div>
                 </div>
 
@@ -4435,7 +3309,7 @@ nav ul li a:hover {
                 <div class="form-row">
                     <div class="form-group">
                         <select class="form-control" id="contactOpportunity" name="opportunity" required>
-                            <option value=""></option>
+                            <option value="">Select Opportunity</option>
                             <option value="franchise">Franchise</option>
                             <option value="partner">Business Partner</option>
                             <option value="delivery">Delivery Boy</option>
@@ -4443,36 +3317,32 @@ nav ul li a:hover {
                             <option value="other">Other</option>
                         </select>
                         <label class="form-label">Select Opportunity</label>
-                        <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="contactPincode" name="pincode" required>
+                        <input type="text" class="form-control" id="contactPincode" name="pincode" placeholder=" " required>
                         <label class="form-label">Pincode</label>
-                        <span class="error-message"></span>
                     </div>
                 </div>
 
                 <!-- STATE -->
                 <div class="form-group">
-                    <input type="text" class="form-control" id="contactState" name="state" required>
+                    <input type="text" class="form-control" id="contactState" name="state" placeholder=" " required>
                     <label class="form-label">State</label>
-                    <span class="error-message"></span>
                 </div>
 
                 <!-- MESSAGE -->
                 <div class="form-group">
-                    <textarea class="form-message" id="contactMessage" name="message" required></textarea>
+                    <textarea class="form-message" id="contactMessage" name="message" placeholder=" " required></textarea>
                     <label class="form-label">Message</label>
-                    <span class="error-message"></span>
                 </div>
 
-                <button type="submit" class="form-submit" onclick="submitToAPI">Submit</button>
+                <button type="submit" class="form-submit">Submit</button>
             </form>
         </div>
-
     </div>
 </section>
+
 <!-- moving-bike -->
 <section class="india-hero">
     <div class="road-layer">
@@ -4480,9 +3350,9 @@ nav ul li a:hover {
         <img src="https://eazyonesources.com/wp-content/uploads/2021/11/bike.png" class="bike bike-left" alt="">
     </div>
 </section>
+
 <!-- Footer -->
 <footer class="footer">
-    
     <div class="container">
         <div class="footer-container">
             <div class="footer-column">
@@ -4491,19 +3361,18 @@ nav ul li a:hover {
                 
                 <div class="social-icons">
                     <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022" style="width: auto; height: 20px;">
                     </a>
                     <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29" style="width: auto; height: 20px;">
                     </a>
                     <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook" style="width: auto; height: 20px;">
                     </a>
-                    <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+                    <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp" style="width: auto; height: 20px;">
                     </a>
                 </div>
-                
             </div>
             
             <div class="footer-column">
@@ -4528,528 +3397,400 @@ nav ul li a:hover {
             </div>
             
             <div class="footer-column contact-box">
-                <div class="footer-column contact-box">
-    <h3>Contact Us</h3>
-    
-    <ul class="footer-links contact-details">
-        <li>
-            <i class="fas fa-phone"></i>
-            <a href="tel:+919136601185">+91 91366 01185</a>
-        </li>
-
-        <li>
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:info@trackshiplogistics.com">info@trackshiplogistics.com</a>
-        </li>
-
-        <li>
-            <i class="fas fa-map-marker-alt"></i>
-            <span>411, 4th Floor, Lotus Business Park Premises,
+                <h3>Contact Us</h3>
+                <ul class="footer-links contact-details">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919136601185">+91 91366 01185</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@trackshiplogistics.com">info@trackshiplogistics.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>411, 4th Floor, Lotus Business Park Premises,
 Near HP Petrol Pump, SV Road, Malad West,
 Mumbai, India - 400064</span>
-        </li>
-
-        <li>
-            <i class="fas fa-clock"></i>
-            <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
-        </li>
-    </ul>
-</div>
-
-</div>
-
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+                    </li>
+                </ul>
+            </div>
         </div>
         
         <div class="footer-bottom">
             <p>&copy; 2025 Trackship. All rights reserved.</p>
         </div>
-        <div class="credit">Designed By <a href="https://itzadarsh.co.in" target="_blank"  class="developer" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: red;">ITZ Adarsh</a></div>
+        <div class="credit">Designed By <a href="https://itzadarsh.co.in" target="_blank" class="developer">ITZ Adarsh</a></div>
     </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const footer = document.querySelector(".footer");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                footer.classList.add("footer-visible");
-            }
-        });
-    }, { threshold: 0.2 });
-
-    observer.observe(footer);
-});
-// Check if user has visited before and popup logic
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user has submitted the popup form
+    // Check if user has visited before and popup logic
     const hasSubmitted = localStorage.getItem('trackshipPopupSubmitted');
-    
-    // Check if user has closed the popup and when
     const popupClosedData = localStorage.getItem('trackshipPopupClosed');
     let hasClosedRecently = false;
     
     if (popupClosedData) {
         const { timestamp } = JSON.parse(popupClosedData);
-        const thirtyDaysInMs = 0 * 0 * 0 * 0 * 0;
+        const thirtyDaysInMs = 0 * 0 * 0 * 0 * 1000;
         hasClosedRecently = (Date.now() - timestamp) < thirtyDaysInMs;
     }
     
     // Show popup if user hasn't submitted and hasn't closed recently
     if (!hasSubmitted && !hasClosedRecently) {
         setTimeout(() => {
-            document.getElementById('popupModal').classList.add('active');
+            const popupModal = document.getElementById('popupModal');
+            popupModal.style.display = 'flex';
+            setTimeout(() => popupModal.classList.add('active'), 10);
         }, 1000);
     }
-});
-// Popup Modal Controls
-document.getElementById('popupClose').addEventListener('click', function() {
-    document.getElementById('popupModal').classList.remove('active');
     
-    // Store that user closed the popup with timestamp
-    localStorage.setItem('trackshipPopupClosed', JSON.stringify({
-        timestamp: Date.now()
-    }));
-});
-document.getElementById('popupModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.classList.remove('active');
+    // Popup Modal Controls
+    document.getElementById('popupClose').addEventListener('click', function() {
+        const popupModal = document.getElementById('popupModal');
+        popupModal.classList.remove('active');
+        setTimeout(() => popupModal.style.display = 'none', 300);
         
-        // Store that user closed the popup with timestamp
         localStorage.setItem('trackshipPopupClosed', JSON.stringify({
             timestamp: Date.now()
         }));
-    }
-});
-// Mobile panel controls
-const hamburger = document.getElementById('hamburger');
-const hamburgerIcon = document.getElementById('hamburgerIcon');
-const mobilePanel = document.getElementById('mobilePanel');
-const closePanel = document.getElementById('closePanel');
-const overlay = document.getElementById('overlay');
-// Open Mobile Menu
-hamburger.addEventListener('click', () => {
-    mobilePanel.classList.add('open');
-    overlay.style.display = 'block';
-    overlay.classList.add('visible');
-    hamburger.classList.add('active');
-    
-    // Prevent body scrolling when panel is open
-    document.body.style.overflow = 'hidden';
-});
-// Close (from cross button)
-closePanel.addEventListener('click', () => {
-    mobilePanel.classList.remove('open');
-    overlay.style.display = 'none';
-    overlay.classList.remove('visible');
-    hamburger.classList.remove('active');
-    
-    // Restore body scrolling
-    document.body.style.overflow = '';
-});
-// Click outside overlay closes menu
-overlay.addEventListener('click', () => {
-    mobilePanel.classList.remove('open');
-    overlay.style.display = 'none';
-    overlay.classList.remove('visible');
-    hamburger.classList.remove('active');
-    
-    // Restore body scrolling
-    document.body.style.overflow = '';
-});
-// Mobile panel dropdown
-const mobileDropdowns = document.querySelectorAll('.mobile-panel .dropdown');
-mobileDropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector('.dropdown-toggle');
-    const menu = dropdown.querySelector('.dropdown-menu');
-    
-    toggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isOpen = menu.style.display === 'block';
-        menu.style.display = isOpen ? 'none' : 'block';
-        toggle.querySelector('i').style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
     });
     
-    // Handle nested dropdown in mobile
-    const nestedDropdowns = dropdown.querySelectorAll('.nested-dropdown');
-    nestedDropdowns.forEach(nested => {
-        const nestedToggle = nested.querySelector('.nested-toggle');
-        const nestedMenu = nested.querySelector('.nested-menu');
-        
-        if (nestedToggle && nestedMenu) {
-            nestedToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const isOpen = nestedMenu.style.display === 'block';
-                nestedMenu.style.display = isOpen ? 'none' : 'block';
-                nestedToggle.querySelector('i').style.transform = isOpen ? 'rotate(0deg)' : 'rotate(90deg)';
-            });
+    document.getElementById('popupModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('active');
+            setTimeout(() => this.style.display = 'none', 300);
+            
+            localStorage.setItem('trackshipPopupClosed', JSON.stringify({
+                timestamp: Date.now()
+            }));
         }
     });
-});
-// DESKTOP NAVIGATION
-// Desktop Services dropdown
-const desktopDropdowns = document.querySelectorAll('.desktop-nav .dropdown');
-desktopDropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector('.dropdown-toggle');
-    const menu = dropdown.querySelector('.dropdown-menu');
-    const nestedDropdowns = dropdown.querySelectorAll('.nested-dropdown');
     
-    dropdown.addEventListener('mouseenter', () => {
-        menu.style.opacity = '1';
-        menu.style.visibility = 'visible';
-        menu.style.transform = 'translateY(0)';
+    // Mobile panel controls
+    const hamburger = document.getElementById('hamburger');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const closePanel = document.getElementById('closePanel');
+    const overlay = document.getElementById('overlay');
+    
+    // Open Mobile Menu
+    hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobilePanel.classList.add('open');
+        overlay.classList.add('visible');
+        hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
     
-    dropdown.addEventListener('mouseleave', () => {
-        menu.style.opacity = '0';
-        menu.style.visibility = 'hidden';
-        menu.style.transform = 'translateY(10px)';
+    // Close (from cross button)
+    closePanel.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobilePanel.classList.remove('open');
+        overlay.classList.remove('visible');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
     });
     
-    // Handle nested dropdown
-    nestedDropdowns.forEach(nested => {
-        const nestedMenu = nested.querySelector('.nested-menu');
+    // Click outside overlay closes menu
+    overlay.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobilePanel.classList.remove('open');
+        overlay.classList.remove('visible');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Mobile dropdown functionality
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+    mobileDropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.mobile-dropdown-toggle');
+        const menu = dropdown.querySelector('.mobile-dropdown-menu');
         
-        nested.addEventListener('mouseenter', () => {
-            nestedMenu.style.opacity = '1';
-            nestedMenu.style.visibility = 'visible';
-            nestedMenu.style.transform = 'translateX(0)';
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isOpen = menu.classList.contains('show');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.mobile-dropdown-menu').forEach(m => {
+                m.classList.remove('show');
+            });
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach(t => {
+                t.classList.remove('active');
+            });
+            
+            // Toggle current dropdown
+            if (!isOpen) {
+                menu.classList.add('show');
+                toggle.classList.add('active');
+            }
         });
         
-        nested.addEventListener('mouseleave', () => {
-            nestedMenu.style.opacity = '0';
-            nestedMenu.style.visibility = 'hidden';
-            nestedMenu.style.transform = 'translateX(10px)';
+        // Handle nested dropdown
+        const nestedDropdowns = dropdown.querySelectorAll('.mobile-nested-dropdown');
+        nestedDropdowns.forEach(nested => {
+            const nestedToggle = nested.querySelector('.mobile-nested-toggle');
+            const nestedMenu = nested.querySelector('.mobile-nested-menu');
+            
+            if (nestedToggle && nestedMenu) {
+                nestedToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = nestedMenu.classList.contains('show');
+                    
+                    // Close all other nested menus
+                    document.querySelectorAll('.mobile-nested-menu').forEach(m => {
+                        m.classList.remove('show');
+                    });
+                    
+                    // Toggle current nested menu
+                    if (!isOpen) {
+                        nestedMenu.classList.add('show');
+                    }
+                });
+            }
         });
     });
-});
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-            
-            // Close mobile menu if open
-            mobilePanel.classList.remove('open');
-            overlay.style.display = 'none';
-            overlay.classList.remove('visible');
-            hamburger.classList.remove('active');
-            
-            // Restore body scrolling
-            document.body.style.overflow = '';
-        }
-    });
-});
-// Reveal Animation on Scroll
-function revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     
-    reveals.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementTop < windowHeight - 100) {
-            element.classList.add('active');
+    // Desktop dropdowns already work with CSS hover
+    
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             
-            // Service card animation
-            if (element.classList.contains('service-card')) {
-                element.style.animation = 'fadeUp 0.9s ease forwards';
-                element.style.animationDelay = getComputedStyle(element).animationDelay;
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobilePanel.classList.remove('open');
+                overlay.classList.remove('visible');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             }
-        }
+        });
     });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-// FAQ Accordion (Independent toggle)
-const faqQuestions = document.querySelectorAll('.faq-question');
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const isActive = faqItem.classList.contains('active');
+    
+    // Reveal Animation on Scroll
+    function revealOnScroll() {
+        const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
         
-        // Toggle ONLY this FAQ
-        faqItem.classList.toggle('active');
-    });
-});
-// Testimonial Slider
-const testimonialTrack = document.getElementById('testimonialsTrack');
-const navDots = document.querySelectorAll('.nav-dot');
-let currentSlide = 0;
-const slideWidth = 370; // Width of testimonial card + margin
-function goToSlide(slideIndex) {
-    if (slideIndex < 0) {
-        slideIndex = navDots.length - 1;
-    } else if (slideIndex >= navDots.length) {
-        slideIndex = 0;
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('active');
+            }
+        });
     }
     
-    currentSlide = slideIndex;
-    testimonialTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
     
-    // Update nav dots
-    navDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === slideIndex);
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Toggle ONLY this FAQ
+            faqItem.classList.toggle('active');
+        });
     });
-}
-// Add click event to nav dots
-navDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        goToSlide(index);
-    });
-});
-// Auto-rotate testimonials
-let testimonialInterval = setInterval(() => {
-    goToSlide(currentSlide + 1);
-}, 5000);
-// Pause auto-rotation on hover
-testimonialTrack.addEventListener('mouseenter', () => {
-    clearInterval(testimonialInterval);
-});
-testimonialTrack.addEventListener('mouseleave', () => {
-    testimonialInterval = setInterval(() => {
-        goToSlide(currentSlide + 1);
-    }, 5000);
-});
-// Clone testimonials for infinite scroll
-const testimonials = document.querySelectorAll('.testimonial-card');
-testimonials.forEach(testimonial => {
-    const clone = testimonial.cloneNode(true);
-    testimonialTrack.appendChild(clone);
-});
-// Enable swipe for testimonials
-function enableSwipe(slider) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    // Mouse Events
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; // Scroll-fast
-        slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Touch Events
-    slider.addEventListener('touchstart', (e) => {
-        isDown = true;
-        startX = e.touches[0].pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('touchend', () => {
-        isDown = false;
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-        if (!isDown) return;
-        const x = e.touches[0].pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
-    });
-}
-// Apply swipe to testimonials
-enableSwipe(testimonialTrack);
-// Partners carousel swipe
-const partnersCarousel = document.querySelector('.partners-carousel');
-if (partnersCarousel) {
-    enableSwipe(partnersCarousel);
-}
-// Preloader
-window.addEventListener("load", function () {
-    const preloader = document.getElementById("preloader");
-    setTimeout(() => {
-        preloader.classList.add("hide");
-    }, 300); // slight delay for smooth fade
-});
-// Text case conversion (Title Case) for sections
-function convertToTitleCase() {
-    // Get all sections except header, footer, and hero
-    const sections = document.querySelectorAll('section:not(.hero-section):not(.main-header):not(.footer)');
     
-    sections.forEach(section => {
-        // Get all text nodes that are not inside script, style, or other excluded elements
-        const walker = document.createTreeWalker(
-            section,
-            NodeFilter.SHOW_TEXT,
-            {
-                acceptNode: function(node) {
-                    // Exclude script, style, and other non-content elements
-                    const parent = node.parentElement;
-                    if (!parent) return NodeFilter.FILTER_REJECT;
-                    
-                    // Exclude certain elements
-                    if (parent.tagName === 'SCRIPT' || 
-                        parent.tagName === 'STYLE' || 
-                        parent.tagName === 'NOSCRIPT' ||
-                        parent.classList.contains('credit')) {
-                        return NodeFilter.FILTER_REJECT;
-                    }
-                    
-                    // Exclude text that is just whitespace
-                    if (node.textContent.trim() === '') {
-                        return NodeFilter.FILTER_REJECT;
-                    }
-                    
-                    return NodeFilter.FILTER_ACCEPT;
-                }
-            }
-        );
-        let textNode;
-        while (textNode = walker.nextNode()) {
-            const text = textNode.textContent;
-            // Convert to title case
-            const titleCaseText = text.replace(/\w\S*/g, (txt) => {
-                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-            });
-            // Only update if there's a change
-            if (text !== titleCaseText) {
-                textNode.textContent = titleCaseText;
-            }
+    // Testimonial Slider
+    const testimonialTrack = document.getElementById('testimonialsTrack');
+    const navDots = document.querySelectorAll('.nav-dot');
+    let currentSlide = 0;
+    const slideWidth = 370; // Width of testimonial card + margin
+    
+    function goToSlide(slideIndex) {
+        if (slideIndex < 0) {
+            slideIndex = navDots.length - 1;
+        } else if (slideIndex >= navDots.length) {
+            slideIndex = 0;
         }
+        
+        currentSlide = slideIndex;
+        testimonialTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+        
+        // Update nav dots
+        navDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === slideIndex);
+        });
+    }
+    
+    // Clone testimonials for infinite scroll
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    testimonials.forEach(testimonial => {
+        const clone = testimonial.cloneNode(true);
+        testimonialTrack.appendChild(clone);
     });
-}
-// Apply title case conversion after DOM is loaded
-document.addEventListener('DOMContentLoaded', convertToTitleCase);
-// ======= CITY CARDS SCROLL ANIMATION =======
-const cityCards = document.querySelectorAll('.city-card');
-const revealCities = () => {
-    const trigger = window.innerHeight - 100;
-    cityCards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if (top < trigger) card.classList.add("show");
-    });
-};
-window.addEventListener("scroll", revealCities);
-revealCities();
+    
+    // Enable swipe for testimonials
+    function enableSwipe(slider) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-document.addEventListener("DOMContentLoaded", () => {
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    }
+    
+    enableSwipe(testimonialTrack);
+    
+    // Partners carousel swipe
+    const partnersCarousel = document.querySelector('.partners-carousel');
+    if (partnersCarousel) {
+        enableSwipe(partnersCarousel);
+    }
+    
+    // Preloader
+    window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        setTimeout(() => {
+            preloader.classList.add("hide");
+        }, 300);
+    });
+    
+    // CITY CARDS SCROLL ANIMATION
+    const cityCards = document.querySelectorAll('.city-card');
+    const revealCities = () => {
+        const trigger = window.innerHeight - 100;
+        cityCards.forEach(card => {
+            const top = card.getBoundingClientRect().top;
+            if (top < trigger) card.classList.add("show");
+        });
+    };
+    window.addEventListener("scroll", revealCities);
+    revealCities();
+    
+    // Stats Counter Animation
     const counters = document.querySelectorAll(".stat-value");
-    counters.forEach(counter => {
-        const animate = () => {
-            const target = +counter.getAttribute("data-target");
-            const current = +counter.innerText;
-            const speed = 100; // animation speed
-
-            if (current < target) {
-                counter.innerText = Math.ceil(current + target / 150);
-                setTimeout(animate, speed);
-            } else {
-                counter.innerText = target;
+    const speed = 200;
+    
+    const countUp = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+    
+    // Trigger counter animation when stats section is visible
+    const statsSection = document.querySelector('.stats-section');
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                countUp();
+                statsObserver.unobserve(entry.target);
             }
-        };
-        
-        animate();
-    });
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Slider elements
+        });
+    }, { threshold: 0.5 });
+    
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+    
+    // Revolution Slider
     const slides = document.querySelectorAll('.rev-slide');
     const dots = document.querySelectorAll('.rev-slider-dot');
     const sliderContainer = document.getElementById('rev-slider-container');
-    let currentSlide = 0;
+    let currentRevSlide = 0;
     let slideInterval;
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID;
     
-    // Initialize slider
     function initSlider() {
-        // Set first slide as active
         slides[0].classList.add('active');
         dots[0].classList.add('active');
-        
-        // Animate first slide content
         animateSlideContent(0);
-        
-        // Start auto-slide
         startAutoSlide();
-        
-        // Add event listeners
         setupEventListeners();
     }
     
-    // Setup all event listeners
     function setupEventListeners() {
-        // Dot navigation
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
-                goToSlide(index);
+                goToRevSlide(index);
             });
         });
         
-        // Pause on hover (desktop)
         sliderContainer.addEventListener('mouseenter', pauseAutoSlide);
         sliderContainer.addEventListener('mouseleave', startAutoSlide);
-        
-        // Touch events for mobile
-        sliderContainer.addEventListener('touchstart', touchStart);
-        sliderContainer.addEventListener('touchmove', touchMove);
-        sliderContainer.addEventListener('touchend', touchEnd);
-        
-        // Mouse events for desktop drag
-        sliderContainer.addEventListener('mousedown', dragStart);
-        sliderContainer.addEventListener('mousemove', dragMove);
-        sliderContainer.addEventListener('mouseup', dragEnd);
-        sliderContainer.addEventListener('mouseleave', dragEnd);
-        
-        // Prevent context menu on long press
-        sliderContainer.addEventListener('contextmenu', e => e.preventDefault());
     }
     
-    // Go to specific slide
-    function goToSlide(index) {
-        // Remove active class from current slide and dot
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
+    function goToRevSlide(index) {
+        slides[currentRevSlide].classList.remove('active');
+        dots[currentRevSlide].classList.remove('active');
         
-        // Set new slide index
-        currentSlide = index;
+        currentRevSlide = index;
         
-        // Add active class to new slide and dot
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+        slides[currentRevSlide].classList.add('active');
+        dots[currentRevSlide].classList.add('active');
         
-        // Animate slide content
-        animateSlideContent(currentSlide);
-        
-        // Reset auto-slide timer
+        animateSlideContent(currentRevSlide);
         resetAutoSlide();
     }
     
-    // Animate slide content with staggered animations
     function animateSlideContent(index) {
         const slide = slides[index];
         const h1 = slide.querySelector('h1');
@@ -5057,16 +3798,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const p = slide.querySelector('p');
         const btn = slide.querySelector('.rev-slider-btn');
         
-        // Reset animation state
         gsap.set([h1, h2, p, btn], {
             opacity: 0,
             y: 30
         });
         
-        // Create timeline for staggered animations
         const tl = gsap.timeline();
         
-        // Animate elements with stagger
         tl.to(h1, {
             opacity: 1,
             y: 0,
@@ -5093,7 +3831,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, "-=0.6");
     }
     
-    // Auto-slide functionality
     function startAutoSlide() {
         slideInterval = setInterval(() => {
             nextSlide();
@@ -5110,167 +3847,61 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function nextSlide() {
-        const nextIndex = (currentSlide + 1) % slides.length;
-        goToSlide(nextIndex);
+        const nextIndex = (currentRevSlide + 1) % slides.length;
+        goToRevSlide(nextIndex);
     }
     
-    function prevSlide() {
-        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-        goToSlide(prevIndex);
-    }
+    // Initialize slider
+    initSlider();
     
-    // Touch events for mobile swipe
-    function touchStart(e) {
-        startPos = getPositionX(e);
-        isDragging = true;
-        animationID = requestAnimationFrame(animation);
-        sliderContainer.style.cursor = 'grabbing';
-    }
-    
-    function touchMove(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        const currentPosition = getPositionX(e);
-        currentTranslate = prevTranslate + currentPosition - startPos;
-    }
-    
-    function touchEnd() {
-        cancelAnimationFrame(animationID);
-        isDragging = false;
+    // Form submission handler
+    function submitToAPI(formId) {
+        const form = document.getElementById(formId);
+        const formData = new FormData(form);
         
-        const movedBy = currentTranslate - prevTranslate;
-        
-        if (movedBy < -100 && currentSlide < slides.length - 1) {
-            nextSlide();
-        } else if (movedBy > 100 && currentSlide > 0) {
-            prevSlide();
-        }
-        
-        setPositionByIndex();
-        sliderContainer.style.cursor = 'grab';
-    }
-    
-    // Mouse events for desktop drag
-    function dragStart(e) {
-        startPos = getPositionX(e);
-        isDragging = true;
-        animationID = requestAnimationFrame(animation);
-        sliderContainer.style.cursor = 'grabbing';
-    }
-    
-    function dragMove(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        const currentPosition = getPositionX(e);
-        currentTranslate = prevTranslate + currentPosition - startPos;
-    }
-    
-    function dragEnd() {
-        cancelAnimationFrame(animationID);
-        isDragging = false;
-        
-        const movedBy = currentTranslate - prevTranslate;
-        
-        if (movedBy < -100 && currentSlide < slides.length - 1) {
-            nextSlide();
-        } else if (movedBy > 100 && currentSlide > 0) {
-            prevSlide();
-        }
-        
-        setPositionByIndex();
-        sliderContainer.style.cursor = 'grab';
-    }
-    
-    // Helper functions
-    function getPositionX(e) {
-        return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-    }
-    
-    function animation() {
-        setSliderPosition();
-        if (isDragging) requestAnimationFrame(animation);
-    }
-    
-    function setSliderPosition() {
-        sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
-    }
-    
-    function setPositionByIndex() {
-        // Fix: Always keep slides visible
-        slides.forEach((slide, index) => {
-            if (index === currentSlide) {
-                slide.style.opacity = '1';
-                slide.style.visibility = 'visible';
+        fetch("https://itzadarsh.co.in/api/v1/post", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                form.reset();
+                
+                // If it's the popup form, mark as submitted
+                if (formId === 'popupForm') {
+                    localStorage.setItem('trackshipPopupSubmitted', 'true');
+                    const popupModal = document.getElementById('popupModal');
+                    popupModal.classList.remove('active');
+                    setTimeout(() => popupModal.style.display = 'none', 300);
+                }
             } else {
-                slide.style.opacity = '0';
-                slide.style.visibility = 'hidden';
+                alert("Error: " + data.message);
             }
+        })
+        .catch(err => {
+            alert("Network error — please try again.");
+            console.error(err);
         });
     }
     
-    // Initialize the slider
-    initSlider();
-});
-
-// ====== FORM VALIDATION ======
-function validateForm(formId) {
-    const form = document.getElementById(formId);
-    const inputs = form.querySelectorAll("input, textarea, select");
-    let valid = true;
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            valid = false;
-            input.classList.add("shake");
-            setTimeout(() => input.classList.remove("shake"), 500);
-        }
+    // Attach form submit handlers
+    document.getElementById('popupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToAPI('popupForm');
     });
-    return valid;
-}
-function submitToAPI(formId) {
-    if (!validateForm(formId)) {
-        return false;
-    }
     
-    const form = document.getElementById(formId);
-    const formData = new FormData(form);
-
-    fetch("https://itzadarsh.co.in/api/v1/post", {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            alert(data.message);
-            form.reset();
-        } else {
-            alert("Error: " + data.message);
-        }
-    })
-    .catch(err => {
-        alert("Network error — please try again.");
-        console.error(err);
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToAPI('contactForm');
     });
-}
-
-// ===== POPUP FORM =====
-document.getElementById("popupForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    submitToAPI("popupForm");
-});
-// ===== CONTACT FORM =====
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    submitToAPI("contactForm");
-});
-// ===== QUICK FORM (cities section) =====
-document.getElementById("quickForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    submitToAPI("quickForm");
+    
+    document.getElementById('quickForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToAPI('quickForm');
+    });
 });
 </script>
-	<script>script.js</script>
 </body>
 </html>
-
-
