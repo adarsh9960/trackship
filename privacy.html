@@ -59,6 +59,7 @@
     /* Hero Section Styles for Privacy */
 .hero-section {
     padding: 20px 0 80px;
+    padding-top: 15%;
     background: linear-gradient(135deg, #005792 0%, #003d5c 100%);
     position: relative;
     overflow: hidden;
@@ -517,23 +518,6 @@
     <nav class="desktop-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <div class="dropdown">
-        <button class="dropdown-toggle">
-            Services <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="dropdown-menu">
-            <a href="#">Courier Point</a>
-            <a href="#">Logistics</a>
-            <div class="nested-dropdown">
-                <button class="nested-toggle">B2B <i class="fas fa-chevron-right"></i></button>
-                <div class="nested-menu">
-                    <a href="#">B2B Seller</a>
-                    <a href="#">B2B Franchise</a>
-                    <a href="#">B2B Services</a>
-                </div>
-            </div>
-        </div>
-    </div>
     <a href="#why-choose">Why Choose Us</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -554,32 +538,21 @@
     <div class="panel-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <div class="dropdown">
-            <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">
-                Services <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu" id="servicesMenu">
-                <a href="#">Courier Point</a>
-                <a href="#">Logistics</a>
-                <div class="dropdown nested-dropdown">
-                    <button class="nested-toggle" aria-expanded="false" aria-controls="b2bMenu">
-                        B2B <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="nested-menu" id="b2bMenu">
-                        <a href="#">B2B Seller</a>
-                        <a href="#">B2B Franchise</a>
-                        <a href="#">B2B Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
     </div>
     <div class="panel-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022" style="width: auto; height: 20px;">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29" style="width: auto; height: 20px;">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook" style="width: auto; height: 20px;">
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp" style="width: auto; height: 20px;">
+                    </a>
     </div>
 </div>
 <div class="overlay" id="overlay"></div>
@@ -636,6 +609,16 @@
                     <li><strong>Name and Identification:</strong> Full name, company name (for business users), and government identification numbers when required by law.</li>
                     <li><strong>Contact Details:</strong> Phone numbers, email addresses, residential and business addresses, and alternative contact information.</li>
                     <li><strong>Financial Information:</strong> Bank account details for refunds, payment method information, and billing addresses for service transactions.</li>
+                    <li><strong>Refunds & Cancellation:</strong> Refunds are applicable only when:
+
+The service has not been initiated
+Payment was deducted but the booking could not be confirmed
+Cancellations were made within the allowed time frame</li>
+<li><strong>Refunds are not applicable for:</strong> Services already completed or in transit
+
+Customer-provided incorrect details (address, contact, package info, etc.)
+
+Delays caused by weather, traffic, or external circumstances beyond our control</li>
                 </ul>
 
                 <h3>Transaction and Service Data</h3>
@@ -1043,25 +1026,29 @@
 
         <div class="contact-form reveal">
             <form id="contactForm" method="POST" novalidate>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="contactName" name="name" required>
-                        <label for="contactName" class="form-label">Name</label>
-                        <span class="error-message"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="contactEmail" name="email" required>
-                        <label for="contactEmail" class="form-label">Email</label>
-                        <span class="error-message"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-message" id="contactMessage" name="message" required placeholder=""></textarea>
-                    <label class="form-label">Message</label>
-                    <span class="error-message"></span>
-                </div>
-                <button type="submit" class="form-submit">Submit</button>
-            </form>
+    <div class="form-row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="contactName" name="name" required>
+            <label for="contactName" class="form-label">Name</label>
+            <span class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="form-control" id="contactEmail" name="email" required>
+            <label for="contactEmail" class="form-label">Email</label>
+            <span class="error-message"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <textarea class="form-message" id="contactMessage" name="message" required></textarea>
+        <label class="form-label">Message</label>
+        <span class="error-message"></span>
+    </div>
+
+    <button type="submit" class="form-submit">Submit</button>
+</form>
+
         </div>
     </div>
 </section>
@@ -1368,17 +1355,82 @@ function trackPrivacyPageView() {
 }
 
 trackPrivacyPageView();
+// ====== UNIVERSAL VALIDATION (contactForm + popupForm + quickForm) ======
+function validateForm(form) {
+    let valid = true;
+    const groups = form.querySelectorAll(".form-group");
 
-// Form validation for privacy contact form
-const privacyContactForm = document.getElementById('contactForm');
-if (privacyContactForm) {
-    privacyContactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Add form submission logic here
-        console.log('Privacy contact form submitted');
+    groups.forEach(group => {
+        const input = group.querySelector("input, textarea, select");
+        const errorMessage = group.querySelector(".error-message");
+
+        if (!input.value.trim()) {
+            valid = false;
+            errorMessage.textContent = "This field is required";
+            group.classList.add("shake");
+
+            setTimeout(() => group.classList.remove("shake"), 500);
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
+
+    return valid;
+}
+
+// ====== API SUBMIT FUNCTION ======
+function submitToAPI(formId) {
+    const form = document.getElementById(formId);
+
+    if (!validateForm(form)) {
+        return; // stop submit if validation fails
+    }
+
+    const formData = new FormData(form);
+
+    fetch("https://itzadarsh.co.in/api/v1/post", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(err => {
+        alert("Network error — please try again.");
+        console.error(err);
     });
 }
 
+// ====== FORM SUBMIT EVENT BINDINGS ======
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        submitToAPI("contactForm");
+    });
+}
+
+const popupForm = document.getElementById("popupForm");
+if (popupForm) {
+    popupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        submitToAPI("popupForm");
+    });
+}
+
+const quickForm = document.getElementById("quickForm");
+if (quickForm) {
+    quickForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        submitToAPI("quickForm");
+    });
+}
 </script>
 </body>
 </html>
