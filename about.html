@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="icon.css">
+
 <style>
     /* icon.css */
 /* Reset and Base Styles */
@@ -26,9 +26,508 @@ html, body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 -20px;
 }
 
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+.social-icon:hover {
+    background: #ff7300;
+    transform: translateY(-3px);
+}
+
+/* WhatsApp Floater Advanced Animation */
+.whatsapp-floater {
+    position: fixed;
+    bottom: 30px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    animation: popIn 0.6s ease-out, wave 0.5s infinite ease-in-out 0.5s, gentleShake 3s infinite ease-in-out 2s;
+    z-index: 9999;
+}
+.whatsapp-floater img {
+    height: 40px;
+    width: 40px;
+}
+/* POP-IN Animation */
+@keyframes popIn {
+    0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+    50% { transform: scale(1.15) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* WAVE EFFECT (ripple like WhatsApp calling) */
+.whatsapp-floater::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: rgba(37, 211, 46, 0.747);
+    animation: wavePulse 1.4s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+@keyframes gentleShake {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Optional: Hover Boost */
+.whatsapp-floater:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.social-icons {
+    display: flex;
+    gap: 35px;
+}
+.social-icon img{
+    height: auto;
+    width: 25px;
+    
+}
+
+/* REMOVE ALL GAPS / BORDERS */
+.india-hero,
+.road-layer,
+.road-layer img {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+/* ===============================
+   iOS FORM BASE STYLE
+================================ */
+.form-group {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.form-control,
+.form-message,
+select.form-control {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 16px;
+    border-radius: 16px;
+    border: 1.8px solid #d5d5d5;
+    background: rgba(255, 255, 255, 0.212);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.form-control:focus,
+.form-message:focus,
+select.form-control:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 0 4px rgba(247,147,30,0.25);
+    background: #fff;
+}
+
+/* ========== FLOATING LABEL ========== */
+.form-label {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 15px;
+    color: #555;
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+#popupForm input::placeholder,
+#popupForm textarea::placeholder,
+#popupForm select {
+    color: #777 !important;   /* visible grey */
+    opacity: 1 !important;
+    font-size: 14px;
+}
+
+
+/* Input filled or focused */
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label,
+select.form-control:focus + .form-label,
+select.form-control:not([value=""]) + .form-label,
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+    top: -10px;
+    left: 14px;
+    font-size: 13px;
+    color: #ff7300;
+    background: #fff;
+    border-radius: 15px;
+    padding: 0 5px;
+}
+
+/* ========== SELECT DROPDOWN DESIGN ========== */
+select.form-control {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%230b4a7a" height="20" width="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 20px;
+}
+
+/* Dropdown options */
+select.form-control option {
+    padding: 5px;
+    background: #fff;
+    font-size: 15px;
+}
+
+
+/* Option hover + selected */
+select.form-control option:hover {
+    background: #ffe0bf !important;
+}
+select.form-control option:checked {
+    background: #ff7300 !important;
+    color: #fff;
+}
+
+/* ========== ERROR MESSAGE ========== */
+.error-message {
+    font-size: 13px;
+    color: #d90000;
+    margin-top: 4px;
+    display: block;
+    padding-left: 4px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+/* Show Error */
+.show-error .error-message {
+    opacity: 1;
+}
+
+/* Red border error */
+.show-error .form-control,
+.show-error .form-message,
+.show-error select.form-control {
+    border-color: #d90000 !important;
+    box-shadow: 0 0 0 4px rgba(217,0,0,0.18);
+}
+
+/* ========== SHAKE ANIMATION ========== */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease;
+}
+.form-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7300, #FFA726);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+/* Popup Background */
+.popup-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup box */
+.popup-content {
+    background: #fff;
+    width: 420px;
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Header */
+.popup-header {
+    background: #0b4a7a;
+    padding: 15px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-close i {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Body */
+.popup-body {
+    padding: 25px 25px 35px;
+}
+
+/* Floating Inputs */
+.form-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 14px 12px;
+    font-size: 15px;
+    border: 1.8px solid #ddd;
+    background: #fff;
+    border-radius: 16px;
+    outline: none;
+    transition: 0.25s;
+}
+
+textarea { height: 80px; resize: none; }
+
+/* Label */
+.form-group label {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    color: #888;
+    font-size: 15px;
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+/* Floating effect when typing */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group select:focus + label,
+.form-group select:not([value=""]) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -6px;
+    left: 10px;
+    font-size: 12px;
+    color: #ff7300;
+    background: #fff;
+    padding: 0 6px;
+}
+
+/* Focus effect */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 0 3px rgba(247,147,30,0.20);
+}
+
+/* Custom error text */
+.error-text {
+    font-size: 12px;
+    color: #d00000;
+    margin-top: 3px;
+    display: block;
+}
+
+/* Submit Button */
+.form-submit {
+    width: 100%;
+    background: #ff7300;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.form-submit:hover {
+    background: #bd6500;
+}
+
+/* Shake error animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+.contact-info {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .why-choose-container {
+        flex-direction: column;
+    }
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-card {
+        min-width: 300px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        padding: 10px 15px;
+    }
+    .about-title, .why-choose-title, .cta-title, .contact-title {
+        font-size: 24px;
+    }
+    
+    .stat-number {
+        font-size: 32px;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.error-shake {
+    animation: shake 0.3s ease;
+}
+/* Hide scrollbar but keep scroll working */
+.popup-content {
+    scrollbar-width: none; /* Firefox */
+}
+
+.popup-content::-webkit-scrollbar {
+    width: 0px;              /* Chrome */
+    background: transparent; /* Chrome */
+}
+
+/* MAIN WRAPPER */
+.india-hero {
+    width: 100%;
+    overflow: hidden;
+}
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #b3a100;
+    transform: translateY(-3px);
+}
 /* Button Styles */
 .btn {
     display: inline-flex;
@@ -1582,6 +2081,46 @@ select.form-control {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* Base footer links */
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    padding-left: 26px; /* left space for the arrow */
+    transition: 0.3s ease;
+}
+
+/* Arrow ALWAYS visible */
+.footer-links a::before {
+    content: "\27A7";  /* → */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #ffbb00;      /* default orange arrow */
+    transition: 0.35s cubic-bezier(.25,.8,.25,1);
+}
+
+/* Hover: text moves slightly right */
+.footer-links a:hover {
+    color: #ff7300;
+    transform: translateX(4px);
+}
+
+/* Hover: arrow slides right smoothly + color change */
+.footer-links a:hover::before {
+    transform: translateY(-50%) translateX(6px);
+    color: #ff7300;          /* arrow turns white */
+}
+
+/* Body */
+.popup-body {
+    padding: 25px 25px 35px;
+}
+
 .credit {
     margin-top: 10px;
 }
@@ -1636,7 +2175,7 @@ select.form-control {
 }
 
 .hamburger.active .cross {
-    opacity: 1;
+    opacity: 0;
 }
 
 /* Scroll Reveal Animations */
@@ -1754,7 +2293,7 @@ select.form-control {
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: 120px 0 60px;
+        padding: -120px 0 -60px;
     }
     
     .hero-section h1 {
@@ -2253,33 +2792,8 @@ a, button, .btn, .social-icon, .testimonial-card {
     <nav class="desktop-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-
-    <!-- SERVICES DROPDOWN -->
-    <div class="dropdown">
-        <button class="dropdown-toggle">
-            Services <i class="fas fa-chevron-down"></i>
-        </button>
-
-        <div class="dropdown-menu">
-            <a href="#">Courier Point</a>
-            <a href="#">Logistics</a>
-
-            <!-- B2B NESTED DROPDOWN -->
-            <div class="nested-dropdown">
-                <button class="nested-toggle">
-                    B2B <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="nested-menu">
-                    <a href="#">B2B Seller</a>
-                    <a href="#">B2B Franchise</a>
-                    <a href="#">B2B Services</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <a href="#why-choose">Why Choose Us</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html#why-choose">Why Choose Us</a>
+    <a href="contact.html">Contact</a>
 </nav>
     
     <div class="hamburger" id="hamburger">
@@ -2299,46 +2813,30 @@ a, button, .btn, .social-icon, .testimonial-card {
     <div class="panel-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-
-        <!-- SERVICES MAIN DROPDOWN -->
-        <div class="dropdown">
-            <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">
-                Services <i class="fas fa-chevron-down"></i>
-            </button>
-
-            <div class="dropdown-menu" id="servicesMenu">
-                <a href="#">Courier Point</a>
-                <a href="#">Logistics</a>
-
-                <!-- B2B NESTED DROPDOWN -->
-                <div class="dropdown nested-dropdown">
-                    <button class="nested-toggle" aria-expanded="false" aria-controls="b2bMenu">
-                        B2B <i class="fas fa-chevron-right"></i>
-                    </button>
-
-                    <div class="nested-menu" id="b2bMenu">
-                        <a href="#">B2B Seller</a>
-                        <a href="#">B2B Franchise</a>
-                        <a href="#">B2B Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a href="contact.html">Contact</a>
     </div>
 
     <div class="panel-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+                    </a>
     </div>
 </div>
 <div class="overlay" id="overlay"></div>
 
 <!-- WhatsApp Floater -->
 <a href="https://wa.me/917400372375?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+
 </a>
 
 <!-- Lottie Import -->
@@ -3012,64 +3510,6 @@ overlay.addEventListener('click', () => {
     document.body.style.overflow = '';
 });
 
-// Desktop Services dropdown
-const desktopDropdown = document.querySelector('.desktop-nav .dropdown');
-const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
-const desktopMenu = desktopDropdown.querySelector('.dropdown-menu');
-
-desktopDropdown.addEventListener('mouseenter', () => {
-    desktopMenu.classList.add('show');
-});
-
-desktopDropdown.addEventListener('mouseleave', () => {
-    desktopMenu.classList.remove('show');
-});
-
-// Nested dropdown hover
-const nestedDropdown = document.querySelector('.desktop-nav .nested-dropdown');
-if (nestedDropdown) {
-    const nestedToggle = nestedDropdown.querySelector('.nested-toggle');
-    const nestedMenu = nestedDropdown.querySelector('.nested-menu');
-
-    nestedDropdown.addEventListener('mouseenter', () => {
-        nestedMenu.classList.add('show');
-    });
-
-    nestedDropdown.addEventListener('mouseleave', () => {
-        nestedMenu.classList.remove('show');
-    });
-}
-
-// Mobile Services dropdown
-const dropdownToggle = document.querySelector('.mobile-panel .dropdown-toggle');
-const dropdownMenu = document.getElementById('servicesMenu');
-
-if (dropdownToggle) {
-    dropdownToggle.addEventListener('click', () => {
-        const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
-
-        dropdownToggle.setAttribute('aria-expanded', !isOpen);
-
-        dropdownMenu.style.maxHeight = isOpen ? "0px" : dropdownMenu.scrollHeight + "px";
-
-        dropdownToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
-    });
-}
-
-const nestedToggle = document.querySelector('.nested-toggle');
-const nestedMenu = document.getElementById('b2bMenu');
-
-if (nestedToggle) {
-    nestedToggle.addEventListener('click', () => {
-        const isOpen = nestedToggle.getAttribute('aria-expanded') === 'true';
-
-        nestedToggle.setAttribute('aria-expanded', !isOpen);
-
-        nestedMenu.style.maxHeight = isOpen ? "0px" : nestedMenu.scrollHeight + "px";
-
-        nestedToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
-    });
-}
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -3519,6 +3959,3 @@ if ('serviceWorker' in navigator) {
 </script>
 </body>
 </html>
-
-
-
