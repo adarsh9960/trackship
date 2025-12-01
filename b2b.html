@@ -1,1 +1,3186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Services - Enterprise Logistics Solutions | Trackship Logistics</title>
+<meta name="description" content="Comprehensive B2B logistics solutions including supply chain management, enterprise shipping, bulk deliveries, warehousing, and integrated logistics services. Transform your business operations with Trackship's scalable B2B solutions across India.">
+<meta name="keywords" content="B2B logistics, enterprise shipping, supply chain management, bulk delivery, business logistics, warehousing solutions, freight forwarding, corporate logistics, B2B courier, enterprise transportation, inventory management, fulfillment services">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Trackship Logistics">
+<link rel="canonical" href="https://trackshiplogistics.com/b2b.html">
+<meta property="og:title" content="B2B Services - Enterprise Logistics Solutions">
+<meta property="og:description" content="Transform your business with comprehensive B2B logistics solutions">
+<meta property="og:image" content="https://trackshiplogistics.com/assets/b2b-services-og.jpg">
+<meta property="og:url" content="https://trackshiplogistics.com/b2b-services">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "B2B Logistics Services",
+  "description": "Comprehensive B2B logistics solutions for enterprises",
+  "provider": {
+    "@type": "Organization",
+    "name": "Trackship Logistics"
+  }
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #fff;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0b4a7a, #003d5c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.loader-circle {
+    position: absolute;
+    border: 3px solid transparent;
+    border-top-color: #ff7300;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loader-circle:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    animation-duration: 1s;
+}
+
+.loader-circle:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    left: 10px;
+    animation-duration: 0.8s;
+    animation-direction: reverse;
+}
+
+.loader-circle:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    animation-duration: 0.6s;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+    padding: 10px 30px;
+    height: 70px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    height: auto;
+    width: 250px;
+    margin-top: 0px;
+    margin-left: -20px;
+    margin-bottom: 0px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: #042B53;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff7300;
+    transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: #ff7300;
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: #042B53;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    color: #ff7300;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 8px 0;
+    margin-top: 8px;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #042B53;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dropdown-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #ff7300;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255,115,0,0.1);
+    color: #ff7300;
+    padding-left: 25px;
+}
+
+.dropdown-menu a:hover::before {
+    transform: scaleY(1);
+}
+
+.hamburger {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1200;
+    background: transparent;
+    border: none;
+    position: relative;
+}
+
+#hamburgerIcon {
+    font-size: 22px;
+    line-height: 1;
+    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+    pointer-events: none;
+    color: #333;
+}
+
+.hamburger .cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+}
+
+.hamburger.active #hamburgerIcon {
+    transform: rotate(-20deg) scale(.85);
+    opacity: 0;
+}
+.hamburger.active .cross {
+    transform: translate(-50%, -50%) rotate(0);
+    opacity: 1;
+}
+
+.mobile-panel {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background: white;
+    width: 300px;
+    height: 100vh;
+    padding: 25px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.mobile-panel.open {
+    transform: translateX(300px);
+}
+
+.panel-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.panel-links a::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: #ff7300;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, left 0.3s ease;
+}
+
+.panel-links a:hover {
+    color: #ff7300;
+    padding-left: 10px;
+}
+
+.panel-links a:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+.close-btn {
+    text-align: right;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff7300;
+    transform: rotate(90deg);
+}
+
+.panel-social {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.panel-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    color: #333;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-social a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #ff7300;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.panel-social a:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.panel-social a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform: translateZ(0);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff7300, #FFA726);
+    color: white;
+    box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ff7300;
+    border: 2px solid #ff7300;
+}
+
+.btn-secondary:hover {
+    background: #ff7300;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+    transform: rotate(360deg);
+}
+
+/* WhatsApp Floater */
+.whatsapp-floater {
+    position: fixed;
+    bottom: 30px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    animation: popIn 0.6s ease-out, wave 2s infinite ease-in-out 1s, gentleShake 3s infinite ease-in-out 2s;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-floater img {
+    height: 30px;
+    width: 30px;
+    filter: brightness(0) invert(1);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+    50% { transform: scale(1.15) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes wave {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(3deg); }
+    75% { transform: scale(1.05) rotate(-3deg); }
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.whatsapp-floater::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(37, 211, 46, 0.3);
+    animation: wavePulse 2s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes gentleShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+}
+
+.whatsapp-floater:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* Popup Modal */
+.popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    border-radius: 14px;
+    overflow: hidden;
+    transform: scale(0.8) rotateX(10deg);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.popup-modal.active .popup-content {
+    transform: scale(1) rotateX(0);
+}
+
+.popup-header {
+    background: linear-gradient(135deg, #0b4a7a, #003d5c);
+    padding: 15px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.popup-close {
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.popup-close:hover {
+    transform: rotate(90deg);
+    background: rgba(255,255,255,0.2);
+}
+
+.popup-body {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(90vh - 70px);
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+.popup-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.popup-body::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control,
+.form-message {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-control:focus,
+.form-message:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 0 3px rgba(255,115,0,0.2);
+    transform: translateY(-2px);
+}
+
+.form-label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 15px;
+    color: #777;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label,
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+    top: -8px;
+    font-size: 12px;
+    color: #ff7300;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7300, #ff8c00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.form-submit:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,115,0,0.3);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #0b4a7a;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-top: -10px;
+    color: #0b4a7a;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7300, #FFA726);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #ff7300;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+/* Particle Background */
+#particles-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,115,0,0.3);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Reveal Animations Enhanced */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.95);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(80px) scale(0.95);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-left.active,
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Hero Section Enhanced */
+.hero-section {
+    padding: 120px 0 100px;
+    background: linear-gradient(135deg, #0b4a7a 0%, #003d5c 50%, #1a5490 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    width: 150%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff10" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,138.7C672,128,768,128,864,149.3C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    animation: floatWave 20s ease-in-out infinite;
+}
+
+@keyframes floatWave {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-20px) translateY(-10px); }
+    50% { transform: translateX(10px) translateY(5px); }
+    75% { transform: translateX(-10px) translateY(-5px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    margin-bottom: 45px;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,115,0,0.2);
+    color: #ff7300;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,115,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Floating Elements */
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element.box {
+    width: 60px;
+    height: 60px;
+    background: #ff7300;
+    border-radius: 8px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element.circle {
+    width: 80px;
+    height: 80px;
+    background: #ff7300;
+    border-radius: 50%;
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.floating-element.triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid #ff7300;
+    top: 40%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Premium Services Section Enhanced */
+.premium-services-section {
+    padding: 120px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ff7300, transparent);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.premium-title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0b4a7a;
+    margin-bottom: 15px;
+}
+
+.premium-subtitle {
+    color: #ff7300;
+    margin-bottom: 70px;
+    font-size: 20px;
+}
+
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+.premium-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,115,0,0.03), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff7300;
+    box-shadow: 0 20px 40px rgba(255,115,0,0.15);
+}
+
+.premium-card:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border: 3px dashed #ff7300;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.icon-circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ff7300;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+.premium-card:hover .icon-circle {
+    animation: rotateIcon 1.2s linear infinite;
+    background: linear-gradient(135deg, #fff5e6, #fff);
+    box-shadow: 0 5px 15px rgba(255,115,0,0.2);
+}
+
+.premium-card:hover .icon-circle::after {
+    opacity: 0.3;
+    transform: scale(1);
+}
+
+.icon-circle i {
+    font-size: 24px;
+    color: #ff7300;
+    transition: all 0.3s ease;
+}
+
+.premium-card:hover .icon-circle i {
+    transform: scale(1.2);
+}
+
+.premium-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0b4a7a;
+    transition: color 0.3s ease;
+}
+
+.premium-card:hover h4 {
+    color: #ff7300;
+}
+
+.premium-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #ff7300, #FFA726);
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.premium-card:hover .underline {
+    left: 0;
+}
+
+/* Service Categories Section Enhanced */
+.service-categories {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #ffffff, #f0f4f8);
+    position: relative;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7300, #FFA726, #ff7300);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.category-card:hover {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.category-header {
+    background: linear-gradient(135deg, #0b4a7a, #003d5c);
+    color: white;
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.category-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.category-title {
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.category-body {
+    padding: 35px 30px;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: '✓';
+    color: #ff7300;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.feature-list li:hover {
+    padding-left: 10px;
+    color: #ff7300;
+}
+
+.feature-list li:hover::before {
+    transform: scale(1.3) rotate(360deg);
+}
+
+/* Workflow Section Enhanced */
+.workflow-section {
+    padding: 120px 0;
+    background: white;
+    position: relative;
+}
+
+.workflow-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 0L100 100M100 0L0 100" stroke="%23e9ecef" stroke-width="1"/></svg>');
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 70px;
+    z-index: 1;
+}
+
+.workflow-steps::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 50px;
+    right: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7300, #0b4a7a, #ff7300);
+    border-radius: 2px;
+    z-index: 0;
+    animation: flowGradient 3s ease-in-out infinite;
+}
+
+@keyframes flowGradient {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.workflow-step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff7300, #FFA726);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 25px rgba(255,115,0,0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step-number::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #ff7300;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover .step-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 35px rgba(255,115,0,0.4);
+}
+
+.workflow-step:hover .step-number::before {
+    opacity: 0.3;
+}
+
+.step-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0b4a7a;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.workflow-step:hover .step-title {
+    color: #ff7300;
+}
+
+.step-description {
+    color: #666;
+    line-height: 1.7;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover .step-description {
+    color: #333;
+    transform: translateY(-2px);
+}
+
+/* Pricing Section Enhanced */
+.pricing-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.pricing-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.pricing-table {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.pricing-table:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.table-header {
+    background: linear-gradient(135deg, #0b4a7a, #003d5c);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+.table-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.pricing-row {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    padding: 22px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.pricing-row:last-child {
+    border-bottom: none;
+}
+
+.pricing-row:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.feature-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.plan-basic,
+.plan-professional,
+.plan-enterprise {
+    text-align: center;
+    font-size: 15px;
+}
+
+.check-icon {
+    color: #28a745;
+    font-size: 22px;
+    animation: bounceIn 0.5s ease;
+}
+
+.cross-icon {
+    color: #dc3545;
+    font-size: 22px;
+}
+
+.price-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff7300;
+}
+
+/* Partners Section Enhanced */
+.partners-section {
+    padding: 120px 0;
+    background: white;
+    position: relative;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff7300, transparent);
+    transform: translateY(-50%);
+}
+
+.partners-carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+.partners-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: fit-content;
+}
+
+.partners-track:hover {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    filter: grayscale(50%);
+    opacity: 0.7;
+    transition: all 0.4s ease;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.partner-logo img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Testimonials Section Enhanced */
+.testimonials-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    position: relative;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
+    margin-top: 60px;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    border-left: 4px solid #ff7300;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 80px;
+    color: #ff7300;
+    opacity: 0.05;
+    font-family: Georgia, serif;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) rotateX(2deg);
+    box-shadow: 0 20px 40px rgba(255,115,0,0.15);
+    border-left-width: 6px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.author-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff7300, #FFA726);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,115,0,0.3);
+}
+
+.testimonial-card:hover .author-avatar {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.author-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #0b4a7a;
+    font-weight: 600;
+}
+
+.author-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.rating {
+    color: #ffc107;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+/* CTA Section Enhanced */
+.cta-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #0b4a7a, #003d5c);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,115,0,0.1)" stroke-width="0.5"/></svg>');
+    background-size: 100px 100px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.cta-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: 42px;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.cta-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #ff7300;
+    border-radius: 2px;
+}
+
+.cta-description {
+    font-size: 20px;
+    margin-bottom: 45px;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+/* Footer Enhanced */
+.footer {
+    background: #042b53 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path fill="%23ffffff05" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z"/></svg>') no-repeat bottom;
+    background-size: cover;
+    color: #ffffff;
+    padding: 80px 0 20px;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,115,0,0.3), transparent);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-column h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff7300;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #ff7300;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ff7300;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff7300;
+    transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+    width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #ff7300;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #ff7300;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,115,0,0.3);
+}
+
+.social-icon:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.social-icon img {
+    width: 22px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Statistics Counter */
+.stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0b4a7a, #003d5c);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ff7300;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .hero-title {
+        font-size: 42px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .workflow-steps::before {
+        display: none;
+    }
+    
+    .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .premium-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .workflow-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        padding: 10px 15px;
+    }
+    
+    .hero-section {
+        padding: 100px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    section {
+        padding: 80px 0 !important;
+    }
+    
+    .premium-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .logo img {
+        width: 200px;
+    }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7300, #FFA726);
+    z-index: 10001;
+    transition: width 0.1s ease;
+}
+
+/* Cursor Effect */
+.cursor-effect {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff7300;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: all 0.1s ease;
+    opacity: 0.5;
+}
+
+.cursor-effect.active {
+    transform: scale(2);
+    opacity: 0.3;
+}
+</style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+    </div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Cursor Effect -->
+<div class="cursor-effect" id="cursorEffect"></div>
+
+<!-- Header -->
+<header class="main-header" id="mainHeader">
+    <div class="logo">
+        <img src="https://itzadarsh.co.in/assets/trackship/img/track-ship-logo.png" alt="Trackship Logo">
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        
+        <!-- Services Dropdown -->
+        <div class="dropdown">
+            <button class="dropdown-toggle">
+                Services <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a href="service.html">Courier Point</a>
+                <a href="service.html">Logistics</a>
+                <a href="b2b.html">B2B Services</a>
+            </div>
+        </div>
+        
+        <a href="contact.html">Contact</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars" id="hamburgerIcon"></i>
+        <div class="cross">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Panel -->
+<div class="mobile-panel" id="mobilePanel">
+    <div class="close-btn" id="closePanel">
+        <i class="fas fa-times"></i>
+    </div>
+    
+    <div class="panel-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="b2b.html">B2B Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="panel-social">
+        <a href="#" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+        </a>
+        <a href="#" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube">
+        </a>
+        <a href="#" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+        </a>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- WhatsApp Floater -->
+<a href="https://wa.me/919136601185?text=Hi%20Trackship%20-%20I'm%20interested%20in%20B2B%20services" target="_blank" class="whatsapp-floater">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- Popup Modal -->
+<div class="popup-modal" id="popupModal">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3 class="popup-title">Get B2B Solutions</h3>
+            <div class="popup-close" id="popupClose">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="popup-body">
+            <form id="popupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="popupName" name="name" class="form-control" placeholder=" " required>
+                        <label for="popupName" class="form-label">Company Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="popupEmail" name="email" class="form-control" placeholder=" " required>
+                        <label for="popupEmail" class="form-label">Business Email</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="popupContact" name="contact" class="form-control" placeholder=" " required>
+                        <label for="popupContact" class="form-label">Contact Number</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="popupService" name="service" class="form-control" required>
+                            <option value="">Select Service</option>
+                            <option value="supply-chain">Supply Chain Management</option>
+                            <option value="bulk-shipping">Bulk Shipping</option>
+                            <option value="warehousing">Warehousing Solutions</option>
+                            <option value="enterprise">Enterprise Logistics</option>
+                        </select>
+                        <label for="popupService" class="form-label">Service Type</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="popupVolume" name="volume" class="form-control" placeholder=" " required>
+                    <label for="popupVolume" class="form-label">Monthly Volume (approx.)</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="popupMessage" name="message" class="form-message" placeholder=" " required></textarea>
+                    <label for="popupMessage" class="form-label">Requirements</label>
+                </div>
+                <button type="submit" class="form-submit">Get Quote</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div id="particles-bg"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-element box"></div>
+    <div class="floating-element circle"></div>
+    <div class="floating-element triangle"></div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge reveal">
+                <i class="fas fa-award"></i> India's Leading B2B Logistics Provider
+            </div>
+            <h1 class="hero-title reveal">Enterprise B2B Logistics Solutions</h1>
+            <p class="hero-subtitle reveal">
+                Transform your business operations with comprehensive B2B logistics services designed for scale, efficiency, and reliability. 
+                From intelligent warehousing to AI-powered last-mile delivery, we empower enterprises with next-generation supply chain solutions 
+                that drive growth and competitive advantage in today's dynamic marketplace.
+            </p>
+            <div class="hero-buttons reveal">
+                <a href="#pricing" class="btn btn-primary">
+                    <span>View Pricing Plans</span>
+                    <span class="btn-icon"><i class="fas fa-chart-line"></i></span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Schedule Consultation</span>
+                    <span class="btn-icon"><i class="fas fa-phone-alt"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Enterprise Clients</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="19000">0</div>
+                <div class="stat-label">Pin Codes Covered</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">On-Time Delivery %</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">Hour Support</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Premium Services Section -->
+<section class="premium-services-section">
+    <div class="container">
+        <h2 class="premium-title reveal">Why Businesses Choose Trackship B2B</h2>
+        <p class="premium-subtitle reveal">Empowering enterprises with cutting-edge logistics innovation and unparalleled service excellence</p>
+        
+        <div class="premium-grid">
+            <div class="premium-card reveal">
+                <div class="icon-circle">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                    <h4>Scalable Infrastructure</h4>
+                    <p>Adaptive logistics ecosystem that seamlessly scales with your business growth, supporting everything from startup operations to multinational enterprise requirements</p>
+                </div>
+                <span class="underline"></span>
+            </div>
+
+            <div class="premium-card reveal">
+                <div class="icon-circle">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div>
+                    <h4>Advanced Security Systems</h4>
+                    <p>Multi-layered security protocols with real-time tracking, geofencing, and blockchain-verified chain of custody for complete shipment protection</p>
+                </div>
+                <span class="underline"></span>
+            </div>
+
+            <div class="premium-card reveal">
+                <div class="icon-circle">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div>
+                    <h4>Intelligent Cost Optimization</h4>
+                    <p>AI-powered route planning, dynamic pricing models, and bulk shipment consolidation reduce logistics costs by up to 35%</p>
+                </div>
+                <span class="underline"></span>
+            </div>
+
+            <div class="premium-card reveal">
+                <div class="icon-circle">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                    <h4>24/7 Dedicated Support</h4>
+                    <p>Enterprise-grade support team with guaranteed response times, dedicated account managers, and proactive issue resolution</p>
+                </div>
+                <span class="underline"></span>
+            </div>
+
+            <div class="premium-card reveal">
+                <div class="icon-circle">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div>
+                    <h4>Pan-India Network Excellence</h4>
+                    <p>Strategically positioned fulfillment centers covering 19,000+ pin codes with last-mile delivery capabilities in both urban and rural areas</p>
+                </div>
+                <span class="underline"></span>
+            </div>
+
+            <div class="premium-card reveal">
+                <div class="icon-circle">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div>
+                    <h4>Advanced Tech Integration</h4>
+                    <p>Seamless API connectivity, ERP system synchronization, and custom dashboard development for complete logistics automation</p>
+                </div>
+                <span class="underline"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Categories Section -->
+<section class="service-categories" id="services">
+    <div class="container">
+        <h2 class="section-title reveal">Comprehensive B2B Services</h2>
+        <p class="section-subtitle reveal">End-to-end logistics solutions tailored for every industry and business scale</p>
+        
+        <div class="category-grid">
+            <div class="category-card reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="category-title">Smart Warehousing</h3>
+                </div>
+                <div class="category-body">
+                    <ul class="feature-list">
+                        <li>Climate-controlled storage with IoT monitoring</li>
+                        <li>Real-time inventory management with RFID tracking</li>
+                        <li>Automated picking and packing systems</li>
+                        <li>24/7 CCTV surveillance with AI analytics</li>
+                        <li>Multi-location warehousing network</li>
+                        <li>Just-in-time inventory optimization</li>
+                        <li>Hazmat and temperature-sensitive handling</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPopup()">
+                        <span>Explore Warehousing</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="category-card reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3 class="category-title">Bulk Shipping Solutions</h3>
+                </div>
+                <div class="category-body">
+                    <ul class="feature-list">
+                        <li>Fleet of 500+ GPS-enabled vehicles</li>
+                        <li>Full truckload (FTL) and LTL services</li>
+                        <li>Oversized cargo specialist handling</li>
+                        <li>Real-time shipment tracking with alerts</li>
+                        <li>AI-optimized route planning algorithms</li>
+                        <li>Multi-modal transportation options</li>
+                        <li>Freight forwarding and customs clearance</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPopup()">
+                        <span>Get Bulk Shipping</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="category-card reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="category-title">Supply Chain Intelligence</h3>
+                </div>
+                <div class="category-body">
+                    <ul class="feature-list">
+                        <li>End-to-end supply chain visibility platform</li>
+                        <li>Predictive analytics with ML forecasting</li>
+                        <li>Vendor management and performance tracking</li>
+                        <li>Custom logistics workflow automation</li>
+                        <li>Real-time KPI dashboards and reporting</li>
+                        <li>Demand forecasting and inventory planning</li>
+                        <li>Risk management and contingency planning</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPopup()">
+                        <span>Optimize Supply Chain</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="category-card reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3 class="category-title">Intelligent Fulfillment</h3>
+                </div>
+                <div class="category-body">
+                    <ul class="feature-list">
+                        <li>Automated order processing systems</li>
+                        <li>Multi-channel inventory synchronization</li>
+                        <li>Smart returns management with reverse logistics</li>
+                        <li>Quality control with AI vision systems</li>
+                        <li>Same-day and next-day delivery options</li>
+                        <li>Custom packaging and kitting services</li>
+                        <li>Cross-docking and rapid fulfillment</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPopup()">
+                        <span>Enhance Fulfillment</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="category-card reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="category-title">Global Trade Logistics</h3>
+                </div>
+                <div class="category-body">
+                    <ul class="feature-list">
+                        <li>End-to-end customs clearance assistance</li>
+                        <li>International freight forwarding network</li>
+                        <li>Digital documentation and paperwork processing</li>
+                        <li>Trade compliance and regulatory management</li>
+                        <li>Global shipment visibility platform</li>
+                        <li>Multi-modal transportation solutions</li>
+                        <li>Duty drawback and tax optimization</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPopup()">
+                        <span>Go Global</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="category-card reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="category-title">Digital Transformation</h3>
+                </div>
+                <div class="category-body">
+                    <ul class="feature-list">
+                        <li>RESTful API and GraphQL integration</li>
+                        <li>SAP, Oracle, and ERP system connectivity</li>
+                        <li>Custom BI dashboard development</li>
+                        <li>Automated reporting and analytics tools</li>
+                        <li>Mobile-first applications for field teams</li>
+                        <li>AI-powered predictive maintenance</li>
+                        <li>Blockchain for supply chain transparency</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPopup()">
+                        <span>Transform Digitally</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workflow Section -->
+<section class="workflow-section" id="workflow">
+    <div class="container">
+        <h2 class="section-title reveal">Our B2B Process Excellence</h2>
+        <p class="section-subtitle reveal">A proven methodology that transforms logistics challenges into competitive advantages</p>
+        
+        <div class="workflow-steps">
+            <div class="workflow-step reveal">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Deep Analysis</h3>
+                <p class="step-description">
+                    Comprehensive assessment of your current logistics ecosystem, pain points, and growth opportunities. 
+                    Our consultants conduct detailed process mapping, stakeholder interviews, and data analysis to understand 
+                    your unique business requirements and industry-specific challenges.
+                </p>
+            </div>
+            
+            <div class="workflow-step reveal">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Strategic Solution Design</h3>
+                <p class="step-description">
+                    Engineering bespoke logistics solutions leveraging our extensive industry expertise and technology stack. 
+                    We develop detailed implementation roadmaps, ROI projections, and risk mitigation strategies tailored to your specific 
+                    operational requirements and growth objectives.
+                </p>
+            </div>
+            
+            <div class="workflow-step reveal">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Seamless Integration</h3>
+                <p class="step-description">
+                    Methodical implementation of our logistics solutions with minimal disruption to your operations. 
+                    Our technical team handles API integrations, system configurations, staff training, and process optimization 
+                    to ensure smooth transition and immediate value realization.
+                </p>
+            </div>
+            
+            <div class="workflow-step reveal">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Operational Excellence</h3>
+                <p class="step-description">
+                    Deploying the logistics solution with comprehensive support, real-time monitoring, and continuous quality assurance. 
+                    Our dedicated operations team ensures SLA compliance, performance optimization, and proactive issue resolution 
+                    throughout the engagement lifecycle.
+                </p>
+            </div>
+            
+            <div class="workflow-step reveal">
+                <div class="step-number">5</div>
+                <h3 class="step-title">Continuous Innovation</h3>
+                <p class="step-description">
+                    Leveraging advanced analytics, machine learning, and industry insights to continuously optimize performance. 
+                    We provide regular performance reviews, optimization recommendations, and technology upgrades to ensure 
+                    your logistics operations remain at the cutting edge of industry best practices.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section" id="pricing">
+    <div class="container">
+        <h2 class="section-title reveal">Flexible B2B Pricing Plans</h2>
+        <p class="section-subtitle reveal">Transparent, competitive pricing tailored to your business volume and complexity</p>
+        
+        <div class="pricing-container">
+            <div class="pricing-table reveal">
+                <div class="table-header">
+                    Compare Enterprise Logistics Plans
+                </div>
+                <div class="pricing-body">
+                    <div class="pricing-row">
+                        <div class="feature-name">Monthly Shipments</div>
+                        <div class="plan-basic">Up to 500</div>
+                        <div class="plan-professional">500 - 2,000</div>
+                        <div class="plan-enterprise">2,000+</div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">Warehousing Space</div>
+                        <div class="plan-basic"><span class="cross-icon">✗</span></div>
+                        <div class="plan-professional">1,000 sq ft</div>
+                        <div class="plan-enterprise">Custom</div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">Dedicated Account Manager</div>
+                        <div class="plan-basic"><span class="cross-icon">✗</span></div>
+                        <div class="plan-professional"><span class="check-icon">✓</span></div>
+                        <div class="plan-enterprise"><span class="check-icon">✓</span></div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">API Integration Support</div>
+                        <div class="plan-basic"><span class="cross-icon">✗</span></div>
+                        <div class="plan-professional">Basic</div>
+                        <div class="plan-enterprise">Advanced</div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">Real-Time Analytics</div>
+                        <div class="plan-basic"><span class="check-icon">✓</span></div>
+                        <div class="plan-professional"><span class="check-icon">✓</span></div>
+                        <div class="plan-enterprise"><span class="check-icon">✓</span></div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">Support Level</div>
+                        <div class="plan-basic">Standard (9-6)</div>
+                        <div class="plan-professional">Priority (24/5)</div>
+                        <div class="plan-enterprise">24/7 Dedicated</div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">Starting Rate</div>
+                        <div class="plan-basic"><span class="price-value">₹15/shipment</span></div>
+                        <div class="plan-professional"><span class="price-value">₹12/shipment</span></div>
+                        <div class="plan-enterprise"><span class="price-value">Custom Quote</span></div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div class="feature-name">Implementation Time</div>
+                        <div class="plan-basic">2 Weeks</div>
+                        <div class="plan-professional">1 Week</div>
+                        <div class="plan-enterprise">3 Days</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partners Section -->
+<section class="partners-section" id="partners">
+    <div class="container">
+        <h2 class="section-title reveal">Trusted by Industry Leaders</h2>
+        <p class="section-subtitle reveal">Partnering with India's most innovative businesses to drive logistics excellence</p>
+        
+        <div class="partners-carousel">
+            <div class="partners-track">
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-7.jpg" alt="Ekart">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-6.png" alt="Ecom Express">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/amazon-logo-1-3.jpg" alt="Amazon">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-5.png" alt="Facebook">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/zepto-1-1.png" alt="Zepto">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-1.png" alt="Apple">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-4.png" alt="Microsoft">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/Swiggy_logo-1.png" alt="Swiggy">
+                </div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-7.jpg" alt="Ekart">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-6.png" alt="Ecom Express">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/amazon-logo-1-3.jpg" alt="Amazon">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-5.png" alt="Facebook">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/zepto-1-1.png" alt="Zepto">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-1.png" alt="Apple">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-4.png" alt="Microsoft">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/Swiggy_logo-1.png" alt="Swiggy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title reveal">Success Stories From Our Partners</h2>
+        <p class="section-subtitle reveal">Real transformations and measurable results from businesses that chose Trackship</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">
+                    "Trackship's B2B logistics platform has revolutionized our supply chain operations. Their AI-powered routing algorithms reduced our delivery costs by 40% while improving on-time delivery rates to 98.5%. The real-time visibility platform provides complete transparency into our logistics operations, enabling data-driven decision making at every level. The integrated technology stack has eliminated manual processes, reducing our operational overhead by 35%."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AK</div>
+                    <div class="author-info">
+                        <h4>Amit Kumar</h4>
+                        <p>Operations Head, TechMart India</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">
+                    "The integrated warehousing and fulfillment services have been transformational for our e-commerce operations. Trackship's smart inventory management system with predictive analytics has reduced our stockouts by 75% while improving inventory turnover by 40%. Their same-day delivery capabilities across 19,000+ pin codes have increased our customer satisfaction ratings to 4.8/5. The dedicated account management team provides proactive support that anticipates our needs before they become issues."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SP</div>
+                    <div class="author-info">
+                        <h4>Sonia Patel</h4>
+                        <p>CEO, Fashion Hub</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">
+                    "Outstanding cross-border logistics expertise! Their customs clearance team handles our international shipments with remarkable efficiency, reducing clearance times by 60%. The documentation automation system has eliminated paperwork errors completely. Their API integration with our SAP system has automated our entire shipping workflow, reducing order processing time from 45 minutes to under 5 minutes per order."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RJ</div>
+                    <div class="author-info">
+                        <h4>Rahul Jain</h4>
+                        <p>Director, Global Exports Ltd.</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">
+                    "The bulk shipping solutions have optimized our distribution network beyond expectations. Trackship's route optimization algorithms have reduced our fuel consumption by 22% and improved fleet utilization by 35%. Their real-time tracking system with predictive ETA accuracy of 97% has transformed our customer communication. The dashboard provides actionable insights that have helped us reduce operational costs by 28% year-over-year."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MP</div>
+                    <div class="author-info">
+                        <h4>Meera Prasad</h4>
+                        <p>Supply Chain Director, MegaCorp</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">
+                    "Exceptional B2B fulfillment platform! Their multi-channel integration has synchronized our inventory across all marketplaces in real-time, eliminating overselling completely. The automated returns management system has reduced return processing time from 7 days to under 48 hours while improving customer satisfaction by 45%. The quality control systems have reduced product damage rates to under 0.1%."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">VS</div>
+                    <div class="author-info">
+                        <h4>Vikram Singh</h4>
+                        <p>E-commerce Director, RetailPro</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">
+                    "Trackship's cold chain logistics solutions have set industry benchmarks for our pharmaceutical business. Their temperature-controlled warehousing with real-time monitoring ensures 99.9% product integrity. The specialized fleet with IoT sensors provides complete temperature visibility throughout the journey. Their compliance team handles all regulatory requirements seamlessly, reducing our compliance overhead by 60%."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">NG</div>
+                    <div class="author-info">
+                        <h4>Neha Gupta</h4>
+                        <p>Operations Director, MedSupply</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title reveal">Transform Your B2B Logistics Today</h2>
+            <p class="cta-description reveal">
+                Join 500+ leading businesses that have revolutionized their supply chains with Trackship's comprehensive B2B solutions. 
+                Experience the power of AI-driven logistics, real-time visibility, and dedicated expertise that drives competitive advantage 
+                in today's digital economy. Schedule your personalized consultation and discover how we can transform your logistics challenges 
+                into growth opportunities.
+            </p>
+            <div class="hero-buttons reveal">
+                <a href="#" class="btn btn-primary" onclick="openPopup()">
+                    <span>Get Custom Solution</span>
+                    <span class="btn-icon"><i class="fas fa-rocket"></i></span>
+                </a>
+                <a href="tel:+919136601185" class="btn btn-secondary">
+                    <span>Call B2B Expert</span>
+                    <span class="btn-icon"><i class="fas fa-phone-alt"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Trackship B2B</h3>
+                <p>
+                    India's leading provider of comprehensive B2B logistics solutions, empowering enterprises with scalable, efficient, 
+                    and reliable supply chain management through cutting-edge technology and unwavering commitment to excellence. 
+                    Our mission is to transform logistics challenges into competitive advantages for businesses across all sectors.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                    </a>
+                    <a href="https://wa.me/919136601185" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>B2B Solutions</h3>
+                <ul class="footer-links">
+                    <li><a href="#warehousing">Smart Warehousing</a></li>
+                    <li><a href="#bulk-shipping">Bulk Shipping</a></li>
+                    <li><a href="#supply-chain">Supply Chain Intelligence</a></li>
+                    <li><a href="#fulfillment">Intelligent Fulfillment</a></li>
+                    <li><a href="#cross-border">Global Trade Logistics</a></li>
+                    <li><a href="#tech">Digital Transformation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources Hub</h3>
+                <ul class="footer-links">
+                    <li><a href="#">B2B Logistics Whitepapers</a></li>
+                    <li><a href="#">Industry Case Studies</a></li>
+                    <li><a href="#">API Documentation</a></li>
+                    <li><a href="#">Shipping Calculator Pro</a></li>
+                    <li><a href="#">Track Shipment Live</a></li>
+                    <li><a href="#">Logistics Insights Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +91 91366 01185</li>
+                    <li><i class="fas fa-envelope"></i> b2b@trackshiplogistics.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 411, 4th Floor, Lotus Business Park, Malad West, Mumbai - 400064</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9AM-7PM IST</li>
+                    <li><i class="fas fa-headset"></i> 24/7 Emergency Support</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Trackship Logistics Pvt. Ltd. All rights reserved. | <a href="#" style="color: #ff7300;">Privacy Policy</a> | <a href="#" style="color: #ff7300;">Terms of Service</a> | <a href="#" style="color: #ff7300;">B2B Agreement</a> | <a href="#" style="color: #ff7300;">Sitemap</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Loading Screen
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.getElementById('loadingScreen').classList.add('fade-out');
+        }, 1000);
+    });
+
+    // Particle Background
+    function createParticles() {
+        const particlesBg = document.getElementById('particles-bg');
+        const particleCount = 50;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesBg.appendChild(particle);
+        }
+    }
+
+    createParticles();
+
+    // Scroll Progress Bar
+    function updateScrollProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('mainHeader');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Cursor Effect
+    const cursor = document.getElementById('cursorEffect');
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mousedown', function() {
+        cursor.classList.add('active');
+    });
+
+    document.addEventListener('mouseup', function() {
+        cursor.classList.remove('active');
+    });
+
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const closePanel = document.getElementById('closePanel');
+    const overlay = document.getElementById('overlay');
+    
+    hamburger.addEventListener('click', function() {
+        mobilePanel.classList.add('open');
+        overlay.classList.add('visible');
+        hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closePanel.addEventListener('click', function() {
+        mobilePanel.classList.remove('open');
+        overlay.classList.remove('visible');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    overlay.addEventListener('click', function() {
+        mobilePanel.classList.remove('open');
+        overlay.classList.remove('visible');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Popup modal functionality
+    const popupModal = document.getElementById('popupModal');
+    const popupClose = document.getElementById('popupClose');
+    
+    function openPopup() {
+        popupModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closePopup() {
+        popupModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    popupClose.addEventListener('click', closePopup);
+    
+    popupModal.addEventListener('click', function(e) {
+        if (e.target === popupModal) {
+            closePopup();
+        }
+    });
+    
+    // Enhanced Reveal Animations
+    function revealOnScroll() {
+        const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('active');
+                
+                // Add stagger animation for grid items
+                if (element.classList.contains('premium-card') || element.classList.contains('category-card')) {
+                    const siblings = element.parentElement.children;
+                    const index = Array.from(siblings).indexOf(element);
+                    element.style.transitionDelay = (index * 0.1) + 's';
+                }
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+    
+    // Counter Animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const increment = target / 100;
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            
+            // Start animation when element is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(counter);
+        });
+    }
+    
+    animateCounters();
+    
+    // Form submission with enhanced feedback
+    document.getElementById('popupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Create enhanced success message
+        const successDiv = document.createElement('div');
+        successDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+            z-index: 10000;
+            font-weight: 600;
+            transform: translateX(400px);
+            transition: all 0.3s ease;
+            max-width: 400px;
+        `;
+        successDiv.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <i class="fas fa-check-circle" style="font-size: 24px;"></i>
+                <div>
+                    <strong>Request Submitted Successfully!</strong><br>
+                    <span style="font-size: 14px; opacity: 0.9;">Our B2B expert will contact you within 2 hours</span>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(successDiv);
+        
+        // Animate in
+        setTimeout(() => {
+            successDiv.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Reset form and close popup
+        this.reset();
+        closePopup();
+        
+        // Remove with animation
+        setTimeout(() => {
+            successDiv.style.transform = 'translateX(400px)';
+            setTimeout(() => {
+                successDiv.remove();
+            }, 300);
+        }, 4000);
+    });
+    
+    // Smooth scrolling with parallax
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobilePanel.classList.remove('open');
+                overlay.classList.remove('visible');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    // Parallax effect for hero section
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero-section');
+        const floatingElements = document.querySelectorAll('.floating-element');
+        
+        if (hero && scrolled < window.innerHeight) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            
+            floatingElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.2);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        }
+    });
+    
+    // Timeline Animation for Workflow
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.workflow-section',
+            start: 'top 60%',
+            end: 'bottom 40%',
+            scrub: 1
+        }
+    })
+    .from('.workflow-step', {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2
+    })
+    .from('.step-number', {
+        scale: 0,
+        rotation: -180,
+        duration: 0.8,
+        stagger: 0.2
+    }, '<')
+    .from('.step-title', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.2
+    }, '-=0.4')
+    .from('.step-description', {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.2
+    }, '-=0.2');
+    
+    // Float animation for premium cards
+    gsap.utils.toArray('.premium-card').forEach((card, index) => {
+        gsap.to(card, {
+            y: -10,
+            duration: 2 + index * 0.3,
+            ease: 'power1.inOut',
+            repeat: -1,
+            yoyo: true
+        });
+    });
+    
+    // Initialize animations
+    setTimeout(() => {
+        revealOnScroll();
+    }, 100);
+});
+</script>
+</body>
+</html>
