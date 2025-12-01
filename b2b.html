@@ -12,7 +12,7 @@
 <meta property="og:title" content="B2B Services - Enterprise Logistics Solutions">
 <meta property="og:description" content="Transform your business with comprehensive B2B logistics solutions">
 <meta property="og:image" content="https://trackshiplogistics.com/assets/b2b-services-og.jpg">
-<meta property="og:url" content="https://trackshiplogistics.com/b2b-services">
+<meta property="og:url" content="https://trackshiplogistics.com/b2b.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
@@ -60,6 +60,49 @@ body {
     align-items: center;
     z-index: 10000;
     transition: opacity 0.5s ease;
+}
+/* Notification styles */
+.notification {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button states */
+.form-submit.loading,
+.submit-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.form-submit.loading::after,
+.submit-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.form-submit.success,
+.submit-btn.success {
+    background: #28a745 !important;
+    color: white;
+}
+
+.form-submit.error,
+.submit-btn.error {
+    background: #dc3545 !important;
+    color: white;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .loading-screen.fade-out {
@@ -310,7 +353,7 @@ body {
 }
 .hamburger.active .cross {
     transform: translate(-50%, -50%) rotate(0);
-    opacity: 1;
+    opacity: 0;
 }
 
 .mobile-panel {
@@ -525,40 +568,43 @@ body {
     transform: rotate(360deg);
 }
 
-/* WhatsApp Floater */
+/* WhatsApp Floater Advanced Animation */
 .whatsapp-floater {
     position: fixed;
     bottom: 30px;
     left: 10px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #25D366;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    animation: popIn 0.6s ease-out, wave 2s infinite ease-in-out 1s, gentleShake 3s infinite ease-in-out 2s;
+    animation: popIn 0.6s ease-out, wave 0.5s infinite ease-in-out 0.5s, gentleShake 3s infinite ease-in-out 2s;
     z-index: 9999;
-    transition: all 0.3s ease;
 }
-
 .whatsapp-floater img {
-    height: 30px;
-    width: 30px;
-    filter: brightness(0) invert(1);
+    height: 40px;
+    width: 40px;
 }
-
+/* POP-IN Animation */
 @keyframes popIn {
     0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
     50% { transform: scale(1.15) rotate(8deg); opacity: 1; }
     100% { transform: scale(1) rotate(0deg); }
 }
 
-@keyframes wave {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    25% { transform: scale(1.05) rotate(3deg); }
-    75% { transform: scale(1.05) rotate(-3deg); }
+/* WAVE EFFECT (ripple like WhatsApp calling) */
+.whatsapp-floater::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: rgba(37, 211, 46, 0.747);
+    animation: wavePulse 1.4s infinite ease-out;
+    z-index: -1;
 }
 
 @keyframes wavePulse {
@@ -567,35 +613,24 @@ body {
         opacity: 1;
     }
     50% {
-        transform: scale(1.3);
-        opacity: 0.3;
+        transform: scale(1.5);
+        opacity: 0.5;
     }
     100% {
-        transform: scale(1.5);
+        transform: scale(2.2);
         opacity: 0;
     }
 }
 
-.whatsapp-floater::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(37, 211, 46, 0.3);
-    animation: wavePulse 2s infinite ease-out;
-    z-index: -1;
-}
-
 @keyframes gentleShake {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-2deg); }
-    75% { transform: rotate(2deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
 }
 
+/* Optional: Hover Boost */
 .whatsapp-floater:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
 /* Popup Modal */
@@ -1241,6 +1276,7 @@ h1, h2, h3, h4, h5, h6 {
 .category-title {
     font-size: 26px;
     font-weight: 700;
+    color: #ff7300;
     text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
@@ -1539,12 +1575,12 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     margin: 0 15px;
-    filter: grayscale(50%);
-    opacity: 0.7;
+    filter: grayscale(0%);
+   
     transition: all 0.4s ease;
-    background: white;
+    
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    
 }
 
 .partner-logo:hover {
@@ -1695,6 +1731,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-title {
     font-size: 42px;
     margin-bottom: 25px;
+    color: white;
     position: relative;
     display: inline-block;
 }
@@ -1813,7 +1850,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
@@ -1847,7 +1884,7 @@ h1, h2, h3, h4, h5, h6 {
 .social-icon img {
     width: 22px;
     height: auto;
-    filter: brightness(0) invert(1);
+    
     position: relative;
     z-index: 1;
 }
@@ -2007,23 +2044,6 @@ h1, h2, h3, h4, h5, h6 {
     transition: width 0.1s ease;
 }
 
-/* Cursor Effect */
-.cursor-effect {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ff7300;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transition: all 0.1s ease;
-    opacity: 0.5;
-}
-
-.cursor-effect.active {
-    transform: scale(2);
-    opacity: 0.3;
-}
 </style>
 </head>
 <body>
@@ -2093,17 +2113,17 @@ h1, h2, h3, h4, h5, h6 {
     
     <div class="panel-social">
         <a href="#" class="social-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
-        </a>
-        <a href="#" class="social-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube">
-        </a>
-        <a href="#" class="social-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
-        <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship" class="social-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
-        </a>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+                    </a>
     </div>
 </div>
 
@@ -2112,7 +2132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- WhatsApp Floater -->
 <a href="https://wa.me/919136601185?text=Hi%20Trackship%20-%20I'm%20interested%20in%20B2B%20services" target="_blank" class="whatsapp-floater">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
 </a>
 
 <!-- Popup Modal -->
@@ -2454,65 +2474,7 @@ h1, h2, h3, h4, h5, h6 {
     </div>
 </section>
 
-<!-- Workflow Section -->
-<section class="workflow-section" id="workflow">
-    <div class="container">
-        <h2 class="section-title reveal">Our B2B Process Excellence</h2>
-        <p class="section-subtitle reveal">A proven methodology that transforms logistics challenges into competitive advantages</p>
-        
-        <div class="workflow-steps">
-            <div class="workflow-step reveal">
-                <div class="step-number">1</div>
-                <h3 class="step-title">Deep Analysis</h3>
-                <p class="step-description">
-                    Comprehensive assessment of your current logistics ecosystem, pain points, and growth opportunities. 
-                    Our consultants conduct detailed process mapping, stakeholder interviews, and data analysis to understand 
-                    your unique business requirements and industry-specific challenges.
-                </p>
-            </div>
-            
-            <div class="workflow-step reveal">
-                <div class="step-number">2</div>
-                <h3 class="step-title">Strategic Solution Design</h3>
-                <p class="step-description">
-                    Engineering bespoke logistics solutions leveraging our extensive industry expertise and technology stack. 
-                    We develop detailed implementation roadmaps, ROI projections, and risk mitigation strategies tailored to your specific 
-                    operational requirements and growth objectives.
-                </p>
-            </div>
-            
-            <div class="workflow-step reveal">
-                <div class="step-number">3</div>
-                <h3 class="step-title">Seamless Integration</h3>
-                <p class="step-description">
-                    Methodical implementation of our logistics solutions with minimal disruption to your operations. 
-                    Our technical team handles API integrations, system configurations, staff training, and process optimization 
-                    to ensure smooth transition and immediate value realization.
-                </p>
-            </div>
-            
-            <div class="workflow-step reveal">
-                <div class="step-number">4</div>
-                <h3 class="step-title">Operational Excellence</h3>
-                <p class="step-description">
-                    Deploying the logistics solution with comprehensive support, real-time monitoring, and continuous quality assurance. 
-                    Our dedicated operations team ensures SLA compliance, performance optimization, and proactive issue resolution 
-                    throughout the engagement lifecycle.
-                </p>
-            </div>
-            
-            <div class="workflow-step reveal">
-                <div class="step-number">5</div>
-                <h3 class="step-title">Continuous Innovation</h3>
-                <p class="step-description">
-                    Leveraging advanced analytics, machine learning, and industry insights to continuously optimize performance. 
-                    We provide regular performance reviews, optimization recommendations, and technology upgrades to ensure 
-                    your logistics operations remain at the cutting edge of industry best practices.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- Pricing Section -->
 <section class="pricing-section" id="pricing">
@@ -2601,24 +2563,18 @@ h1, h2, h3, h4, h5, h6 {
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-6.png" alt="Ecom Express">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/amazon-logo-1-3.jpg" alt="Amazon">
-                </div>
+                
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-5.png" alt="Facebook">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/zepto-1-1.png" alt="Zepto">
-                </div>
+               
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-1.png" alt="Apple">
                 </div>
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-4.png" alt="Microsoft">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/Swiggy_logo-1.png" alt="Swiggy">
-                </div>
+                
                 <!-- Duplicate for seamless scroll -->
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-7.jpg" alt="Ekart">
@@ -2626,158 +2582,23 @@ h1, h2, h3, h4, h5, h6 {
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/clients-6.png" alt="Ecom Express">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/amazon-logo-1-3.jpg" alt="Amazon">
-                </div>
+                
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-5.png" alt="Facebook">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/zepto-1-1.png" alt="Zepto">
-                </div>
+                
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-1.png" alt="Apple">
                 </div>
                 <div class="partner-logo">
                     <img src="https://eazyonesources.com/wp-content/uploads/2024/12/client-4.png" alt="Microsoft">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://www.quickcomexpress.com/wp-content/uploads/2025/01/Swiggy_logo-1.png" alt="Swiggy">
-                </div>
+                
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials-section">
-    <div class="container">
-        <h2 class="section-title reveal">Success Stories From Our Partners</h2>
-        <p class="section-subtitle reveal">Real transformations and measurable results from businesses that chose Trackship</p>
-        
-        <div class="testimonials-grid">
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">
-                    "Trackship's B2B logistics platform has revolutionized our supply chain operations. Their AI-powered routing algorithms reduced our delivery costs by 40% while improving on-time delivery rates to 98.5%. The real-time visibility platform provides complete transparency into our logistics operations, enabling data-driven decision making at every level. The integrated technology stack has eliminated manual processes, reducing our operational overhead by 35%."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">AK</div>
-                    <div class="author-info">
-                        <h4>Amit Kumar</h4>
-                        <p>Operations Head, TechMart India</p>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">
-                    "The integrated warehousing and fulfillment services have been transformational for our e-commerce operations. Trackship's smart inventory management system with predictive analytics has reduced our stockouts by 75% while improving inventory turnover by 40%. Their same-day delivery capabilities across 19,000+ pin codes have increased our customer satisfaction ratings to 4.8/5. The dedicated account management team provides proactive support that anticipates our needs before they become issues."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SP</div>
-                    <div class="author-info">
-                        <h4>Sonia Patel</h4>
-                        <p>CEO, Fashion Hub</p>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">
-                    "Outstanding cross-border logistics expertise! Their customs clearance team handles our international shipments with remarkable efficiency, reducing clearance times by 60%. The documentation automation system has eliminated paperwork errors completely. Their API integration with our SAP system has automated our entire shipping workflow, reducing order processing time from 45 minutes to under 5 minutes per order."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">RJ</div>
-                    <div class="author-info">
-                        <h4>Rahul Jain</h4>
-                        <p>Director, Global Exports Ltd.</p>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">
-                    "The bulk shipping solutions have optimized our distribution network beyond expectations. Trackship's route optimization algorithms have reduced our fuel consumption by 22% and improved fleet utilization by 35%. Their real-time tracking system with predictive ETA accuracy of 97% has transformed our customer communication. The dashboard provides actionable insights that have helped us reduce operational costs by 28% year-over-year."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MP</div>
-                    <div class="author-info">
-                        <h4>Meera Prasad</h4>
-                        <p>Supply Chain Director, MegaCorp</p>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">
-                    "Exceptional B2B fulfillment platform! Their multi-channel integration has synchronized our inventory across all marketplaces in real-time, eliminating overselling completely. The automated returns management system has reduced return processing time from 7 days to under 48 hours while improving customer satisfaction by 45%. The quality control systems have reduced product damage rates to under 0.1%."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">VS</div>
-                    <div class="author-info">
-                        <h4>Vikram Singh</h4>
-                        <p>E-commerce Director, RetailPro</p>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">
-                    "Trackship's cold chain logistics solutions have set industry benchmarks for our pharmaceutical business. Their temperature-controlled warehousing with real-time monitoring ensures 99.9% product integrity. The specialized fleet with IoT sensors provides complete temperature visibility throughout the journey. Their compliance team handles all regulatory requirements seamlessly, reducing our compliance overhead by 60%."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">NG</div>
-                    <div class="author-info">
-                        <h4>Neha Gupta</h4>
-                        <p>Operations Director, MedSupply</p>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- CTA Section -->
 <section class="cta-section" id="contact">
@@ -2791,7 +2612,7 @@ h1, h2, h3, h4, h5, h6 {
                 into growth opportunities.
             </p>
             <div class="hero-buttons reveal">
-                <a href="#" class="btn btn-primary" onclick="openPopup()">
+                <a href="index.html#contactform" class="btn btn-primary" onclick="openPopup()">
                     <span>Get Custom Solution</span>
                     <span class="btn-icon"><i class="fas fa-rocket"></i></span>
                 </a>
@@ -2817,15 +2638,15 @@ h1, h2, h3, h4, h5, h6 {
                 </p>
                 <div class="social-icons">
                     <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
                     </a>
                     <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
                     </a>
                     <a href="#" class="social-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
                     </a>
-                    <a href="https://wa.me/919136601185" class="social-icon">
+                    <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
                     </a>
                 </div>
@@ -3148,7 +2969,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .from('.step-number', {
         scale: 0,
-        rotation: -180,
+        rotation: -10,
         duration: 0.8,
         stagger: 0.2
     }, '<')
@@ -3181,6 +3002,148 @@ document.addEventListener('DOMContentLoaded', function() {
         revealOnScroll();
     }, 100);
 });
+function submitToAPI(formId) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.textContent = 'Submitting...';
+
+    fetch("https://itzadarsh.co.in/api/v1/post", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return res.json();
+    })
+    .then(data => {
+        if (data.success) {
+            // Success state
+            submitBtn.textContent = 'Success!';
+            submitBtn.classList.remove('loading');
+            submitBtn.classList.add('success');
+            
+            // Show success message (optional - replace alert with a better UI notification)
+            showNotification(data.message || 'Form submitted successfully!', 'success');
+            
+            // Handle popup form special case
+            if (formId === 'popupForm') {
+                localStorage.setItem('trackshipPopupSubmitted', 'true');
+                setTimeout(() => {
+                    document.getElementById('popupModal').classList.remove('active');
+                }, 1500);
+            }
+            
+            // Reset form after delay
+            setTimeout(() => {
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('success');
+            }, 2000);
+        } else {
+            throw new Error(data.message || 'Submission failed');
+        }
+    })
+    .catch(err => {
+        // Error state
+        submitBtn.textContent = 'Error!';
+        submitBtn.classList.remove('loading');
+        submitBtn.classList.add('error');
+        
+        showNotification('Error: ' + err.message, 'error');
+        console.error('Form submission error:', err);
+        
+        // Reset after delay
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.classList.remove('error');
+        }, 2000);
+    });
+}
+// Popup Form
+document.getElementById('popupForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateForm(this)) {
+        submitToAPI('popupForm');
+    }
+});
+
+// Services Form
+document.getElementById('servicesForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateForm(this)) {
+        submitToAPI('servicesForm');
+    }
+});
+
+// Contact Form
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateForm(this)) {
+        submitToAPI('contactForm');
+    }
+});
+
+// Optional: Add a notification system (better than alerts)
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    `;
+    
+    // Set background color based on type
+    if (type === 'success') {
+        notification.style.background = '#28a745';
+    } else if (type === 'error') {
+        notification.style.background = '#dc3545';
+    } else {
+        notification.style.background = '#0b4a7a';
+    }
+    
+    document.body.appendChild(notification);
+    
+    // Slide in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 5000);
+}
+
 </script>
 </body>
 </html>
