@@ -118,65 +118,7 @@ h4:hover::after, h5:hover::after, h6:hover::after,
     opacity: 1;
     transform: translateY(0) scale(1);
 }
-/* Reduce Global Section Padding */
-/* 🔥 Reduce padding for ALL sections EXCEPT Partners Section */
-section:not(.partners-section,.india-hero, .hero-slider) {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
-}
 
-
-
-/* Services Section spacing fix */
-.services-section {
-    padding-top: 70px !important;
-    padding-bottom: 70px !important;
-}
-
-/* Why Choose Us */
-.why-choose-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-}
-
-
-
-/* FAQ */
-.faq-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-}
-
-/* Gallery */
-.gallery-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-}
-
-/* Testimonials */
-.testimonials-section {
-    padding-top: -60px !important;
-    padding-bottom: 60px !important;
-}
-
-/* CTA */
-.cta-section {
-    padding-top: -60px !important;
-    padding-bottom: -60px !important;
-}
-
-/* Contact Section */
-.contact-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-}
-
-footer {
-    padding-top: 20px !important;
-}
-.container {
-    padding-top: 0 !important;
-}
 /* ---------------------------------------------
    HOW IT WORKS : Premium Gradient Cards
 ---------------------------------------------- */
@@ -338,7 +280,7 @@ footer {
    FOOTER MAIN STYLING (Optimized + Clean)
 ----------------------------------------- */
 .footer {
-    background: #042b53 url('india-map.png') 
+    background: #042b53 url('//trackshiplogistics.com/india-map.png') 
                center/cover no-repeat;
     color: #ffffff;
     padding: 70px 0 20px;
@@ -1280,10 +1222,11 @@ textarea { height: 80px; resize: none; }
     top: 40px;
     left: 0;
     min-width: 180px;
-    background: #ffffff;
+    min-height: 335px;
+    background: #00000000;
     border-radius: 10px;
     padding: 10px 0;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.349);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -1350,30 +1293,36 @@ textarea { height: 80px; resize: none; }
     display: none;
     opacity: 0;
     visibility: hidden;
-    left: 100%;
+    left: 10%;
     top: 0;
     position: absolute;
 }
 
 .desktop-nav .nested-menu.show {
     display: block;
-    opacity: 1;
+    opacity: 100;
     visibility: visible;
 }
-
+.b2bMenu{
+    color: red;
+    height: auto;
+    width: 500px;
+}
 /* Nested menu (right side) */
 .nested-menu {
     position: absolute;
     top: 0;
-    left: 100%;
+    left: 10%;
     width: 180px;
-    background: #ffffff;
+    height: 135px;
+    background: #ff0000;
     border-radius: 10px;
-    padding: 10px 0;
+   
+    padding-top: 50px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 
     opacity: 0;
-    visibility: hidden;
+    
     transform: translateX(10px);
     transition: 0.25s ease;
 }
@@ -2327,10 +2276,6 @@ html, body {
 
 
 
-/* Nested dropdown styling */
-.nested-dropdown {
-    padding-left: 15px;
-}
 
 .nested-toggle {
     width: 100%;
@@ -2345,12 +2290,6 @@ html, body {
     cursor: pointer;
 }
 /* Main dropdown animation */
-.dropdown-menu,
-.nested-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-}
 
 /* Inner B2B dropdown indent */
 .nested-dropdown {
@@ -2359,10 +2298,10 @@ html, body {
 
 
 .nested-menu {
-    max-height: 0;
-    overflow: hidden;
+    max-height: 500px;
+    overflow: visible;
     background: rgba(0,0,0,0.03);
-    margin-left: 10px;
+    margin-left: -10px;
     border-left: 2px solid #ff7300;
     transition: max-height 0.3s ease;
 }
@@ -3035,7 +2974,7 @@ html, body {
 }
 
 .dropdown-menu {
-    max-height: 0;
+    max-height: 15px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -3081,34 +3020,73 @@ html, body {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* WhatsApp Floater */
+
+/* WhatsApp Floater Advanced Animation */
 .whatsapp-floater {
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
+    left: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    background: #25D366;
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.5s ease forwards;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    animation: popIn 0.6s ease-out, wave 0.5s infinite ease-in-out 0.5s, gentleShake 3s infinite ease-in-out 2s;
+    z-index: 9999;
+}
+.whatsapp-floater img {
+    height: 40px;
+    width: 40px;
+}
+/* POP-IN Animation */
+@keyframes popIn {
+    0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+    50% { transform: scale(1.15) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
 }
 
+/* WAVE EFFECT (ripple like WhatsApp calling) */
+.whatsapp-floater::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: rgba(37, 211, 46, 0.747);
+    animation: wavePulse 1.4s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+@keyframes gentleShake {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Optional: Hover Boost */
 .whatsapp-floater:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-.whatsapp-floater i {
-    color: white;
-    font-size: 28px;
-}
+
 
 /* Redirect Toast */
 .redirect-toast {
@@ -3153,5 +3131,3 @@ html, body {
 
 /*hero-section*/
 		/* Reset and Base Styles */
-
-
