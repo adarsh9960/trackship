@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="icon.css">
 
 
 <style>
@@ -22,6 +21,13 @@ html, body {
     line-height: 1.6;
     scroll-behavior: smooth;
 }
+/* social icon */
+.social-icon img{
+    height: auto;
+    width: 25px;
+    
+}
+
 
 /* Container */
 .container {
@@ -496,6 +502,10 @@ html, body {
 }
 
 .hero-image {
+    position: absolute;
+    right: 20%;
+    top: 200px;
+    opacity: 1%;
     max-width: 500px;
 }
 
@@ -503,14 +513,185 @@ html, body {
     width: 100%;
     height: auto;
     border-radius: 20px;
+    opacity: 10%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+
 
 .hero-buttons {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
+
+/* ===============================
+   iOS FORM BASE STYLE
+================================ */
+.form-group {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.form-control,
+.form-message,
+select.form-control {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 16px;
+    border-radius: 16px;
+    border: 1.8px solid #d5d5d5;
+    background: rgba(255, 255, 255, 0.212);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.form-control:focus,
+.form-message:focus,
+select.form-control:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 0 4px rgba(247,147,30,0.25);
+    background: #fff;
+}
+
+/* ========== FLOATING LABEL ========== */
+.form-label {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 15px;
+    color: #555;
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+#popupForm input::placeholder,
+#popupForm textarea::placeholder,
+#popupForm select {
+    color: #777 !important;   /* visible grey */
+    opacity: 1 !important;
+    font-size: 14px;
+}
+
+
+/* Input filled or focused */
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label,
+select.form-control:focus + .form-label,
+select.form-control:not([value=""]) + .form-label,
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+    top: -10px;
+    left: 14px;
+    font-size: 13px;
+    color: #ff7300;
+    background: #fff;
+    border-radius: 15px;
+    padding: 0 5px;
+}
+
+/* ========== SELECT DROPDOWN DESIGN ========== */
+select.form-control {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%230b4a7a" height="20" width="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 20px;
+}
+
+/* Dropdown options */
+select.form-control option {
+    padding: 5px;
+    background: #fff;
+    font-size: 15px;
+}
+
+
+/* Option hover + selected */
+select.form-control option:hover {
+    background: #ffe0bf !important;
+}
+select.form-control option:checked {
+    background: #ff7300 !important;
+    color: #fff;
+}
+
+/* ========== ERROR MESSAGE ========== */
+.error-message {
+    font-size: 13px;
+    color: #d90000;
+    margin-top: 4px;
+    display: block;
+    padding-left: 4px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+/* Show Error */
+.show-error .error-message {
+    opacity: 1;
+}
+
+/* Red border error */
+.show-error .form-control,
+.show-error .form-message,
+.show-error select.form-control {
+    border-color: #d90000 !important;
+    box-shadow: 0 0 0 4px rgba(217,0,0,0.18);
+}
+
+/* ========== SHAKE ANIMATION ========== */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease;
+}
+.form-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7300, #FFA726);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+/* Popup Background */
+.popup-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup box */
+.popup-content {
+    background: #fff;
+    width: 420px;
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 
 /* Section Styles */
 section {
@@ -1795,7 +1976,7 @@ select.form-control {
 
 /* Footer */
 .footer {
-    background: #042b53 url('india-map.png') center/cover no-repeat;
+    background: #042b53 url('https://itzadarsh.co.in/assets/trackship/img/india-map.jpg') center/cover no-repeat;
     color: white;
     padding: 70px 0 20px;
     position: relative;
@@ -2496,7 +2677,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
     </div>
 
     <a href="#why-choose">Why Choose Us</a>
-    <a href="#contact">Contact</a>
+    <a href="contact.html">Contact</a>
 </nav>
     
     <div class="hamburger" id="hamburger">
@@ -2516,7 +2697,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
     <div class="panel-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
 
         <!-- SERVICES MAIN DROPDOWN -->
         <div class="dropdown">
@@ -2554,7 +2735,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
 <div class="overlay" id="overlay"></div>
 
 <!-- WhatsApp Floater -->
-<a href="https://wa.me/917400372375?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
+<a href="https://wa.me/919136601185?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -2572,6 +2753,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="container">
+        
         <div class="hero-content">
             <h1 class="reveal-left">Complete Logistics Solutions</h1>
             <h2 class="reveal-right">Transform Your Business with Trackship's Comprehensive Services</h2>
@@ -2786,6 +2968,9 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
         </div>
         
         <div class="service-detail-container">
+            <div class="service-detail-image reveal">
+                <img src="/icons/Business-Marketing-430x362.png" alt="Logistics Solutions">
+            </div>
             
             <div class="service-detail-content reveal">
                 <h3>Advanced Logistics Management</h3>
@@ -3386,7 +3571,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                 <div class="testimonial-card reveal">
                     <p class="testimonial-text">"Starting a Trackship franchise was the best decision I ever made. The comprehensive training, continuous support, and proven business model helped me achieve ROI within just 8 months. Now I'm expanding to multiple locations with their help."</p>
                     <div class="testimonial-author">
-                        <img src="https://trackshiplogistics.com/icons/user.png" alt="Rajesh Kumar" class="author-image">
+                        <img src="/icons/user.png" alt="Rajesh Kumar" class="author-image">
                         <div class="author-info">
                             <h4>Rajesh Kumar</h4>
                             
@@ -3404,10 +3589,9 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                 <div class="testimonial-card reveal">
                     <p class="testimonial-text">"Trackship's B2B logistics solutions transformed our e-commerce operations. Their technology integration reduced our delivery costs by 30% while improving customer satisfaction significantly. The real-time tracking and analytics have been game-changers for our business."</p>
                     <div class="testimonial-author">
-                        <img src="https://trackshiplogistics.com/icons/user.png" alt="Priya Sharma" class="author-image">
+                        <img src="/icons/user.png" alt="Priya Sharma" class="author-image">
                         <div class="author-info">
                             <h4>Priya Sharma</h4>
-                           
                         </div>
                     </div>
                     <div class="testimonial-rating">
@@ -3422,7 +3606,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                 <div class="testimonial-card reveal">
                     <p class="testimonial-text">"The bulk SMS service from Trackship has revolutionized our marketing campaigns. With their high delivery rate and competitive pricing, we've seen a 45% increase in customer engagement. The API integration was seamless and their technical support is exceptional."</p>
                     <div class="testimonial-author">
-                        <img src="https://trackshiplogistics.com/icons/user.png" alt="Amit Patel" class="author-image">
+                        <img src="/icons/user.png" alt="Amit Patel" class="author-image">
                         <div class="author-info">
                             <h4>Amit Patel</h4>
                             
@@ -3440,10 +3624,10 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                 <div class="testimonial-card reveal">
                     <p class="testimonial-text">"As a B2B seller on Trackship's platform, I've seen my business grow exponentially. Their extensive network and reliable delivery system have helped me reach customers across India. The dashboard analytics help me optimize my inventory and pricing strategy effectively."</p>
                     <div class="testimonial-author">
-                        <img src="https://trackshiplogistics.com/icons/user.png" alt="Neha Gupta" class="author-image">
+                        <img src="/icons/user.png" alt="Neha Gupta" class="author-image">
                         <div class="author-info">
                             <h4>Neha Gupta</h4>
-                           
+                            
                         </div>
                     </div>
                     <div class="testimonial-rating">
@@ -3458,7 +3642,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                 <div class="testimonial-card reveal">
                     <p class="testimonial-text">"The EV charging station setup from Trackship has been a great addition to our business. They handled everything from location selection to installation and ongoing maintenance. The revenue sharing model makes it a win-win partnership."</p>
                     <div class="testimonial-author">
-                        <img src="https://trackshiplogistics.com/icons/user.png" class="author-image">
+                        <img src="/icons/user.png" alt="Vikram Singh" class="author-image">
                         <div class="author-info">
                             <h4>Vikram Singh</h4>
                             
@@ -3523,7 +3707,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                 </div>
                 <div class="contact-content">
                     <h4>Contact Numbers</h4>
-                    <p>Franchise: +91 91366 01185<br>B2B Services: +91 91366 01185<br>Support: +91 76543 21098</p>
+                    <p>Franchise: +91 91366 01185<br>B2B Services: +91 87654 32109<br>Support: +91 76543 21098</p>
                 </div>
             </div>
             
@@ -3615,9 +3799,6 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
         </div>
     </div>
 </section>
-
-
-
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -3648,8 +3829,8 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
                 </ul>
             </div>
             
@@ -4278,8 +4459,6 @@ window.addEventListener('scroll', () => {
     }
 });
 </script>
+
 </body>
 </html>
-
-
-
