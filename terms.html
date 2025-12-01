@@ -13,6 +13,10 @@
     position: relative;
     overflow: hidden;
 }
+.hamburger.active .cross {
+    transform: translate(-50%, -50%) rotate(0);
+    opacity: 0;
+}
 
 .hero-content {
     margin-top: 50px;
@@ -380,25 +384,9 @@
     <nav class="desktop-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <div class="dropdown">
-        <button class="dropdown-toggle">
-            Services <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="dropdown-menu">
-            <a href="#">Courier Point</a>
-            <a href="#">Logistics</a>
-            <div class="nested-dropdown">
-                <button class="nested-toggle">B2B <i class="fas fa-chevron-right"></i></button>
-                <div class="nested-menu">
-                    <a href="#">B2B Seller</a>
-                    <a href="#">B2B Franchise</a>
-                    <a href="#">B2B Services</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a href="#why-choose">Why Choose Us</a>
-    <a href="#contact">Contact</a>
+    
+    <a href="index.html#why-choose">Why Choose Us</a>
+    <a href="contact.html">Contact</a>
 </nav>
     
     <div class="hamburger" id="hamburger">
@@ -417,39 +405,29 @@
     <div class="panel-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <div class="dropdown">
-            <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">
-                Services <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu" id="servicesMenu">
-                <a href="#">Courier Point</a>
-                <a href="#">Logistics</a>
-                <div class="dropdown nested-dropdown">
-                    <button class="nested-toggle" aria-expanded="false" aria-controls="b2bMenu">
-                        B2B <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="nested-menu" id="b2bMenu">
-                        <a href="#">B2B Seller</a>
-                        <a href="#">B2B Franchise</a>
-                        <a href="#">B2B Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <a href="#contact">Contact</a>
     </div>
     <div class="panel-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
+                    </a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
+                    </a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                    </a>
+        <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+        </a>
     </div>
 </div>
 <div class="overlay" id="overlay"></div>
 
 <!-- WhatsApp Floater -->
-<a href="https://wa.me/917400372375?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
 </a>
 
 <!-- PRELOADER -->
@@ -851,7 +829,7 @@
         </div>
 
         <div class="contact-form reveal">
-            <form id="contactForm" method="POST" novalidate>
+            <form id="contactForm" novalidate>
                 <div class="form-row">
                     <div class="form-group">
                         <input type="text" class="form-control" id="contactName" name="name" required>
@@ -865,7 +843,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-message" id="contactMessage" name="message" required placeholder="Your message about terms..."></textarea>
+                    <textarea class="form-message" id="contactMessage" name="message" required placeholder=""></textarea>
                     <label class="form-label">Message</label>
                     <span class="error-message"></span>
                 </div>
@@ -892,7 +870,7 @@
                     <a href="#" class="social-icon">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
                     </a>
-                    <a href="#" class="social-icon">
+                    <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
                     </a>
                 </div>
@@ -1106,32 +1084,42 @@ window.addEventListener("load", function () {
     }, 300);
 });
 
-// Desktop hover dropdown
-const desktopDropdown = document.querySelector('.desktop-nav .dropdown');
-const desktopToggleBtn = desktopDropdown.querySelector('.dropdown-toggle');
-const desktopDropdownMenu = desktopDropdown.querySelector('.dropdown-menu');
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-desktopToggleBtn.addEventListener('mouseenter', () => {
-    desktopDropdownMenu.classList.add('show');
-});
+    let valid = true;
 
-desktopDropdown.addEventListener('mouseleave', () => {
-    desktopDropdownMenu.classList.remove('show');
-});
+    this.querySelectorAll(".form-group").forEach(group => {
+        const input = group.querySelector("input, textarea");
+        const error = group.querySelector(".error-message");
 
-const nestedDropdown = document.querySelector('.desktop-nav .nested-dropdown');
-if (nestedDropdown) {
-    const nestedToggleBtn = nestedDropdown.querySelector('.nested-toggle');
-    const nestedDropdownMenu = nestedDropdown.querySelector('.nested-menu');
+        if (!input.value.trim()) {
+            valid = false;
+            error.textContent = "This field is required";
+            group.classList.add("error-shake");
 
-    nestedDropdown.addEventListener('mouseenter', () => {
-        nestedDropdownMenu.classList.add('show');
+            setTimeout(() => group.classList.remove("error-shake"), 400);
+        } else {
+            error.textContent = "";
+        }
     });
 
-    nestedDropdown.addEventListener('mouseleave', () => {
-        nestedDropdownMenu.classList.remove('show');
-    });
-}
+    if (!valid) return;
+
+    // Submit to API
+    const formData = new FormData(this);
+
+    fetch("https://itzadarsh.co.in/api/v1/post", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message || "Submitted successfully!");
+        this.reset();
+    })
+    .catch(() => alert("Network Error — Please try again."));
+});
 
 </script>
 </body>
