@@ -2795,7 +2795,7 @@ html, body {
 }
 .hamburger.active .cross {
     transform: translate(-50%, -50%) rotate(0);
-    opacity: 1;
+    opacity: 0;
 }
 
 /* mobile panel closing animation (cut-close) */
@@ -3131,3 +3131,4 @@ html, body {
 
 /*hero-section*/
 		/* Reset and Base Styles */
+
