@@ -116,32 +116,7 @@ hamburger.addEventListener('click', () => {
 
     document.body.style.overflow = 'hidden';
 });
-// ================================
-// SERVICES MAIN DROPDOWN
-// ================================
-const dropdownToggle = document.querySelector('.dropdown-toggle');
-const dropdownMenu = document.getElementById('servicesMenu');
 
-dropdownToggle.addEventListener('click', () => {
-    const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
-
-    dropdownToggle.setAttribute('aria-expanded', !isOpen);
-
-    dropdownMenu.style.maxHeight = isOpen ? "0px" : dropdownMenu.scrollHeight + "px";
-
-    dropdownToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
-});
-const nestedToggle = document.querySelector('.nested-toggle');
-const nestedMenu = document.getElementById('b2bMenu');
-nestedToggle.addEventListener('click', () => {
-    const isOpen = nestedToggle.getAttribute('aria-expanded') === 'true';
-
-    nestedToggle.setAttribute('aria-expanded', !isOpen);
-
-    nestedMenu.style.maxHeight = isOpen ? "0px" : nestedMenu.scrollHeight + "px";
-
-    nestedToggle.querySelector("i").style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
-});
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -443,3 +418,4 @@ if (nestedDropdown) {
     });
 }
 // hero-section
+
