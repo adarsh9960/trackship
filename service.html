@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 <style>
-    /* icon.css */
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -27,15 +24,12 @@ html, body {
     width: 25px;
     
 }
-
-
 /* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
 /* Button Styles */
 .btn {
     display: inline-flex;
@@ -56,7 +50,6 @@ html, body {
 .footer-column i {
     color: #ff7300;
 }
-
 .btn::before {
     content: '';
     position: absolute;
@@ -73,29 +66,24 @@ html, body {
 .btn:hover::before {
     transform: translateX(0);
 }
-
 .btn-primary {
     background: linear-gradient(135deg, #0b4a7a, #005792);
     color: white;
     box-shadow: 0 4px 15px rgba(11, 74, 122, 0.3);
 }
-
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(11, 74, 122, 0.4);
 }
-
 .btn-secondary {
     background: transparent;
     color: #0b4a7a;
     border: 2px solid #0b4a7a;
 }
-
 .btn-secondary:hover {
     background: #0b4a7a;
     color: white;
 }
-
 .btn-icon {
     display: inline-flex;
     align-items: center;
@@ -106,7 +94,6 @@ html, body {
     border-radius: 50%;
     flex-shrink: 0;
 }
-
 /* Popup Modal */
 .popup-modal {
     position: fixed;
@@ -416,33 +403,74 @@ html, body {
     display: block;
 }
 
-/* WhatsApp Floater */
+
+
+/* WhatsApp Floater Advanced Animation */
 .whatsapp-floater {
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
+    left: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    background: #25D366;
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    animation: popIn 0.6s ease-out, wave 0.5s infinite ease-in-out 0.5s, gentleShake 3s infinite ease-in-out 2s;
+    z-index: 9999;
+}
+.whatsapp-floater img {
+    height: 40px;
+    width: 40px;
+}
+/* POP-IN Animation */
+@keyframes popIn {
+    0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+    50% { transform: scale(1.15) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
 }
 
+/* WAVE EFFECT (ripple like WhatsApp calling) */
+.whatsapp-floater::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: rgba(37, 211, 46, 0.747);
+    animation: wavePulse 1.4s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+@keyframes gentleShake {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Optional: Hover Boost */
 .whatsapp-floater:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-.whatsapp-floater i {
-    color: white;
-    font-size: 28px;
-}
+
 
 /* Preloader */
 #preloader {
@@ -1825,7 +1853,7 @@ section {
 
 /* Contact Form */
 .contact-form {
-    background: rgba(255, 255, 255, 0.05);
+    background: #ffffff86;
     padding: 40px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -1834,7 +1862,7 @@ section {
 .contact-form h3 {
     font-size: 24px;
     font-weight: 700;
-    color: #ff7300;
+    color: #0b4a7a;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -1859,7 +1887,7 @@ section {
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #ff7300;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -1976,7 +2004,7 @@ select.form-control {
 
 /* Footer */
 .footer {
-    background: #042b53 url('https://itzadarsh.co.in/assets/trackship/img/india-map.jpg') center/cover no-repeat;
+    background: #042b53 url('//trackshiplogistics.com/india-map.png') center/cover no-repeat;
     color: white;
     padding: 70px 0 20px;
     position: relative;
@@ -2387,7 +2415,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
 /* Print styles */
 @media print {
     .main-header,
-    .whatsapp-floater,
+    
     .cta-section,
     .contact-section,
     .footer {
@@ -2414,24 +2442,12 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
 
 <!-- SEO Title -->
 <title>Trackship Logistics Services - Courier Point, B2B Delivery, Logistics Solutions Across India</title>
-
-<!-- Description -->
 <meta name="description" content="Explore Trackship Logistics' comprehensive services including courier point franchise, B2B delivery solutions, logistics management, and future services like solar energy and EV charging. Pan India coverage with 750+ cities.">
-
-<!-- Keywords -->
 <meta name="keywords" content="Trackship services, courier point franchise, B2B delivery services, logistics solutions India, courier business opportunity, B2B seller platform, logistics management, delivery franchise, supply chain solutions, pan India courier services, last mile delivery, warehouse management, technology solutions, solar energy services, EV charging solutions, bulk SMS services">
-
-<!-- For Better SEO Indexing -->
 <meta name="robots" content="index, follow">
 <meta name="author" content="Trackship Logistics">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://trackshiplogistics.com/services">
-
-<!-- Viewport -->
+<link rel="canonical" href="https://trackshiplogistics.com/service.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- FAVICONS & ICONS -->
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/trackship_16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/trackship_32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/trackship_48.png">
@@ -2440,14 +2456,10 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/trackship_512.png">
 <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/trackship_180.png">
-
-<!-- PWA SETUP -->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="msapplication-TileImage" content="/assets/icons/trackship_256.png">
-
-<!-- SOCIAL SHARE (Open Graph) -->
 <meta property="og:title" content="Trackship Logistics Services - Comprehensive Courier & Logistics Solutions">
 <meta property="og:description" content="Complete range of logistics services including courier franchise, B2B delivery, and innovative solutions across India.">
 <meta property="og:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
@@ -2457,8 +2469,6 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
 <meta name="twitter:title" content="Trackship Logistics Services - Comprehensive Courier & Logistics Solutions">
 <meta name="twitter:description" content="Complete range of logistics services including courier franchise, B2B delivery, and innovative solutions.">
 <meta name="twitter:image" content="https://trackshiplogistics.com/assets/og-image.jpg">
-
-<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2526,7 +2536,6 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
   }
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2651,32 +2660,7 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
     <nav class="desktop-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-
-    <!-- SERVICES DROPDOWN -->
-    <div class="dropdown">
-        <button class="dropdown-toggle">
-            Services <i class="fas fa-chevron-down"></i>
-        </button>
-
-        <div class="dropdown-menu">
-            <a href="#courier-point">Courier Point</a>
-            <a href="#logistics">Logistics</a>
-
-            <!-- B2B NESTED DROPDOWN -->
-            <div class="nested-dropdown">
-                <button class="nested-toggle">
-                    B2B <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="nested-menu">
-                    <a href="#b2b-seller">B2B Seller</a>
-                    <a href="#b2b-franchise">B2B Franchise</a>
-                    <a href="#b2b-services">B2B Services</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <a href="#why-choose">Why Choose Us</a>
+    <a href="index.html#why-choose">Why Choose Us</a>
     <a href="contact.html">Contact</a>
 </nav>
     
@@ -2698,45 +2682,28 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-
-        <!-- SERVICES MAIN DROPDOWN -->
-        <div class="dropdown">
-            <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">
-                Services <i class="fas fa-chevron-down"></i>
-            </button>
-
-            <div class="dropdown-menu" id="servicesMenu">
-                <a href="#courier-point">Courier Point</a>
-                <a href="#logistics">Logistics</a>
-
-                <!-- B2B NESTED DROPDOWN -->
-                <div class="dropdown nested-dropdown">
-                    <button class="nested-toggle" aria-expanded="false" aria-controls="b2bMenu">
-                        B2B <i class="fas fa-chevron-right"></i>
-                    </button>
-
-                    <div class="nested-menu" id="b2bMenu">
-                        <a href="#b2b-seller">B2B Seller</a>
-                        <a href="#b2b-franchise">B2B Franchise</a>
-                        <a href="#b2b-services">B2B Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="panel-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram_logo_2022">
+                    </a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/YouTube_social_red_circle_%282017%29.svg" alt="YouTube_social_red_circle_%282017%29">
+                    </a>
+        <a href="#" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook">
+                    </a>
+        <a href="https://api.whatsapp.com/send/?phone=919136601185&text=Hi+Trackship&type=phone_number&app_absent=0" class="social-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+        </a>
     </div>
 </div>
 <div class="overlay" id="overlay"></div>
 
 <!-- WhatsApp Floater -->
 <a href="https://wa.me/919136601185?text=Hi%20Trackship" target="_blank" rel="noopener noreferrer" class="whatsapp-floater" aria-label="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
 </a>
 
 <!-- Lottie Import -->
@@ -3869,16 +3836,15 @@ a, button, .btn, .social-icon, .testimonial-card, .overview-item, .type-card {
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Trackship Logistics. All rights reserved.</p>
+            <p>&copy; 2025 Trackship Logistics. All rights reserved.</p>
             <div class="credit">Designed By <a href="https://itzadarsh.co.in" target="_blank" class="developer">ITZ Adarsh</a></div>
         </div>
     </div>
 </footer>
 
 <script src="script.js"></script>
+
 <script>
-    
-// script.js
 document.addEventListener("DOMContentLoaded", function () {
     const footer = document.querySelector(".footer");
 
@@ -4457,6 +4423,80 @@ window.addEventListener('scroll', () => {
     if (heroImage) {
         heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
     }
+});
+// ====== FORM VALIDATION ======
+const form = document.getElementById("quickForm");
+form.addEventListener("submit", (e) => {
+    const inputs = form.querySelectorAll("input, textarea");
+    let valid = true;
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            valid = false;
+            input.classList.add("shake");
+            setTimeout(() => input.classList.remove("shake"), 500);
+        }
+    });
+    if (!valid) e.preventDefault();
+});
+    const popupForm = document.getElementById("popupForm");
+popupForm.addEventListener("submit", function(e) {
+    let valid = true;
+
+    document.querySelectorAll("#popupForm .form-group").forEach(group => {
+        const input = group.querySelector("input, select, textarea");
+        const errorText = group.querySelector(".error-text");
+
+        if (!input.checkValidity()) {
+            valid = false;
+            errorText.textContent = "This field is required";
+            group.classList.add("error-shake");
+
+            setTimeout(() => {
+                group.classList.remove("error-shake");
+            }, 300);
+        } else {
+            errorText.textContent = "";
+        }
+    });
+
+    if (!valid) e.preventDefault();
+});
+function submitToAPI(formId) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+
+    fetch("https://itzadarsh.co.in/api/v1/post", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(err => {
+        alert("Network error — please try again.");
+        console.error(err);
+    });
+}
+
+// ===== POPUP FORM =====
+document.getElementById("popupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitToAPI("popupForm");
+});
+// ===== CONTACT FORM =====
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitToAPI("contactForm");
+});
+// ===== QUICK FORM (cities section) =====
+document.getElementById("quickForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitToAPI("quickForm");
 });
 </script>
 
