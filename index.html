@@ -37,57 +37,160 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Trackship Logistics",
-  "url": "https://trackshiplogistics.com",
-  "logo": "https://trackship.in/logo.png",
-  "description": "Trackship provides fast courier services, logistics solutions, B2B support, franchise opportunities, and business partner programs across India.",
-  "foundingDate": "2024",
-  "founder": {
-    "@type": "Person",
-    "name": "Trackship"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91 9136601185",
-    "contactType": "customer support",
-    "areaServed": "IN",
-    "availableLanguage": ["English", "Hindi"]
-  },
-  "sameAs": [
-    "https://www.facebook.com/trackship",
-    "https://www.instagram.com/trackship",
-    "https://www.linkedin.com/company/trackship"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
-  },
-  "serviceArea": {
-    "@type": "Country",
-    "name": "India"
-  },
-  "services": [
+  "@graph": [
+
     {
-      "@type": "Service",
-      "name": "Courier Point Services",
-      "description": "Franchise-based courier point setup for new entrepreneurs."
+      "@type": "Organization",
+      "@id": "https://trackshiplogistics.com/#organization",
+      "name": "Trackship Logistics",
+      "legalName": "Trackship Logistics Services",
+      "url": "https://trackshiplogistics.com",
+      "logo": "https://trackshiplogistics.com/assets/icons/favicon.ico",
+      "image": [
+        "https://trackshiplogistics.com/assets/icons/trackship_16.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_32.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_40.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_48.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_100.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_180.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_192.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_256.png",
+        "https://trackshiplogistics.com/assets/icons/trackship_512.png"
+      ],
+      "foundingDate": "2019",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Trackship"
+        }
+      ],
+      "description": "Trackship Logistics offers courier services, B2B logistics, warehousing, pickup & delivery, and franchise opportunities across India.",
+      "sameAs": [
+        "https://www.facebook.com/trackship",
+        "https://www.instagram.com/trackship",
+        "https://www.linkedin.com/company/trackship"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 9136601185",
+        "contactType": "customer support",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      }
     },
+
     {
-      "@type": "Service",
-      "name": "Logistics Solutions",
-      "description": "Pan-India pickup & delivery services for businesses."
+      "@type": "LocalBusiness",
+      "@id": "https://trackshiplogistics.com/#localbusiness",
+      "name": "Trackship Logistics",
+      "image": "https://trackshiplogistics.com/assets/icons/trackship_256.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "411, 4th Floor, Lotus Business Park Premises, Near HP Petrol Pump, SV Road, Malad West",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400064",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "19.1860",
+        "longitude": "72.8480"
+      },
+      "url": "https://trackshiplogistics.com",
+      "telephone": "+91 9136601185",
+      "priceRange": "₹₹",
+      "openingHours": "Mo-Su 09:00-21:00",
+      "servesCuisine": "N/A"
     },
+
     {
-      "@type": "Service",
-      "name": "B2B Delivery Solutions",
-      "description": "Supply chain, warehousing, and business-to-business delivery services."
+      "@type": "WebSite",
+      "@id": "https://trackshiplogistics.com/#website",
+      "url": "https://trackshiplogistics.com",
+      "name": "Trackship Logistics",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://trackshiplogistics.com/?s={search_term}",
+        "query-input": "required name=search_term"
+      }
     },
+
     {
-      "@type": "Service",
-      "name": "Technology Services",
-      "description": "API-based tracking system and digital business solutions."
+      "@type": "BreadcrumbList",
+      "@id": "https://trackshiplogistics.com/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trackshiplogistics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://trackshiplogistics.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Franchise",
+          "item": "https://trackshiplogistics.com/franchise"
+        }
+      ]
+    },
+
+    {
+      "@type": "Product",
+      "@id": "https://trackshiplogistics.com/#franchiseproduct",
+      "name": "Trackship Logistics Franchise Package",
+      "brand": {
+        "@type": "Brand",
+        "name": "Trackship Logistics"
+      },
+      "image": "https://trackshiplogistics.com/assets/icons/trackship_180.png",
+      "description": "Start your own Trackship Logistics courier point or logistics centre with low investment and full business support.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "19999",
+        "availability": "https://schema.org/InStock",
+        "url": "https://trackshiplogistics.com/franchise"
+      }
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://trackshiplogistics.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Trackship Logistics provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trackship provides courier services, B2B delivery, warehousing, logistics solutions, and franchise-based business opportunities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I apply for a Trackship franchise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can apply for a Trackship franchise online on the official website under the Franchise section."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Trackship offer pan-India logistics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Trackship Logistics provides nationwide pickup and delivery services across India."
+          }
+        }
+      ]
     }
+
   ]
 }
 </script>
@@ -4127,6 +4230,7 @@ document.addEventListener('DOMContentLoaded', function() {
      crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
